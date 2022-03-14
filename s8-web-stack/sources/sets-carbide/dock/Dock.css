@@ -1,0 +1,47 @@
+
+
+.dock {
+	box-sizing: content-box;
+	position: absolute;
+    width: 256px;
+	top: 50%; left: 0px;
+	transform: translate(0, -50%);
+}
+
+
+.dock-background {
+    position: absolute;
+    top: 50%; left: 0px;
+	transform: translate(0, -50%);
+	box-sizing: content-box;
+    background-color: rgb(189, 204, 218, 0.6);
+    border-radius: 0px 6px 6px 0px;
+    width: 72px;
+}
+
+.dock-foreground {
+    position: absolute;
+    top: 50%; left: 0px;
+	transform: translate(0, -50%);
+    display: block;
+}
+
+
+.dock-item {
+    padding: 4px;
+    cursor: pointer;
+}
+
+.dock-item > div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.dock-item > img {
+    width: 64px;
+    height: 64px;
+}
+
+.dock-item-tooltip {
+    padding: 6px;
+}
