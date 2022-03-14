@@ -18,7 +18,7 @@ export class Cube extends S8Orbital {
 
     static BOHR_Prototype = {
         fields: [
-            { name: "layers-#189", type: BOHR.Signature.OBJECT_ARRAY, setter: Cube.prototype.setLayers02 }
+            { name: "layers-#189", setter: Cube.prototype.setLayers02 }
         ],
         render : Cube.prototype.S8_render,
     };

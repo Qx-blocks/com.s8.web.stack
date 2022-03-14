@@ -27,7 +27,7 @@ public class Cube extends NeObject {
 		for(int i=0; i<NB_LAYERS; i++) {
 			layers.add(new CubeLevel(branch, i*8));
 		}
-		setObjArray("layers", layers);
+		setObjList("layers", layers);
 	}
 	
 	

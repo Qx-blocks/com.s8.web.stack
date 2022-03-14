@@ -39,7 +39,7 @@ public class Dock extends NeObject {
 		items.add(new DockItem(branch, "Sharing...", "/carbide/icon/photores/network-icon-128px.png"));
 		items.add(new DockItem(branch, "Projects...", "/carbide/icon/photores/project-icon-128px.png"));
 		items.add(new DockItem(branch, "Settings", "/carbide/icon/photores/settings-icon-128px.png"));
-		setObjArray("items", items);
+		setObjList("items", items);
 	}
 	
 }
