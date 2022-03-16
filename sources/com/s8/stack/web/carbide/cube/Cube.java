@@ -1,4 +1,4 @@
-package com.s8.web.stack.sets.carbide.cube;
+package com.s8.stack.web.carbide.cube;
 
 import java.util.ArrayList;
 import java.util.List;

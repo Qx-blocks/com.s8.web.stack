@@ -1,4 +1,4 @@
-package com.s8.web.stack.sets.carbide.cube;
+package com.s8.stack.web.carbide.cube;
 
 import com.s8.io.bohr.neon.core.NeBranch;
 import com.s8.io.bohr.neon.core.NeObject;

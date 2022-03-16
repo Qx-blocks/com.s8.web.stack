@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>com.s8.web.stack</name>
+	<name>com.s8.stack.web</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -16,7 +16,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1647255881016</id>
+			<id>0</id>
 			<name></name>
 			<type>30</type>
 			<matcher>

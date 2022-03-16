@@ -1,4 +1,4 @@
-package com.s8.web.stack.sets.carbide.dock;
+package com.s8.stack.web.carbide.dock;
 
 import java.util.ArrayList;
 import java.util.List;
