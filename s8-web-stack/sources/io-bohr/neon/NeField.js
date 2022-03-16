@@ -24,6 +24,9 @@ class NeField {
 NeField.build = function (inflow) {
     switch (inflow.getUInt8()) {
 
+        case BOHR_Types.ARRAY : return NeField.buildArray(inflow);
+
+        case BOHR_Types.SERIAL : throw "Unsupported serial";
 
         case BOHR_Types.BOOL8 : return new Bool8NeField();
 
@@ -41,18 +44,30 @@ NeField.build = function (inflow) {
         case BOHR_Types.FLOAT64: return new Float64NeField();
 
         case BOHR_Types.STRING_UTF8: return new StringUTF8NeField();
+        case BOHR_Types.S8OBJECT: return new S8ObjectNeField();
     }
 }
 
 NeField.buildArray = function (inflow) {
     switch (inflow.getUInt8()) {
 
-        case BOHR_Types.BOOL8: return new Bool8NeField();
-        case BOHR_Types.FLOAT64: return new Float64ArrayNeField();
+        case BOHR_Types.BOOL8: return new Bool8ArrayNeField();
+
+        case BOHR_Types.UINT8 : return new UInt8ArrayNeField();
+        case BOHR_Types.UINT16 : return new UInt16ArrayNeField();
+        case BOHR_Types.UINT32 : return new UInt32ArrayNeField();
+        case BOHR_Types.UINT64 : return new UInt64ArrayNeField();
+
+        case BOHR_Types.INT8 : return new Int8ArrayNeField();
+        case BOHR_Types.INT16 : return new Int16ArrayNeField();
+        case BOHR_Types.INT32 : return new Int32ArrayNeField();
+        case BOHR_Types.INT64 : return new Int64ArrayNeField();
       
         case BOHR_Types.FLOAT32: return new Float32ArrayNeField();
         case BOHR_Types.FLOAT64: return new Float64ArrayNeField();
 
+        case BOHR_Types.STRING_UTF8: return new StringUTF8ArrayNeField();
+        case BOHR_Types.S8OBJECT: return new S8ObjectArrayNeField();
     }
 }
 
@@ -474,9 +489,31 @@ class StringUTF8ArrayNeField extends NeField {
 }
 
 
-
-
 class S8ObjectNeField extends NeField {
+
+    /**
+     * 
+     * @param {*} object 
+     * @param {ByteInflow} inflow 
+     * @param {Array} bindings 
+     */
+    setValue(object, inflow, bindings) {
+        let index = inflow.getStringUTF8();
+        if(index != null){
+            bindings.push(function(map){
+                let value = map.get(index);
+                this.setter.call(object, value);
+            });
+        }
+        else {
+            this.setter.call(object, null);
+        }
+    }
+}
+
+
+
+class S8ObjectArrayNeField extends NeField {
 
 
     /**
@@ -486,6 +523,18 @@ class S8ObjectNeField extends NeField {
      * @param {Array} bindings 
      */
     setValue(object, inflow, bindings) {
-        this.setter.call(object, inflow.getStringUTF8());
+        let length = inflow.getUInt7x();
+        if(length >= 0){
+            let indices = new Array(length);
+            for(let i = 0; i<length; i++) { indices[i] = inflow.getStringUTF8(); }
+            bindings.push(function(map){
+                let array = new Array(length);
+                for(let i = 0; i<length; i++) { array[i] = map.get(indices[i]); }
+                this.setter.call(object, array);
+            });
+        }
+        else{
+            this.setter.call(object, null);
+        }
     }
 }

@@ -37,7 +37,7 @@ public class Cube extends NeObject {
 	 * @return
 	 */
 	public CubeLevel getLayer(int i) {
-		return (CubeLevel) getObjArray("layers").get(i);
+		return (CubeLevel) getObjList("layers").get(i);
 	}
 
 
