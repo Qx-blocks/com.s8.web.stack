@@ -1,15 +1,23 @@
 
-import { S8, S8Orbital } from '/s8/S8';
+import { NeObject } from '../../io-bohr/neon/NeObject';
+import { NeObjectTypeHandler } from '../../io-bohr/neon/NeObjectTypeHandler';
+import { S8 } from '/s8/S8';
 
 S8.import_CSS("/carbide/dock/Dock.css");
 
 /**
  * 
  */
-export class Dock extends S8Orbital {
+export class Dock extends NeObject {
 
-    constructor(id) {
-        super(id);
+
+    /**
+     * 
+     * @param {string} id 
+     * @param {NeObjectTypeHandler} type 
+     */
+    constructor(id, type){
+        super(id, type);
 
         this.isDeployed = false;
 
@@ -55,7 +63,7 @@ export class Dock extends S8Orbital {
 
     S8_render(){ /* continuous rendering approach... */ }
 
-    setItems(items) {
+    S8_set_items(items) {
         this.items = items;
         let n = items.length;
         let height = n * 64 + (n - 1) * 16;

@@ -90,7 +90,15 @@ export const BOHR_Keywords = {
 
 export const BOHR_Types = {
 
-    /* <system> */
+
+	/* <core> */
+	
+	VOID: 0x02,
+	
+	/* </core> */
+	
+
+    /* <structure> */
     TUPLE: 0x12,
 
     ARRAY: 0x14,
@@ -99,7 +107,7 @@ export const BOHR_Types = {
 
     TREE_MAP: 0x17,
 
-    /* </system> */
+    /* </structure> */
 
 
     /* <byte> */

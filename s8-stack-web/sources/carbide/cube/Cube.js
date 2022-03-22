@@ -1,8 +1,6 @@
 
-
-
-
-import * as BOHR from '../../bohr/BOHR_Protocol';
+import { NeObject } from '../../io-bohr/neon/NeObject';
+import { NeObjectTypeHandler } from '../../io-bohr/neon/NeObjectTypeHandler';
 
 
 /**
@@ -14,17 +12,15 @@ S8.import_CSS('/carbide/cube/Cube.css');
 /**
  * 
  */
-export class Cube extends S8Orbital {
+export class Cube extends NeObject {
 
-    static BOHR_Prototype = {
-        fields: [
-            { name: "layers-#189", setter: Cube.prototype.setLayers02 }
-        ],
-        render : Cube.prototype.S8_render,
-    };
-
-    constructor(id) {
-        super(id);
+     /**
+     * 
+     * @param {string} id 
+     * @param {NeObjectTypeHandler} type 
+     */
+    constructor(id, type) {
+        super(id, type);
         this.wrapperNode = document.createElement("div");
         this.wrapperNode.classList.add("cube");
     }
@@ -33,12 +29,6 @@ export class Cube extends S8Orbital {
         return this.wrapperNode;
     }
 
-    S8_set(code, value) {
-        switch (code) {
-            case 0x02: this.setLayers02(value); break; // layers
-            default: throw `Unsupported code for Stack: ${code}`;
-        }
-    }
 
     S8_render() { /* continuous rendering approach... */ }
 
@@ -47,7 +37,7 @@ export class Cube extends S8Orbital {
      * 
      * @param {*} layers 
      */
-    setLayers02(layers) {
+    S8_set_layers(layers) {
         layers.forEach(layer => {
             if (layer != null) {
                 this.wrapperNode.appendChild(layer.getEnvelope());

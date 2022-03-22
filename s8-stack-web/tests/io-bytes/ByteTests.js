@@ -1,5 +1,5 @@
-import { ByteInflow } from "./ByteInflow";
-import { ByteOutflow } from "./ByteOutflow";
+import { ByteInflow } from "../../sources/io-bytes/ByteInflow";
+import { ByteOutflow } from "../../sources/io-bytes/ByteOutflow";
 
 export function testBytes(){
 

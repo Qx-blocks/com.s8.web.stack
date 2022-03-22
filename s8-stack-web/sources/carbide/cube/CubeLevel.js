@@ -1,6 +1,10 @@
 
 
 
+import { NeObject } from '../../io-bohr/neon/NeObject';
+import { NeObjectTypeHandler } from '../../io-bohr/neon/NeObjectTypeHandler';
+
+
 import { S8, S8Orbital } from '/s8/S8';
 
 /**
@@ -8,14 +12,16 @@ import { S8, S8Orbital } from '/s8/S8';
  */
 S8.import_CSS('/carbide/cube/Cube.css');
 
-export class CubeLevel extends S8Orbital {
+export class CubeLevel extends NeObject {
 
-    static S8Prototype = {
-        content : ObjectS8FieldValueHandler
-    };
 
-    constructor(id){
-        super(id);
+    /**
+     * 
+     * @param {string} id 
+     * @param {NeObjectTypeHandler} type 
+     */
+    constructor(id, type){
+        super(id, type);
         this.level = -1;
 
         this.wrapperNode = document.createElement("div");
@@ -27,25 +33,16 @@ export class CubeLevel extends S8Orbital {
         return this.wrapperNode;
     }
 
-    S8_set(code, value){
-        switch(code){
-            case 0x02 : this.setContent(value); break; // layers
-            case 0x04 : this.setLevel(value); break; // layers
-            default : throw `Unsupported code for Stack: ${code}`;
-        }
-    }
-
-
     S8_render(){ /* continuous rendering approach... */ }
 
 
-    setContent(view){
+    S8_set_content(view){
         if(view != null){
             this.wrapperNode.appendChild(view.getEnvelope());
         }
     }
 
-    setLevel(level){
+    S8_set_level(level){
         this.wrapperNode.style = `z-index: ${level*8};`;
     }
 

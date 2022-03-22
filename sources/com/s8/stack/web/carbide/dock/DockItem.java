@@ -24,7 +24,7 @@ public class DockItem extends NeObject {
 		setStringUTF8("name", name);
 		setStringUTF8("icon-filename", iconFilename);
 		
-		onBool8("onClickSelect", v -> System.out.print("hello world"));
+		onBoolean("onClickSelect", v -> System.out.print("hello world"));
 	}
 	
 	

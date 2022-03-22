@@ -1,16 +1,25 @@
 
 
-import { S8, S8Orbital } from '/s8/S8';
+import { S8 } from '/s8/S8';
+
+import { NeObject } from '../../io-bohr/neon/NeObject';
+import { NeObjectTypeHandler } from '../../io-bohr/neon/NeObjectTypeHandler';
 
 import { Popover } from '../popover/Popover';
 
 
 S8.import_CSS("/carbide/dock/Dock.css");
 
-export class DockItem extends S8Orbital {
+export class DockItem extends NeObject {
 
-    constructor(id) {
-        super(id);
+    
+    /**
+     * 
+     * @param {string} id 
+     * @param {NeObjectTypeHandler} type 
+     */
+     constructor(id, type){
+        super(id, type);
         this.wrapperNode = document.createElement("div");
         this.wrapperNode.classList.add("dock-item");
 
