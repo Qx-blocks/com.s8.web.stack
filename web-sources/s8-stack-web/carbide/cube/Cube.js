@@ -1,6 +1,6 @@
 
-import { NeObject } from '../../io-bohr/neon/NeObject';
-import { NeObjectTypeHandler } from '../../io-bohr/neon/NeObjectTypeHandler';
+import { NeObject } from 's8-io-bohr/neon/NeObject.js';
+import { NeObjectTypeHandler } from 's8-io-bohr/neon/NeObjectTypeHandler.js';
 
 
 /**

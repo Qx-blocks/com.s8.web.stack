@@ -1,4 +1,4 @@
-import { ByteInflow } from "../../../../com.s8.io.bytes/web-sources/s8-io-bytes/ByteInflow";
+import { ByteInflow } from "../../sources/io-bytes/ByteInflow";
 import { ByteOutflow } from "../../sources/io-bytes/ByteOutflow";
 
 export function testBytes(){

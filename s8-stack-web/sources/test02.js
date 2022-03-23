@@ -1,3 +1,0 @@
-
-
-const toto = new SuperToto();
