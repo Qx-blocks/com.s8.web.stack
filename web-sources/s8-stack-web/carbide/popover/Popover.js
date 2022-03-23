@@ -1,7 +1,7 @@
 
-import { S8 } from '/s8/S8';
+import { S8 } from '/s8-io-bohr/atom/S8.js';
 
-S8.import_CSS("/carbide/popover/Popover.css");
+S8.import_CSS("/s8-stack-web/carbide/popover/Popover.css");
 
 
 // the renderable

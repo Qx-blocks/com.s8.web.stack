@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.s8.io.bohr.neon.core.NeBranch;
 import com.s8.io.bohr.neon.core.NeObject;
+import com.s8.stack.web.carbide.dock.Dock;
 
 /**
  * 
@@ -17,7 +18,7 @@ public class Cube extends NeObject {
 	public final static int NB_LAYERS = 8;
 	
 	public Cube(NeBranch branch) {
-		super(branch, "sets-carbide/cube/Cube");
+		super(branch, "/s8-stack-web/carbide/cube/Cube");
 		initialize();
 	}
 
@@ -28,6 +29,12 @@ public class Cube extends NeObject {
 			layers.add(new CubeLevel(branch, i*8));
 		}
 		setObjList("layers", layers);
+		
+		
+		// dock
+		Dock dock = new Dock(branch);
+		dock.initialize();
+		layers.get(NB_LAYERS-1).setObj("content", dock);
 	}
 	
 	

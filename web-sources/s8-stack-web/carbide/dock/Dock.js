@@ -1,8 +1,8 @@
 
-import { S8Object } from 's8-io-bohr/atom/S8Object.js';
-import { S8 } from '/s8/S8';
+import { S8Object } from '/s8-io-bohr/atom/S8Object.js';
+import { S8 } from '/s8-io-bohr/atom/S8.js';
 
-S8.import_CSS("/carbide/dock/Dock.css");
+S8.import_CSS("/s8-stack-web/carbide/dock/Dock.css");
 
 /**
  * 
@@ -45,13 +45,6 @@ export class Dock extends S8Object {
             _this.rescaleItems(false, 0, 0);
         });
 
-    }
-
-    S8_set(code, value) {
-        switch (code) {
-            case 0x02: this.setItems(value); break; // items
-            default: throw `Unsupported code for Dock: ${code}`;
-        }
     }
 
 

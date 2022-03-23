@@ -1,12 +1,12 @@
 
 
-import { S8 } from '/s8/S8';
+import { S8 } from '/s8-io-bohr/atom/S8.js';
+import { S8Object } from '/s8-io-bohr/atom/S8Object.js';
 
 import { Popover } from '../popover/Popover';
-import { S8Object } from 's8-io-bohr/atom/S8Object.js';
 
 
-S8.import_CSS("/carbide/dock/Dock.css");
+S8.import_CSS("/s8-stack-web/carbide/dock/Dock.css");
 
 export class DockItem extends S8Object {
 
@@ -51,11 +51,11 @@ export class DockItem extends S8Object {
 
     S8_render(){ /* continuous rendering approach... */ }
 
-    setName(name){
+    S8_set_name(name){
         this.billboardNode.innerHTML = name;
     }
 
-    setImage(pathname) {
+    S8_set_iconFilename(pathname) {
         this.imagePathname = pathname;
         let _this = this;
         this.loadImage(function (src) {
@@ -72,7 +72,7 @@ export class DockItem extends S8Object {
         }
 
         // launch loading
-        imageLoader.src = S8.resolve(this.imagePathname);
+        imageLoader.src = this.imagePathname;
     }
 
     rescale(isGenieEffectEnabled, x, y) {

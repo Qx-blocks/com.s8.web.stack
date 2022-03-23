@@ -24,7 +24,7 @@ public class Dock extends NeObject {
 	 * 
 	 */
 	public Dock(NeBranch branch) {
-		super(branch, "/sets-carbide/dock/Dock");
+		super(branch, "/s8-stack-web/carbide/dock/Dock");
 		this.items = new ArrayList<DockItem>();
 	}
 	
@@ -33,12 +33,13 @@ public class Dock extends NeObject {
 	 */
 	public void initialize() {
 		List<DockItem> items = new ArrayList<DockItem>();
-		items.add(new DockItem(branch, "Home", "/carbide/icon/photores/compass-icon-128px.png"));
-		items.add(new DockItem(branch, "Fluid Properties", "/carbide/icon/photores/atom-icon-128px.png"));
-		items.add(new DockItem(branch, "Lattice", "/carbide/icon/photores/lattice-icon-128px.png"));
-		items.add(new DockItem(branch, "Sharing...", "/carbide/icon/photores/network-icon-128px.png"));
-		items.add(new DockItem(branch, "Projects...", "/carbide/icon/photores/project-icon-128px.png"));
-		items.add(new DockItem(branch, "Settings", "/carbide/icon/photores/settings-icon-128px.png"));
+		String root = "/s8-stack-web/carbide/icon/photores";
+		items.add(new DockItem(branch, "Home", root+"/compass-icon-128px.png"));
+		items.add(new DockItem(branch, "Fluid Properties", root+"/atom-icon-128px.png"));
+		items.add(new DockItem(branch, "Lattice", root+"/lattice-icon-128px.png"));
+		items.add(new DockItem(branch, "Sharing...", root+"/network-icon-128px.png"));
+		items.add(new DockItem(branch, "Projects...", root+"/project-icon-128px.png"));
+		items.add(new DockItem(branch, "Settings", root+"/settings-icon-128px.png"));
 		setObjList("items", items);
 	}
 	

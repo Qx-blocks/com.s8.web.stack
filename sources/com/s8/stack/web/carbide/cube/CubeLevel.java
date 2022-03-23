@@ -10,14 +10,14 @@ public class CubeLevel extends NeObject {
 	
 	
 	public CubeLevel(NeBranch branch, int zIndex) {
-		super(branch, "sets-carbide/cube/CubeLevel");
-		setUInt8("z-index", zIndex);
+		super(branch, "/s8-stack-web/carbide/cube/CubeLevel");
+		setZIndex(zIndex);
 	}
 
 	
 	
 	public void setZIndex(int zIndex) {
-		setUInt8("z-index", zIndex);
+		setUInt8("zIndex", zIndex);
 	}
 	
 	public void setContent(NeObject object) {

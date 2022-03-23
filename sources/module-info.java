@@ -6,5 +6,11 @@
  *
  */
 module com.s8.web.stack {
-	requires com.s8.io.bohr;
+	
+	
+	exports com.s8.stack.web.carbide.cube;
+	exports com.s8.stack.web.carbide.dock;
+	
+	
+	requires transitive com.s8.io.bohr;
 }
