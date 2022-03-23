@@ -1,8 +1,7 @@
 
 
 
-import { NeObject } from '../../io-bohr/neon/NeObject';
-import { NeObjectTypeHandler } from '../../io-bohr/neon/NeObjectTypeHandler';
+import { S8Object } from 's8-io-bohr/atom/S8Object.js';
 
 
 import { S8, S8Orbital } from '/s8/S8';
@@ -12,16 +11,11 @@ import { S8, S8Orbital } from '/s8/S8';
  */
 S8.import_CSS('/carbide/cube/Cube.css');
 
-export class CubeLevel extends NeObject {
+export class CubeLevel extends S8Object {
 
 
-    /**
-     * 
-     * @param {string} id 
-     * @param {NeObjectTypeHandler} type 
-     */
-    constructor(id, type){
-        super(id, type);
+    constructor(){
+        super();
         this.level = -1;
 
         this.wrapperNode = document.createElement("div");

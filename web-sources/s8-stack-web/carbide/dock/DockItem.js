@@ -2,24 +2,16 @@
 
 import { S8 } from '/s8/S8';
 
-import { NeObject } from '../../io-bohr/neon/NeObject';
-import { NeObjectTypeHandler } from '../../io-bohr/neon/NeObjectTypeHandler';
-
 import { Popover } from '../popover/Popover';
+import { S8Object } from 's8-io-bohr/atom/S8Object.js';
 
 
 S8.import_CSS("/carbide/dock/Dock.css");
 
-export class DockItem extends NeObject {
+export class DockItem extends S8Object {
 
-    
-    /**
-     * 
-     * @param {string} id 
-     * @param {NeObjectTypeHandler} type 
-     */
-     constructor(id, type){
-        super(id, type);
+     constructor(){
+        super();
         this.wrapperNode = document.createElement("div");
         this.wrapperNode.classList.add("dock-item");
 

@@ -1,6 +1,5 @@
 
-import { NeObject } from '../../io-bohr/neon/NeObject';
-import { NeObjectTypeHandler } from '../../io-bohr/neon/NeObjectTypeHandler';
+import { S8Object } from 's8-io-bohr/atom/S8Object.js';
 import { S8 } from '/s8/S8';
 
 S8.import_CSS("/carbide/dock/Dock.css");
@@ -8,16 +7,11 @@ S8.import_CSS("/carbide/dock/Dock.css");
 /**
  * 
  */
-export class Dock extends NeObject {
+export class Dock extends S8Object {
 
 
-    /**
-     * 
-     * @param {string} id 
-     * @param {NeObjectTypeHandler} type 
-     */
-    constructor(id, type){
-        super(id, type);
+    constructor(){
+        super();
 
         this.isDeployed = false;
 
