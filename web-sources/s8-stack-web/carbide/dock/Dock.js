@@ -1,5 +1,5 @@
 
-import { S8Object } from '/s8-io-bohr/atom/S8Object.js';
+import { CubeElement } from '/s8-stack-web/carbide/cube/CubeElement.js';
 import { S8 } from '/s8-io-bohr/atom/S8.js';
 
 S8.import_CSS("/s8-stack-web/carbide/dock/Dock.css");
@@ -7,8 +7,7 @@ S8.import_CSS("/s8-stack-web/carbide/dock/Dock.css");
 /**
  * 
  */
-export class Dock extends S8Object {
-
+export class Dock extends CubeElement {
 
     constructor(){
         super();

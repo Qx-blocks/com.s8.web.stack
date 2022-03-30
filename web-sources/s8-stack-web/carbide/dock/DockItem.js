@@ -3,7 +3,7 @@
 import { S8 } from '/s8-io-bohr/atom/S8.js';
 import { S8Object } from '/s8-io-bohr/atom/S8Object.js';
 
-import { Popover } from '../popover/Popover';
+import { Popover } from '../popover/Popover.js';
 
 
 S8.import_CSS("/s8-stack-web/carbide/dock/Dock.css");
