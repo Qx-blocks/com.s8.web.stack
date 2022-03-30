@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.s8.io.bohr.neon.core.NeBranch;
-import com.s8.io.bohr.neon.core.NeObject;
+import com.s8.stack.web.carbide.cube.CubeElement;
 
 
 /**
@@ -12,7 +12,7 @@ import com.s8.io.bohr.neon.core.NeObject;
  * @author pierreconvert
  *
  */
-public class Dock extends NeObject {
+public class Dock extends CubeElement {
 
 	
 	/**
@@ -28,19 +28,30 @@ public class Dock extends NeObject {
 		this.items = new ArrayList<DockItem>();
 	}
 	
+	
+	
+	public void setItems(List<DockItem> items) {
+		vertex.setObjList("items", items);
+	}
+	
 	/**
 	 * 
 	 */
-	public void initialize() {
+	public static Dock createPreset00(NeBranch branch) {
+		
+		Dock dock = new Dock(branch);
 		List<DockItem> items = new ArrayList<DockItem>();
 		String root = "/s8-stack-web/carbide/icon/photores";
+		
 		items.add(new DockItem(branch, "Home", root+"/compass-icon-128px.png"));
 		items.add(new DockItem(branch, "Fluid Properties", root+"/atom-icon-128px.png"));
 		items.add(new DockItem(branch, "Lattice", root+"/lattice-icon-128px.png"));
 		items.add(new DockItem(branch, "Sharing...", root+"/network-icon-128px.png"));
 		items.add(new DockItem(branch, "Projects...", root+"/project-icon-128px.png"));
 		items.add(new DockItem(branch, "Settings", root+"/settings-icon-128px.png"));
-		setObjList("items", items);
+		dock.setItems(items);
+		
+		return dock;
 	}
 	
 }
