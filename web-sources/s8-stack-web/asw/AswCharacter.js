@@ -2,6 +2,7 @@
 import { AswCharacterAttitude } from '/s8-stack-web/asw/AswCharacterAttitude.js';
 import { S8 } from '/s8-io-bohr/atom/S8.js';
 import { S8Object } from '/s8-io-bohr/atom/S8Object.js';
+import { AswCharacterSentence } from '/s8-stack-web/asw/AswCharacterSentence.js';
 
 /**
  * 
@@ -47,6 +48,12 @@ export class AswCharacter extends S8Object {
     onButtonPressed;
 
 
+    /**
+     * @type {AswCharacterSentence[]}
+     */
+    speechSequence = new Array();
+
+
     constructor() {
         super();
         this.wrapperNode = document.createElement("div");
@@ -59,7 +66,7 @@ export class AswCharacter extends S8Object {
         this.buttonNode.style.display = "hidden";
 
         let _this = this;
-        this.onButtonPressed = function(e){ _this.start(); }
+        this.onButtonPressed = function (e) { _this.start(); }
         this.buttonNode.addEventListener("click", this.onButtonPressed);
 
         this.wrapperNode.appendChild(this.faceImageNode);
@@ -68,17 +75,7 @@ export class AswCharacter extends S8Object {
         console.log("this");
     }
 
-    /**
-     * 
-     * @param {AswAttitude} attitude 
-     */
-    repaint(attitude) {
-        //this.wrapperNode.style.width = `${this.viewportWidth}%`;
-        this.wrapperNode.style.top = `${this.viewportY}%`;
-        this.wrapperNode.style.left = `${this.viewportX}%`;
 
-        this.faceImageNode.src = attitude.faceImage.src;
-    }
 
     getEnvelope() {
         return this.wrapperNode;
@@ -122,6 +119,15 @@ export class AswCharacter extends S8Object {
         });
     }
 
+    /**
+    * 
+    * @param {AswCharacterSentence[]} attitudes 
+    */
+    S8_set_speechSequence(sentences) {
+        sentences.forEach(sentence => this.speechSequence.push(sentence));
+    }
+
+
     S8_render() {
         /* continuous rendering approach... */
         this.repaint(this.attitudes[0]);
@@ -132,36 +138,119 @@ export class AswCharacter extends S8Object {
 
 
 
-    notifyAttitudeLoaded(){
+    notifyAttitudeLoaded() {
         let isLoaded = true;
         this.attitudes.forEach(attitude => {
-            if(!attitude.isLoaded){
+            if (!attitude.isLoaded) {
                 isLoaded = false;
             }
         });
         this.isLoaded = isLoaded;
 
-        if(this.isLoaded){
+        if (this.isLoaded) {
             this.showButton();
         }
     }
 
     start() {
-        this.say(0, "Salut tout le monde");
+        this.hideButton();
+        this.talk();
     }
 
 
-    say(index, text){
-        let attitude = this.attitudes[index];
-        this.repaint(attitude);
-        attitude.say(text);
+    talk() {
+        if (this.speechSequence.length > 0) {
+            let sentence = this.speechSequence.shift();
+            let attitude = this.attitudes[sentence.attitudeIndex];
+            let text = sentence.text;
+            let _this = this;
+            this.repaint(attitude);
+            attitude.say(text, function () {
+                _this.talk();
+            });
+        }
+        /* now: time to listen */
+        else{
+            this.listen();
+        }
     }
 
-    showButton(){
+    listen() {
+        SPEECH_RECKOGNITION.listen(
+            function (text) { console.log(text); },
+            function () { console.log("not understood"); });
+    }
+
+
+    /**
+    * 
+    * @param {AswAttitude} attitude 
+    */
+    repaint(attitude) {
+        //this.wrapperNode.style.width = `${this.viewportWidth}%`;
+        this.wrapperNode.style.top = `${this.viewportY}%`;
+        this.wrapperNode.style.left = `${this.viewportX}%`;
+
+        this.faceImageNode.src = attitude.faceImage.src;
+    }
+
+    showButton() {
         this.buttonNode.style.display = "block";
+    }
+
+    hideButton() {
+        this.buttonNode.style.display = "none";
     }
 }
 
 
 
 
+class AswSpeechReckognition {
+
+
+    /**
+     * @type {webkitSpeechRecognition}
+     */
+    recognition = new webkitSpeechRecognition();
+
+    constructor() {
+
+        this.recognition = new webkitSpeechRecognition();
+        // var speechRecognitionList = new SpeechGrammarList();
+        this.recognition.continuous = false;
+        this.recognition.lang = 'fr-FR';
+        this.recognition.interimResults = false;
+        this.recognition.maxAlternatives = 1;
+    }
+
+    listen(onHeard, onNotUnderstood) {
+
+
+        let isUnderstood = false;
+
+        this.recognition.onresult = function (event) {
+            isUnderstood = true;
+            let result = event.results[0][0];
+            console.log('result:' + result.transcript);
+            console.log('Confidence: ' + result.confidence);
+            // this.recognition.stop();
+            onHeard(result.transcript);
+        }
+
+        this.recognition.onend = function (event) {
+            if (!isUnderstood) {
+                // this.recognition.stop();
+                onNotUnderstood();
+            }
+        }
+
+        this.recognition.start();
+    }
+
+    display(logText) {
+        return logText + ", LISTENING";
+    }
+}
+
+export const SPEECH_RECKOGNITION = new AswSpeechReckognition();

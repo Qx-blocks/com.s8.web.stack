@@ -1,5 +1,6 @@
 package com.s8.stack.web.asw;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.s8.io.bohr.neon.core.NeBranch;
@@ -44,6 +45,19 @@ public class AswCharacter extends NeObject {
 	 */
 	public void setAttitudes(List<AswCharacterAttitude> attitudes) {
 		vertex.setObjList("attitudes", attitudes);
+	}
+	
+	
+	
+	/**
+	 * 
+	 * @param sentences
+	 */
+	public void pushSentences(AswCharacterSentence... sentences) {
+		int n = sentences.length;
+		List<AswCharacterSentence> sequence = new ArrayList<AswCharacterSentence>(n);
+		for(int i =0; i<n; i++) { sequence.add(sentences[i]); }
+		vertex.setObjList("speechSequence", sequence);
 	}
 
 }
