@@ -1,8 +1,8 @@
 
 import { AswCharacterAttitude } from '/s8-stack-web/asw/AswCharacterAttitude.js';
 import { S8 } from '/s8-io-bohr/atom/S8.js';
-import { S8Object } from '/s8-io-bohr/atom/S8Object.js';
 import { AswCharacterSentence } from '/s8-stack-web/asw/AswCharacterSentence.js';
+import { NeObject } from '/s8-io-bohr/neon/NeObject.js';
 
 /**
  * 
@@ -15,7 +15,7 @@ export const VOICE_SYNTH = window.speechSynthesis;
 /**
  * 
  */
-export class AswCharacter extends S8Object {
+export class AswCharacter extends NeObject {
 
     viewportX = 25;
     viewportY = 25;

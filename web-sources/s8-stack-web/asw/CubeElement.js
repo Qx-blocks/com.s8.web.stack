@@ -1,6 +1,6 @@
 
 import { S8 } from '/s8-io-bohr/atom/S8.js';
-import { S8Object } from '/s8-io-bohr/atom/S8Object.js';
+import { NeObject } from '/s8-io-bohr/neon/NeObject.js';
 
 
 
@@ -9,7 +9,7 @@ import { S8Object } from '/s8-io-bohr/atom/S8Object.js';
  */
 S8.import_CSS('/s8-stack-web/carbide/cube/Cube.css');
 
-export class CubeElement extends S8Object {
+export class CubeElement extends NeObject {
 
 
     constructor(){
