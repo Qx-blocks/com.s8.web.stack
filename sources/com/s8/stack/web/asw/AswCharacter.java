@@ -60,4 +60,14 @@ public class AswCharacter extends NeObject {
 		vertex.setObjList("speechSequence", sequence);
 	}
 
+	
+	public void forAnswer(NeObject.StringUTF8Lambda lambda) {
+		vertex.forStringUTF8("answer", lambda);
+	}
+	
+	
+	public void whenNotUnderstood(NeObject.VoidLambda lambda) {
+		vertex.forVoid("notUnderstood", lambda);
+	}
+	
 }

@@ -54,6 +54,10 @@ export class AswCharacter extends NeObject {
     speechSequence = new Array();
 
 
+
+	isActivated = false;
+
+
     constructor() {
         super();
         this.wrapperNode = document.createElement("div");
@@ -66,7 +70,7 @@ export class AswCharacter extends NeObject {
         this.buttonNode.style.display = "hidden";
 
         let _this = this;
-        this.onButtonPressed = function (e) { _this.start(); }
+        this.onButtonPressed = function (e) { _this.activate(); }
         this.buttonNode.addEventListener("click", this.onButtonPressed);
 
         this.wrapperNode.appendChild(this.faceImageNode);
@@ -130,7 +134,12 @@ export class AswCharacter extends NeObject {
 
     S8_render() {
         /* continuous rendering approach... */
-        this.repaint(this.attitudes[0]);
+		if(this.isActivated){
+			this.talk();
+		}
+		else{
+			this.repaint(this.attitudes[0]);
+		}
     }
 
 
@@ -152,8 +161,9 @@ export class AswCharacter extends NeObject {
         }
     }
 
-    start() {
+    activate() {
         this.hideButton();
+		this.isActivated = true;
         this.talk();
     }
 
@@ -176,9 +186,16 @@ export class AswCharacter extends NeObject {
     }
 
     listen() {
+        let _obj = this;
         SPEECH_RECKOGNITION.listen(
-            function (text) { console.log(text); },
-            function () { console.log("not understood"); });
+            function (text) { 
+                console.log("Well understood:"+text);
+                _obj.S8_vertex.runStringUTF8("answer", text);
+            },
+            function () { 
+                console.log("Not understood");
+                _obj.S8_vertex.runVoid("notUnderstood");
+            });
     }
 
 
