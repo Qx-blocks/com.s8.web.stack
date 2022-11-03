@@ -15,6 +15,15 @@ export class AswCharacterSentence extends NeObject {
      * @type {number}
      */
     attitudeIndex;
+
+
+    /**
+     * @type {number}
+     */
+    pause = 250;
+
+
+
  
 
     constructor() {
@@ -35,6 +44,15 @@ export class AswCharacterSentence extends NeObject {
      */
      S8_set_text(text) {
         this.text = text;
+    }
+
+
+     /**
+     * 
+     * @param {number} pause 
+     */
+      S8_set_pause(pause) {
+        this.pause = pause;
     }
 
     S8_render() {  }

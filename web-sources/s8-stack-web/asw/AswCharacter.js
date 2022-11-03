@@ -173,9 +173,10 @@ export class AswCharacter extends NeObject {
             let sentence = this.speechSequence.shift();
             let attitude = this.attitudes[sentence.attitudeIndex];
             let text = sentence.text;
+            let pause = sentence.pause;
             let _this = this;
             this.repaint(attitude);
-            attitude.say(text, function () {
+            attitude.say(text, pause, function () {
                 _this.talk();
             });
         }

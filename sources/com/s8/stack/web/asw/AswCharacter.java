@@ -53,15 +53,19 @@ public class AswCharacter extends NeObject {
 	 * 
 	 * @param sentences
 	 */
-	public void pushSentences(AswCharacterSentence... sentences) {
+	public void say(AswCharacterSentence... sentences) {
 		int n = sentences.length;
-		List<AswCharacterSentence> sequence = new ArrayList<AswCharacterSentence>(n);
-		for(int i =0; i<n; i++) { sequence.add(sentences[i]); }
-		vertex.setObjList("speechSequence", sequence);
+		List<AswCharacterSentence> list = new ArrayList<AswCharacterSentence>(n);
+		for(int i =0; i<n; i++) { list.add(sentences[i]); }
+		vertex.setObjList("speechSequence", list);
+	}
+	
+	public void say(List<AswCharacterSentence> sentences) {
+		vertex.setObjList("speechSequence", sentences);
 	}
 
 	
-	public void forAnswer(NeObject.StringUTF8Lambda lambda) {
+	public void whenTold(NeObject.StringUTF8Lambda lambda) {
 		vertex.forStringUTF8("answer", lambda);
 	}
 	

@@ -15,15 +15,12 @@ public class AswCharacterAttitude extends NeObject {
 			double speechPitch, 
 			double speechRate, 
 			double speechVolume, 
-			double speechPause, 
 			String faceImagePathname) {
 		super(branch, "/s8-stack-web/asw/AswCharacterAttitude");
 		
 		vertex.setFloat32("speechPitch", (float) speechPitch);
 		vertex.setFloat32("speechRate", (float) speechRate);
 		vertex.setFloat32("speechVolume", (float) speechVolume);
-		vertex.setFloat32("speechPause", (float) speechPause);
-		
 		vertex.setStringUTF8("faceImagePathname", faceImagePathname);
 	}
 

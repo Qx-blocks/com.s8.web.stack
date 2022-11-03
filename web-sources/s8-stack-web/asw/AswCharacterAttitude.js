@@ -167,14 +167,13 @@ export class AswCharacterAttitude extends NeObject {
     S8_dispose() { /* no disposing to be done... */ }
 
 
-    say(text, onSaid){
+    say(text, pause, onSaid){
         let utterance = new SpeechSynthesisUtterance(text);
         utterance.voice = this.voice;
         utterance.pitch = this.speechPitch;
         utterance.rate = this.speechRate;
         utterance.volume = this.speechVolume;
-
-        let pause = this.speechPause;
+       
         utterance.onend = function () {
 
             let interval = setInterval(function () {
