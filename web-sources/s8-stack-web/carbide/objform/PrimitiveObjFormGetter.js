@@ -15,17 +15,25 @@ export class PrimtiveObjFormGetter extends ObjFormElement {
 
         this.fieldNode.classList.add("objform-primitive-field");
 
-        this.createNameNode();
-        this.createOutputNode();
-        this.createPlusNode();
-    }
 
-    createNameNode() {
+        /* <ribbon> */
+        this.ribbonNode = document.createElement("div");
+        this.ribbonNode.classList.add("objform-markup");
+        this.ribbonNode.classList.add("objform-markup-" + getColor(markupColor));
+        this.fieldNode.appendChild(this.ribbonNode);
+        this.markupColor = markupColor;
+        /* </ribbon> */
+
+        /* <name> */
         this.nameNode = document.createElement("div");
         this.nameNode.classList.add("objform-field-name-primitive");
-        this.nameNode.classList.add("objform-markup-" + getColor(this.markupColor));
         this.nameNode.innerHTML = "<span>field_name:</span>";
         this.fieldNode.appendChild(this.nameNode);
+        /* </name> */
+
+
+        this.createOutputNode();
+        this.createPlusNode();
     }
 
     createPlusNode() {
@@ -40,10 +48,11 @@ export class PrimtiveObjFormGetter extends ObjFormElement {
     }
 
     setMarkupColor(colorCode) {
-        let previous = "objform-markup-" + getColor(this.iconColor);
+        let previous = "objform-markup-" + getColor(this.markupColor);
         this.markupColor = colorCode;
-        this.nameNode.classList.replace(previous, "objform-markup-" + getColor(this.markupColor));
+        this.ribbonNode.classList.replace(previous, "objform-markup-" + getColor(this.markupColor));
     }
+
 
     S8_render(){ /* continuous rendering approach... */ }
 

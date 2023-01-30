@@ -55,5 +55,9 @@ export class PrimtiveObjFormSetter extends ObjFormElement {
         this.nameNode.innerHTML = `<span>${name}</span>`;
     }
 
+
+    S8_render(){ /* continuous rendering approach... */ }
+
+    S8_dispose(){ /* nothing to dispose*/ }
 }
 

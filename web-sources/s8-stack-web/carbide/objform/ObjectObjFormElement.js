@@ -26,8 +26,15 @@ export class ObjectObjFormElement extends ObjFormElement {
         this.headerNode.classList.add("objform-object-header");
         this.fieldNode.appendChild(this.headerNode);
 
+
+        /* <ribbon> */
+        this.ribbonNode = document.createElement("div");
+        this.ribbonNode.classList.add("objform-markup");
+        this.ribbonNode.classList.add("objform-markup-" + getColor(this.markupColorCode));
+        this.headerNode.appendChild(this.ribbonNode);
+        /* </ribbon> */
+
         this.triangleNode = document.createElement("div");
-        this.triangleNode.classList.add("objform-markup-" + getColor(this.markupColorCode));
         this.triangleNode.classList.add("objform-icon-triangle-collapsed");
         this.triangleNode.innerHTML = ` <svg height="10" width="10" viewBox="0 0 16 16">
             <polygon points="2,0 14,8 2,16" />
@@ -94,7 +101,7 @@ export class ObjectObjFormElement extends ObjFormElement {
     S8_set_markupColor(colorCode) {
         let previous = "objform-markup-" + getColor(this.markupColorCode);
         let next = "objform-markup-" + getColor(colorCode);
-        this.triangleNode.classList.replace(previous, next);
+        this.ribbonNode.classList.replace(previous, next);
         this.markupColorCode = colorCode;
     }
 

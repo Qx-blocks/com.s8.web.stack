@@ -34,4 +34,10 @@ export class ScalarObjFormSetter extends PrimtiveObjFormSetter {
     setUnit(abbreviation){
         this.unitNode.innerHTML = abbreviation;
     }
+
+
+    S8_set_unit(abbreviation){
+        this.setUnit(abbreviation);
+    }
+
 }
