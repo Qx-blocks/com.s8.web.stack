@@ -5,6 +5,12 @@ import { PrimtiveObjFormSetter } from '/s8-stack-web/carbide/objform/PrimtiveObj
 
 export class ScalarObjFormSetter extends PrimtiveObjFormSetter {
 
+
+    /**
+     * 
+     */
+    value = "(unset)";
+
     constructor() {
         super(2);
     }
@@ -18,6 +24,10 @@ export class ScalarObjFormSetter extends PrimtiveObjFormSetter {
         this.inputNode.setAttribute("type", "text");
         inputWrapperNode.appendChild(this.inputNode);
         this.fieldNode.appendChild(inputWrapperNode);
+
+        let _this = this;
+        this.inputListener = function(){ _this.sendValue(); };
+        this.inputNode.addEventListener("blur", this.inputListener);
         /* </input> */
 
         /* <unit> */
@@ -28,8 +38,19 @@ export class ScalarObjFormSetter extends PrimtiveObjFormSetter {
         unitWrapperNode.appendChild(this.unitNode);
         this.fieldNode.appendChild(unitWrapperNode);
         /* </unit> */
+
+
+
     }
 
+
+    sendValue(){
+        let newInputValue = this.inputNode.value;
+        if(newInputValue != this.value){
+            this.value = newInputValue;
+            this.S8_vertex.runFloat32("set-value", this.value);
+        }
+    }
 
     setUnit(abbreviation){
         this.unitNode.innerHTML = abbreviation;
@@ -38,6 +59,10 @@ export class ScalarObjFormSetter extends PrimtiveObjFormSetter {
 
     S8_set_unit(abbreviation){
         this.setUnit(abbreviation);
+    }
+
+    S8_set_value(value){
+        this.inputNode.value = value;
     }
 
 }

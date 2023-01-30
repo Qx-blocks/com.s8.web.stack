@@ -17,6 +17,15 @@ export class PrimtiveObjFormSetter extends ObjFormElement {
         this.fieldNode = document.createElement("div");
         this.fieldNode.classList.add("objform-primitive-field");
 
+
+        /* <ribbon> */
+        this.ribbonNode = document.createElement("div");
+        this.ribbonNode.classList.add("objform-markup");
+        this.ribbonNode.classList.add("objform-markup-" + getColor(markupColor));
+        this.fieldNode.appendChild(this.ribbonNode);
+        this.markupColor = markupColor;
+        /* </ribbon> */
+
         this.createNameNode();
         this.createInputNode();
         this.createPlusNode();
@@ -25,7 +34,6 @@ export class PrimtiveObjFormSetter extends ObjFormElement {
     createNameNode() {
         this.nameNode = document.createElement("div");
         this.nameNode.classList.add("objform-field-name-primitive");
-        this.nameNode.classList.add("objform-markup-" + getColor(this.markupColor));
         this.nameNode.innerHTML = "<span>field_name:</span>";
         this.fieldNode.appendChild(this.nameNode);
     }
@@ -46,7 +54,7 @@ export class PrimtiveObjFormSetter extends ObjFormElement {
     }
 
     setMarkupColor(colorCode) {
-        let previous = "objform-markup-" + getColor(this.iconColor);
+        let previous = "objform-markup-" + getColor(this.markupColor);
         this.markupColor = colorCode;
         this.nameNode.classList.replace(previous, "objform-markup-" + getColor(this.markupColor));
     }

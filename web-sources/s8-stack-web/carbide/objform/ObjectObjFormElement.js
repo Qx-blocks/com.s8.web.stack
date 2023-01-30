@@ -34,14 +34,16 @@ export class ObjectObjFormElement extends ObjFormElement {
         this.headerNode.appendChild(this.ribbonNode);
         /* </ribbon> */
 
+        /* <triangle> */
         this.triangleNode = document.createElement("div");
         this.triangleNode.classList.add("objform-icon-triangle-collapsed");
         this.triangleNode.innerHTML = ` <svg height="10" width="10" viewBox="0 0 16 16">
             <polygon points="2,0 14,8 2,16" />
             </svg>`;
         this.headerNode.appendChild(this.triangleNode);
+        /* </triangle> */
 
-
+        /* <name> */
         //<div class=><span>Folder_00:</span></div>
         let nameWrapperNode = document.createElement("div");
         nameWrapperNode.classList.add("objform-field-name-object");
@@ -50,6 +52,7 @@ export class ObjectObjFormElement extends ObjFormElement {
         this.nameNode = document.createElement("span");
         this.nameNode.innerHTML = "${field_name}:";
         nameWrapperNode.appendChild(this.nameNode);
+        /* </name> */
 
         this.iconNode = document.createElement("div");
         this.iconNode.classList.add("objform-icon-size-16");
@@ -81,13 +84,18 @@ export class ObjectObjFormElement extends ObjFormElement {
             <circle cx="56" cy="32" r="8" />
         </svg>`;
         this.headerNode.appendChild(this.plusNode);
+
+        const _this = this;
+        this.headerNode.addEventListener("click", function(){
+           _this.toggle();
+        }, false);
         /* </header> */
 
         /* <body> */
+        this.isExpanded = false; // initially collapsed
         this.bodyNode = document.createElement("div");
-        this.bodyNode.classList.add("objform-object-body");
+        this.bodyNode.classList.add("objform-object-body", "objform-object-body-collapsed");
         this.fieldNode.appendChild(this.bodyNode);
-
         /* </body> */
     }
 
@@ -132,18 +140,40 @@ export class ObjectObjFormElement extends ObjFormElement {
         });
     }
 
-    S8_set_togglingState(mustBeExpanded){
-        if(!this.isExpanded && mustBeExpanded){
+
+    /**
+     * 
+     * @param {boolean} mustBeExpanded 
+     */
+    S8_set_togglingState(mustBeExpanded) {
+        if(this.isExpanded != mustBeExpanded){
+            this.toggle();
+        }
+    }
+
+
+    toggle(){
+        if(!this.isExpanded){ // initially collapsed
+            // update header
             this.triangleNode.classList.replace("objform-icon-triangle-collapsed", "objform-icon-triangle-expanded");
+            this.bodyNode.classList.replace(
+                "objform-object-body-collapsed", 
+                "objform-object-body-expanded");
+
+            // load fields
             this.isExpanded = true;
         }
-        else if(this.isExpanded && !mustBeExpanded){
+        else { // is expanded
             this.triangleNode.classList.replace("objform-icon-triangle-expanded", "objform-icon-triangle-collapsed");
+            this.bodyNode.classList.replace(
+                "objform-object-body-expanded", 
+                "objform-object-body-collapsed");
             this.isExpanded = false;
         }
-        else{
-            throw "error: illegal toggling state";
-        }
+    }
+
+    loadFields(){
+
     }
 
     removeFields(){

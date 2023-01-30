@@ -30,6 +30,16 @@
     clear: both;
 }
 
+.objform-object-body-expanded {
+   visibility: visible;
+   display: block;
+}
+
+.objform-object-body-collapsed {
+    visibility: hidden;
+    display: none;
+ }
+
 /* define line */
 .objform-object-header, .objform-primitive-field, .objform-method {
     border-bottom: 1px solid rgb(42 42 42 / 96%);
@@ -41,8 +51,14 @@
 }
 
 .objform-object-header {
-    cursor: default;
+    cursor: pointer;
     background-color: rgb(16, 16, 16);
+    color: white;
+}
+
+.objform-object-header:hover {
+    cursor: pointer;
+    background-color: rgb(17, 0, 64);
     color: white;
 }
 

@@ -8,14 +8,22 @@ import com.s8.io.bohr.neon.core.NeBranch;
 
 
 public class ObjectObjFormElement extends ObjFormElement {
+	
+	
+	
+	private boolean hasLoaded = false;
+	
+	private VoidLambda onLoad = null;
 
 	public ObjectObjFormElement(NeBranch branch) {
 		super(branch, "/s8-stack-web/carbide/objform/ObjectObjFormElement");
+		
+		vertex.forVoid("load", () -> {
+			if(!hasLoaded && onLoad != null) {
+				onLoad.operate();
+			}
+		});
 	}
-
-
-
-
 
 	public void setMarkupColor(int code) {
 		vertex.setUInt8("markupColor", code);
@@ -54,6 +62,13 @@ public class ObjectObjFormElement extends ObjFormElement {
 
 	public void setTogglingState(boolean mustBeExpanded){
 		vertex.setBool8("togglingState", mustBeExpanded);
+	}
+	
+	
+	
+	public void onLoad(VoidLambda lambda) {
+		this.onLoad = lambda;
+		this.hasLoaded = false;
 	}
 
 }
