@@ -46,8 +46,5 @@ export class EnumObjFormSetter extends PrimtiveObjFormSetter {
         }
     }
 
-    S8_render(){ /* continuous rendering approach... */ }
-
-    S8_dispose(){ /* nothing to dispose*/ }
 
 }
