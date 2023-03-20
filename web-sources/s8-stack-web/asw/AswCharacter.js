@@ -206,8 +206,8 @@ export class AswCharacter extends NeObject {
     */
     repaint(attitude) {
         //this.wrapperNode.style.width = `${this.viewportWidth}%`;
-        this.wrapperNode.style.top = `${this.viewportY}%`;
-        this.wrapperNode.style.left = `${this.viewportX}%`;
+       // this.wrapperNode.style.top = `${this.viewportY}%`;
+        //this.wrapperNode.style.left = `${this.viewportX}%`;
 
         this.faceImageNode.src = attitude.faceImage.src;
     }
