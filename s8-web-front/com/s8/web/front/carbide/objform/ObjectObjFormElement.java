@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.s8.io.bohr.neon.core.NeBranch;
-import com.s8.io.bohr.neon.lambdas.VoidLambda;
 
 
 
@@ -19,11 +18,11 @@ public class ObjectObjFormElement extends ObjFormElement {
 	public ObjectObjFormElement(NeBranch branch) {
 		super(branch, "/s8-web-front/carbide/objform/ObjectObjFormElement");
 		
-		vertex.setVoidMethod("load", sync.createVoidFunc(() -> {
+		vertex.forVoid("load", () -> {
 			if(!hasLoaded && onLoad != null) {
 				onLoad.operate();
 			}
-		}));
+		});
 	}
 
 	public void setMarkupColor(int code) {

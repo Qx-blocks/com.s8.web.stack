@@ -5,8 +5,6 @@ import java.util.List;
 
 import com.s8.io.bohr.neon.core.NeBranch;
 import com.s8.io.bohr.neon.core.NeObject;
-import com.s8.io.bohr.neon.lambdas.VoidLambda;
-import com.s8.io.bohr.neon.lambdas.primitives.StringUTF8Lambda;
 
 
 /**
@@ -67,13 +65,13 @@ public class AswCharacter extends NeObject {
 	}
 
 	
-	public void whenTold(StringUTF8Lambda lambda) {
-		vertex.setStringUTF8Method("answer", sync.createStringUTF8Func(lambda));
+	public void whenTold(NeObject.StringUTF8Lambda lambda) {
+		vertex.forStringUTF8("answer", lambda);
 	}
 	
 	
-	public void whenNotUnderstood(VoidLambda lambda) {
-		vertex.setVoidMethod("notUnderstood", sync.createVoidFunc(lambda));
+	public void whenNotUnderstood(NeObject.VoidLambda lambda) {
+		vertex.forVoid("notUnderstood", lambda);
 	}
 	
 }
