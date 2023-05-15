@@ -12,7 +12,7 @@ public class CubeElement extends NeObject {
 
 	
 	public void setZIndex(int zIndex) {
-		vertex.setUInt8("zIndex", zIndex);
+		vertex.setUInt8Field("zIndex", zIndex);
 	}
 
 

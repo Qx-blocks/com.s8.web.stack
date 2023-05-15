@@ -16,7 +16,7 @@ public class ScalarObjFormGetter extends PrimitiveObjFormGetter {
 	 * @param name
 	 */
 	public void setValue(String value) {
-		vertex.setStringUTF8("value", value);
+		vertex.setStringUTF8Field("value", value);
 	}
 	
 	/**
@@ -24,12 +24,12 @@ public class ScalarObjFormGetter extends PrimitiveObjFormGetter {
 	 * @param name
 	 */
 	public void setValue(double value, DecimalFormat format) {
-		vertex.setStringUTF8("value", format.format(value));
+		vertex.setStringUTF8Field("value", format.format(value));
 	}
 	
 	
 	public void setUnit(String unit) {
-		vertex.setStringUTF8("unit", unit);
+		vertex.setStringUTF8Field("unit", unit);
 	}
 
 }

@@ -23,7 +23,7 @@ public class ObjFormLayer extends CubeElement {
 	
 	
 	public void setRoot(ObjFormElement element) {
-		vertex.setObj("root", element);
+		vertex.setObjectField("root", element);
 	}
 
 	

@@ -30,7 +30,7 @@ public class Cube extends NeObject {
 	 * @return
 	 */
 	public CubeElement getLayer(int i) {
-		return (CubeElement) vertex.getObjList("elements").get(i);
+		return (CubeElement) vertex.getObjectListField("elements").get(i);
 	}
 	
 	

@@ -16,7 +16,7 @@ public class EnumObjFormSetter extends PrimitiveObjFormSetter {
 	
 	
 	public void setOptions(String[] options) {
-		vertex.setStringUTF8Array("options", options);
+		vertex.setStringUTF8ArrayField("options", options);
 	}
 
 }

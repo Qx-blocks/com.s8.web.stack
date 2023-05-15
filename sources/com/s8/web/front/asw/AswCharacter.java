@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.s8.io.bohr.neon.core.NeBranch;
 import com.s8.io.bohr.neon.core.NeObject;
-import com.s8.io.bohr.neon.lambdas.VoidLambda;
+import com.s8.io.bohr.neon.lambdas.none.VoidLambda;
 import com.s8.io.bohr.neon.lambdas.primitives.StringUTF8Lambda;
 
 
@@ -34,9 +34,9 @@ public class AswCharacter extends NeObject {
 	 * @param height
 	 */
 	public void setViewPort(double x, double y, double width) {
-		vertex.setFloat32("viewportX", (float) x);
-		vertex.setFloat32("viewportY", (float) y);
-		vertex.setFloat32("viewportWidth", (float) width);
+		vertex.setFloat32Field("viewportX", (float) x);
+		vertex.setFloat32Field("viewportY", (float) y);
+		vertex.setFloat32Field("viewportWidth", (float) width);
 	}
 
 	
@@ -46,7 +46,7 @@ public class AswCharacter extends NeObject {
 	 * @param attitudes
 	 */
 	public void setAttitudes(List<AswCharacterAttitude> attitudes) {
-		vertex.setObjList("attitudes", attitudes);
+		vertex.setObjectListField("attitudes", attitudes);
 	}
 	
 	
@@ -59,11 +59,11 @@ public class AswCharacter extends NeObject {
 		int n = sentences.length;
 		List<AswCharacterSentence> list = new ArrayList<AswCharacterSentence>(n);
 		for(int i =0; i<n; i++) { list.add(sentences[i]); }
-		vertex.setObjList("speechSequence", list);
+		vertex.setObjectListField("speechSequence", list);
 	}
 	
 	public void say(List<AswCharacterSentence> sentences) {
-		vertex.setObjList("speechSequence", sentences);
+		vertex.setObjectListField("speechSequence", sentences);
 	}
 
 	

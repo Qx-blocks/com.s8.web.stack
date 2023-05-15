@@ -24,13 +24,13 @@ public class AswScreen extends CubeElement {
 	 * @return
 	 */
 	public CubeElement getLayer(int i) {
-		return (CubeElement) vertex.getObjList("elements").get(i);
+		return (CubeElement) vertex.getObjectListField("elements").get(i);
 	}
 	
 	
 	
 	public void setBackgroundColor(String color) {
-		vertex.setStringUTF8("backgroundColor", color);
+		vertex.setStringUTF8Field("backgroundColor", color);
 	}
 
 	

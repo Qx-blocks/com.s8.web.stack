@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.s8.io.bohr.neon.core.NeBranch;
-import com.s8.io.bohr.neon.lambdas.VoidLambda;
+import com.s8.io.bohr.neon.lambdas.none.VoidLambda;
 
 
 
@@ -27,42 +27,42 @@ public class ObjectObjFormElement extends ObjFormElement {
 	}
 
 	public void setMarkupColor(int code) {
-		vertex.setUInt8("markupColor", code);
+		vertex.setUInt8Field("markupColor", code);
 	}
 
 	public void setName(String name) {
-		vertex.setStringUTF8("name", name);
+		vertex.setStringUTF8Field("name", name);
 	}
 
 	public void setTypeName(String name) {
-		vertex.setStringUTF8("typeName", name);
+		vertex.setStringUTF8Field("typeName", name);
 	}
 
 	public void setIconShapeByCode(int code){
-		vertex.setUInt8("iconShapeByCode", code);
+		vertex.setUInt8Field("iconShapeByCode", code);
 	}
 
 	public void setIconShape(String name){
-		vertex.setStringUTF8("iconShape", name);
+		vertex.setStringUTF8Field("iconShape", name);
 	}
 
 	public void setIconColor(int code) {
-		vertex.setUInt8("iconColor", code);
+		vertex.setUInt8Field("iconColor", code);
 	}
 
 
 	public void setFields(List<ObjFormElement> elements){
-		vertex.setObjList("fields", elements);
+		vertex.setObjectListField("fields", elements);
 	}
 
 	public void setFields(ObjFormElement... elements){
 		List<ObjFormElement> list = new ArrayList<>();
 		for(ObjFormElement element : elements) { list.add(element); }
-		vertex.setObjList("fields", list);
+		vertex.setObjectListField("fields", list);
 	}
 
 	public void setTogglingState(boolean mustBeExpanded){
-		vertex.setBool8("togglingState", mustBeExpanded);
+		vertex.setBool8Field("togglingState", mustBeExpanded);
 	}
 	
 	
