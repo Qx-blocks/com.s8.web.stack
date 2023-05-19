@@ -19,11 +19,11 @@ public class ObjectObjFormElement extends ObjFormElement {
 	public ObjectObjFormElement(NeBranch branch) {
 		super(branch, "/s8-web-front/carbide/objform/ObjectObjFormElement");
 		
-		vertex.setVoidMethod("load", sync.createVoidFunc(() -> {
+		vertex.setVoidMethodLambda("load", () -> {
 			if(!hasLoaded && onLoad != null) {
 				onLoad.operate();
 			}
-		}));
+		});
 	}
 
 	public void setMarkupColor(int code) {

@@ -1,6 +1,7 @@
 package com.s8.web.front.carbide.objform;
 
 import com.s8.io.bohr.neon.core.NeBranch;
+import com.s8.io.bohr.neon.functions.primitives.Float32NeFunction;
 import com.s8.io.bohr.neon.lambdas.primitives.Float32Lambda;
 
 
@@ -30,7 +31,11 @@ public class ScalarObjFormSetter extends PrimitiveObjFormSetter {
 	 * @param lambda
 	 */
 	public void onSetValue(Float32Lambda lambda) {
-		vertex.setFloat32Method("set-value", sync.createFloat32Func(lambda));
+		vertex.setFloat32MethodLambda("set-value", lambda);
 	}
 
+	
+	public void onSetValue(Float32NeFunction func) {
+		vertex.setFloat32Method("set-value", func);
+	}
 }

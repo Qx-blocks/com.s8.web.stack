@@ -24,7 +24,7 @@ public class DockItem extends NeObject {
 		vertex.setStringUTF8Field("name", name);
 		vertex.setStringUTF8Field("iconFilename", iconFilename);
 		
-		vertex.setBool8Method("onClickSelect", sync.createBool8Func(v -> System.out.print("hello world")));
+		vertex.setBool8Method("onClickSelect", (f,v) -> { System.out.print("hello world"); });
 		
 	}
 	
