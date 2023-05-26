@@ -6,7 +6,7 @@
 	<property name="stack" value="/Users/pc/qx/git/com.s8.stack/modules" />
 	<property name="java-sources" value="/Users/pc/qx/git/com.s8.stack/mod-sources" />
 	<property name="web-sources" value="/Users/pc/qx/git/com.s8.stack/web-sources" />
-	<property name="jar-name" value="${stack}/${name}.jar" />
+	<property name="jar-path" value="${stack}/${name}.jar" />
 	<property name="d0" value="${stack}/s8-io-bytes.jar" />
 	<property name="d1" value="${stack}/s8-io-bohr-atom.jar" />
 	<property name="d2" value="${stack}/s8-io-bohr-neon.jar" />
@@ -59,7 +59,7 @@
 	<target name="package-jar" depends="compile">
 		<exec executable="${javahome}/bin/jar" dir="${basedir}">
 			<arg value="-c" />
-			<arg value="--file=${jar-name}.jar" />
+			<arg value="--file=${jar-path}.jar" />
 			<arg value="-C" />
 			<arg value="forge/classes/${module}" />
 			<arg value="." />
@@ -68,7 +68,7 @@
 	<target name="add-sources" depends="package-jar">
 		<exec executable="${javahome}/bin/jar" dir="${basedir}">
 			<arg value="uf" />
-			<arg value="${jar-name}.jar" />
+			<arg value="${jar-path}" />
 			<arg value="-C" />
 			<arg value="forge/java/${module}" />
 			<arg value="." />
