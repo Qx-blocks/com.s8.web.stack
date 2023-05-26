@@ -1,8 +1,8 @@
 
 import { AswCharacterAttitude } from '/s8-web-front/asw/AswCharacterAttitude.js';
-import { S8 } from '/s8-io-bohr/atom/S8.js';
+import { S8 } from '/s8-io-bohr-atom/S8.js';
 import { AswCharacterSentence } from '/s8-web-front/asw/AswCharacterSentence.js';
-import { NeObject } from '/s8-io-bohr/neon/NeObject.js';
+import { NeObject } from '/s8-io-bohr-neon/NeObject.js';
 
 /**
  * 

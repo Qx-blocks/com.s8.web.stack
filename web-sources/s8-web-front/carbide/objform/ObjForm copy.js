@@ -1,7 +1,7 @@
 
 
 import { S8 } from '../../s8/S8.js';
-import { NeObject } from '/s8-io-bohr/neon/NeObject.js';
+import { NeObject } from '/s8-io-bohr-neon/NeObject.js';
 
 
 S8.import_CSS("/air/objform/ObjForm.css");

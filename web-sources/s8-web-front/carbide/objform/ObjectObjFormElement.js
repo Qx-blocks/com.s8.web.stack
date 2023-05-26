@@ -1,7 +1,7 @@
 
 
 import { getColor, getSVGShape, ICON_ROOT_PATHNAME, ObjFormElement } from '/s8-web-front/carbide/objform/ObjFormElement.js';
-import { S8 } from '/s8-io-bohr/atom/S8.js';
+import { S8 } from '/s8-io-bohr-atom/S8.js';
 
 
 /**

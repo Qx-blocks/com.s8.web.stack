@@ -1,7 +1,7 @@
 
 
 import { PrimtiveObjFormSetter } from '/s8-web-front/carbide/objform/PrimtiveObjFormSetter.js';
-import { S8 } from '/s8-io-bohr/atom/S8.js';
+import { S8 } from '/s8-io-bohr-atom/S8.js';
 
 
 export class EnumObjFormSetter extends PrimtiveObjFormSetter {

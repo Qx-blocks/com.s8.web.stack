@@ -1,6 +1,6 @@
 
 import { CubeElement } from '/s8-web-front/carbide/cube/CubeElement.js';
-import { S8 } from '/s8-io-bohr/atom/S8.js';
+import { S8 } from '/s8-io-bohr-atom/S8.js';
 
 S8.import_CSS("/s8-web-front/carbide/dock/Dock.css");
 

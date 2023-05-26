@@ -1,6 +1,6 @@
 
-import { S8 } from '/s8-io-bohr/atom/S8.js';
-import { NeObject } from '/s8-io-bohr/neon/NeObject.js';
+import { S8 } from '/s8-io-bohr-atom/S8.js';
+import { NeObject } from '/s8-io-bohr-neon/NeObject.js';
 
 /**
  * 
