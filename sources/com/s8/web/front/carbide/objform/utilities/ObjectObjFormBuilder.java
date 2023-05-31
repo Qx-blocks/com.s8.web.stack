@@ -36,7 +36,7 @@ public class ObjectObjFormBuilder {
 	public void addDoubleField(String name, double initialValue, Float32Lambda lambda) {
 		ScalarObjFormSetter fieldView = new ScalarObjFormSetter(branch);
 		fieldView.setName(name);
-		fieldView.setValueLambda((float) initialValue);
+		fieldView.setValue((float) initialValue);
 		fieldView.onSetValue(lambda);
 		fieldViews.add(fieldView);
 	}

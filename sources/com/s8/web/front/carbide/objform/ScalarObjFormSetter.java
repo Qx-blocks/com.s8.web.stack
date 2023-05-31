@@ -21,7 +21,7 @@ public class ScalarObjFormSetter extends PrimitiveObjFormSetter {
 		vertex.setStringUTF8Field("unit", unit);
 	}
 	
-	public void setValueLambda(float value) {
+	public void setValue(float value) {
 		vertex.setFloat32Field("value", value);
 	}
 	
