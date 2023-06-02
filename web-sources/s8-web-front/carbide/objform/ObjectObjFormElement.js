@@ -2,6 +2,8 @@
 
 import { getColor, getSVGShape, ICON_ROOT_PATHNAME, ObjFormElement } from '/s8-web-front/carbide/objform/ObjFormElement.js';
 import { S8 } from '/s8-io-bohr-atom/S8.js';
+import { Popmenu } from '/s8-web-front/carbide/popmenu/Popmenu.js';
+import { PopmenuItem } from '/s8-web-front/carbide/popmenu/PopmenuItem.js';
 
 
 /**
@@ -83,9 +85,14 @@ export class ObjectObjFormElement extends ObjFormElement {
             <circle cx="32" cy="32" r="8" />
             <circle cx="56" cy="32" r="8" />
         </svg>`;
+        const _this = this;
+        this.plusNode.addEventListener("click", function(event){
+            event.stopPropagation();
+            _this.onPlus();
+        });
         this.headerNode.appendChild(this.plusNode);
 
-        const _this = this;
+       
         this.headerNode.addEventListener("click", function(){
            _this.toggle();
         }, false);
@@ -160,7 +167,6 @@ export class ObjectObjFormElement extends ObjFormElement {
                 "objform-object-body-collapsed", 
                 "objform-object-body-expanded");
 
-            // load fields
             this.isExpanded = true;
         }
         else { // is expanded
@@ -171,6 +177,36 @@ export class ObjectObjFormElement extends ObjFormElement {
             this.isExpanded = false;
         }
     }
+
+
+    onPlus(){
+
+        S8.focus(this);
+        
+        let item0 = new PopmenuItem();
+        item0.S8_set_name("Fork");
+        item0.S8_set_icon("octicons/alert");
+
+        let item1 = new PopmenuItem();
+        item1.S8_set_name("Fork");
+        item1.S8_set_icon("octicons/pulse");
+
+        let item2 = new PopmenuItem();
+        item2.S8_set_name("Fork");
+        item2.S8_set_icon("octicons/git-merge");
+        
+        let plusMenu = new Popmenu();
+        plusMenu.S8_set_items([item0, item1, item2]);
+
+        //plusMenu.setDirection("left-bottom");
+
+
+        this.menuWrapperNode = document.createElement("div");
+        this.menuWrapperNode.appendChild(plusMenu.getEnvelope());
+
+        this.plusNode.appendChild(this.menuWrapperNode);
+    }
+
 
     loadFields(){
 
@@ -183,5 +219,9 @@ export class ObjectObjFormElement extends ObjFormElement {
     S8_render(){ /* continuous rendering approach... */ }
 
     S8_dispose(){ /* nothing to dispose*/ }
+
+    S8_unfocus(){
+        this.plusNode.removeChild(this.menuWrapperNode);
+    }
 }
 

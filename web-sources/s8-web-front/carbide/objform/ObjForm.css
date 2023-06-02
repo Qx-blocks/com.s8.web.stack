@@ -2,6 +2,7 @@
 
 
 .objform-box {
+    position: absolute;
     color: #eee;
     font: 12px arial, sans-serif;
     font-weight: 100;
@@ -12,6 +13,7 @@
     /* to de deleted */
     margin-left: 400px;
 }
+
 
 
 
