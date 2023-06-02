@@ -17,6 +17,11 @@ export class DockItem extends NeObject {
         this.node0 = document.createElement("div");
         this.wrapperNode.appendChild(this.node0);
 
+        const _this = this;
+        this.node0.addEventListener("click", function(){
+            S8.focus(_this);
+        });
+
         this.imageNode = document.createElement("img");
         this.node0.appendChild(this.imageNode);
 
