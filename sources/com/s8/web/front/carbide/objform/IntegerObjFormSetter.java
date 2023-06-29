@@ -13,7 +13,7 @@ import com.s8.io.bohr.neon.lambdas.primitives.Int32Lambda;
 public class IntegerObjFormSetter extends PrimitiveObjFormSetter {
 
 	public IntegerObjFormSetter(NeBranch branch) {
-		super(branch, "/s8-web-front/carbide/objform/TextObjFormSetter");
+		super(branch, "/s8-web-front/carbide/objform/IntegerObjFormSetter");
 	}
 	
 	

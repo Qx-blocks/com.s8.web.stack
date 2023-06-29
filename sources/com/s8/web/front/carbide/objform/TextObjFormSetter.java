@@ -17,8 +17,8 @@ public class TextObjFormSetter extends PrimitiveObjFormSetter {
 	}
 	
 	
-	public void setValue(float value) {
-		vertex.setFloat32Field("value", value);
+	public void setValue(String value) {
+		vertex.setStringUTF8Field("value", value);
 	}
 	
 

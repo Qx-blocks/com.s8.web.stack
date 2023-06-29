@@ -5,7 +5,7 @@ import com.s8.io.bohr.neon.core.NeBranch;
 public class IntegerObjFormGetter extends PrimitiveObjFormGetter {
 
 	public IntegerObjFormGetter(NeBranch branch) {
-		super(branch, "/s8-web-front/carbide/objform/TextObjFormGetter");
+		super(branch, "/s8-web-front/carbide/objform/IntegerObjFormGetter");
 	}
 	
 	

@@ -4,12 +4,13 @@ import { getColor, getSVGShape, ICON_ROOT_PATHNAME, ObjFormElement } from '/s8-w
 import { S8 } from '/s8-io-bohr-atom/S8.js';
 import { Popmenu } from '/s8-web-front/carbide/popmenu/Popmenu.js';
 import { PopmenuItem } from '/s8-web-front/carbide/popmenu/PopmenuItem.js';
+import { S8_FlatIcons_Map } from '/s8-web-front/carbide/icon/S8FlatIcon.js';
 
 
 /**
  * 
  */
-export class ObjectObjFormElement extends ObjFormElement {
+export class SetObjFormElement extends ObjFormElement {
 
     constructor() {
         
@@ -129,7 +130,7 @@ export class ObjectObjFormElement extends ObjFormElement {
     }
 
     S8_set_iconShapeByCode(code){
-       S8.insert_SVG(this.iconNode, ICON_ROOT_PATHNAME+getSVGShape(code), 16, 16);
+       S8.insert_SVG(this.iconNode, ICON_ROOT_PATHNAME+S8_FlatIcons_Map[code], 16, 16);
     }
 
     S8_set_iconShape(name){

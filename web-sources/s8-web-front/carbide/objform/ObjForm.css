@@ -295,6 +295,7 @@ div[class*="objform-icon-color-"]> svg {
     text-align: right;
     padding-left: 2px;
     padding-right: 2px;
+    border: 0;
 }
 
 .objform-input > input[type="text"] {
