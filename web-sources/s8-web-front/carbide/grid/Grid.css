@@ -27,9 +27,13 @@
 	/* z-index: 32; */
 }
 
-.grid-card {
+.grid-card-shape {
 	box-sizing: content-box;
-    height: 240px;
+   
+}
+
+.grid-card {
+	height: 240px;
     width: 160px;
 	border: 2px solid rgb(204, 204, 204);
 	border-radius: 8px;
@@ -38,6 +42,8 @@
 	cursor: pointer;
 	overflow: hidden;
 }
+
+
 
 .grid-card:hover{
 	border: 2px solid rgb(130, 176, 250);

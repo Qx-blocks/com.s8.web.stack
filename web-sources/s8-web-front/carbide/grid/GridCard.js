@@ -27,20 +27,24 @@ export class GridCard extends NeObject {
         this.wrapperNode.classList.add("grid-card-wrapper");
 
         this.cardNode = document.createElement("div");
-        this.cardNode.classList.add("grid-card");
+        this.cardNode.classList.add("grid-card-shape");
+        this.wrapperNode.appendChild(this.cardNode);
+
+        this.containerNode = document.createElement("div");
+        this.containerNode.classList.add("grid-card");
        
         this.picNode = document.createElement("div");
         this.picNode.classList.add("grid-card-image");
-        this.cardNode.appendChild(this.picNode);
+        this.containerNode.appendChild(this.picNode);
 
         this.titleNode = document.createElement("div");
         this.titleNode.classList.add("grid-card-title");
-        this.cardNode.appendChild(this.titleNode);
+        this.containerNode.appendChild(this.titleNode);
 
         this.infoNode = document.createElement("div");
         this.infoNode.classList.add("grid-card-info");
-        this.cardNode.appendChild(this.infoNode);
-        this.wrapperNode.appendChild(this.cardNode);
+        this.containerNode.appendChild(this.infoNode);
+        this.cardNode.appendChild(this.containerNode);
 
 
         let popoverBox = new PopoverBox();
@@ -52,8 +56,8 @@ export class GridCard extends NeObject {
 
         let _this = this;
         this.isPopoverAttached = false;
-        this.cardNode.addEventListener("click", function (event) {
-            _this.cardNode.setAttribute("selected", '');
+        this.containerNode.addEventListener("click", function (event) {
+            _this.containerNode.setAttribute("selected", '');
             _this.S8_vertex.runVoid("on-click");
         }, false);
     }

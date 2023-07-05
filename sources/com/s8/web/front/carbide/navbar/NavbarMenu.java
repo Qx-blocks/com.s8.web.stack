@@ -2,6 +2,7 @@ package com.s8.web.front.carbide.navbar;
 
 import com.s8.io.bohr.neon.core.NeBranch;
 import com.s8.io.bohr.neon.core.NeObject;
+import com.s8.io.bohr.neon.lambdas.none.VoidLambda;
 import com.s8.web.front.carbide.icons.S8FlatIcon;
 
 
@@ -26,6 +27,9 @@ public class NavbarMenu extends NeObject {
 		super(branch, "/s8-web-front/carbide/navbar/NavbarMenu");
 		setIcon(icon);
 		setName(name);
+		onSelected(() -> {
+			System.out.println("I'm selected");
+		});
 	}
 	
 	
@@ -46,5 +50,10 @@ public class NavbarMenu extends NeObject {
 		vertex.setStringUTF8Field("name", name);
 	}
 	
+	
+	
+	public void onSelected(VoidLambda lambda) {
+		vertex.setVoidMethodLambda("on-selected", lambda);
+	}
 	
 }

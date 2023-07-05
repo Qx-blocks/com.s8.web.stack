@@ -1,6 +1,7 @@
 
 import { S8WebFront } from "/s8-web-front/S8WebFront.js";
 import { NeObject } from "/s8-io-bohr-neon/NeObject.js";
+import { Navbar } from "/s8-web-front/carbide/navbar/Navbar.js";
 
 
 /**
@@ -14,6 +15,12 @@ S8WebFront.CSS_import('/s8-web-front/carbide/navbar/Navbar.css');
  */
 export class NavbarMenu extends NeObject {
 
+
+
+    /**
+     * @type{Navbar}
+     */
+    navbar;
     
 
     /**
@@ -22,11 +29,11 @@ export class NavbarMenu extends NeObject {
     index;
 
 
+
     constructor(){
         super();
         this.wrapperNode = document.createElement("div");
         this.wrapperNode.classList.add("navbar-menu");
-
 
         this.labelNode = document.createElement("div");
         this.labelNode.classList.add("navbar-menu-label");
@@ -40,18 +47,24 @@ export class NavbarMenu extends NeObject {
         this.nameNode.classList.add("navbar-menu-name");
         this.labelNode.appendChild(this.nameNode);
         
+        this.wrapperNode.setAttribute("selected", "true");
+
+        const _this = this;
+        this.wrapperNode.addEventListener("click", function (event) {
+            _this.navbar.select(_this.index);
+            _this.S8_vertex.runVoid("on-selected");
+        }, false);
     }
 
 
 
 
-    changeSelection(isSelected){
-        if(isSelected){
-            this.wrapperNode.setAttribute("selected", '');
-        }
-        else{
-            this.wrapperNode.removeAttribute("selected");
-        }      
+    /**
+     * 
+     * @param {boolean} isSelected 
+     */
+    setSelected(isSelected){
+        this.wrapperNode.setAttribute("selected", isSelected ? "true" : "false");
     }
 
     

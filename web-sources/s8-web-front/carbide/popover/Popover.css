@@ -20,6 +20,10 @@
 /* <popover> */
 
 
+.popover{
+    cursor: default;   
+}
+
 /* <popover-visibility> */
 
 .popover-visible {

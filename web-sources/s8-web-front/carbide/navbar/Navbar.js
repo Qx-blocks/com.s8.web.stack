@@ -1,7 +1,7 @@
 
 import { S8WebFront } from "/s8-web-front/S8WebFront.js";
 import { NeObject } from "/s8-io-bohr-neon/NeObject.js";
-import { NavbarMenu } from "./NavbarMenu.js";
+import { NavbarMenu } from "/s8-web-front/carbide/navbar/NavbarMenu.js";
 
 
 
@@ -58,6 +58,7 @@ export class Navbar extends NeObject {
         for(let i=0; i<n; i++){
             let menu = menus[i];
             menu.index = i;
+            menu.navbar = this;
             this.wrapperNode.appendChild(menu.getEnvelope());
         }
         this.menus = menus;
@@ -70,10 +71,20 @@ export class Navbar extends NeObject {
      * 
      * @param {*} index 
      */
+    select(index){
+        this.selectionIndex = index;
+        this.updateSelection();
+    }
+
+
+    /**
+     * 
+     * @param {*} index 
+     */
     updateSelection(){
         let n = this.menus.length;
         for(let i=0; i<n; i++){
-            this.menus[i].changeSelection(i == this.selectionIndex);
+            this.menus[i].setSelected(i == this.selectionIndex);
         }
     }
 

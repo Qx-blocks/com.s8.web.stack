@@ -35,18 +35,20 @@ export class PopoverBox {
 
 
         this.node = document.createElement("div");
+        this.node.classList.add("popover");
 
         // visibility
         this.isDisplayed = false;
         this.node.classList.add("popover-hidden");
 
-        // set theme
+        // theme
         this.theme = "light";
         this.node.classList.add("popover-" + this.theme);
 
-        // set direction
+        // direction
         this.direction = "left-top";
         this.node.classList.add("popover-" + this.direction);
+
     }
 
     /**
