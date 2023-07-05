@@ -30,6 +30,7 @@
 .dock-item {
     padding: 4px;
     cursor: pointer;
+    position: relative;
 }
 
 .dock-item > div {

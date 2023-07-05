@@ -1,4 +1,4 @@
-import { Icon } from "../icon/Icon";
+import { Icon } from "../icons/Icon";
 import { S8 } from "../../s8/S8.js";
 
 

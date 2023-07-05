@@ -49,8 +49,8 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param icon
 	 */
 	public void setIcon(S8FlatIcon icon, ObjFormColor color){
-		vertex.setUInt8Field("iconShapeByCode", icon.code);
-		vertex.setUInt8Field("iconColor", color.code);
+		setIconShape(icon);
+		setIconColor(color);
 	}
 
 	
@@ -59,7 +59,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param icon
 	 */
 	public void setIconShape(S8FlatIcon icon){
-		vertex.setUInt8Field("iconShapeByCode", icon.code);
+		vertex.setUInt16Field("iconShapeByCode", icon.code);
 	}
 
 	/**

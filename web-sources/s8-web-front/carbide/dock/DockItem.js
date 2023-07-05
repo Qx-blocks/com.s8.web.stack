@@ -1,11 +1,11 @@
 
 
-import { S8 } from '/s8-io-bohr-atom/S8.js';
-import { Popover } from '../popover/Popover.js';
+import { S8WebFront } from '/s8-web-front/S8WebFront.js';
 import { NeObject } from '/s8-io-bohr-neon/NeObject.js';
+import { PopoverBox } from '/s8-web-front/carbide/popover/PopoverBox.js';
 
 
-S8.import_CSS("/s8-web-front/carbide/dock/Dock.css");
+S8WebFront.CSS_import("/s8-web-front/carbide/dock/Dock.css");
 
 export class DockItem extends NeObject {
 
@@ -26,20 +26,19 @@ export class DockItem extends NeObject {
         this.node0.appendChild(this.imageNode);
 
         // popover
-        this.node1 = document.createElement("div");
-        //this.wrapperNode.appendChild(this.node1);
+       
 
         this.isTooltipVisible = false;
-        this.popover = new Popover();
-        this.popover.setDirection("right-center");
-        this.popover.setStyle("default");
+        this.popover = new PopoverBox();
+        this.popover.hide();
+        this.popover.setDirection("left");
+        this.popover.setTheme("light");
         
         this.billboardNode = document.createElement("div");
         this.billboardNode.innerHTML = "${Name}";
         this.billboardNode.classList.add("dock-item-tooltip");
-        this.popover.setContent(this.billboardNode);
+        this.popover.node.appendChild(this.billboardNode);
 
-        this.node1.appendChild(this.popover.getEnvelope());
     }
 
 
@@ -114,8 +113,8 @@ export class DockItem extends NeObject {
     showTooltip(){
         console.log("showing tooltip for i="+this.index);
         if(!this.isTooltipVisible){
-            this.popover.setVisibility(true);
-            this.wrapperNode.appendChild(this.node1);
+            this.popover.show();
+            this.popover.attach(this.node0);
             this.isTooltipVisible = true;
         }
     }
@@ -123,8 +122,8 @@ export class DockItem extends NeObject {
     hideTooltip(){
         console.log("hiding tooltip for i="+this.index);
         if(this.isTooltipVisible){
-            this.popover.setVisibility(false);
-            this.wrapperNode.removeChild(this.node1);
+            this.popover.hide();
+            this.popover.detach();
             this.isTooltipVisible = false;
         }
     }

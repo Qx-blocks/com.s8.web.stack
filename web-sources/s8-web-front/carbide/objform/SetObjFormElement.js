@@ -1,10 +1,13 @@
 
 
-import { getColor, getSVGShape, ICON_ROOT_PATHNAME, ObjFormElement } from '/s8-web-front/carbide/objform/ObjFormElement.js';
 import { S8 } from '/s8-io-bohr-atom/S8.js';
-import { Popmenu } from '/s8-web-front/carbide/popmenu/Popmenu.js';
-import { PopmenuItem } from '/s8-web-front/carbide/popmenu/PopmenuItem.js';
-import { S8_FlatIcons_Map } from '/s8-web-front/carbide/icon/S8FlatIcon.js';
+
+import { S8WebFront } from '/s8-web-front/S8WebFront.js';
+
+import { Popover } from '/s8-web-front/carbide/popover/Popover.js';
+import { PopoverMenuItem } from '/s8-web-front/carbide/popover/PopoverMenuItem.js';
+
+import { getColor, ObjFormElement } from '/s8-web-front/carbide/objform/ObjFormElement.js';
 
 
 /**
@@ -130,11 +133,11 @@ export class SetObjFormElement extends ObjFormElement {
     }
 
     S8_set_iconShapeByCode(code){
-       S8.insert_SVG(this.iconNode, ICON_ROOT_PATHNAME+S8_FlatIcons_Map[code], 16, 16);
+       S8WebFront.SVG_insertByCode(this.iconNode, code, 16, 16);
     }
 
     S8_set_iconShape(name){
-        S8.insert_SVG(this.iconNode, ICON_ROOT_PATHNAME+name, 16, 16);
+        S8WebFront.SVG_insertByName(this.iconNode, name, 16, 16);
     }
 
     S8_set_fields(fields){
@@ -182,21 +185,21 @@ export class SetObjFormElement extends ObjFormElement {
 
     onPlus(){
 
-        S8.focus(this);
+        S8WebFront.focus(this);
         
-        let item0 = new PopmenuItem();
+        let item0 = new PopoverMenuItem();
         item0.S8_set_name("Fork");
         item0.S8_set_icon("octicons/alert");
 
-        let item1 = new PopmenuItem();
+        let item1 = new PopoverMenuItem();
         item1.S8_set_name("Fork");
         item1.S8_set_icon("octicons/pulse");
 
-        let item2 = new PopmenuItem();
+        let item2 = new PopoverMenuItem();
         item2.S8_set_name("Fork");
         item2.S8_set_icon("octicons/git-merge");
         
-        let plusMenu = new Popmenu();
+        let plusMenu = new Popover();
         plusMenu.S8_set_items([item0, item1, item2]);
 
         //plusMenu.setDirection("left-bottom");

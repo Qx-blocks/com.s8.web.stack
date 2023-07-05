@@ -1,6 +1,6 @@
 
 import { S8 } from "../../s8/S8.js";
-import { Icon } from "../icon/Icon.js";
+import { Icon } from "../icons/Icon.js";
 
 export class Nav {
 

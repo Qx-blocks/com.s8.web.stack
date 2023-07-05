@@ -59,7 +59,7 @@
 	<target name="package-jar" depends="compile">
 		<exec executable="${javahome}/bin/jar" dir="${basedir}">
 			<arg value="-c" />
-			<arg value="--file=${jar-path}.jar" />
+			<arg value="--file=${jar-path}" />
 			<arg value="-C" />
 			<arg value="forge/classes/${module}" />
 			<arg value="." />

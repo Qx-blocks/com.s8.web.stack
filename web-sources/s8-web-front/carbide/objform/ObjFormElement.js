@@ -1,10 +1,10 @@
 
 
-import { S8 } from '/s8-io-bohr-atom/S8.js';
+import { S8WebFront } from '/s8-web-front/S8WebFront.js';
 import { NeObject } from '/s8-io-bohr-neon/NeObject.js';
 
 
-S8.import_CSS("/s8-web-front/carbide/objform/ObjForm.css");
+S8WebFront.CSS_import("/s8-web-front/carbide/objform/ObjForm.css");
 
 
 
@@ -20,22 +20,6 @@ export const getColor = function (code) {
     }
 }
 
-export const ICON_ROOT_PATHNAME = "/s8-web-front/carbide/icon/";
-
-export const getSVGShape = function(code) {
-    switch (code) {
-        
-        case 0x02: return "octicons/alert";
-        case 0x03: return "octicons/beaker";
-        case 0x04: return "octicons/check";
-        case 0x05: return "octicons/database";
-        case 0x06: return "octicons/gift";
-
-        case 0x22: return "set2/forward";
-        case 0x23: return "set2/geopoint";
-        default: throw "Unsupported shape code";
-    }
-}
 
 
 export class ObjFormElement extends NeObject {

@@ -1,10 +1,10 @@
+import { S8WebFront } from "/s8-web-front/S8WebFront.js";
 import { DynamicMeshScreen } from "./DynamicMeshScreen.js";
-import { S8 } from '/s8-io-bohr-atom/S8.js';
 
 /**
  * 
  */
-S8.import_CSS('/s8-web-front/inboard/inboard.css');
+S8WebFront.CSS_import('/s8-web-front/inboard/inboard.css');
 
 
 

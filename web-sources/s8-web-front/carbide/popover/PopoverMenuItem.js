@@ -1,18 +1,17 @@
-import { Popmenu } from "/s8-web-front/carbide/popmenu/Popmenu.js";
+import { Popover } from "./Popover.js";
 import { S8 } from "/s8-io-bohr-atom/S8.js";
 import { NeObject } from "/s8-io-bohr-neon/NeObject.js";
 
 
 
 
-export const ICON_ROOT_PATHNAME = "/s8-web-front/carbide/icon/";
 
-export class PopmenuItem extends NeObject {
+export class PopoverMenuItem extends NeObject {
 
 
 
     /**
-     * @type {Popmenu}
+     * @type {Popover}
      */
     menu;
 
@@ -21,14 +20,14 @@ export class PopmenuItem extends NeObject {
         super();
 
         this.wrapperNode = document.createElement("div");
-        this.wrapperNode.classList.add("popmenu-item");
+        this.wrapperNode.classList.add("popover-item");
 
         this.iconNode = document.createElement("div");
-        this.iconNode.classList.add("popmenu-item-icon");
+        this.iconNode.classList.add("popover-item-icon");
         this.wrapperNode.appendChild(this.iconNode);
 
         this.labelNode = document.createElement("div");
-        this.labelNode.classList.add("popmenu-item-label");
+        this.labelNode.classList.add("popover-item-label");
         this.wrapperNode.appendChild(this.labelNode);
     }
 
@@ -51,7 +50,7 @@ export class PopmenuItem extends NeObject {
     }
 
     S8_set_icon(name){
-        S8.insert_SVG(this.iconNode, ICON_ROOT_PATHNAME + name, 16, 16);
+        S8.SVG_insertByName(this.iconNode, ICON_ROOT_PATHNAME + name, 16, 16);
     }
 
     /**

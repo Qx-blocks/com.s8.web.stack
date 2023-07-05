@@ -1,144 +1,94 @@
 
-import { S8 } from '/s8-io-bohr-atom/S8.js';
+import { NeObject } from "/s8-io-bohr-neon/NeObject.js";
+import { S8WebFront } from "/s8-web-front/S8WebFront.js";
 
-S8.import_CSS("/s8-web-front/carbide/popover/Popover.css");
 
 
-// the renderable
-export class Popover {
+S8WebFront.CSS_import("/s8-web-front/carbide/popover/Popover.css");
 
-	constructor() {
 
-		// initialize state
-		this.isVisible = false;
-		this.node = document.createElement("div");
-		this.node.classList.add("popover-hidden");
+export class Popover extends NeObject{
 
-		this.direction = "top-left";
-		this.style = "default";
 
-		this.containerNode = document.createElement("div");
 
-		/* ClassList Order MATTERS!!! */
-		this.node.classList.add("popover-"+this.direction, "popover-"+this.style);
+    constructor(){
+        super();
 
-		this.node.appendChild(this.containerNode);
+        this.wrapperNode = document.createElement("div");
 
-		this.target = null;
-		this.content = [];
-	}
+       
+
+        // set theme
+        this.theme = "light";
+        this.wrapperNode.classList.add("popover-"+this.theme);      
+       
+        // set direction
+        this.direction = "left-top";
+        this.wrapperNode.classList.add("popover-"+this.direction);        
+    }
+
+    
+
+
+    getEnvelope(){
+        return this.wrapperNode;
+    }
+
 
 
 	/**
 	 * 
 	 * @param {*} direction 
 	 */
+	S8_set_theme(theme){
+		/* ClassList Order MATTERS!!! because theme define colors for direction */
+		this.wrapperNode.classList.replace("popover-"+this.theme, "popover-"+theme);
+		this.theme = theme;
+	}
+
+
+    /**
+	 * 
+	 * @param {*} direction 
+	 */
 	setDirection(direction){
-		/* ClassList Order MATTERS!!! */
-		this.node.classList.replace("popover-"+this.direction, "popover-"+direction);
+		/* ClassList Order MATTERS!!! because theme define colors for direction */
+		this.wrapperNode.classList.replace("popover-"+this.direction, "popover-"+direction);
 		this.direction = direction;
 	}
 
 
-	/**
-	 * 
-	 * @param {*} style 
-	 */
-	setStyle(style){
-		/* ClassList Order MATTERS!!! */
-		this.node.classList.replace("popover-"+this.style, "popover-"+style);
-		this.style = style;
-	}
+    /**
+     * 
+     * @param {*} iconName 
+     * @param {*} fieldName 
+     */
+    addItem(iconName, fieldName){
 
-	/**
-	 * 
-	 * @param {*} isVisible 
-	 */
-	setVisibility(isVisible){
-		this.node.classList.remove(this.isVisible ? "popover-visible" : "popover-hidden");
-		this.isVisible = isVisible;
-		this.node.classList.add(this.isVisible ? "popover-visible" : "popover-hidden");
-	}
+    }
 
+    /**
+     * 
+     * @param {NeObject[]} items 
+     */
+    S8_set_elements(elements){
+        const _this = this;
+        
+        // remove child nodes
+        while(this.wrapperNode.hasChildNodes()){ this.wrapperNode.removeChild(this.wrapperNode.firstChild); }
 
-	setObjects(elements){
-		S8.removeChildren(this.containerNode);
-		elements.forEach(element => { this.containerNode.appendChild(element.getEnvelope()); });
-	}
-
-	setContent(content){
-		S8.removeChildren(this.containerNode);
-		this.containerNode.appendChild(content);
-	}
+        elements.forEach(element => {
+            //element.menu = _this;
+            _this.wrapperNode.appendChild(element.getEnvelope());
+        });
+    }
 
 
+    S8_render(){
 
-	getEnvelope(){
-		return this.node;
-	}
+    }
 
-	computeWrapperPosition = () => {
+    S8_dispose(){
 
-		let target = this.state.target;
-
-		if(target==null){
-			return "left: 256px; bottom: 256px;";
-		}
-
-		/* choose where to land: check available space around target */
-		let boundingBox = this.target.getBoundingClientRect();
-		//let lzHeight = ui.popoversLandingZone.offsetHeight;
-
-		// main anchors
-		let windowWidth = window.innerWidth;
-		let windowHeight = window.innerHeight;
-
-		let xTargetLeft = window.scrollX + boundingBox.left;
-		let xTargetRight = window.scrollX + boundingBox.right;
-		let yTargetTop = window.scrollY + boundingBox.top;
-		let yTargetBottom = window.scrollY + boundingBox.bottom;
-
-		return {left: xTargetLeft+"px", bottom:(windowHeight - yTargetTop)+"px" };
-
-		/*
-		switch (this.direction) {
-
-			case "top-left":
-				return {left: xTargetLeft+"px", bottom:(windowHeight - yTargetTop)+"px" };
-				
-			case "top-center":
-				return {left: xTargetLeft+"px", bottom:(windowHeight - yTargetTop)+"px" };
-
-			case "top-right":
-				return {right: (windowWidth - xTargetRight) + "px", bottom:(windowHeight - yTargetTop)+"px" };
-
-			case "right-top":
-				return {left: xTargetRight+"px", top:yTargetTop+"px"};
-
-			case "right-center":
-				return {left: xTargetRight + "px", top:yTargetTop +"px"};
-
-			case "right-bottom":
-				return {left: xTargetRight + "px", bottom:(windowHeight - yTargetBottom) + "px"};
-
-			case "bottom-right":
-				return "right:" + (windowWidth - xTargetRight) + "px; top:" + yTargetBottom + "px;";
-
-			case "bottom-center":
-				return "left:" + xTargetLeft + "px; top:" + yTargetBottom + "px;";
-
-			case "bottom-left":
-				return "left:" + xTargetLeft + "px; top:" + yTargetBottom + "px;";
-
-			case "left-bottom":
-				return "right:" + (windowWidth - xTargetLeft) + "px; bottom:" + (windowHeight - yTargetBottom) + "px;";
-
-			case "left-center":
-				return "right:" + (windowWidth - xTargetLeft) + "px; top:" + yTargetTop + "px;";
-
-			case "left-top":
-				return "right:" + (windowWidth - xTargetLeft) + "px; top:" + yTargetTop + "px;";
-		}
-		*/
-	}
+    }
 }

@@ -41,7 +41,7 @@ public class Dock extends CubeElement {
 		
 		Dock dock = new Dock(branch);
 		List<DockItem> items = new ArrayList<DockItem>();
-		String root = "/s8-web-front/carbide/icon/photores";
+		String root = "/s8-web-front/carbide/icons/photores";
 		
 		items.add(new DockItem(branch, "Home", root+"/compass-icon-128px.png"));
 		items.add(new DockItem(branch, "Fluid Properties", root+"/atom-icon-128px.png"));
