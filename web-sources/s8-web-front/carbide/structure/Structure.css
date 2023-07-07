@@ -1,0 +1,24 @@
+
+
+.row {
+    padding: 6px;
+    text-align: left;
+
+}
+
+
+.spacer {
+    display: inline-block;
+    height: 10px;
+    width: 12px;
+}
+
+
+.inline-text {
+    display: inline-block;
+    color: black;
+    font: 12px arial, sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-variant-caps: normal;
+}

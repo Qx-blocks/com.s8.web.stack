@@ -11,9 +11,9 @@ import com.s8.io.bohr.neon.core.NeObject;
  * @author pierreconvert
  *
  */
-public abstract class NeNode extends NeObject {
+public abstract class HTML_NeNode extends NeObject {
 
-	public NeNode(NeBranch branch, String typeName) {
+	public HTML_NeNode(NeBranch branch, String typeName) {
 		super(branch, typeName);
 	}
 

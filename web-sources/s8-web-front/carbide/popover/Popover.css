@@ -52,7 +52,7 @@
 .popover-light {
     --inside-color : white;
     --border-color : rgb(178, 178, 178);
-    --shadow-color : rgba(117, 117, 117, 0.225);
+    --shadow-color: rgb(64, 64, 64, 0.36);
 }
 
 /* */
@@ -69,7 +69,6 @@
 .popover-bottom,
 .popover-bottom-right {
     padding: 8px 0px 8px 0px;
-    margin: 8px;
     position: absolute;
     text-align: center;
     font-size: 20px;
@@ -108,14 +107,20 @@
 
 
 .popover-top-left {
+    top: 100%;
+    left: 0px;
     transform: translate(-22px, 8px);
 }
 
 .popover-top {
+    top: 100%;
+    left: 50%;
     transform: translate(-50%, 8px);
 }
 
 .popover-top-right {
+    top: 100%;
+    left: 100%;
     transform: translate(9px - 100%, 8px);
 }
 
@@ -168,15 +173,21 @@
 
 
 .popover-right-top {
-   transform : translate(-8px, -28px);
+    top: 20px;
+    right: 100%;
+    transform : translate(-9px, -28px);
 }
 
 .popover-right {
-   transform : translate(-8px, -50%);
+    top: 50%;
+    right: 100%;
+    transform : translate(-9px, -50%);
 }
 
 .popover-right-bottom {
-    transform : translate(-6px, 9px - 100%);
+    top: calc(100% - 20px);
+    right: 100%;
+    transform : translate(-9px, 9px - 100%);
 }
 
 
@@ -226,15 +237,21 @@
 
 
 .popover-bottom-left {
-    transform : translate(-28px, -8px);
+    bottom: 100%;
+    left: 20px;
+    transform : translate(-28px, -18px);
 }
 
 .popover-bottom {
-    transform : translate(-50%, -6px);
+    bottom: 100%;
+    left: 50%;
+    transform : translate(-50%, -18px);
 }
 
 .popover-bottom-right {
-    transform : translate(9px - 100%, -6px);
+    bottom: 100%;
+    left: 100%;
+    transform : translate(9px - 100%, -18px);
 } 
 
 
@@ -283,15 +300,21 @@
 /* <left> */
 
 .popover-left-top {
-    transform: translate(8px, -38px);
+    left: 100%;
+    top: 0px;
+    transform: translate(-8px, -38px);
 }
 
 .popover-left {
-    transform: translate(8px, -50%);
+    left: 100%;
+    top: 50%;
+    transform: translate(-8px, -50%);
 }
 
 .popover-left-bottom {
-    transform: translate(8px, calc(9px - 100%));
+    left: 100%;
+    top: 100%;
+    transform: translate(-8px, calc(9px - 100%));
 }
 
 

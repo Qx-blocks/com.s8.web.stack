@@ -3,7 +3,7 @@ package com.s8.web.front.carbide.navbar;
 import java.util.List;
 
 import com.s8.io.bohr.neon.core.NeBranch;
-import com.s8.web.front.NeNode;
+import com.s8.web.front.HTML_NeNode;
 
 
 /**
@@ -11,7 +11,7 @@ import com.s8.web.front.NeNode;
  * @author pierreconvert
  *
  */
-public class Navbar extends NeNode {
+public class Navbar extends HTML_NeNode {
 
 	
 	/**

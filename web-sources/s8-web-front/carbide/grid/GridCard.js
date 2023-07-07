@@ -2,6 +2,7 @@
 import { PopoverBox } from '/s8-web-front/carbide/popover/PopoverBox.js';
 import { NeObject } from '/s8-io-bohr-neon/NeObject.js';
 import { S8WebFront } from '/s8-web-front/S8WebFront.js';
+import { Popover } from '/s8-web-front/carbide/popover/Popover.js';
 
 
 
@@ -16,9 +17,11 @@ export class GridCard extends NeObject {
 
 
     /**
-     * @type {PopoverBox}
+     * @type{Popover}
      */
-    popoverBox = null;
+    popover = null;
+
+
 
     constructor() {
         super();
@@ -47,13 +50,6 @@ export class GridCard extends NeObject {
         this.cardNode.appendChild(this.containerNode);
 
 
-        let popoverBox = new PopoverBox();
-        popoverBox.show();
-        popoverBox.setDirection("top");
-        popoverBox.setTheme("light");
-        this.popoverBox = popoverBox;
-
-
         let _this = this;
         this.isPopoverAttached = false;
         this.containerNode.addEventListener("click", function (event) {
@@ -80,20 +76,21 @@ export class GridCard extends NeObject {
 
     /**
      * 
-     * @param {Popover} popoverBox 
+     * @param {Popover} popover
      */
-    S8_set_popoverContent(elements) {
+    S8_set_popover(popover) {
+        if(popover != null){
+            this.popover = popover;
+            this.cardNode.appendChild(this.popover.getEnvelope());
+            //this.popover.attach(this.cardNode);
 
-        this.attachPopover();
-
-        /* clear child */
-        this.popoverBox.clearContent();
-
-        /* elements */
-        elements.forEach(element => this.popoverBox.node.appendChild(element.getEnvelope()));
-
-        /* focus on node */
-        this.popoverBox.show();
+            /* focus on node */
+            this.popover.show();
+        }
+        else if(popover == null && this.popover != null){
+            this.cardNode.removeChild(this.popover.getEnvelope());
+            this.popover = null;
+        }
     }
 
 
