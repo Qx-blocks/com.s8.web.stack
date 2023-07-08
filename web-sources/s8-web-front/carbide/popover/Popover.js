@@ -7,38 +7,7 @@ import { S8WebFront } from "/s8-web-front/S8WebFront.js";
 S8WebFront.CSS_import("/s8-web-front/carbide/popover/Popover.css");
 
 
-const directionMapper = function (code) {
-    switch (code) {
-        case 0x22: return "top-left";
-        case 0x23: return "top";
-        case 0x24: return "top-right";
 
-        case 0x32: return "right-top";
-        case 0x33: return "right";
-        case 0x34: return "right-bottom";
-
-        case 0x42: return "bottom-left";
-        case 0x43: return "bottom";
-        case 0x44: return "bottom-right";
-
-        case 0x52: return "left-top";
-        case 0x53: return "left";
-        case 0x54: return "left-bottom";
-
-        case 0x62: return "auto";
-
-        default: return "default";
-    }
-}
-
-
-const themeMapper = function (code) {
-    switch (code) {
-        case 0x22: return "light";
-        case 0x23: return "dark";
-        default: return "light";
-    }
-}
 
 
 export class Popover extends NeObject {
@@ -64,7 +33,7 @@ export class Popover extends NeObject {
     /**
      * @type {direction}
      */
-    theme = "direction";
+    direction = "direction";
 
 
 
@@ -144,7 +113,7 @@ export class Popover extends NeObject {
      * @param {code} code 
      */
     S8_set_theme(code) {
-        this.setTheme(themeMapper(code));
+        this.setTheme(S8WebFront.parseTheme(code));
     }
 
 
@@ -166,7 +135,7 @@ export class Popover extends NeObject {
     * @param {code} code 
     */
     S8_set_direction(code) {
-        this.setDirection(directionMapper(code));
+        this.setDirection(S8WebFront.parseDirection(code));
     }
 
 

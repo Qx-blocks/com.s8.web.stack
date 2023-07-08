@@ -32,9 +32,9 @@ class S8WebFrontUtilities {
 
 
 
-    constructor(){
-       
-    }
+	constructor() {
+
+	}
 
 
 
@@ -61,16 +61,16 @@ class S8WebFrontUtilities {
 
 
 
-    /**
-     * 
-     * @param {HTMLElement} target 
-     * @param {number} code 
-     * @param {number} width 
-     * @param {number} height 
-     */
-    SVG_insertByCode(target, code, width, height) {
-        S8WebFront.SVG_insertByName(target, S8_FlatIcons_Map[code], width, height);
-    }
+	/**
+	 * 
+	 * @param {HTMLElement} target 
+	 * @param {number} code 
+	 * @param {number} width 
+	 * @param {number} height 
+	 */
+	SVG_insertByCode(target, code, width, height) {
+		S8WebFront.SVG_insertByName(target, S8_FlatIcons_Map[code], width, height);
+	}
 
 
 	/**
@@ -132,19 +132,92 @@ class S8WebFrontUtilities {
 	 * 
 	 * @param {Object} object 
 	 */
-	focus(object){
+	focus(object) {
 		let previous = this.previouslyFocussed;
-		if(previous != null){
-			if(previous.S8_unfocus){
+		if (previous != null) {
+			if (previous.S8_unfocus) {
 				previous.S8_unfocus();
 			}
-			else{
+			else {
 				console.log("Object missing a S8_unfocus method: " + previous);
 			}
 		}
 		this.previouslyFocussed = object;
 	}
 
+
+
+	/**
+	 * 
+	 * @param {*} code 
+	 * @returns 
+	 */
+	parseDirection = function (code) {
+		switch (code) {
+
+			case 0x22: return "top-left";
+			case 0x23: return "top";
+			case 0x24: return "top-right";
+
+			case 0x32: return "right-top";
+			case 0x33: return "right";
+			case 0x34: return "right-bottom";
+
+			case 0x42: return "bottom-left";
+			case 0x43: return "bottom";
+			case 0x44: return "bottom-right";
+
+			case 0x52: return "left-top";
+			case 0x53: return "left";
+			case 0x54: return "left-bottom";
+
+			case 0x62: return "auto";
+
+			default: throw "Cannot parse direction";
+		}
+	}
+
+
+	/**
+	 * 
+	 * @param {*} code 
+	 * @returns 
+	 */
+	parseTheme = function (code) {
+		switch (code) {
+
+			case 0x22 : return "default";
+
+			case 0x32 : return "light";
+			case 0x36 : return "dark";
+
+			case 0x42 : return "primary";
+
+			case 0x62 : return "outline";
+
+			case 0xb2 : return "warning";
+			case 0xb4 : return "danger";
+
+			default: throw "Cannot parse theme";
+		}
+	}
+
+
+	/**
+	 * 
+	 * @param {*} code 
+	 * @returns 
+	 */
+	parseSize(code) {
+		switch (code) {
+			case 0x02: return "inlined";
+			case 0x04: return "small";
+			case 0x06: return "normal";
+			case 0x08: return "big";
+
+			default: return "normal";
+		}
+	}
 }
 
 

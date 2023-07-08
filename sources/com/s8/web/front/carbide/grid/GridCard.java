@@ -6,18 +6,18 @@ import java.util.List;
 import com.s8.io.bohr.neon.core.NeBranch;
 import com.s8.io.bohr.neon.core.NeObject;
 import com.s8.web.front.HTML_NeNode;
+import com.s8.web.front.S8WebDirection;
+import com.s8.web.front.S8WebSize;
+import com.s8.web.front.S8WebTheme;
 import com.s8.web.front.carbide.button.Button;
-import com.s8.web.front.carbide.button.Button.Size;
-import com.s8.web.front.carbide.button.Button.Style;
 import com.s8.web.front.carbide.icons.S8FlatIcon;
 import com.s8.web.front.carbide.navbar.Navbar;
 import com.s8.web.front.carbide.navbar.NavbarMenu;
 import com.s8.web.front.carbide.popover.Popover;
-import com.s8.web.front.carbide.popover.Popover.Direction;
-import com.s8.web.front.carbide.popover.Popover.Theme;
-import com.s8.web.front.carbide.structure.Row;
 import com.s8.web.front.carbide.structure.InlineSpacer;
 import com.s8.web.front.carbide.structure.InlineTextBox;
+import com.s8.web.front.carbide.structure.Row;
+import com.s8.web.front.carbide.textinput.TextInput;
 import com.s8.web.front.carbide.title.H1Title;
 
 
@@ -55,12 +55,12 @@ public class GridCard extends NeObject {
 			elements.add(Row.create(branch, 
 					InlineTextBox.create(branch, "Actions: "),
 					InlineSpacer.create(branch, 10),
-					Button.create(branch, "Launch", Size.INLINED, Style.PRIMARY),
+					Button.create(branch, "Launch", S8WebSize.INLINED, S8WebTheme.PRIMARY),
 					InlineSpacer.create(branch, 20),
-					Button.create(branch, "Cancel", Size.INLINED, Style.DEFAULT)));
-			elements.add(Row.create(branch, Button.create(branch, "Fork", Size.SMALL, Style.DEFAULT)));
+					Button.create(branch, "Cancel", S8WebSize.INLINED, S8WebTheme.DEFAULT)));
+			elements.add(Row.create(branch, Button.create(branch, "Fork", S8WebSize.SMALL, S8WebTheme.DEFAULT)));
 			
-			Popover popover = Popover.create(branch, Theme.LIGHT, Direction.LEFT);
+			Popover popover = Popover.create(branch, S8WebTheme.LIGHT, S8WebDirection.LEFT);
 			popover.setElements(elements);
 			
 			vertex.setObjectField("popover", popover);
@@ -82,12 +82,21 @@ public class GridCard extends NeObject {
 			elements2.add(Row.create(branch, 
 					InlineTextBox.create(branch, "Actions: "),
 					InlineSpacer.create(branch, 10),
-					Button.create(branch, "Launch", Size.INLINED, Style.PRIMARY),
+					Button.create(branch, "Launch", S8WebSize.INLINED, S8WebTheme.PRIMARY),
 					InlineSpacer.create(branch, 20),
-					Button.create(branch, "Cancel", Size.INLINED, Style.DEFAULT)));
-			elements2.add(Row.create(branch, Button.create(branch, "Fork", Size.SMALL, Style.DEFAULT)));
+					Button.create(branch, "Cancel", S8WebSize.INLINED, S8WebTheme.DEFAULT)));
+			elements2.add(Row.create(branch, Button.create(branch, "Fork", S8WebSize.SMALL, S8WebTheme.DEFAULT)));
 			
-			Popover popover2 = Popover.create(branch, Theme.LIGHT, Direction.TOP);
+			elements2.add(Row.create(branch, 
+					InlineTextBox.create(branch, "Actions: "),
+					InlineSpacer.create(branch, 10),
+					TextInput.create(branch, S8WebSize.INLINED, 12, "Add text here..."),
+					InlineSpacer.create(branch, 10),
+					Button.create(branch, "Cancel", S8WebSize.INLINED, S8WebTheme.DEFAULT)));
+			
+			
+			
+			Popover popover2 = Popover.create(branch, S8WebTheme.LIGHT, S8WebDirection.TOP);
 			popover2.setElements(elements2);
 			
 			popover.setPopover(popover2);

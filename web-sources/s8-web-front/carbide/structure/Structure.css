@@ -1,7 +1,7 @@
 
 
 .row {
-    padding: 6px;
+    padding: 4px 6px;
     text-align: left;
 
 }
@@ -21,4 +21,5 @@
     font-weight: 100;
     font-style: normal;
     font-variant-caps: normal;
+    vertical-align: middle;
 }

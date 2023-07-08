@@ -3,6 +3,8 @@ package com.s8.web.front.carbide.button;
 import com.s8.io.bohr.neon.core.NeBranch;
 import com.s8.io.bohr.neon.functions.none.VoidNeFunction;
 import com.s8.web.front.HTML_NeNode;
+import com.s8.web.front.S8WebSize;
+import com.s8.web.front.S8WebTheme;
 
 
 /**
@@ -20,12 +22,12 @@ public class Button extends HTML_NeNode {
 	 * @param style
 	 * @return
 	 */
-	public static Button create(NeBranch branch, String label, Size size, Style style) {
+	public static Button create(NeBranch branch, String label, S8WebSize size, S8WebTheme theme) {
 		Button button = new Button(branch);
 		
 		button.setLabel(label);
 		button.setSize(size);
-		button.setStyle(style);
+		button.setTheme(theme);
 		
 		return button;
 	}
@@ -36,12 +38,6 @@ public class Button extends HTML_NeNode {
 		private Style(int code) { this.code = code; }
 	}
 	
-	public enum Size {
-		INLINED(0x02), SMALL(0x04), BIG(0x06), HUGE(0x08);
-		public int code;
-		private Size(int code) { this.code = code; }
-	}
-
 	
 	/**
 	 * 
@@ -70,7 +66,7 @@ public class Button extends HTML_NeNode {
 	 * 
 	 * @param menus
 	 */
-	public void setSize(Size size) {
+	public void setSize(S8WebSize size) {
 		vertex.setUInt8Field("size", size.code);
 	}
 	
@@ -79,11 +75,15 @@ public class Button extends HTML_NeNode {
 	 * 
 	 * @param menus
 	 */
-	public void setStyle(Style style) {
-		vertex.setUInt8Field("style", style.code);
+	public void setTheme(S8WebTheme theme) {
+		vertex.setUInt8Field("theme", theme.code);
 	}
 	
 	
+	/**
+	 * 
+	 * @param state
+	 */
 	public void setEnabled(boolean state) {
 		vertex.setBool8Field("isEnabled", state);
 	}

@@ -5,27 +5,8 @@ import { NeObject } from '/s8-io-bohr-neon/NeObject.js';
 
 S8WebFront.CSS_import("/s8-web-front/carbide/button/Button.css")
 
-const sizeMapper = function(code){
-	switch(code){
-		case 0x02 : return "inlined";
-		case 0x04 : return "small";
-		case 0x06 : return "big";
-		case 0x08 : return "huge";
 
-		default : return "big";
-	}
-}
 
-const styleMapper = function(code){
-	switch(code){
-		case 0x02 : return "default";
-		case 0x03 : return "primary";
-		case 0x04 : return "outline";
-		case 0x05 : return "danger";
-
-		default : return "default";
-	}
-}
 
 
 /**
@@ -34,7 +15,7 @@ const styleMapper = function(code){
 export class Button extends NeObject {
 
 
-	style = "default";
+	theme = "default";
 
 
 	constructor(){
@@ -54,7 +35,7 @@ export class Button extends NeObject {
 
 		/* <style> */
 		this.style = "default";
-		this.node.classList.add("button-"+this.style);
+		this.node.classList.add("button-"+this.theme);
 		/* </style> */
 
 		this.isEnabled = true;
@@ -81,7 +62,7 @@ export class Button extends NeObject {
 	 * @param {number} code 
 	 */
 	S8_set_size(code){
-		let assignedSize = sizeMapper(code);
+		let assignedSize = S8WebFront.parseSize(code);
 		if(assignedSize != this.size){
 			this.node.classList.replace("button-"+this.size, "button-"+assignedSize);
 			this.size = assignedSize;
@@ -93,11 +74,11 @@ export class Button extends NeObject {
 	 * 
 	 * @param {number} code 
 	 */
-	S8_set_style(code){
-		let assignedStyle = styleMapper(code);
-		if(assignedStyle != this.style){
-			this.node.classList.replace("button-"+this.style, "button-"+assignedStyle);
-			this.style = assignedStyle;
+	S8_set_theme(code){
+		let assignedTheme = S8WebFront.parseTheme(code);
+		if(assignedTheme != this.theme){
+			this.node.classList.replace("button-"+this.theme, "button-"+assignedTheme);
+			this.theme = assignedTheme;
 		}
 	}
 
