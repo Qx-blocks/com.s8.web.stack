@@ -101,6 +101,36 @@ public class GridCard extends NeObject {
 			
 			popover.setPopover(popover2);
 			
+			
+			
+			List<HTML_NeNode> elements3 =  new ArrayList<>();
+			elements3.add(H1Title.create(branch, "Fork Repository"));
+			
+			
+			
+			
+			elements2.add(Row.create(branch, Button.create(branch, "Fork", S8WebSize.SMALL, S8WebTheme.DEFAULT)));
+			
+			elements3.add(Row.create(branch, 
+					InlineTextBox.create(branch, "New Branch name: "),
+					InlineSpacer.create(branch, 10),
+					TextInput.create(branch, S8WebSize.INLINED, 12, "Branch name..."),
+					InlineSpacer.create(branch, 10),
+					Button.create(branch, "Validate", S8WebSize.INLINED, S8WebTheme.DEFAULT)));
+			
+			elements3.add(Row.create(branch, 
+					InlineSpacer.create(branch, 10),
+					Button.create(branch, "Fork", S8WebSize.NORMAL, S8WebTheme.PRIMARY),
+					InlineSpacer.create(branch, 20),
+					Button.create(branch, "Cancel", S8WebSize.NORMAL, S8WebTheme.DEFAULT)));
+			
+			
+			
+			Popover popover3 = Popover.create(branch, S8WebTheme.LIGHT, S8WebDirection.TOP);
+			popover3.setElements(elements3);
+			
+			popover2.setPopover(popover3);
+			
 		});
 	}
 	
