@@ -35,7 +35,7 @@ export class GridCard extends NeObject {
 
         this.containerNode = document.createElement("div");
         this.containerNode.classList.add("grid-card");
-       
+
         this.picNode = document.createElement("div");
         this.picNode.classList.add("grid-card-image");
         this.containerNode.appendChild(this.picNode);
@@ -53,8 +53,8 @@ export class GridCard extends NeObject {
         let _this = this;
         this.isPopoverAttached = false;
         this.containerNode.addEventListener("click", function (event) {
-            _this.containerNode.setAttribute("selected", '');
             _this.S8_vertex.runVoid("on-click");
+            event.stopPropagation();
         }, false);
     }
 
@@ -65,11 +65,11 @@ export class GridCard extends NeObject {
     }
 
 
-    attachPopover(){
+    attachPopover() {
         this.popoverBox.attach(this.cardNode);
     }
 
-    detachPopover(){
+    detachPopover() {
         this.popoverBox.detach();
     }
 
@@ -79,7 +79,7 @@ export class GridCard extends NeObject {
      * @param {Popover} popover
      */
     S8_set_popover(popover) {
-        if(popover != null){
+        if (popover != null) {
             this.popover = popover;
             this.cardNode.appendChild(this.popover.getEnvelope());
             //this.popover.attach(this.cardNode);
@@ -87,7 +87,7 @@ export class GridCard extends NeObject {
             /* focus on node */
             this.popover.show();
         }
-        else if(popover == null && this.popover != null){
+        else if (popover == null && this.popover != null) {
             this.cardNode.removeChild(this.popover.getEnvelope());
             this.popover = null;
         }
@@ -108,6 +108,20 @@ export class GridCard extends NeObject {
     */
     S8_set_info(name) {
         this.infoNode.innerHTML = name;
+    }
+
+
+    /**
+     * 
+     * @param {string} cards
+     */
+    S8_set_isSelected(isSelected) {
+        if (isSelected) {
+            this.containerNode.setAttribute("selected", '');
+        }
+        else {
+            this.containerNode.removeAttribute("selected");
+        }
     }
 
 

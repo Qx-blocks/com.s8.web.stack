@@ -12,6 +12,7 @@ module com.s8.web.front {
 	
 	exports com.s8.web.front.asw;
 	
+	exports com.s8.web.front.carbide.button;
 	exports com.s8.web.front.carbide.cube;
 	exports com.s8.web.front.carbide.dock;
 	exports com.s8.web.front.carbide.grid;
@@ -19,6 +20,9 @@ module com.s8.web.front {
 	exports com.s8.web.front.carbide.navbar;
 	exports com.s8.web.front.carbide.objform;
 	exports com.s8.web.front.carbide.popover;
+	exports com.s8.web.front.carbide.structure;
+	exports com.s8.web.front.carbide.textinput;
+	exports com.s8.web.front.carbide.title;
 	
 	
 	requires transitive com.s8.arch.fluor;

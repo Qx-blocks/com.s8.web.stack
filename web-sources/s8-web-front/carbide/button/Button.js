@@ -47,6 +47,7 @@ export class Button extends NeObject {
         let _this = this;
         this.node.addEventListener("click", function (event) {
             _this.S8_vertex.runVoid("on-click");
+			event.stopPropagation();
         }, false);
 		/* </listeners> */
 	}

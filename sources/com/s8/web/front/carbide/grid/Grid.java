@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.s8.io.bohr.neon.core.NeBranch;
 import com.s8.io.bohr.neon.core.NeObject;
+import com.s8.io.bohr.neon.functions.none.VoidNeFunction;
+import com.s8.io.bohr.neon.lambdas.none.VoidLambda;
 
 /**
  * 
@@ -12,15 +14,59 @@ import com.s8.io.bohr.neon.core.NeObject;
  */
 public class Grid extends NeObject {
 
+
 	public Grid(NeBranch branch) {
 		super(branch, "/s8-web-front/carbide/grid/Grid");
+		onClickLambda(() -> unselectAllCards());
 	}
-	
-	
-	
+
+
+
+
+
+
+
 	public void setCards(List<GridCard> cards) {
 		vertex.setObjectListField("cards", cards);
 	}
-	
-	
+
+
+	/**
+	 * 
+	 * @return
+	 */
+	public List<GridCard> getCards(){
+		return vertex.getObjectListField("cards");
+	}
+
+
+	public void unselectAllCards() {
+		List<GridCard> cards = getCards();
+		if(cards != null) {
+			cards.forEach(card -> {
+				card.clearPopover();
+				card.setSelected(false);
+			}); 
+		}	
+	}
+
+
+	/**
+	 * 
+	 * @param func
+	 */
+	public void onClick(VoidNeFunction func) {
+		vertex.setVoidMethod("on-click", func);
+	}
+
+
+
+	/**
+	 * 
+	 * @param func
+	 */
+	public void onClickLambda(VoidLambda lambda) {
+		vertex.setVoidMethodLambda("on-click", lambda);
+	}
+
 }

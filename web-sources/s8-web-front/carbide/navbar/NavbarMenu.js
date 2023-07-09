@@ -53,6 +53,7 @@ export class NavbarMenu extends NeObject {
         this.wrapperNode.addEventListener("click", function (event) {
             _this.navbar.select(_this.index);
             _this.S8_vertex.runVoid("on-selected");
+            event.stopPropagation();
         }, false);
     }
 

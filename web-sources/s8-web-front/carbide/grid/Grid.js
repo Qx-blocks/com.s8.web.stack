@@ -21,6 +21,12 @@ export class Grid extends NeObject {
         this.coreNode = document.createElement("div");
         this.coreNode.classList.add("grid-core");
         this.wrapperNode.appendChild(this.coreNode);
+
+        let _this = this;
+        this.wrapperNode.addEventListener("click", function (event) {
+            _this.S8_vertex.runVoid("on-click");
+            event.stopPropagation();
+        }, false);
     }
 
     S8_render(){ /* continuous rendering approach... */ }
