@@ -31,6 +31,12 @@ export class DynamicMeshScreen {
 
 	delay;
 
+
+	/**
+	 * @type{string}
+	 */
+	requestAnimationID;
+
 	constructor(options) {
 		this.opts = options;
 
@@ -85,9 +91,7 @@ export class DynamicMeshScreen {
 		}
 	}
 
-	loop() {
-		let _this = this;
-		window.requestAnimationFrame(function(){ _this.loop() });
+	redraw() {
 		this.drawArea.clearRect(0, 0, this.w, this.h);
 		let nParticles = this.particles.length;
 		for (let i = 0; i < nParticles; i++) {
@@ -98,6 +102,10 @@ export class DynamicMeshScreen {
 		for (let i = 0; i < nParticles; i++) {
 			this.linkPoints(this.particles[i], this.particles);
 		}
+
+
+		let _this = this;
+		this.requestAnimationID = window.requestAnimationFrame(function(){ _this.redraw() });
 	}
 
 	start() {
@@ -117,11 +125,14 @@ export class DynamicMeshScreen {
 		for (let i = 0; i < this.opts.particleAmount; i++) {
 			this.particles.push(new Particle(this));
 		}
-		window.requestAnimationFrame(function () {
-			_this.loop();
+		this.requestAnimationID = window.requestAnimationFrame(function () {
+			_this.redraw();
 		});
 	}
 	
+	stop(){
+		window.cancelAnimationFrame(this.requestAnimationID);
+	}
 }
 
 

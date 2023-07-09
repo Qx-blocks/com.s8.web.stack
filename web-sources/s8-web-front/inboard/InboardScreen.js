@@ -11,16 +11,20 @@ S8WebFront.CSS_import('/s8-web-front/inboard/inboard.css');
 export class InboardScreen {
 
 
+	/**
+	 * @type{DynamicMeshScreen}
+	 */
+	dynamicMeshScreen;
+	
+
 	constructor(title, onLoggingIn) {
 		this.title = title;
 		this.onLoggingIn = onLoggingIn;
-		this.build();
 	}
 
 
 
-	build() {
-
+	start() {
 
 		let wrapperNode = document.createElement("div");
 		wrapperNode.classList.add("inboard");
@@ -36,11 +40,11 @@ export class InboardScreen {
 			linkRadius: 256,
 		};
 
-		let dynamicMeshScreen = new DynamicMeshScreen(options);
-		dynamicMeshScreen.start();
-		
-		wrapperNode.appendChild(dynamicMeshScreen.getEnvelope());
-
+		/* <dynamic-mesh-screen> */
+		this.dynamicMeshScreen = new DynamicMeshScreen(options);
+		this.dynamicMeshScreen.start();
+		wrapperNode.appendChild(this.dynamicMeshScreen.getEnvelope());
+		/* </dynamic-mesh-screen> */
 
 		let formNode = document.createElement("div");
 
@@ -103,6 +107,11 @@ export class InboardScreen {
 
 	getEnvelope() {
 		return this.wrapperNode;
+	}
+
+
+	stop(){
+		this.dynamicMeshScreen.stop();
 	}
 
 }
