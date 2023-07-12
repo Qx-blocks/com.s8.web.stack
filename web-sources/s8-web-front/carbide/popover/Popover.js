@@ -66,6 +66,16 @@ export class Popover extends NeObject {
         this.direction = "left-top";
         this.node.classList.add("popover-" + this.direction);
 
+
+        // mouseover
+        /**
+         * @param {Event} event 
+         */
+        this.clickListener = function (event) {
+            event.stopPropagation();
+           /* do nothing => inert click */
+        }
+        this.node.addEventListener("click", this.clickListener, false);
     }
 
 
@@ -159,8 +169,6 @@ export class Popover extends NeObject {
     }
 
 
-    S8_render() { /* no post processing */ }
-    S8_dispose() { /* disposing */ }
 
 
     /* <chaining> */
@@ -182,6 +190,22 @@ export class Popover extends NeObject {
             this.node.removeChild(this.popover.getEnvelope());
             this.popover = null;
         }
+    }
+
+
+    /**
+     * render
+     */
+    S8_render() { /* no post processing */ }
+
+
+    /**
+     * dispose
+     */
+    S8_dispose() {
+
+        // remove listeners
+        this.inputNode.removeEventListener("click", this.clickListener);
     }
 
 }

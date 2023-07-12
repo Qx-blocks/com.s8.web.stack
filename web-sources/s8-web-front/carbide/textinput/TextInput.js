@@ -88,32 +88,62 @@ export class TextInput extends NeObject {
 		let _this = this;
 
 		// mouseover
+		/**
+		 * @param {Event} event 
+		 */
+		this.clickListener = function (event) {
+			_this.onClick(event);
+			event.stopPropagation();
+		}
+		this.inputNode.addEventListener("click", this.clickListener, false);
+		
+		// mouseover
+		/**
+		 * @param {Event} event 
+		 */
 		this.mouseoverListener = function (event) {
-			this.onMouseOver(event);
+			_this.onMouseOver(event);
+			event.stopPropagation();
 		}
 		this.inputNode.addEventListener("mouseover", this.mouseOverListener, false);
 
 		// mouseleave
+		/**
+		 * @param {Event} event 
+		 */
 		this.mouseleaveListener = function (event) {
 			_this.onMouseleave(event);
+			event.stopPropagation();
 		}
 		this.inputNode.addEventListener("mouseleave", this.mouseLeaveListener, false);
 
 		// focus
+		/**
+		 * @param {Event} event 
+		 */
 		this.focusListener = function (event) {
 			_this.onFocus(event);
+			event.stopPropagation();
 		}
 		this.inputNode.addEventListener("focus", this.focusListener, false);
 
 		// blur
+		/**
+		 * @param {Event} event 
+		 */
 		this.blurListener = function (event) {
 			_this.onBlur(event);
+			event.stopPropagation();
 		}
 		this.inputNode.addEventListener("blur", this.blurListener, false);
 
 		// input
+		/**
+		 * @param {Event} event 
+		 */
 		this.inputListener = function (event) {
 			_this.onInput(event);
+			event.stopPropagation();
 		}
 		this.inputNode.addEventListener("input", this.inputListener, false);
 		/* </listeners> */
@@ -184,6 +214,10 @@ export class TextInput extends NeObject {
 
 
 
+	onClick(event) {
+
+	}
+	
 	onMouseOver(event) {
 		if (!this.popover && this.doc) {
 			//_this.popover = ui.popover(_this.node, "bottom-left", "default",
@@ -259,6 +293,7 @@ export class TextInput extends NeObject {
 		}
 
 		// remove listeners
+		this.inputNode.removeEventListener("click", this.clickListener);
 		this.inputNode.removeEventListener("mouseover", this.mouseoverListener);
 		this.inputNode.removeEventListener("mouseleave", this.mouseleaveListener);
 		this.inputNode.removeEventListener("focus", this.focusListener);

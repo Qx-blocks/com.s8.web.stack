@@ -67,6 +67,11 @@ export class Navbar extends NeObject {
     }
 
 
+    S8_set_selectedIndex(index){
+        this.select(index);
+    }
+
+
     /**
      * 
      * @param {*} index 

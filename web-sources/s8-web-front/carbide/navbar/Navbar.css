@@ -18,7 +18,7 @@
 .navbar-menu[selected="true"] {
     border-bottom: 3px solid rgb(216, 1, 1);
     color: black;
-    cursor: default;
+    cursor: pointer;
 }
 
 
@@ -33,7 +33,7 @@
     margin-bottom: 4px;
 }
 
-.navbar-menu[selected="false"] > .navbar-menu-label:hover {
+.navbar-menu > .navbar-menu-label:hover {
     background-color: rgb(231, 231, 255);
     border-radius: 4px;
     color: rgb(38, 33, 53);
