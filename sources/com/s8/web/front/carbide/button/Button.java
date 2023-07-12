@@ -2,6 +2,7 @@ package com.s8.web.front.carbide.button;
 
 import com.s8.io.bohr.neon.core.NeBranch;
 import com.s8.io.bohr.neon.functions.none.VoidNeFunction;
+import com.s8.io.bohr.neon.lambdas.none.VoidLambda;
 import com.s8.web.front.HTML_NeNode;
 import com.s8.web.front.S8WebSize;
 import com.s8.web.front.S8WebTheme;
@@ -90,8 +91,13 @@ public class Button extends HTML_NeNode {
 	
 	
 	
-	public void onClick(VoidNeFunction lambda) {
-		vertex.setVoidMethod("on-click", lambda);
+	public void onClick(VoidNeFunction function) {
+		vertex.setVoidMethod("on-click", function);
+	}
+	
+	
+	public void onClickLambda(VoidLambda lambda) {
+		vertex.setVoidMethodLambda("on-click", lambda);
 	}
 	
 }

@@ -5,39 +5,50 @@
  */
 export const S8_FlatIcons_Map = new Array(0x10000);
 
-
 /** alert */
 S8_FlatIcons_Map[0x0802] = "octicons/alert.svg";
 
 /** archive */
 S8_FlatIcons_Map[0x0803] = "octicons/archive.svg";
 
-/** lab */
-S8_FlatIcons_Map[0x0804] = "octicons/beaker.svg";
-
 /** broadcast */
-S8_FlatIcons_Map[0x0805] = "octicons/broadcast.svg";
+S8_FlatIcons_Map[0x0804] = "octicons/broadcast.svg";
 
 /** browser */
-S8_FlatIcons_Map[0x0806] = "octicons/browser.svg";
+S8_FlatIcons_Map[0x0805] = "octicons/browser.svg";
 
 /** checklist */
-S8_FlatIcons_Map[0x0807] = "octicons/checklist.svg";
-
-/** pulse */
-S8_FlatIcons_Map[0x0808] = "octicons/pulse.svg";
-
-/** sync */
-S8_FlatIcons_Map[0x0809] = "octicons/sync.svg";
-
-/** file */
-S8_FlatIcons_Map[0x080a] = "octicons/file.svg";
-
-/** fork */
-S8_FlatIcons_Map[0x080b] = "octicons/git-branch.svg";
+S8_FlatIcons_Map[0x0810] = "octicons/checklist.svg";
 
 /** compare */
-S8_FlatIcons_Map[0x080c] = "octicons/git-compare.svg";
+S8_FlatIcons_Map[0x8011] = "octicons/git-compare.svg";
+
+/** lab */
+S8_FlatIcons_Map[0x0812] = "octicons/beaker.svg";
+
+/** file */
+S8_FlatIcons_Map[0x0813] = "octicons/file.svg";
+
+/** fork */
+S8_FlatIcons_Map[0x0814] = "octicons/git-branch.svg";
+
+/** gear */
+S8_FlatIcons_Map[0x0815] = "octicons/gear.svg";
+
+/** pencil */
+S8_FlatIcons_Map[0x0821] = "octicons/pencil.svg";
+
+/** person */
+S8_FlatIcons_Map[0x0822] = "octicons/person.svg";
+
+/** play */
+S8_FlatIcons_Map[0x0823] = "octicons/play.svg";
+
+/** pulse */
+S8_FlatIcons_Map[0x0824] = "octicons/pulse.svg";
+
+/** sync */
+S8_FlatIcons_Map[0x0831] = "octicons/sync.svg";
 
 /** arrow_double_curved */
 S8_FlatIcons_Map[0x0202] = "set2/arrow-curve-left-right-winding-icon.svg";
@@ -71,5 +82,4 @@ S8_FlatIcons_Map[0x020b] = "set2/tech-icon.svg";
 
 /** thermodynamic */
 S8_FlatIcons_Map[0x020c] = "set2/thermometer-icon.svg";
-
 

@@ -22,6 +22,16 @@ public class Navbar extends HTML_NeNode {
 		super(branch, "/s8-web-front/carbide/navbar/Navbar");
 	}
 	
+
+	
+	/**
+	 * 
+	 * @param menus
+	 */
+	public void setSelectedIndex(int index) {
+		vertex.setUInt8Field("selectedIndex", index);
+	}
+	
 	
 	/**
 	 * 
