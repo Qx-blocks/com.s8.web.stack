@@ -41,7 +41,9 @@ export class TopbarElement extends NeObject {
         this.node = document.createElement("div");
         this.node.classList.add("topbar-element");
 
-        this.node.setAttribute("selected", "true");
+        /* selection */
+        this.node.setAttribute("selected", "false");
+        this.isSelected = false;
 
         const _this = this;
         this.node.addEventListener("click", function (event) {
