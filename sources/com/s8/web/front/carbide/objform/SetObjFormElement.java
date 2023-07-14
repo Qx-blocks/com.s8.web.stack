@@ -16,19 +16,33 @@ public class SetObjFormElement extends ObjFormElement {
 	
 	
 	
-	private boolean hasLoaded = false;
 	
-	private VoidLambda onLoad = null;
-
 	public SetObjFormElement(NeBranch branch) {
 		super(branch, "/s8-web-front/carbide/objform/SetObjFormElement");
 		
-		vertex.setVoidMethodLambda("load", () -> {
-			if(!hasLoaded && onLoad != null) {
-				onLoad.operate();
-			}
-		});
+		vertex.setVoidMethodLambda("on-expanded", () -> {});
+		vertex.setVoidMethodLambda("on-collapsed", () -> {});
 	}
+	
+	
+	/**
+	 * 
+	 * @param lambda
+	 */
+	public void onExpanded(VoidLambda lambda) {
+		vertex.setVoidMethodLambda("on-expanded", lambda);
+	}
+	
+	
+	/**
+	 * 
+	 * @param lambda
+	 */
+	public void onCollapsed(VoidLambda lambda) {
+		vertex.setVoidMethodLambda("on-collapsed", lambda);
+	}
+	
+	
 
 	public void setMarkupColor(ObjFormColor color) {
 		vertex.setUInt8Field("markupColor", color.code);
@@ -92,13 +106,6 @@ public class SetObjFormElement extends ObjFormElement {
 
 	public void setTogglingState(boolean mustBeExpanded){
 		vertex.setBool8Field("togglingState", mustBeExpanded);
-	}
-	
-	
-	
-	public void onLoad(VoidLambda lambda) {
-		this.onLoad = lambda;
-		this.hasLoaded = false;
 	}
 	
 	

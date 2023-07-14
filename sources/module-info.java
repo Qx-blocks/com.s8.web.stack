@@ -23,6 +23,7 @@ module com.s8.web.front {
 	exports com.s8.web.front.carbide.structure;
 	exports com.s8.web.front.carbide.textinput;
 	exports com.s8.web.front.carbide.title;
+	exports com.s8.web.front.carbide.topbar;
 	
 	
 	requires transitive com.s8.arch.fluor;

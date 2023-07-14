@@ -2,18 +2,23 @@
 
 
 .objform-box {
-    position: absolute;
+    position: relative;
     color: #eee;
     font: 12px arial, sans-serif;
     font-weight: 100;
     font-style: normal;
     font-variant-caps: normal;
+    text-align: left;
     width: 420px;
 
     /* to de deleted */
-    margin-left: 400px;
+    margin-left: 8px;
+    margin-right: 8px;
 }
 
+.objform-box * {
+    position: relative;
+}
 
 
 

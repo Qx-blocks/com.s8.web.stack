@@ -8,7 +8,7 @@ S8WebFront.CSS_import("/s8-web-front/carbide/dock/Dock.css");
 /**
  * 
  */
-export class ObjFormLayer extends CubeElement {
+export class ObjFormWrapper extends CubeElement {
 
     /**
      * 

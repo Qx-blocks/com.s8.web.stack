@@ -172,6 +172,7 @@ export class SetObjFormElement extends ObjFormElement {
                 "objform-object-body-expanded");
 
             this.isExpanded = true;
+            this.S8_vertex.runVoid("on-expanded");
         }
         else { // is expanded
             this.triangleNode.classList.replace("objform-icon-triangle-expanded", "objform-icon-triangle-collapsed");
@@ -179,6 +180,7 @@ export class SetObjFormElement extends ObjFormElement {
                 "objform-object-body-expanded", 
                 "objform-object-body-collapsed");
             this.isExpanded = false;
+            this.S8_vertex.runVoid("on-collapsed");
         }
     }
 
