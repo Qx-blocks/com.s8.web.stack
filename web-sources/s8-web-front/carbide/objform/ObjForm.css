@@ -14,12 +14,16 @@
     /* to de deleted */
     margin-left: 8px;
     margin-right: 8px;
+
+    max-height: 620px;
+    overflow: scroll;
 }
 
+/*
 .objform-box * {
     position: relative;
 }
-
+*/
 
 
 
@@ -36,6 +40,32 @@
     /*width: 100%; --> cancelled to enable auto-align right */
     clear: both;
 }
+
+.objform-object-body-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(64,64,64,0.64);
+    z-index: 1;
+    cursor: pointer;
+}
+
+.objform-object-body-overlay > svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: lime;
+    filter: drop-shadow(0px 0px 8px rgb(0, 255, 0, 0.8));
+}
+
+.objform-object-body-overlay[up-to-date="false"] {
+   visibility: visible;
+}
+
+.objform-object-body-overlay[up-to-date="true"] {
+    visibility: hidden;
+ }
 
 .objform-object-body-expanded {
    visibility: visible;
@@ -295,7 +325,7 @@ div[class*="objform-icon-color-"]> svg {
 .objform-input > input, .objform-input > select {
     width: 100%;
     background: #303030;
-    font-size: 14px;
+    font-size: 13px;
     color: aqua;
     text-align: right;
     padding-left: 2px;
@@ -350,6 +380,54 @@ div[class*="objform-icon-color-"]> svg {
     color: rgb(97, 206, 233);
 }
 
+
+/* toolttip inserted inline */
+.objform-info {
+    position: relative;
+    font: 12px arial, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-variant-caps: normal;
+    text-align: left;
+    font-size: 12px;
+    margin-bottom: 3px;
+    background-color: #53697c;
+    color: #222222;
+    border-radius: 2px;
+    margin-left: 4px;
+    padding: 0 3px 0 3px;
+}
+
+.objform-info > div[class*="popover"]{
+    visibility: hidden;
+}
+
+.objform-info:hover > div[class*="popover"]{
+    visibility: visible;
+}
+
+.objform-info[enabled = "true"]{
+    visibility: visible;
+}
+
+.objform-info[enabled = "false"]{
+    visibility: hidden;
+}
+
+
+.objform-doc-text {
+    margin: 0 8px 0 8px;
+    font: 12px arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-variant-caps: normal;
+    font-size: 12px;
+    color: #222222;
+    max-width: 320px;
+    min-width: 200px;
+    max-height: 60px;
+    overflow-y: scroll;
+}
 
 /* <icons> */
 .objform-expand-icon{

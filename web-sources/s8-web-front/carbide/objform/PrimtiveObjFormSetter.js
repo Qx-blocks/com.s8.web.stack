@@ -28,6 +28,7 @@ export class PrimtiveObjFormSetter extends ObjFormElement {
 
         this.createNameNode();
         this.createInputNode();
+        this.fieldNode.appendChild(this.createInfoNode());
         this.createPlusNode();
     }
 

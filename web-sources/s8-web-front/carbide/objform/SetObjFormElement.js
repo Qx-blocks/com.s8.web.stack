@@ -15,6 +15,23 @@ import { getColor, ObjFormElement } from '/s8-web-front/carbide/objform/ObjFormE
  */
 export class SetObjFormElement extends ObjFormElement {
 
+
+
+
+
+
+    /**
+     * @type{boolean}
+     */
+    isUpToDate = false;
+
+
+    /**
+     * @type{HTMLDivElement}
+     */
+    upToDateOverlayNode = null;
+
+
     constructor() {
         
         super();
@@ -81,6 +98,9 @@ export class SetObjFormElement extends ObjFormElement {
         this.typeNode.innerHTML = "${field_type}:";
         typeWrapperNode.appendChild(this.typeNode);
 
+        /* info node */
+        this.headerNode.appendChild(this.createInfoNode());
+
         this.plusNode = document.createElement("div");
         this.plusNode.classList.add("objform-icon-dots");
         this.plusNode.innerHTML = ` <svg 
@@ -107,6 +127,27 @@ export class SetObjFormElement extends ObjFormElement {
         this.bodyNode = document.createElement("div");
         this.bodyNode.classList.add("objform-object-body", "objform-object-body-collapsed");
         this.fieldNode.appendChild(this.bodyNode);
+
+
+        /* <overlay> */
+        this.upToDateOverlayNode = document.createElement("div");
+        this.upToDateOverlayNode.classList.add("objform-object-body-overlay");
+        this.upToDateOverlayNode.setAttribute("up-to-date", "true");
+        this.isUpToDate = true;
+        S8WebFront.SVG_insertByName(this.upToDateOverlayNode, "octicons/sync.svg", 32, 32);
+      
+        this.upToDateOverlayNode.addEventListener("click", function(event){
+            event.stopPropagation();
+            _this.onSync();
+        });
+        this.bodyNode.appendChild(this.upToDateOverlayNode);
+        /* </overlay> */
+
+        /* <content> */
+        this.elementsNode = document.createElement("div");
+        this.bodyNode.appendChild(this.elementsNode);
+        /* </content> */
+
         /* </body> */
     }
 
@@ -142,12 +183,12 @@ export class SetObjFormElement extends ObjFormElement {
 
     S8_set_fields(fields){
         // remove previous nodes
-        S8.removeChildren(this.bodyNode);
+        S8.removeChildren(this.elementsNode);
 
         // add new ones
         let _this = this;
         fields.forEach(field => {
-            _this.bodyNode.appendChild(field.getEnvelope());
+            _this.elementsNode.appendChild(field.getEnvelope());
         });
     }
 
@@ -214,13 +255,34 @@ export class SetObjFormElement extends ObjFormElement {
     }
 
 
+    onSync(){
+        this.S8_vertex.runVoid("on-sync");
+    }
+
+
     loadFields(){
 
     }
 
     removeFields(){
-         S8.removeChildren(this.bodyNode);
+         S8.removeChildren(this.elementsNode);
     }
+
+
+
+    S8_set_isUpToDate(state){
+        if(state && !this.isUpToDate){
+            this.upToDateOverlayNode.setAttribute("up-to-date", "true");
+            this.isUpToDate = true;
+        }
+        else if(!state && this.isUpToDate){
+            this.upToDateOverlayNode.setAttribute("up-to-date", "false");
+            this.isUpToDate = false;
+        }
+    }
+
+
+
 
     S8_render(){ /* continuous rendering approach... */ }
 

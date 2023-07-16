@@ -74,6 +74,14 @@ public class Popover extends NeObject {
 		vertex.setObjectListField("content", elements);
 	}
 	
+	/**
+	 * 
+	 * @param elements
+	 */
+	public void setElements(HTML_NeNode... elements) {
+		vertex.setObjectListField("content", elements);
+	}
+	
 	
 
 	/**

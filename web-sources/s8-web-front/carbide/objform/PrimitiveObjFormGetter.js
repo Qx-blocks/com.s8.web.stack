@@ -6,6 +6,8 @@ import { getColor, ObjFormElement } from "/s8-web-front/carbide/objform/ObjFormE
  */
 export class PrimtiveObjFormGetter extends ObjFormElement {
 
+
+
     constructor(markupColor) {
 
         super();
@@ -33,8 +35,13 @@ export class PrimtiveObjFormGetter extends ObjFormElement {
 
 
         this.createOutputNode();
+        this.fieldNode.appendChild(this.createInfoNode());
         this.createPlusNode();
     }
+
+
+    
+
 
     createPlusNode() {
         this.plusNode = document.createElement("div");

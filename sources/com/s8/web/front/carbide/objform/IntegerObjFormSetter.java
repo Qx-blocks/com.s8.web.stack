@@ -11,6 +11,45 @@ import com.s8.io.bohr.neon.lambdas.primitives.Int32Lambda;
  *
  */
 public class IntegerObjFormSetter extends PrimitiveObjFormSetter {
+	
+	
+	/**
+	 * 
+	 * @param branch
+	 * @param name
+	 * @param initialValue
+	 * @param lambda
+	 * @return
+	 */
+	public static IntegerObjFormSetter create(NeBranch branch, String name, int initialValue, Int32Lambda lambda) {
+		IntegerObjFormSetter fieldView = new IntegerObjFormSetter(branch);
+		fieldView.setName(name);
+		fieldView.setValue(initialValue);
+		fieldView.onSetValueLambda(lambda);
+		return fieldView;
+	}
+	
+	
+	/**
+	 * 
+	 * @param branch
+	 * @param name
+	 * @param initialValue
+	 * @param lambda
+	 * @param doc
+	 * @return
+	 */
+	public static IntegerObjFormSetter create(NeBranch branch, String name, int initialValue, Int32Lambda lambda, String doc) {
+		IntegerObjFormSetter fieldView = new IntegerObjFormSetter(branch);
+		fieldView.setName(name);
+		fieldView.setValue(initialValue);
+		fieldView.onSetValueLambda(lambda);
+		fieldView.setTooltipDoc(doc);
+		return fieldView;
+	}
+	
+	
+	
 
 	public IntegerObjFormSetter(NeBranch branch) {
 		super(branch, "/s8-web-front/carbide/objform/IntegerObjFormSetter");

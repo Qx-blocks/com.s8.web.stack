@@ -4,10 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.s8.io.bohr.neon.core.NeBranch;
+import com.s8.io.bohr.neon.functions.none.VoidNeFunction;
 import com.s8.io.bohr.neon.lambdas.none.VoidLambda;
+import com.s8.io.bohr.neon.lambdas.primitives.Bool8Lambda;
 import com.s8.io.bohr.neon.lambdas.primitives.Float32Lambda;
 import com.s8.io.bohr.neon.lambdas.primitives.Int32Lambda;
 import com.s8.io.bohr.neon.lambdas.primitives.StringUTF8Lambda;
+import com.s8.web.front.carbide.S8NumberFormat;
 import com.s8.web.front.carbide.icons.S8FlatIcon;
 
 
@@ -22,6 +25,7 @@ public class SetObjFormElement extends ObjFormElement {
 		
 		vertex.setVoidMethodLambda("on-expanded", () -> {});
 		vertex.setVoidMethodLambda("on-collapsed", () -> {});
+		vertex.setVoidMethodLambda("on-sync", () -> {});
 	}
 	
 	
@@ -135,10 +139,11 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param unit
 	 * @param value
 	 */
-	public void addScalarGetter(String name, String unit, String value) {
+	public void addScalarGetter(String name, String unit, S8NumberFormat format, double value) {
 		ScalarObjFormGetter fieldView = new ScalarObjFormGetter(vertex.getBranch());
 		fieldView.setName(name);
 		fieldView.setUnit(unit);
+		fieldView.setFormat(format);
 		fieldView.setValue(value);
 		vertex.addObjToList("fields", fieldView);
 	}
@@ -171,6 +176,7 @@ public class SetObjFormElement extends ObjFormElement {
 	
 	
 	
+	
 	/**
 	 * helper method
 	 * @param name
@@ -178,13 +184,46 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param initialValue
 	 * @param lambda
 	 */
-	public void addScalarSetter(String name, String unit, double initialValue, Float32Lambda lambda) {
-		ScalarObjFormSetter fieldView = new ScalarObjFormSetter(vertex.getBranch());
-		fieldView.setName(name);
-		fieldView.setUnit(unit);
-		fieldView.setValue((float) initialValue);
-		fieldView.onSetValue(lambda);
-		vertex.addObjToList("fields", fieldView);
+	public void addBooleanSetter(String name, boolean initialValue, Bool8Lambda lambda) {
+		vertex.addObjToList("fields", BooleanObjFormSetter.create(vertex.getBranch(), name, initialValue, lambda));
+	}
+	
+	/**
+	 * helper method
+	 * @param name
+	 * @param unit
+	 * @param initialValue
+	 * @param lambda
+	 */
+	public void addBooleanSetter(String name, boolean initialValue, Bool8Lambda lambda, String doc) {
+		vertex.addObjToList("fields", BooleanObjFormSetter.create(vertex.getBranch(), name, initialValue, lambda, doc));
+	}
+	
+	
+	
+	/**
+	 * helper method
+	 * @param name
+	 * @param unit
+	 * @param initialValue
+	 * @param lambda
+	 */
+	public void addScalarSetter(String name, String unit, S8NumberFormat format, double initialValue, 
+			Float32Lambda lambda) {
+		vertex.addObjToList("fields", ScalarObjFormSetter.create(vertex.getBranch(), name, unit, format, initialValue, lambda));
+	}
+	
+	
+	/**
+	 * helper method
+	 * @param name
+	 * @param unit
+	 * @param initialValue
+	 * @param lambda
+	 */
+	public void addScalarSetter(String name, String unit, S8NumberFormat format, double initialValue, 
+			Float32Lambda lambda, String doc) {
+		vertex.addObjToList("fields", ScalarObjFormSetter.create(vertex.getBranch(), name, unit, format, initialValue, lambda, doc));
 	}
 	
 	
@@ -197,12 +236,20 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param lambda
 	 */
 	public void addIntegerSetter(String name, int initialValue, Int32Lambda lambda) {
-		IntegerObjFormSetter fieldView = new IntegerObjFormSetter(vertex.getBranch());
-		fieldView.setName(name);
-		fieldView.setValue(initialValue);
-		fieldView.onSetValueLambda(lambda);
-		vertex.addObjToList("fields", fieldView);
+		vertex.addObjToList("fields", IntegerObjFormSetter.create(vertex.getBranch(), name, initialValue, lambda));
 	}
+
+
+	/**
+	 * 
+	 * @param name
+	 * @param initialValue
+	 * @param lambda
+	 */
+	public void addIntegerSetter(String name, int initialValue, Int32Lambda lambda, String doc) {
+		vertex.addObjToList("fields", IntegerObjFormSetter.create(vertex.getBranch(), name, initialValue, lambda, doc));
+	}
+	
 	
 	
 	/**
@@ -219,6 +266,36 @@ public class SetObjFormElement extends ObjFormElement {
 		fieldView.onSetValueLambda(lambda);
 		vertex.addObjToList("fields", fieldView);
 	}
+	
+	
+	/**
+	 * 
+	 * @param state
+	 */
+	public void setUpToDate(boolean state) {
+		vertex.setBool8Field("isUpToDate", state);
+	}
+	
+	
+	
+	/**
+	 * 
+	 * @param lambda
+	 */
+	public void onSyncLambda(VoidLambda lambda) {
+		vertex.setVoidMethodLambda("on-sync", lambda);
+	}
+	
+	
+	/**
+	 * 
+	 * @param lambda
+	 */
+	public void onSync(VoidNeFunction function) {
+		vertex.setVoidMethod("on-sync", function);
+	}
+	
+	
 	
 
 }

@@ -1,5 +1,6 @@
 
 
+import { S8_NumberFormats } from '/s8-web-front/carbide/S8NumberFormat.js';
 import { PrimtiveObjFormSetter } from '/s8-web-front/carbide/objform/PrimtiveObjFormSetter.js';
 
 
@@ -10,6 +11,12 @@ export class ScalarObjFormSetter extends PrimtiveObjFormSetter {
      * 
      */
     value = "(unset)";
+
+    /**
+     * @type{Intl.NumberFormat}
+     */
+    format = S8_NumberFormats[0x22];
+
 
     constructor() {
         super(2);
@@ -61,8 +68,17 @@ export class ScalarObjFormSetter extends PrimtiveObjFormSetter {
         this.setUnit(abbreviation);
     }
 
+
+    /**
+     * 
+     * @param {number} value 
+     */
     S8_set_value(value){
-        this.inputNode.value = value;
+        this.inputNode.value = this.format.format(value);
+    }
+
+    S8_set_format(code){
+        this.format = S8_NumberFormats[code];
     }
 
 }

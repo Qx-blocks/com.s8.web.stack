@@ -12,6 +12,7 @@ module com.s8.web.front {
 	
 	exports com.s8.web.front.asw;
 	
+	exports com.s8.web.front.carbide;
 	exports com.s8.web.front.carbide.button;
 	exports com.s8.web.front.carbide.cube;
 	exports com.s8.web.front.carbide.dock;
