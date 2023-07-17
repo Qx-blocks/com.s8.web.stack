@@ -16,7 +16,7 @@ export class BooleanObjFormGetter extends PrimtiveObjFormGetter {
         /* <output> */
         this.outputNode = document.createElement("div");
         this.outputNode.classList.add("objform-output");
-        this.fieldNode.appendChild(this.outputNode);
+        this.buttonNode.appendChild(this.outputNode);
         this.outputNode.innerHTML = `<span>(value)</span>`;
         /* </output> */
     }

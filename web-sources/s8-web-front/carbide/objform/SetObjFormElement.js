@@ -42,12 +42,12 @@ export class SetObjFormElement extends ObjFormElement {
         this.markupColorCode = 3;
 
         // field node already created by super
-        this.fieldNode.classList.add("objform-object-field");
+        this.buttonNode.classList.add("objform-object-field");
 
         /* <header> */
         this.headerNode = document.createElement("div");
         this.headerNode.classList.add("objform-object-header");
-        this.fieldNode.appendChild(this.headerNode);
+        this.buttonNode.appendChild(this.headerNode);
 
 
         /* <ribbon> */
@@ -115,7 +115,7 @@ export class SetObjFormElement extends ObjFormElement {
         this.isExpanded = false; // initially collapsed
         this.bodyNode = document.createElement("div");
         this.bodyNode.classList.add("objform-object-body", "objform-object-body-collapsed");
-        this.fieldNode.appendChild(this.bodyNode);
+        this.buttonNode.appendChild(this.bodyNode);
 
 
         /* <overlay> */

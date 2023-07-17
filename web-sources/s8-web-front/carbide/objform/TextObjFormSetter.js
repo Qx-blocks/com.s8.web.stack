@@ -23,7 +23,7 @@ export class TextObjFormSetter extends PrimtiveObjFormSetter {
         this.inputNode = document.createElement("input");
         this.inputNode.setAttribute("type", "text");
         inputWrapperNode.appendChild(this.inputNode);
-        this.fieldNode.appendChild(inputWrapperNode);
+        this.buttonNode.appendChild(inputWrapperNode);
 
         let _this = this;
         this.inputListener = function(){ _this.sendValue(); };

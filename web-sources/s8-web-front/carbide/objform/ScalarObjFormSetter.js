@@ -30,7 +30,7 @@ export class ScalarObjFormSetter extends PrimtiveObjFormSetter {
         this.inputNode = document.createElement("input");
         this.inputNode.setAttribute("type", "text");
         inputWrapperNode.appendChild(this.inputNode);
-        this.fieldNode.appendChild(inputWrapperNode);
+        this.buttonNode.appendChild(inputWrapperNode);
 
         let _this = this;
         this.inputListener = function(){ _this.sendValue(); };
@@ -43,7 +43,7 @@ export class ScalarObjFormSetter extends PrimtiveObjFormSetter {
         this.unitNode = document.createElement("span");
         this.unitNode.innerHTML = "(unit)";
         unitWrapperNode.appendChild(this.unitNode);
-        this.fieldNode.appendChild(unitWrapperNode);
+        this.buttonNode.appendChild(unitWrapperNode);
         /* </unit> */
 
 

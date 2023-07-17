@@ -23,7 +23,7 @@ export class IntegerObjFormSetter extends PrimtiveObjFormSetter {
         this.inputNode = document.createElement("input");
         this.inputNode.setAttribute("type", "number");
         inputWrapperNode.appendChild(this.inputNode);
-        this.fieldNode.appendChild(inputWrapperNode);
+        this.buttonNode.appendChild(inputWrapperNode);
 
         let _this = this;
         this.inputListener = function(){ _this.sendValue(); };

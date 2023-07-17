@@ -14,15 +14,15 @@ export class PrimtiveObjFormSetter extends ObjFormElement {
         // setup
         this.markupColor = markupColor;
 
-        this.fieldNode = document.createElement("div");
-        this.fieldNode.classList.add("objform-primitive-field");
+        this.buttonNode = document.createElement("div");
+        this.buttonNode.classList.add("objform-primitive-field");
 
 
         /* <ribbon> */
         this.ribbonNode = document.createElement("div");
         this.ribbonNode.classList.add("objform-markup");
         this.ribbonNode.classList.add("objform-markup-" + getColor(markupColor));
-        this.fieldNode.appendChild(this.ribbonNode);
+        this.buttonNode.appendChild(this.ribbonNode);
         this.markupColor = markupColor;
         /* </ribbon> */
 
@@ -30,22 +30,22 @@ export class PrimtiveObjFormSetter extends ObjFormElement {
         this.createInputNode();
         
         /* tooltip node */
-        this.fieldNode.appendChild(this.createInfoNode());
+        this.buttonNode.appendChild(this.createInfoNode());
 
          /* options node */
-         this.fieldNode.appendChild(this.createPlusNode());
+         this.buttonNode.appendChild(this.createPlusNode());
     }
 
     createNameNode() {
         this.nameNode = document.createElement("div");
         this.nameNode.classList.add("objform-field-name-primitive");
         this.nameNode.innerHTML = "<span>field_name:</span>";
-        this.fieldNode.appendChild(this.nameNode);
+        this.buttonNode.appendChild(this.nameNode);
     }
 
 
     getEnvelope() {
-        return this.fieldNode;
+        return this.buttonNode;
     }
 
     setMarkupColor(colorCode) {

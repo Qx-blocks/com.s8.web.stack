@@ -29,13 +29,13 @@ export class ObjFormElement extends NeObject {
 
 
     /** @type{HTMLDivElement} */
-    fieldNode;
+    buttonNode = null;
 
 
     /**
      * @type{HTMLDivElement}
      */
-    infoNode;
+    infoNode = null;
 
     /**
      * @type{Popover}
@@ -49,11 +49,11 @@ export class ObjFormElement extends NeObject {
 
     constructor() {
         super();
-        this.fieldNode = document.createElement("div");
+        this.buttonNode = document.createElement("div");
     }
 
     getEnvelope() {
-        return this.fieldNode;
+        return this.buttonNode;
     }
 
 

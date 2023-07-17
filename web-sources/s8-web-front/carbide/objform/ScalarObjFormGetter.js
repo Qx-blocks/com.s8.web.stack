@@ -23,7 +23,7 @@ export class ScalarObjFormGetter extends PrimtiveObjFormGetter {
         /* <output> */
         this.outputNode = document.createElement("div");
         this.outputNode.classList.add("objform-output");
-        this.fieldNode.appendChild(this.outputNode);
+        this.buttonNode.appendChild(this.outputNode);
         this.outputNode.innerHTML = `<span>(value)</span>`;
         /* </output> */
 
@@ -33,7 +33,7 @@ export class ScalarObjFormGetter extends PrimtiveObjFormGetter {
         this.unitNode = document.createElement("span");
         this.unitNode.innerHTML = "(unit)";
         unitWrapperNode.appendChild(this.unitNode);
-        this.fieldNode.appendChild(unitWrapperNode);
+        this.buttonNode.appendChild(unitWrapperNode);
         /* </unit> */
     }
 
