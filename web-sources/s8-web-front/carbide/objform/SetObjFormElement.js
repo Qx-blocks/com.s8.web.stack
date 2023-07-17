@@ -42,12 +42,12 @@ export class SetObjFormElement extends ObjFormElement {
         this.markupColorCode = 3;
 
         // field node already created by super
-        this.buttonNode.classList.add("objform-object-field");
+        this.fieldNode.classList.add("objform-object-field");
 
         /* <header> */
         this.headerNode = document.createElement("div");
         this.headerNode.classList.add("objform-object-header");
-        this.buttonNode.appendChild(this.headerNode);
+        this.fieldNode.appendChild(this.headerNode);
 
 
         /* <ribbon> */
@@ -72,9 +72,9 @@ export class SetObjFormElement extends ObjFormElement {
         nameWrapperNode.classList.add("objform-field-name-object");
         this.headerNode.appendChild(nameWrapperNode);
 
-        this.nameNode = document.createElement("span");
-        this.nameNode.innerHTML = "${field_name}:";
-        nameWrapperNode.appendChild(this.nameNode);
+        this.fieldNameNode = document.createElement("span");
+        this.fieldNameNode.innerHTML = "${field_name}:";
+        nameWrapperNode.appendChild(this.fieldNameNode);
         /* </name> */
 
         this.iconNode = document.createElement("div");
@@ -115,7 +115,7 @@ export class SetObjFormElement extends ObjFormElement {
         this.isExpanded = false; // initially collapsed
         this.bodyNode = document.createElement("div");
         this.bodyNode.classList.add("objform-object-body", "objform-object-body-collapsed");
-        this.buttonNode.appendChild(this.bodyNode);
+        this.fieldNode.appendChild(this.bodyNode);
 
 
         /* <overlay> */
@@ -154,8 +154,8 @@ export class SetObjFormElement extends ObjFormElement {
         this.markupColorCode = colorCode;
     }
 
-    S8_set_name(name) {
-        this.nameNode.innerHTML = name;
+    S8_set_fieldName(name) {
+        this.fieldNameNode.innerHTML = name;
     }
 
     S8_set_typeName(name) {

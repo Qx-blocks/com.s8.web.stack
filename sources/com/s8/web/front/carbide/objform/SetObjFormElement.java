@@ -52,8 +52,8 @@ public class SetObjFormElement extends ObjFormElement {
 		vertex.setUInt8Field("markupColor", color.code);
 	}
 
-	public void setName(String name) {
-		vertex.setStringUTF8Field("name", name);
+	public void setFieldName(String name) {
+		vertex.setStringUTF8Field("fieldName", name);
 	}
 
 	public void setTypeName(String name) {
@@ -126,10 +126,6 @@ public class SetObjFormElement extends ObjFormElement {
 	}
 	
 	
-	public void addObjectField(String fieldName, SetObjFormElement objectElement) {
-		objectElement.setName(fieldName);
-		vertex.addObjToList("fields", objectElement);
-	}
 	
 	
 	
@@ -141,7 +137,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 */
 	public void addScalarGetter(String name, String unit, S8NumberFormat format, double value) {
 		ScalarObjFormGetter fieldView = new ScalarObjFormGetter(vertex.getBranch());
-		fieldView.setName(name);
+		fieldView.setFieldName(name);
 		fieldView.setUnit(unit);
 		fieldView.setFormat(format);
 		fieldView.setValue(value);
@@ -156,7 +152,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 */
 	public void addIntegerGetter(String name, int value) {
 		IntegerObjFormGetter fieldView = new IntegerObjFormGetter(vertex.getBranch());
-		fieldView.setName(name);
+		fieldView.setFieldName(name);
 		fieldView.setValue(value);
 		vertex.addObjToList("fields", fieldView);
 	}
@@ -169,7 +165,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 */
 	public void addTextGetter(String name, String value) {
 		TextObjFormGetter fieldView = new TextObjFormGetter(vertex.getBranch());
-		fieldView.setName(name);
+		fieldView.setFieldName(name);
 		fieldView.setValue(value);
 		vertex.addObjToList("fields", fieldView);
 	}

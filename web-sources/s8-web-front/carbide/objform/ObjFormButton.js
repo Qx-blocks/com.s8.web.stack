@@ -13,23 +13,23 @@ export class ObjFormButton extends ObjFormElement {
     constructor(){
         super();
     
-        this.buttonNode = document.createElement("div");
-        this.buttonNode.classList.add("objform-button");
+        this.fieldNode = document.createElement("div");
+        this.fieldNode.classList.add("objform-button");
 
         const _this = this;
-        this.buttonNode.addEventListener("click", function(event){
+        this.fieldNode.addEventListener("click", function(event){
             _this.S8_vertex.runVoid("on-click");
             S8.branch.loseFocus();
             event.stopPropagation();
         });
 
         this.labelNode = document.createElement("span");
-        this.buttonNode.appendChild(this.labelNode);
+        this.fieldNode.appendChild(this.labelNode);
     }
 
 
     getEnvelope(){
-        return this.buttonNode;
+        return this.fieldNode;
     }
 
 

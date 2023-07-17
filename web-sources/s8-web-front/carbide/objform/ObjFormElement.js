@@ -29,7 +29,7 @@ export class ObjFormElement extends NeObject {
 
 
     /** @type{HTMLDivElement} */
-    buttonNode = null;
+    fieldNode = null;
 
 
     /**
@@ -49,11 +49,11 @@ export class ObjFormElement extends NeObject {
 
     constructor() {
         super();
-        this.buttonNode = document.createElement("div");
+        this.fieldNode = document.createElement("div");
     }
 
     getEnvelope() {
-        return this.buttonNode;
+        return this.fieldNode;
     }
 
 

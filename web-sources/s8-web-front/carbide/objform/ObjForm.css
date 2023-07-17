@@ -334,7 +334,7 @@ div[class*="objform-icon-color-"]> svg {
 .objform-input > input, .objform-input > select {
     width: 100%;
     background: #303030;
-    font-size: 13px;
+    font-size: 12px;
     color: aqua;
     text-align: right;
     padding-left: 2px;

@@ -16,7 +16,7 @@ export class BooleanObjFormSetter extends PrimtiveObjFormSetter {
         this.inputNode = document.createElement("input");
         this.inputNode.setAttribute("type", "checkbox");
         inputWrapperNode.appendChild(this.inputNode);
-        this.buttonNode.appendChild(inputWrapperNode);
+        this.fieldNode.appendChild(inputWrapperNode);
         /* </input> */
     }
 

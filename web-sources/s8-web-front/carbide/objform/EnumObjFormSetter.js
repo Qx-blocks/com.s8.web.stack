@@ -26,7 +26,7 @@ export class EnumObjFormSetter extends PrimtiveObjFormSetter {
         this.selectNode = document.createElement("select");
         this.selectNode.setAttribute("name", "list");
         selectWrapperNode.appendChild(this.selectNode);
-        this.buttonNode.appendChild(selectWrapperNode);
+        this.fieldNode.appendChild(selectWrapperNode);
 
         // populate with options
         for(let i=0; i<4; i++){
