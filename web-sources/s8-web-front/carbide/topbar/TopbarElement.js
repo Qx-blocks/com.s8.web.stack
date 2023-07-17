@@ -3,6 +3,7 @@ import { S8WebFront } from "/s8-web-front/S8WebFront.js";
 import { NeObject } from "/s8-io-bohr-neon/NeObject.js";
 import { Popover } from "/s8-web-front/carbide/popover/Popover.js";
 import { Topbar } from "/s8-web-front/carbide/topbar/Topbar.js";
+import { S8 } from "/s8-io-bohr-atom/S8.js";
 
 
 /**
@@ -47,6 +48,7 @@ export class TopbarElement extends NeObject {
 
         const _this = this;
         this.node.addEventListener("click", function (event) {
+            S8.branch.loseFocus();
             _this.toggle();
             event.stopPropagation();
         }, false);

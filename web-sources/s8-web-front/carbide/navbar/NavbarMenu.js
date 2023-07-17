@@ -2,6 +2,7 @@
 import { S8WebFront } from "/s8-web-front/S8WebFront.js";
 import { NeObject } from "/s8-io-bohr-neon/NeObject.js";
 import { Navbar } from "/s8-web-front/carbide/navbar/Navbar.js";
+import { S8 } from "/s8-io-bohr-atom/S8.js";
 
 
 /**
@@ -51,6 +52,7 @@ export class NavbarMenu extends NeObject {
 
         const _this = this;
         this.wrapperNode.addEventListener("click", function (event) {
+            S8.branch.loseFocus();
             _this.navbar.select(_this.index);
             _this.S8_vertex.runVoid("on-selected");
             event.stopPropagation();
@@ -102,6 +104,8 @@ export class NavbarMenu extends NeObject {
     S8_render(){
     }
 
+
+    S8_unfocus(){ /* lose focus by other means */ }
 
     /**
      * 

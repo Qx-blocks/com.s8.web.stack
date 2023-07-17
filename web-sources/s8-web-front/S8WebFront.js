@@ -24,12 +24,6 @@ class S8WebFrontUtilities {
 	map_SVG_sources = new Map();
 
 
-	/**
-	 * @type{Object} 
-	 * Previously active object: the last which sends a signal
-	 */
-	previouslyFocussed = null;
-
 
 
 	constructor() {
@@ -125,25 +119,6 @@ class S8WebFrontUtilities {
 	}
 
 
-
-
-
-	/**
-	 * 
-	 * @param {Object} object 
-	 */
-	focus(object) {
-		let previous = this.previouslyFocussed;
-		if (previous != null) {
-			if (previous.S8_unfocus) {
-				previous.S8_unfocus();
-			}
-			else {
-				console.log("Object missing a S8_unfocus method: " + previous);
-			}
-		}
-		this.previouslyFocussed = object;
-	}
 
 
 
