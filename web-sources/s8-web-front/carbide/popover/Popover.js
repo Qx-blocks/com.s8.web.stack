@@ -1,4 +1,5 @@
 
+import { S8 } from "/s8-io-bohr-atom/S8.js";
 import { NeObject } from "/s8-io-bohr-neon/NeObject.js";
 import { S8WebFront } from "/s8-web-front/S8WebFront.js";
 
@@ -71,8 +72,10 @@ export class Popover extends NeObject {
         /**
          * @param {Event} event 
          */
+        const _this = this;
         this.clickListener = function (event) {
             event.stopPropagation();
+            S8.branch.loseFocus();
            /* do nothing => inert click */
         }
         this.node.addEventListener("click", this.clickListener, false);
@@ -93,6 +96,8 @@ export class Popover extends NeObject {
             this.isDisplayed = true;
         }
     }
+
+
 
     getEnvelope() {
         return this.node;
@@ -199,6 +204,9 @@ export class Popover extends NeObject {
     S8_render() { /* no post processing */ }
 
 
+    S8_unfocus(){ this.hide(); }
+
+
     /**
      * dispose
      */
@@ -207,5 +215,4 @@ export class Popover extends NeObject {
         // remove listeners
         this.inputNode.removeEventListener("click", this.clickListener);
     }
-
 }

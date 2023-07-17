@@ -33,7 +33,7 @@ export class SetObjFormElement extends ObjFormElement {
 
 
     constructor() {
-        
+
         super();
 
         // default setup
@@ -101,24 +101,13 @@ export class SetObjFormElement extends ObjFormElement {
         /* info node */
         this.headerNode.appendChild(this.createInfoNode());
 
-        this.plusNode = document.createElement("div");
-        this.plusNode.classList.add("objform-icon-dots");
-        this.plusNode.innerHTML = ` <svg 
-            width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-            <circle cx="8" cy="32" r="8" />
-            <circle cx="32" cy="32" r="8" />
-            <circle cx="56" cy="32" r="8" />
-        </svg>`;
-        const _this = this;
-        this.plusNode.addEventListener("click", function(event){
-            event.stopPropagation();
-            _this.onPlus();
-        });
-        this.headerNode.appendChild(this.plusNode);
+        /* options node */
+        this.headerNode.appendChild(this.createPlusNode());
 
-       
-        this.headerNode.addEventListener("click", function(){
-           _this.toggle();
+        const _this = this;
+        this.headerNode.addEventListener("click", function () {
+            S8.branch.loseFocus();
+            _this.toggle();
         }, false);
         /* </header> */
 
@@ -135,8 +124,8 @@ export class SetObjFormElement extends ObjFormElement {
         this.upToDateOverlayNode.setAttribute("up-to-date", "true");
         this.isUpToDate = true;
         S8WebFront.SVG_insertByName(this.upToDateOverlayNode, "octicons/sync.svg", 32, 32);
-      
-        this.upToDateOverlayNode.addEventListener("click", function(event){
+
+        this.upToDateOverlayNode.addEventListener("click", function (event) {
             event.stopPropagation();
             _this.onSync();
         });
@@ -157,7 +146,7 @@ export class SetObjFormElement extends ObjFormElement {
         this.iconNode.classList.replace(previous, next);
         this.iconColorCode = colorCode;
     }
-    
+
     S8_set_markupColor(colorCode) {
         let previous = "objform-markup-" + getColor(this.markupColorCode);
         let next = "objform-markup-" + getColor(colorCode);
@@ -173,15 +162,15 @@ export class SetObjFormElement extends ObjFormElement {
         this.typeNode.innerHTML = name;
     }
 
-    S8_set_iconShapeByCode(code){
-       S8WebFront.SVG_insertByCode(this.iconNode, code, 16, 16);
+    S8_set_iconShapeByCode(code) {
+        S8WebFront.SVG_insertByCode(this.iconNode, code, 16, 16);
     }
 
-    S8_set_iconShape(name){
+    S8_set_iconShape(name) {
         S8WebFront.SVG_insertByName(this.iconNode, name, 16, 16);
     }
 
-    S8_set_fields(fields){
+    S8_set_fields(fields) {
         // remove previous nodes
         S8.removeChildren(this.elementsNode);
 
@@ -198,18 +187,18 @@ export class SetObjFormElement extends ObjFormElement {
      * @param {boolean} mustBeExpanded 
      */
     S8_set_togglingState(mustBeExpanded) {
-        if(this.isExpanded != mustBeExpanded){
+        if (this.isExpanded != mustBeExpanded) {
             this.toggle();
         }
     }
 
 
-    toggle(){
-        if(!this.isExpanded){ // initially collapsed
+    toggle() {
+        if (!this.isExpanded) { // initially collapsed
             // update header
             this.triangleNode.classList.replace("objform-icon-triangle-collapsed", "objform-icon-triangle-expanded");
             this.bodyNode.classList.replace(
-                "objform-object-body-collapsed", 
+                "objform-object-body-collapsed",
                 "objform-object-body-expanded");
 
             this.isExpanded = true;
@@ -218,7 +207,7 @@ export class SetObjFormElement extends ObjFormElement {
         else { // is expanded
             this.triangleNode.classList.replace("objform-icon-triangle-expanded", "objform-icon-triangle-collapsed");
             this.bodyNode.classList.replace(
-                "objform-object-body-expanded", 
+                "objform-object-body-expanded",
                 "objform-object-body-collapsed");
             this.isExpanded = false;
             this.S8_vertex.runVoid("on-collapsed");
@@ -226,10 +215,10 @@ export class SetObjFormElement extends ObjFormElement {
     }
 
 
-    onPlus(){
+    onPlus() {
 
         S8WebFront.focus(this);
-        
+
         let item0 = new PopoverMenuItem();
         item0.S8_set_name("Fork");
         item0.S8_set_icon("octicons/alert");
@@ -241,7 +230,7 @@ export class SetObjFormElement extends ObjFormElement {
         let item2 = new PopoverMenuItem();
         item2.S8_set_name("Fork");
         item2.S8_set_icon("octicons/git-merge");
-        
+
         let plusMenu = new Popover();
         plusMenu.S8_set_items([item0, item1, item2]);
 
@@ -255,27 +244,27 @@ export class SetObjFormElement extends ObjFormElement {
     }
 
 
-    onSync(){
+    onSync() {
         this.S8_vertex.runVoid("on-sync");
     }
 
 
-    loadFields(){
+    loadFields() {
 
     }
 
-    removeFields(){
-         S8.removeChildren(this.elementsNode);
+    removeFields() {
+        S8.removeChildren(this.elementsNode);
     }
 
 
 
-    S8_set_isUpToDate(state){
-        if(state && !this.isUpToDate){
+    S8_set_isUpToDate(state) {
+        if (state && !this.isUpToDate) {
             this.upToDateOverlayNode.setAttribute("up-to-date", "true");
             this.isUpToDate = true;
         }
-        else if(!state && this.isUpToDate){
+        else if (!state && this.isUpToDate) {
             this.upToDateOverlayNode.setAttribute("up-to-date", "false");
             this.isUpToDate = false;
         }
@@ -284,12 +273,10 @@ export class SetObjFormElement extends ObjFormElement {
 
 
 
-    S8_render(){ /* continuous rendering approach... */ }
+    S8_render() { /* continuous rendering approach... */ }
 
-    S8_dispose(){ /* nothing to dispose*/ }
+    S8_dispose() { /* nothing to dispose*/ }
 
-    S8_unfocus(){
-        this.plusNode.removeChild(this.menuWrapperNode);
-    }
+    S8_unfocus() { /* stable when unfocussing : do nothing */ }
 }
 

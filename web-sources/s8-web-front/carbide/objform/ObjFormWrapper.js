@@ -18,6 +18,8 @@ export class ObjFormWrapper extends CubeElement {
 
         this.node = document.createElement("div");
         this.node.classList.add("objform-box");
+
+        this.node.addEventListener("scroll", function(event){ event.stopPropagation(); });
     }
 
 

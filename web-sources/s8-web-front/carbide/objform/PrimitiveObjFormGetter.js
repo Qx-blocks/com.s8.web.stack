@@ -35,24 +35,18 @@ export class PrimtiveObjFormGetter extends ObjFormElement {
 
 
         this.createOutputNode();
+        
+        /* tooltip node */
         this.fieldNode.appendChild(this.createInfoNode());
-        this.createPlusNode();
+
+        /* options node */
+        this.fieldNode.appendChild(this.createPlusNode());
     }
 
 
     
 
 
-    createPlusNode() {
-        this.plusNode = document.createElement("div");
-        this.plusNode.classList.add("objform-icon-dots");
-        this.plusNode.innerHTML = `<svg 
-      width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-      <circle cx="8" cy="32" r="8" />
-      <circle cx="32" cy="32" r="8" />
-      <circle cx="56" cy="32" r="8" /></svg>`;
-        this.fieldNode.appendChild(this.plusNode);
-    }
 
     setMarkupColor(colorCode) {
         let previous = "objform-markup-" + getColor(this.markupColor);

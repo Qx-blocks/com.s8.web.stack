@@ -321,22 +321,22 @@
 
 /* <left> */
 
-.popover-left-top {
-    left: 100%;
-    top: 0px;
-    transform: translate(-8px, -38px);
+/* relative to target size */
+.popover-left-top, .popover-left, .popover-left-bottom {
+   left: 100%;
+   top: 50%;
+}
+
+.popover-left-top { /* relative to popover size */
+    transform: translate(12px, -23px);
 }
 
 .popover-left {
-    left: 100%;
-    top: 50%;
-    transform: translate(-8px, -50%);
+    transform: translate(12px, -50%);
 }
 
 .popover-left-bottom {
-    left: 100%;
-    top: 100%;
-    transform: translate(-8px, calc(9px - 100%));
+    transform: translate(12px, calc(9px - 100%));
 }
 
 

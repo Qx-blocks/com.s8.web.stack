@@ -3,6 +3,7 @@
 import { S8WebFront } from '/s8-web-front/S8WebFront.js';
 import { NeObject } from '/s8-io-bohr-neon/NeObject.js';
 import { PopoverBox } from '/s8-web-front/carbide/popover/PopoverBox.js';
+import { S8 } from '/s8-io-bohr-atom/S8.js';
 
 
 S8WebFront.CSS_import("/s8-web-front/carbide/dock/Dock.css");
@@ -19,7 +20,7 @@ export class DockItem extends NeObject {
 
         const _this = this;
         this.node0.addEventListener("click", function(){
-            S8.focus(_this);
+            S8.branch.loseFocus();
         });
 
         this.imageNode = document.createElement("img");

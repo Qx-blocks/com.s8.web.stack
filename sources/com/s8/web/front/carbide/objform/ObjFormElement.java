@@ -2,6 +2,8 @@ package com.s8.web.front.carbide.objform;
 
 import com.s8.io.bohr.neon.core.NeBranch;
 import com.s8.io.bohr.neon.core.NeObject;
+import com.s8.io.bohr.neon.functions.none.VoidNeFunction;
+import com.s8.io.bohr.neon.lambdas.none.VoidLambda;
 import com.s8.web.front.S8WebDirection;
 import com.s8.web.front.S8WebTheme;
 import com.s8.web.front.carbide.popover.Popover;
@@ -12,6 +14,7 @@ public class ObjFormElement extends NeObject {
 
 	public ObjFormElement(NeBranch branch, String typeName) {
 		super(branch, typeName);
+		onOptionsRequiredLambda(() -> {});
 	}
 
 	
@@ -27,5 +30,40 @@ public class ObjFormElement extends NeObject {
 		tooltip.setElements(ObjFormTextDoc.create(vertex.getBranch(), text));
 		vertex.setObjectField("tooltip", tooltip);
 	}
+	
+	
+	
+	public void setOptionsAvailability(boolean isAvailable) {
+		vertex.setBool8Field("hasOptions", isAvailable);
+	}
+	
+	
+	/**
+	 * 
+	 * @param lambda
+	 */
+	public void onOptionsRequiredLambda(VoidLambda lambda) {
+		vertex.setVoidMethodLambda("on-options-required", lambda);
+	}
+	
+	
+	/**
+	 * 
+	 * @param lambda
+	 */
+	public void onOptionsRequired(VoidNeFunction function) {
+		vertex.setVoidMethod("on-options-required", function);
+	}
+	
+	
+	/**
+	 * 
+	 * @param options
+	 */
+	public void setOptions(ObjFormOption... options) {
+		vertex.setObjectListField("options", options);
+	}
+	
+
 	
 }

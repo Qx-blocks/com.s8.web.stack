@@ -16,7 +16,7 @@
     margin-right: 8px;
 
     max-height: 620px;
-    overflow: scroll;
+    /*overflow: scroll;*/
 }
 
 /*
@@ -174,12 +174,23 @@
     fill: rgb(128, 128, 128);
 }
 
+/* <options> */
 
 .objform-icon-dots{
+    position: relative;
     margin-left: 4px;
     cursor: pointer;
     padding-top: 2px;    
     padding-bottom: 2px;
+}
+
+.objform-icon-dots[enabled="true"]{
+    visibility: visible;
+}
+
+.objform-icon-dots[enabled="false"]{
+    visibility: hidden;
+    display: none;
 }
 
 
@@ -194,6 +205,10 @@
 .objform-icon-dots:hover >svg {
     fill: #4be939;
 }
+
+.objform-option-text
+
+/* <options> */
 
 
 .objform-icon-size-16 {
@@ -302,6 +317,7 @@ div[class*="objform-icon-color-"]> svg {
     cursor: pointer;
     padding-top: 3px;
     padding-bottom: 3px;
+    margin-right: 8px;
 }
 
 .objform-field-name-object:hover {
@@ -412,6 +428,7 @@ div[class*="objform-icon-color-"]> svg {
 
 .objform-info[enabled = "false"]{
     visibility: hidden;
+    display: none;
 }
 
 

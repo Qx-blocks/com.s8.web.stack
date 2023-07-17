@@ -294,7 +294,7 @@ public class SetObjFormElement extends ObjFormElement {
 	public void onSync(VoidNeFunction function) {
 		vertex.setVoidMethod("on-sync", function);
 	}
-	
+
 	
 	
 
