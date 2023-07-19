@@ -9,13 +9,13 @@ public class ScalarObjFormGetter extends PrimitiveObjFormGetter {
 	/**
 	 * 
 	 * @param branch
-	 * @param name
+	 * @param fieldName
 	 * @param unit
 	 * @return
 	 */
-	public static final ScalarObjFormGetter create(NeBranch branch, String name, String unit, S8NumberFormat format) {
+	public static final ScalarObjFormGetter create(NeBranch branch, String fieldName, String unit, S8NumberFormat format) {
 		ScalarObjFormGetter fieldView = new ScalarObjFormGetter(branch);
-		fieldView.setFieldName(name);
+		fieldView.setFieldName(fieldName);
 		fieldView.setUnit(unit);
 		fieldView.setFormat(format);
 		return fieldView;
@@ -24,14 +24,14 @@ public class ScalarObjFormGetter extends PrimitiveObjFormGetter {
 	/**
 	 * 
 	 * @param branch
-	 * @param name
+	 * @param fieldName
 	 * @param unit
 	 * @param value
 	 * @return
 	 */
-	public static final ScalarObjFormGetter create(NeBranch branch, String name, String unit, S8NumberFormat format, double value) {
+	public static final ScalarObjFormGetter create(NeBranch branch, String fieldName, String unit, S8NumberFormat format, double value) {
 		ScalarObjFormGetter fieldView = new ScalarObjFormGetter(branch);
-		fieldView.setFieldName(name);
+		fieldView.setFieldName(fieldName);
 		fieldView.setUnit(unit);
 		fieldView.setFormat(format);
 		fieldView.setValue(value);

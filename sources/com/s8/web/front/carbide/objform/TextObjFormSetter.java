@@ -23,11 +23,11 @@ public class TextObjFormSetter extends PrimitiveObjFormSetter {
 	
 
 	
-	public void onSetValue(StringUTF8NeFunction func) {
-		vertex.setStringUTF8Method("set-value", func);
+	public void onValueChanged(StringUTF8NeFunction func) {
+		vertex.setStringUTF8Method("on-value-changed", func);
 	}
 	
-	public void onSetValueLambda(StringUTF8Lambda lambda) {
-		vertex.setStringUTF8MethodLambda("set-value", lambda);
+	public void onValueChangedLambda(StringUTF8Lambda lambda) {
+		vertex.setStringUTF8MethodLambda("on-value-changed", lambda);
 	}
 }

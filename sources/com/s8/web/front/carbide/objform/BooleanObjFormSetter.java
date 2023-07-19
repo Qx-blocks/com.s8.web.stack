@@ -16,7 +16,7 @@ public class BooleanObjFormSetter extends PrimitiveObjFormSetter {
 		BooleanObjFormSetter fieldView = new BooleanObjFormSetter(branch);
 		fieldView.setName(name);
 		fieldView.setValue(initialValue);
-		fieldView.onSetValue(lambda);
+		fieldView.onValueChangedLambda(lambda);
 		return fieldView;
 	}
 	
@@ -25,7 +25,7 @@ public class BooleanObjFormSetter extends PrimitiveObjFormSetter {
 		BooleanObjFormSetter fieldView = new BooleanObjFormSetter(branch);
 		fieldView.setName(name);
 		fieldView.setValue(initialValue);
-		fieldView.onSetValue(lambda);
+		fieldView.onValueChangedLambda(lambda);
 		fieldView.setTooltipDoc(doc);
 		return fieldView;
 	}
@@ -54,8 +54,8 @@ public class BooleanObjFormSetter extends PrimitiveObjFormSetter {
 	 * 
 	 * @param lambda
 	 */
-	public void onSetValue(Bool8Lambda lambda) {
-		vertex.setBool8MethodLambda("set-value", lambda);
+	public void onValueChangedLambda(Bool8Lambda lambda) {
+		vertex.setBool8MethodLambda("on-value-changed", lambda);
 	}
 
 	
@@ -63,8 +63,8 @@ public class BooleanObjFormSetter extends PrimitiveObjFormSetter {
 	 * 
 	 * @param func
 	 */
-	public void onSetValue(Bool8NeFunction func) {
-		vertex.setBool8Method("set-value", func);
+	public void onValueChanged(Bool8NeFunction func) {
+		vertex.setBool8Method("on-value-changed", func);
 	}
 
 }

@@ -259,7 +259,7 @@ public class SetObjFormElement extends ObjFormElement {
 		TextObjFormSetter fieldView = new TextObjFormSetter(vertex.getBranch());
 		fieldView.setName(name);
 		fieldView.setValue(initialValue);
-		fieldView.onSetValueLambda(lambda);
+		fieldView.onValueChangedLambda(lambda);
 		vertex.addObjToList("fields", fieldView);
 	}
 	

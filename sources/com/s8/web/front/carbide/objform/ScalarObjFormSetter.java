@@ -24,7 +24,7 @@ public class ScalarObjFormSetter extends PrimitiveObjFormSetter {
 		fieldView.setName(name);
 		fieldView.setUnit(unit);
 		fieldView.setValue((float) initialValue);
-		fieldView.onSetValue(lambda);
+		fieldView.onValueChanged(lambda);
 		return fieldView;
 	}
 
@@ -40,7 +40,7 @@ public class ScalarObjFormSetter extends PrimitiveObjFormSetter {
 		fieldView.setName(name);
 		fieldView.setUnit(unit);
 		fieldView.setValue((float) initialValue);
-		fieldView.onSetValue(lambda);	
+		fieldView.onValueChanged(lambda);	
 		fieldView.setTooltipDoc(doc);
 		return fieldView;
 	}
@@ -88,8 +88,8 @@ public class ScalarObjFormSetter extends PrimitiveObjFormSetter {
 	 * 
 	 * @param lambda
 	 */
-	public void onSetValue(Float32Lambda lambda) {
-		vertex.setFloat32MethodLambda("set-value", lambda);
+	public void onValueChanged(Float32Lambda lambda) {
+		vertex.setFloat32MethodLambda("on-value-changed", lambda);
 	}
 
 
@@ -97,7 +97,7 @@ public class ScalarObjFormSetter extends PrimitiveObjFormSetter {
 	 * 
 	 * @param func
 	 */
-	public void onSetValue(Float32NeFunction func) {
-		vertex.setFloat32Method("set-value", func);
+	public void onValueChanged(Float32NeFunction func) {
+		vertex.setFloat32Method("on-value-changed", func);
 	}
 }

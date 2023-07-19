@@ -22,10 +22,20 @@ public class ObjFormOption extends HTML_NeNode {
 	 * @param color
 	 * @return
 	 */
-	public static ObjFormOption create(NeBranch branch, String name, S8FlatIcon icon) {
+	public static ObjFormOption createLambda(NeBranch branch, String name, S8FlatIcon icon, VoidLambda lambda) {
 		ObjFormOption objFormOption = new ObjFormOption(branch);
 		objFormOption.setName(name);
 		objFormOption.setIconShape(icon);
+		objFormOption.onClickLambda(lambda);
+		return objFormOption;
+	}
+	
+	
+	public static ObjFormOption createLambda(NeBranch branch, String name, S8FlatIcon icon, VoidNeFunction function) {
+		ObjFormOption objFormOption = new ObjFormOption(branch);
+		objFormOption.setName(name);
+		objFormOption.setIconShape(icon);
+		objFormOption.onClick(function);
 		return objFormOption;
 	}
 	

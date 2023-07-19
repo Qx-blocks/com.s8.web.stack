@@ -25,7 +25,7 @@ public class IntegerObjFormSetter extends PrimitiveObjFormSetter {
 		IntegerObjFormSetter fieldView = new IntegerObjFormSetter(branch);
 		fieldView.setName(name);
 		fieldView.setValue(initialValue);
-		fieldView.onSetValueLambda(lambda);
+		fieldView.onValueChangedLambda(lambda);
 		return fieldView;
 	}
 	
@@ -43,7 +43,7 @@ public class IntegerObjFormSetter extends PrimitiveObjFormSetter {
 		IntegerObjFormSetter fieldView = new IntegerObjFormSetter(branch);
 		fieldView.setName(name);
 		fieldView.setValue(initialValue);
-		fieldView.onSetValueLambda(lambda);
+		fieldView.onValueChangedLambda(lambda);
 		fieldView.setTooltipDoc(doc);
 		return fieldView;
 	}
@@ -62,11 +62,11 @@ public class IntegerObjFormSetter extends PrimitiveObjFormSetter {
 	
 
 	
-	public void onSetValue(Int32NeFunction func) {
-		vertex.setInt32Method("set-value", func);
+	public void onValueChanged(Int32NeFunction func) {
+		vertex.setInt32Method("on-value-changed", func);
 	}
 	
-	public void onSetValueLambda(Int32Lambda lambda) {
-		vertex.setInt32MethodLambda("set-value", lambda);
+	public void onValueChangedLambda(Int32Lambda lambda) {
+		vertex.setInt32MethodLambda("on-value-changed", lambda);
 	}
 }
