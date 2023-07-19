@@ -39,10 +39,16 @@ export class EnumObjFormSetter extends PrimtiveObjFormSetter {
 
         const _this = this;
         this.selectNode.addEventListener("change", function(event){
-           let index = parseInt(_this.selectNode.value);
-            _this.S8_vertex.runUInt8("on-selected", index);
+            S8.branch.loseFocus();
+            _this.sendValue();
             event.stopPropagation();
         })
+    }
+
+
+    sendValue(){
+        let index = parseInt(this.selectNode.value);
+        this.S8_vertex.runUInt8("on-selected", index);
     }
 
     S8_set_enumValues(enumValues){

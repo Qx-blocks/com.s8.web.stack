@@ -321,7 +321,7 @@ div[class*="objform-icon-color-"]> svg {
     padding-left: 4px;
     padding-right: 4px;
     padding-top: 1px;
-    padding-bottom: 1px;
+    padding-bottom: 2px;
     width: 36%;
 }
 
@@ -368,11 +368,11 @@ div[class*="objform-icon-color-"]> svg {
     padding-left: 4px;
     padding-right: 4px;
     padding-top: 2px;
-    padding-bottom: 2px;
+    padding-bottom: 3px;
 }
 
 .objform-output > span {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     color: aqua;
 }

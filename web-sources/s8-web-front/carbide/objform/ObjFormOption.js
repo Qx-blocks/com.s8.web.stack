@@ -4,10 +4,6 @@ import { S8 } from '/s8-io-bohr-atom/S8.js';
 
 import { S8WebFront } from '/s8-web-front/S8WebFront.js';
 
-import { Popover } from '/s8-web-front/carbide/popover/Popover.js';
-import { PopoverMenuItem } from '/s8-web-front/carbide/popover/PopoverMenuItem.js';
-
-import { getColor, ObjFormElement } from '/s8-web-front/carbide/objform/ObjFormElement.js';
 import { NeObject } from '/s8-io-bohr-neon/NeObject.js';
 
 S8WebFront.CSS_import("/s8-web-front/carbide/objform/ObjFormOptions.css");
@@ -57,12 +53,17 @@ export class ObjFormOption extends NeObject {
 
 
         const _this = this;
-        this.wrapperNode.addEventListener("click", function () {
-            S8WebFront.focus(_this);
+        this.wrapperNode.addEventListener("click", function (event) {
+            S8.branch.loseFocus();
             _this.onClick();
+            event.stopPropagation();
         }, false);
     }
 
+
+    onClick(){
+        this.S8_vertex.runVoid("on-click");
+    }
 
     getEnvelope(){
         return this.wrapperNode;

@@ -1,5 +1,6 @@
 
 
+import { S8 } from '/s8-io-bohr-atom/S8.js';
 import { PrimtiveObjFormSetter } from '/s8-web-front/carbide/objform/PrimtiveObjFormSetter.js';
 
 
@@ -25,9 +26,12 @@ export class TextObjFormSetter extends PrimtiveObjFormSetter {
         inputWrapperNode.appendChild(this.inputNode);
         this.fieldNode.appendChild(inputWrapperNode);
 
-        let _this = this;
-        this.inputListener = function(){ _this.sendValue(); };
-        this.inputNode.addEventListener("blur", this.inputListener);
+        const _this = this;
+        this.inputNode.addEventListener("blur", function(event){
+            S8.branch.loseFocus();
+            _this.sendValue();
+            event.stopPropagation();
+        });
         /* </input> */
 
     }
@@ -36,7 +40,7 @@ export class TextObjFormSetter extends PrimtiveObjFormSetter {
         let newInputValue = this.inputNode.value;
         if(newInputValue != this.value){
             this.value = newInputValue;
-            this.S8_vertex.runStringUTF8("set-value", this.value);
+            this.S8_vertex.runStringUTF8("on-value-changed", this.value);
         }
     }
 
