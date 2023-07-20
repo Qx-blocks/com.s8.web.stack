@@ -9,41 +9,23 @@ import com.s8.web.front.carbide.popover.Popover;
 
 /**
  * 
- * 
- * 
  * @author pierreconvert
  *
  */
 public class GridCard extends NeObject {
 
 	
-	
 	/**
 	 * 
 	 * @param branch
+	 * @param typeName
 	 */
-	public GridCard(NeBranch branch) {
-		super(branch, "/s8-web-front/carbide/grid/GridCard");
+	public GridCard(NeBranch branch, String typeName) {
+		super(branch, typeName);
 	}
+
 	
-	
-	/**
-	 * 
-	 * @param name
-	 */
-	public void setTitle(String name) {
-		vertex.fields().setStringUTF8Field("title", name);
-	}
-	
-	/**
-	 * 
-	 * @param name
-	 */
-	public void setInfo(String name) {
-		vertex.fields().setStringUTF8Field("info", name);
-	}
-	
-	
+
 	/**
 	 * 
 	 * @param name
@@ -65,7 +47,7 @@ public class GridCard extends NeObject {
 		vertex.fields().setObjectField("popover", popover);
 	}
 	
-	
+
 	
 	
 	/**
