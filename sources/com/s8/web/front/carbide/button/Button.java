@@ -48,7 +48,7 @@ public class Button extends HTML_NeNode {
 		super(branch, "/s8-web-front/carbide/button/Button");
 		
 		/* to be overridden */
-		vertex.setVoidMethodLambda("on-click", () -> System.out.println("I'm clicked!"));
+		vertex.methods().setVoidMethodLambda("on-click", () -> System.out.println("I'm clicked!"));
 	}
 	
 	
@@ -57,7 +57,7 @@ public class Button extends HTML_NeNode {
 	 * @param text
 	 */
 	public void setLabel(String text) {
-		vertex.setStringUTF8Field("label", text);
+		vertex.fields().setStringUTF8Field("label", text);
 	}
 	
 	
@@ -68,7 +68,7 @@ public class Button extends HTML_NeNode {
 	 * @param menus
 	 */
 	public void setSize(S8WebSize size) {
-		vertex.setUInt8Field("size", size.code);
+		vertex.fields().setUInt8Field("size", size.code);
 	}
 	
 	
@@ -77,7 +77,7 @@ public class Button extends HTML_NeNode {
 	 * @param menus
 	 */
 	public void setTheme(S8WebTheme theme) {
-		vertex.setUInt8Field("theme", theme.code);
+		vertex.fields().setUInt8Field("theme", theme.code);
 	}
 	
 	
@@ -86,18 +86,18 @@ public class Button extends HTML_NeNode {
 	 * @param state
 	 */
 	public void setEnabled(boolean state) {
-		vertex.setBool8Field("isEnabled", state);
+		vertex.fields().setBool8Field("isEnabled", state);
 	}
 	
 	
 	
 	public void onClick(VoidNeFunction function) {
-		vertex.setVoidMethod("on-click", function);
+		vertex.methods().setVoidMethod("on-click", function);
 	}
 	
 	
 	public void onClickLambda(VoidLambda lambda) {
-		vertex.setVoidMethodLambda("on-click", lambda);
+		vertex.methods().setVoidMethodLambda("on-click", lambda);
 	}
 	
 }

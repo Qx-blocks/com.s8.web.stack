@@ -32,7 +32,7 @@ public class GridCard extends NeObject {
 	 * @param name
 	 */
 	public void setTitle(String name) {
-		vertex.setStringUTF8Field("title", name);
+		vertex.fields().setStringUTF8Field("title", name);
 	}
 	
 	/**
@@ -40,7 +40,7 @@ public class GridCard extends NeObject {
 	 * @param name
 	 */
 	public void setInfo(String name) {
-		vertex.setStringUTF8Field("info", name);
+		vertex.fields().setStringUTF8Field("info", name);
 	}
 	
 	
@@ -49,12 +49,12 @@ public class GridCard extends NeObject {
 	 * @param name
 	 */
 	public void setSelected(boolean isSelected) {
-		vertex.setBool8Field("isSelected", isSelected);
+		vertex.fields().setBool8Field("isSelected", isSelected);
 	}
 	
 	
 	public void clearPopover() {
-		vertex.setObjectField("popover", null);
+		vertex.fields().setObjectField("popover", null);
 	}
 	
 	/**
@@ -62,7 +62,7 @@ public class GridCard extends NeObject {
 	 * @param name
 	 */
 	public void setPopover(Popover popover) {
-		vertex.setObjectField("popover", popover);
+		vertex.fields().setObjectField("popover", popover);
 	}
 	
 	
@@ -73,7 +73,7 @@ public class GridCard extends NeObject {
 	 * @param func
 	 */
 	public void onClick(VoidNeFunction func) {
-		vertex.setVoidMethod("on-click", func);
+		vertex.methods().setVoidMethod("on-click", func);
 	}
 	
 	
@@ -83,7 +83,7 @@ public class GridCard extends NeObject {
 	 * @param func
 	 */
 	public void onClickLambda(VoidLambda lambda) {
-		vertex.setVoidMethodLambda("on-click", lambda);
+		vertex.methods().setVoidMethodLambda("on-click", lambda);
 	}
 	
 	

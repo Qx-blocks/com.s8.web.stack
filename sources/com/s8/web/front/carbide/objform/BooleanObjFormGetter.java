@@ -13,7 +13,7 @@ public class BooleanObjFormGetter extends PrimitiveObjFormGetter {
 	 * @param value
 	 */
 	public void setValue(boolean value) {
-		vertex.setBool8Field("value", value);
+		vertex.fields().setBool8Field("value", value);
 	}
 	
 }

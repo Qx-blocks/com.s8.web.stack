@@ -27,7 +27,7 @@ public class Grid extends NeObject {
 
 
 	public void setCards(List<GridCard> cards) {
-		vertex.setObjectListField("cards", cards);
+		vertex.fields().setObjectListField("cards", cards);
 	}
 
 
@@ -36,7 +36,7 @@ public class Grid extends NeObject {
 	 * @return
 	 */
 	public List<GridCard> getCards(){
-		return vertex.getObjectListField("cards");
+		return vertex.fields().getObjectListField("cards");
 	}
 
 
@@ -56,7 +56,7 @@ public class Grid extends NeObject {
 	 * @param func
 	 */
 	public void onClick(VoidNeFunction func) {
-		vertex.setVoidMethod("on-click", func);
+		vertex.methods().setVoidMethod("on-click", func);
 	}
 
 
@@ -66,7 +66,7 @@ public class Grid extends NeObject {
 	 * @param func
 	 */
 	public void onClickLambda(VoidLambda lambda) {
-		vertex.setVoidMethodLambda("on-click", lambda);
+		vertex.methods().setVoidMethodLambda("on-click", lambda);
 	}
 
 }

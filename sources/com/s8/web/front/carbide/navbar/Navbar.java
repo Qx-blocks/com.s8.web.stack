@@ -29,7 +29,7 @@ public class Navbar extends HTML_NeNode {
 	 * @param menus
 	 */
 	public void setSelectedIndex(int index) {
-		vertex.setUInt8Field("selectedIndex", index);
+		vertex.fields().setUInt8Field("selectedIndex", index);
 	}
 	
 	
@@ -38,7 +38,7 @@ public class Navbar extends HTML_NeNode {
 	 * @param menus
 	 */
 	public void setMenus(List<NavbarMenu> menus) {
-		vertex.setObjectListField("menus", menus);
+		vertex.fields().setObjectListField("menus", menus);
 	}
 	
 	

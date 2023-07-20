@@ -34,9 +34,9 @@ public class AswCharacter extends NeObject {
 	 * @param height
 	 */
 	public void setViewPort(double x, double y, double width) {
-		vertex.setFloat32Field("viewportX", (float) x);
-		vertex.setFloat32Field("viewportY", (float) y);
-		vertex.setFloat32Field("viewportWidth", (float) width);
+		vertex.fields().setFloat32Field("viewportX", (float) x);
+		vertex.fields().setFloat32Field("viewportY", (float) y);
+		vertex.fields().setFloat32Field("viewportWidth", (float) width);
 	}
 
 	
@@ -46,7 +46,7 @@ public class AswCharacter extends NeObject {
 	 * @param attitudes
 	 */
 	public void setAttitudes(List<AswCharacterAttitude> attitudes) {
-		vertex.setObjectListField("attitudes", attitudes);
+		vertex.fields().setObjectListField("attitudes", attitudes);
 	}
 	
 	
@@ -59,21 +59,21 @@ public class AswCharacter extends NeObject {
 		int n = sentences.length;
 		List<AswCharacterSentence> list = new ArrayList<AswCharacterSentence>(n);
 		for(int i =0; i<n; i++) { list.add(sentences[i]); }
-		vertex.setObjectListField("speechSequence", list);
+		vertex.fields().setObjectListField("speechSequence", list);
 	}
 	
 	public void say(List<AswCharacterSentence> sentences) {
-		vertex.setObjectListField("speechSequence", sentences);
+		vertex.fields().setObjectListField("speechSequence", sentences);
 	}
 
 	
 	public void whenTold(StringUTF8Lambda lambda) {
-		vertex.setStringUTF8MethodLambda("answer", lambda);
+		vertex.methods().setStringUTF8MethodLambda("answer", lambda);
 	}
 	
 	
 	public void whenNotUnderstood(VoidLambda lambda) {
-		vertex.setVoidMethodLambda("notUnderstood", lambda);
+		vertex.methods().setVoidMethodLambda("notUnderstood", lambda);
 	}
 	
 }

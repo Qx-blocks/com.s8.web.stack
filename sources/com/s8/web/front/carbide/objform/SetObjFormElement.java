@@ -23,9 +23,9 @@ public class SetObjFormElement extends ObjFormElement {
 	public SetObjFormElement(NeBranch branch) {
 		super(branch, "/s8-web-front/carbide/objform/SetObjFormElement");
 		
-		vertex.setVoidMethodLambda("on-expanded", () -> {});
-		vertex.setVoidMethodLambda("on-collapsed", () -> {});
-		vertex.setVoidMethodLambda("on-sync", () -> {});
+		vertex.methods().setVoidMethodLambda("on-expanded", () -> {});
+		vertex.methods().setVoidMethodLambda("on-collapsed", () -> {});
+		vertex.methods().setVoidMethodLambda("on-sync", () -> {});
 	}
 	
 	
@@ -34,7 +34,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param lambda
 	 */
 	public void onExpanded(VoidLambda lambda) {
-		vertex.setVoidMethodLambda("on-expanded", lambda);
+		vertex.methods().setVoidMethodLambda("on-expanded", lambda);
 	}
 	
 	
@@ -43,21 +43,21 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param lambda
 	 */
 	public void onCollapsed(VoidLambda lambda) {
-		vertex.setVoidMethodLambda("on-collapsed", lambda);
+		vertex.methods().setVoidMethodLambda("on-collapsed", lambda);
 	}
 	
 	
 
 	public void setMarkupColor(ObjFormColor color) {
-		vertex.setUInt8Field("markupColor", color.code);
+		vertex.fields().setUInt8Field("markupColor", color.code);
 	}
 
 	public void setFieldName(String name) {
-		vertex.setStringUTF8Field("fieldName", name);
+		vertex.fields().setStringUTF8Field("fieldName", name);
 	}
 
 	public void setTypeName(String name) {
-		vertex.setStringUTF8Field("typeName", name);
+		vertex.fields().setStringUTF8Field("typeName", name);
 	}
 
 	
@@ -77,7 +77,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param icon
 	 */
 	public void setIconShape(S8FlatIcon icon){
-		vertex.setUInt16Field("iconShapeByCode", icon.code);
+		vertex.fields().setUInt16Field("iconShapeByCode", icon.code);
 	}
 
 	/**
@@ -85,7 +85,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param name
 	 */
 	public void setIconShapeByName(String name){
-		vertex.setStringUTF8Field("iconShape", name);
+		vertex.fields().setStringUTF8Field("iconShape", name);
 	}
 
 	
@@ -94,22 +94,22 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param color
 	 */
 	public void setIconColor(ObjFormColor color) {
-		vertex.setUInt8Field("iconColor", color.code);
+		vertex.fields().setUInt8Field("iconColor", color.code);
 	}
 
 
 	public void setFields(List<ObjFormElement> elements){
-		vertex.setObjectListField("fields", elements);
+		vertex.fields().setObjectListField("fields", elements);
 	}
 
 	public void setFields(ObjFormElement... elements){
 		List<ObjFormElement> list = new ArrayList<>();
 		for(ObjFormElement element : elements) { list.add(element); }
-		vertex.setObjectListField("fields", list);
+		vertex.fields().setObjectListField("fields", list);
 	}
 
 	public void setTogglingState(boolean mustBeExpanded){
-		vertex.setBool8Field("togglingState", mustBeExpanded);
+		vertex.fields().setBool8Field("togglingState", mustBeExpanded);
 	}
 	
 	
@@ -122,7 +122,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param value
 	 */
 	public void addElement(ObjFormElement element) {
-		vertex.addObjToList("fields", element);
+		vertex.fields().addObjToList("fields", element);
 	}
 	
 	
@@ -141,7 +141,7 @@ public class SetObjFormElement extends ObjFormElement {
 		fieldView.setUnit(unit);
 		fieldView.setFormat(format);
 		fieldView.setValue(value);
-		vertex.addObjToList("fields", fieldView);
+		addElement(fieldView);
 	}
 	
 	
@@ -154,7 +154,7 @@ public class SetObjFormElement extends ObjFormElement {
 		IntegerObjFormGetter fieldView = new IntegerObjFormGetter(vertex.getBranch());
 		fieldView.setFieldName(name);
 		fieldView.setValue(value);
-		vertex.addObjToList("fields", fieldView);
+		addElement(fieldView);
 	}
 	
 	
@@ -167,7 +167,7 @@ public class SetObjFormElement extends ObjFormElement {
 		TextObjFormGetter fieldView = new TextObjFormGetter(vertex.getBranch());
 		fieldView.setFieldName(name);
 		fieldView.setValue(value);
-		vertex.addObjToList("fields", fieldView);
+		addElement(fieldView);
 	}
 	
 	
@@ -181,7 +181,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param lambda
 	 */
 	public void addBooleanSetter(String name, boolean initialValue, Bool8Lambda lambda) {
-		vertex.addObjToList("fields", BooleanObjFormSetter.create(vertex.getBranch(), name, initialValue, lambda));
+		addElement(BooleanObjFormSetter.create(vertex.getBranch(), name, initialValue, lambda));
 	}
 	
 	/**
@@ -192,7 +192,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param lambda
 	 */
 	public void addBooleanSetter(String name, boolean initialValue, Bool8Lambda lambda, String doc) {
-		vertex.addObjToList("fields", BooleanObjFormSetter.create(vertex.getBranch(), name, initialValue, lambda, doc));
+		addElement(BooleanObjFormSetter.create(vertex.getBranch(), name, initialValue, lambda, doc));
 	}
 	
 	
@@ -206,7 +206,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 */
 	public void addScalarSetter(String name, String unit, S8NumberFormat format, double initialValue, 
 			Float32Lambda lambda) {
-		vertex.addObjToList("fields", ScalarObjFormSetter.create(vertex.getBranch(), name, unit, format, initialValue, lambda));
+		addElement(ScalarObjFormSetter.create(vertex.getBranch(), name, unit, format, initialValue, lambda));
 	}
 	
 	
@@ -219,7 +219,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 */
 	public void addScalarSetter(String name, String unit, S8NumberFormat format, double initialValue, 
 			Float32Lambda lambda, String doc) {
-		vertex.addObjToList("fields", ScalarObjFormSetter.create(vertex.getBranch(), name, unit, format, initialValue, lambda, doc));
+		addElement(ScalarObjFormSetter.create(vertex.getBranch(), name, unit, format, initialValue, lambda, doc));
 	}
 	
 	
@@ -232,7 +232,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param lambda
 	 */
 	public void addIntegerSetter(String name, int initialValue, Int32Lambda lambda) {
-		vertex.addObjToList("fields", IntegerObjFormSetter.create(vertex.getBranch(), name, initialValue, lambda));
+		addElement(IntegerObjFormSetter.create(vertex.getBranch(), name, initialValue, lambda));
 	}
 
 
@@ -243,7 +243,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param lambda
 	 */
 	public void addIntegerSetter(String name, int initialValue, Int32Lambda lambda, String doc) {
-		vertex.addObjToList("fields", IntegerObjFormSetter.create(vertex.getBranch(), name, initialValue, lambda, doc));
+		addElement(IntegerObjFormSetter.create(vertex.getBranch(), name, initialValue, lambda, doc));
 	}
 	
 	
@@ -260,7 +260,7 @@ public class SetObjFormElement extends ObjFormElement {
 		fieldView.setName(name);
 		fieldView.setValue(initialValue);
 		fieldView.onValueChangedLambda(lambda);
-		vertex.addObjToList("fields", fieldView);
+		addElement(fieldView);
 	}
 	
 	
@@ -269,7 +269,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param state
 	 */
 	public void setUpToDate(boolean state) {
-		vertex.setBool8Field("isUpToDate", state);
+		vertex.fields().setBool8Field("isUpToDate", state);
 	}
 	
 	
@@ -279,7 +279,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param lambda
 	 */
 	public void onSyncLambda(VoidLambda lambda) {
-		vertex.setVoidMethodLambda("on-sync", lambda);
+		vertex.methods().setVoidMethodLambda("on-sync", lambda);
 	}
 	
 	
@@ -288,7 +288,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param lambda
 	 */
 	public void onSync(VoidNeFunction function) {
-		vertex.setVoidMethod("on-sync", function);
+		vertex.methods().setVoidMethod("on-sync", function);
 	}
 
 	

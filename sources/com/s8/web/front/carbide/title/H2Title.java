@@ -38,6 +38,6 @@ public class H2Title extends NeObject {
 	 * @param name
 	 */
 	public void setText(String text) {
-		vertex.setStringUTF8Field("text", text);
+		vertex.fields().setStringUTF8Field("text", text);
 	}
 }

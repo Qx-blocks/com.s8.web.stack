@@ -19,9 +19,9 @@ public class AswCharacterSentence extends NeObject {
 	 */
 	public AswCharacterSentence(NeBranch branch, String text, int attitudeIndex, long pause) {
 		super(branch, "/s8-web-front/asw/AswCharacterSentence");
-		vertex.setStringUTF8Field("text", text);
-		vertex.setUInt8Field("attitudeIndex", attitudeIndex);
-		vertex.setUInt32Field("pause", pause);
+		vertex.fields().setStringUTF8Field("text", text);
+		vertex.fields().setUInt8Field("attitudeIndex", attitudeIndex);
+		vertex.fields().setUInt32Field("pause", pause);
 	}
 
 }

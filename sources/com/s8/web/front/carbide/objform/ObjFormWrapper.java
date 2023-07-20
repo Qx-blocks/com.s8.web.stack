@@ -26,7 +26,7 @@ public class ObjFormWrapper extends HTML_NeNode {
 	 * @param element
 	 */
 	public void setRoot(ObjFormElement element) {
-		vertex.setObjectField("root", element);
+		vertex.fields().setObjectField("root", element);
 	}
 	
 	

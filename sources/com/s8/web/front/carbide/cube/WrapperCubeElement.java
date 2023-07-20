@@ -20,7 +20,7 @@ public class WrapperCubeElement extends CubeElement {
 	 * @param content
 	 */
 	public void setContent(NeObject content) {
-		vertex.setObjectField("content", content);
+		vertex.fields().setObjectField("content", content);
 	}
 	
 }

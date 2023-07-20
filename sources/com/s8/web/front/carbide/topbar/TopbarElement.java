@@ -37,7 +37,7 @@ public class TopbarElement extends NeObject {
 	 * @param name
 	 */
 	public void setName(String name) {
-		vertex.setStringUTF8Field("name", name);
+		vertex.fields().setStringUTF8Field("name", name);
 	}
 	
 	
@@ -47,7 +47,7 @@ public class TopbarElement extends NeObject {
 	 * @param popover
 	 */
 	public void setPopover(Popover popover) {
-		vertex.setObjectField("popover", popover);
+		vertex.fields().setObjectField("popover", popover);
 	}
 	
 	
@@ -55,17 +55,17 @@ public class TopbarElement extends NeObject {
 	 * 
 	 */
 	public void clearPopover() {
-		vertex.setObjectField("popover", null);
+		vertex.fields().setObjectField("popover", null);
 	}
 	
 	
 	
 	public void onSelected(VoidLambda lambda) {
-		vertex.setVoidMethodLambda("on-selected", lambda);
+		vertex.methods().setVoidMethodLambda("on-selected", lambda);
 	}
 	
 	public void onDeselected(VoidLambda lambda) {
-		vertex.setVoidMethodLambda("on-deselected", lambda);
+		vertex.methods().setVoidMethodLambda("on-deselected", lambda);
 	}
 	
 	
@@ -74,7 +74,7 @@ public class TopbarElement extends NeObject {
 	 * @param function
 	 */
 	public void onSelectedMethod(VoidNeFunction function) {
-		vertex.setVoidMethod("on-selected", function);
+		vertex.methods().setVoidMethod("on-selected", function);
 	}
 	
 }

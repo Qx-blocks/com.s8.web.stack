@@ -14,7 +14,7 @@ public class IntegerObjFormGetter extends PrimitiveObjFormGetter {
 	 * @param name
 	 */
 	public void setValue(int value) {
-		vertex.setInt32Field("value", value);
+		vertex.fields().setInt32Field("value", value);
 	}
 	
 

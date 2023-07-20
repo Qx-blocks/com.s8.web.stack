@@ -40,7 +40,7 @@ public class ObjFormButton extends ObjFormElement {
 	 * @param lambda
 	 */
 	public void onClickLambda(VoidLambda lambda) {
-		vertex.setVoidMethodLambda("on-click", lambda);
+		vertex.methods().setVoidMethodLambda("on-click", lambda);
 	}
 	
 	
@@ -49,14 +49,14 @@ public class ObjFormButton extends ObjFormElement {
 	 * @param lambda
 	 */
 	public void onClick(VoidNeFunction function) {
-		vertex.setVoidMethod("on-click", function);
+		vertex.methods().setVoidMethod("on-click", function);
 	}
 	
 	
 
 
 	public void setLabel(String name) {
-		vertex.setStringUTF8Field("label", name);
+		vertex.fields().setStringUTF8Field("label", name);
 	}
 
 
@@ -66,7 +66,7 @@ public class ObjFormButton extends ObjFormElement {
 	 * @param icon
 	 */
 	public void setIconShape(S8FlatIcon icon){
-		vertex.setUInt16Field("iconShapeByCode", icon.code);
+		vertex.fields().setUInt16Field("iconShapeByCode", icon.code);
 	}
 
 	/**
@@ -74,7 +74,7 @@ public class ObjFormButton extends ObjFormElement {
 	 * @param name
 	 */
 	public void setIconShapeByName(String name){
-		vertex.setStringUTF8Field("iconShape", name);
+		vertex.fields().setStringUTF8Field("iconShape", name);
 	}
 
 	
@@ -83,7 +83,7 @@ public class ObjFormButton extends ObjFormElement {
 	 * @param lambda
 	 */
 	public void onSyncLambda(VoidLambda lambda) {
-		vertex.setVoidMethodLambda("on-sync", lambda);
+		vertex.methods().setVoidMethodLambda("on-sync", lambda);
 	}
 	
 	
@@ -92,7 +92,7 @@ public class ObjFormButton extends ObjFormElement {
 	 * @param lambda
 	 */
 	public void onSync(VoidNeFunction function) {
-		vertex.setVoidMethod("on-sync", function);
+		vertex.methods().setVoidMethod("on-sync", function);
 	}
 
 	

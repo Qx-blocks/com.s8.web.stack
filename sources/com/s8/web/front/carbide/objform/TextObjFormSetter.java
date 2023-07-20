@@ -18,16 +18,16 @@ public class TextObjFormSetter extends PrimitiveObjFormSetter {
 	
 	
 	public void setValue(String value) {
-		vertex.setStringUTF8Field("value", value);
+		vertex.fields().setStringUTF8Field("value", value);
 	}
 	
 
 	
 	public void onValueChanged(StringUTF8NeFunction func) {
-		vertex.setStringUTF8Method("on-value-changed", func);
+		vertex.methods().setStringUTF8Method("on-value-changed", func);
 	}
 	
 	public void onValueChangedLambda(StringUTF8Lambda lambda) {
-		vertex.setStringUTF8MethodLambda("on-value-changed", lambda);
+		vertex.methods().setStringUTF8MethodLambda("on-value-changed", lambda);
 	}
 }

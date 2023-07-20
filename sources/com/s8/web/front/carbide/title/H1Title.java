@@ -32,6 +32,6 @@ public class H1Title extends HTML_NeNode {
 	 * @param name
 	 */
 	public void setText(String text) {
-		vertex.setStringUTF8Field("text", text);
+		vertex.fields().setStringUTF8Field("text", text);
 	}
 }

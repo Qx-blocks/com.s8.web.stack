@@ -24,18 +24,18 @@ public class AswScreen extends CubeElement {
 	 * @return
 	 */
 	public CubeElement getLayer(int i) {
-		return (CubeElement) vertex.getObjectListField("elements").get(i);
+		return (CubeElement) vertex.fields().getObjectListField("elements").get(i);
 	}
 	
 	
 	
 	public void setBackgroundColor(String color) {
-		vertex.setStringUTF8Field("backgroundColor", color);
+		vertex.fields().setStringUTF8Field("backgroundColor", color);
 	}
 
 	
 	public void addElement(NeObject element) {
-		vertex.addObjToList("elements", element);
+		vertex.fields().addObjToList("elements", element);
 	}
 
 

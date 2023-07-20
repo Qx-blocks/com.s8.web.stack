@@ -42,7 +42,7 @@ public class TextInput extends HTML_NeNode {
 	 * @param state
 	 */
 	public void setType(Type type) {
-		vertex.setUInt8Field("type", type.code);
+		vertex.fields().setUInt8Field("type", type.code);
 	}
 	
 	
@@ -53,7 +53,7 @@ public class TextInput extends HTML_NeNode {
 	 * @param state
 	 */
 	public void setPlaceholder(String placeholderText) {
-		vertex.setStringUTF8Field("placeholder", placeholderText);
+		vertex.fields().setStringUTF8Field("placeholder", placeholderText);
 	}
 	
 	/**
@@ -61,7 +61,7 @@ public class TextInput extends HTML_NeNode {
 	 * @param state
 	 */
 	public void setWidth(int width) {
-		vertex.setUInt16Field("width", width);
+		vertex.fields().setUInt16Field("width", width);
 	}
 	
 	
@@ -70,7 +70,7 @@ public class TextInput extends HTML_NeNode {
 	 * @param state
 	 */
 	public void setTheme(S8WebTheme theme) {
-		vertex.setUInt8Field("theme", theme.code);
+		vertex.fields().setUInt8Field("theme", theme.code);
 	}
 	
 	
@@ -80,7 +80,7 @@ public class TextInput extends HTML_NeNode {
 	 * @param size
 	 */
 	public void setSize(S8WebSize size) {
-		vertex.setUInt8Field("size", size.code);
+		vertex.fields().setUInt8Field("size", size.code);
 	}
 
 }

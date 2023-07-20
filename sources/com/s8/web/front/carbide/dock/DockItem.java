@@ -21,10 +21,10 @@ public class DockItem extends NeObject {
 	 */
 	public DockItem(NeBranch branch, String name, String iconFilename) {
 		super(branch, "/s8-web-front/carbide/dock/DockItem");
-		vertex.setStringUTF8Field("name", name);
-		vertex.setStringUTF8Field("iconFilename", iconFilename);
+		vertex.fields().setStringUTF8Field("name", name);
+		vertex.fields().setStringUTF8Field("iconFilename", iconFilename);
 		
-		vertex.setBool8Method("onClickSelect", (f,v) -> { System.out.print("hello world"); });
+		vertex.methods().setBool8Method("onClickSelect", (f,v) -> { System.out.print("hello world"); });
 		
 	}
 	

@@ -38,7 +38,7 @@ public class InlineSpacer extends HTML_NeNode {
 	 * @param name
 	 */
 	public void setWidth(double width) {
-		vertex.setFloat32Field("width", (float) width);
+		vertex.fields().setFloat32Field("width", (float) width);
 	}
 	
 }

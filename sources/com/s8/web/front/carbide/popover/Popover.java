@@ -44,7 +44,7 @@ public class Popover extends NeObject {
 	 * @param direction
 	 */
 	public void setVisibility(boolean isVisible) {
-		vertex.setBool8Field("visibility", isVisible);
+		vertex.fields().setBool8Field("visibility", isVisible);
 	}
 	
 	
@@ -53,7 +53,7 @@ public class Popover extends NeObject {
 	 * @param direction
 	 */
 	public void setDirection(S8WebDirection direction) {
-		vertex.setUInt8Field("direction", direction.code);
+		vertex.fields().setUInt8Field("direction", direction.code);
 	}
 	
 	
@@ -62,7 +62,7 @@ public class Popover extends NeObject {
 	 * @param theme
 	 */
 	public void setTheme(S8WebTheme theme) {
-		vertex.setUInt8Field("theme", theme.code);
+		vertex.fields().setUInt8Field("theme", theme.code);
 	}
 	
 	
@@ -71,7 +71,7 @@ public class Popover extends NeObject {
 	 * @param elements
 	 */
 	public void setElements(List<HTML_NeNode> elements) {
-		vertex.setObjectListField("content", elements);
+		vertex.fields().setObjectListField("content", elements);
 	}
 	
 	/**
@@ -79,7 +79,7 @@ public class Popover extends NeObject {
 	 * @param elements
 	 */
 	public void setElements(HTML_NeNode... elements) {
-		vertex.setObjectListField("content", elements);
+		vertex.fields().setObjectListField("content", elements);
 	}
 	
 	
@@ -89,7 +89,7 @@ public class Popover extends NeObject {
 	 * @param elements
 	 */
 	public void setPopover(Popover popover) {
-		vertex.setObjectField("popover", popover);
+		vertex.fields().setObjectField("popover", popover);
 	}
 	
 	
@@ -97,7 +97,7 @@ public class Popover extends NeObject {
 	 * 
 	 */
 	public void removePopover() {
-		vertex.setObjectField("popover", null);
+		vertex.fields().setObjectField("popover", null);
 	}
 	
 	

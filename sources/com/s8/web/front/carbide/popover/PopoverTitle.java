@@ -19,7 +19,7 @@ public class PopoverTitle extends HTML_NeNode {
 	 */
 	public PopoverTitle(NeBranch branch, String text) {
 		super(branch, "/s8-web-front/carbide/popover/PopoverTitle");
-		vertex.setStringUTF8Field("text", text);
+		vertex.fields().setStringUTF8Field("text", text);
 	}
 
 	

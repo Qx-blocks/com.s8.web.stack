@@ -57,16 +57,16 @@ public class IntegerObjFormSetter extends PrimitiveObjFormSetter {
 	
 	
 	public void setValue(int value) {
-		vertex.setInt32Field("value", value);
+		vertex.fields().setInt32Field("value", value);
 	}
 	
 
 	
 	public void onValueChanged(Int32NeFunction func) {
-		vertex.setInt32Method("on-value-changed", func);
+		vertex.methods().setInt32Method("on-value-changed", func);
 	}
 	
 	public void onValueChangedLambda(Int32Lambda lambda) {
-		vertex.setInt32MethodLambda("on-value-changed", lambda);
+		vertex.methods().setInt32MethodLambda("on-value-changed", lambda);
 	}
 }

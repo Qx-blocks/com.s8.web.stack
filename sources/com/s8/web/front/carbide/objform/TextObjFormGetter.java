@@ -29,7 +29,7 @@ public class TextObjFormGetter extends PrimitiveObjFormGetter {
 	 * @param name
 	 */
 	public void setValue(String value) {
-		vertex.setStringUTF8Field("value", value);
+		vertex.fields().setStringUTF8Field("value", value);
 	}
 	
 

@@ -26,7 +26,7 @@ public class ObjFormTextDoc extends HTML_NeNode {
 
 	
 	public void setText(String text) {
-		vertex.setStringUTF8Field("text", text);
+		vertex.fields().setStringUTF8Field("text", text);
 	}
 
 }
