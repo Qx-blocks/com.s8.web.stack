@@ -17,6 +17,10 @@ export class DownloadButton extends NeObject {
 
 	theme = "default";
 
+	/**
+	 * @type {string}
+	 */
+	downloadFilename = "download.txt";
 
 	constructor(){
 		super();
@@ -46,7 +50,7 @@ export class DownloadButton extends NeObject {
 		// input		
         let _this = this;
         this.node.addEventListener("click", function (event) {
-            _this.S8_vertex.downloadRaw("get-file");
+            _this.S8_vertex.downloadRaw("get-file", _this.downloadFilename);
 			event.stopPropagation();
         }, false);
 		/* </listeners> */
@@ -95,6 +99,12 @@ export class DownloadButton extends NeObject {
 		else{
 			this.disable();
 		}
+	}
+
+
+
+	S8_set_downloadFilename(value){
+		this.downloadFilename = value;
 	}
 
 
