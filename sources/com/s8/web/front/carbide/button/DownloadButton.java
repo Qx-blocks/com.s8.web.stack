@@ -3,9 +3,8 @@ package com.s8.web.front.carbide.button;
 import java.nio.charset.StandardCharsets;
 
 import com.s8.arch.fluor.delivery.S8WebResource;
+import com.s8.arch.fluor.delivery.S8WebResourceGenerator;
 import com.s8.io.bohr.neon.core.NeBranch;
-import com.s8.io.bohr.neon.functions.none.VoidNeFunction;
-import com.s8.io.bohr.neon.lambdas.none.VoidLambda;
 import com.s8.web.front.HTML_NeNode;
 import com.s8.web.front.S8WebSize;
 import com.s8.web.front.S8WebTheme;
@@ -68,6 +67,11 @@ public class DownloadButton extends HTML_NeNode {
 	}
 	
 	
+	public void setDownloadFilename(String text) {
+		vertex.fields().setStringUTF8Field("downloadFilename", text);
+	}
+	
+	
 	
 
 	/**
@@ -98,13 +102,12 @@ public class DownloadButton extends HTML_NeNode {
 	
 	
 	
-	public void onClick(VoidNeFunction function) {
-		vertex.methods().setVoidMethod("on-click", function);
-	}
-	
-	
-	public void onClickLambda(VoidLambda lambda) {
-		vertex.methods().setVoidMethodLambda("on-click", lambda);
+	/**
+	 * 
+	 * @param generator
+	 */
+	public void onFileRequested(S8WebResourceGenerator generator) {
+		vertex.providers().setRawProvider("get-file", generator);
 	}
 	
 }
