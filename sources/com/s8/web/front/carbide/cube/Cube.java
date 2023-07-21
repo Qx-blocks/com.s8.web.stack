@@ -1,5 +1,7 @@
 package com.s8.web.front.carbide.cube;
 
+import java.util.List;
+
 import com.s8.io.bohr.neon.core.NeBranch;
 import com.s8.io.bohr.neon.core.NeObject;
 
@@ -33,6 +35,11 @@ public class Cube extends NeObject {
 		return (CubeElement) vertex.fields().getObjectListField("elements").get(i);
 	}
 	
+	
+	
+	public void setElements(List<CubeElement> elements) {
+		vertex.fields().setObjectListField("elements", elements);
+	}
 	
 	
 	public void addElement(CubeElement element) {

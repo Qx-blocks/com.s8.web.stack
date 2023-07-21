@@ -34,6 +34,13 @@ export class Cube extends NeObject {
      * @param {CubeElement[]} elements 
      */
     S8_set_elements(elements) {
+        
+        /* clear child nodes */
+        while(this.wrapperNode.hasChildNodes()){ 
+            this.wrapperNode.removeChild(this.wrapperNode.lastChild); 
+        }
+
+        /* insert new elements */
         elements.forEach(element => {
             if (element != null) {
                 this.wrapperNode.appendChild(element.getEnvelope());
