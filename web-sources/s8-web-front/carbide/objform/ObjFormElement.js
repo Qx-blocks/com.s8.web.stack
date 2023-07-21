@@ -24,12 +24,36 @@ export const getColor = function (code) {
 
 
 
+export const getStatus = function (code) {
+    switch (code) {
+        case 0x00: return "disabled";
+        case 0x02: return "ok";
+        case 0x06: return "out-of-sync";
+        case 0x13: return "warning";
+        case 0x26: return "error";
+        default: throw "out-of-sync";
+
+    }
+}
+
+
 export class ObjFormElement extends NeObject {
 
 
 
     /** @type{HTMLDivElement} */
     fieldNode = null;
+
+
+    /**
+     * @type{HTMLDivElement}
+     */
+    statusNode = null;
+
+     /**
+     * @type{Popover}
+     */
+    consolePopover = null;
 
 
     /**
@@ -57,6 +81,69 @@ export class ObjFormElement extends NeObject {
     }
 
 
+    /**
+     * 
+     * @returns 
+     */
+    createStatusNode(){
+        this.statusNode = document.createElement("div");
+        this.statusNode.classList.add("objform-status");
+        this.setStatus("disabled");
+
+        const _this = this;
+        this.statusNode.addEventListener("click", function(event){
+            S8.branch.loseFocus();
+            _this.S8_vertex.runVoid("get-status-info");
+            event.stopPropagation();
+        })
+        return this.statusNode;
+    }
+
+
+    setStatus(status){
+        if( this.statusNode != null){
+            this.statusNode.setAttribute("status", status);
+            switch(status){
+                case "ok": 
+                S8WebFront.SVG_insertByName( this.statusNode, "octicons/check.svg", 16, 16);
+                break;
+    
+                case "out-of-sync": 
+                S8WebFront.SVG_insertByName( this.statusNode, "octicons/sync.svg", 16, 16);
+                break;
+    
+                case "warning": 
+                S8WebFront.SVG_insertByName( this.statusNode, "octicons/alert.svg", 16, 16);
+                break;
+    
+                case "error": 
+                S8WebFront.SVG_insertByName( this.statusNode, "octicons/alert.svg", 16, 16);
+                break;
+            }
+        }
+    }
+
+
+    S8_set_status(code) {
+        const status = getStatus(code);
+        this.setStatus(status);
+    }
+
+
+    S8_set_statusPopover(popover) {
+        /* clear previous */
+        if (this.statusPopover != null) { this.statusNode.removeChild(this.statusPopover.getEnvelope()); }
+
+        if (popover != null) {
+            this.statusPopover = popover;
+            this.statusNode.appendChild(popover.getEnvelope());
+            popover.show();
+            S8.branch.setFocusOn(popover);
+        }
+        else { // tooltip == null
+            this.infoNode.setAttribute("enabled", "false");
+        }
+    }
 
 
 

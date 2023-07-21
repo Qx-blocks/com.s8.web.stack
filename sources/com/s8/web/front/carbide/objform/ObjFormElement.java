@@ -12,10 +12,17 @@ import com.s8.web.front.carbide.popover.Popover;
 
 public class ObjFormElement extends NeObject {
 
+	
+	/**
+	 * 
+	 * @param branch
+	 * @param typeName
+	 */
 	public ObjFormElement(NeBranch branch, String typeName) {
 		super(branch, typeName);
 		onOptionsRequiredLambda(() -> {});
 	}
+	
 
 	
 	/**
@@ -30,6 +37,7 @@ public class ObjFormElement extends NeObject {
 		tooltip.setElements(ObjFormTextDoc.create(vertex.getBranch(), text));
 		vertex.fields().setObjectField("tooltip", tooltip);
 	}
+	
 	
 	
 	
@@ -63,6 +71,10 @@ public class ObjFormElement extends NeObject {
 	public void setOptions(ObjFormOption... options) {
 		vertex.fields().setObjectListField("options", options);
 	}
+	
+	
+	
+	
 	
 
 	

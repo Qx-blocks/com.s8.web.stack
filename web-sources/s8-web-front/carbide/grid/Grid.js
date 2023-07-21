@@ -1,5 +1,5 @@
 
-import { GridCard } from '/s8-web-front/carbide/grid/GridCard.js';
+import { GridCard } from './GridCard.js';
 import { NeObject } from '/s8-io-bohr-neon/NeObject.js';
 import { S8WebFront } from '/s8-web-front/S8WebFront.js';
 

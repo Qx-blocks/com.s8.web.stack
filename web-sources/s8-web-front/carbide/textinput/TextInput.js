@@ -249,35 +249,13 @@ export class TextInput extends NeObject {
 	}
 
 
+	/**
+	 * 
+	 * @param {Event} event 
+	 */
 	onInput(event) {
-		if (this.isValidating) {
-
-			// increment until become reactive
-			if (!this.isReacting) {
-				this.nInputs++;
-			}
-
-			if (!this.isReacting && this.nInputs > 2) {
-				// dispose previous one if any
-				if (this.popover) {
-					this.popover.dispose();
-				}
-
-				this.popover = ui.popover2(this.inputNode, "bottom-left",
-					"success",
-					[ui.div("padding-8 struct-row width-256", [
-						this.iconNode = ui.icon(null, "check", 16, 16, "icon-flat-green"),
-						this.resultNode = ui.span(null, "nothing yet to print...")])],
-					"default",
-					[ui.div("padding-8 width-256", [ui.span(null, this.doc)])]);
-				this.update();
-				this.popover.show();
-				this.isReacting = true;
-			}
-			else if (this.isReacting) {
-				this.update();
-			}
-		}
+		const value = event.target.value;
+		this.S8_vertex.runStringUTF8("on-value-changed", value);
 	}
 
 

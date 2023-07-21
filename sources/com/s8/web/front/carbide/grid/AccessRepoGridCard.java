@@ -10,7 +10,7 @@ import com.s8.io.bohr.neon.core.NeBranch;
  * @author pierreconvert
  *
  */
-public class RepositoryGridCard extends GridCard {
+public class AccessRepoGridCard extends GridCard {
 
 	
 	
@@ -18,8 +18,8 @@ public class RepositoryGridCard extends GridCard {
 	 * 
 	 * @param branch
 	 */
-	public RepositoryGridCard(NeBranch branch) {
-		super(branch, "/s8-web-front/carbide/grid/RepositoryGridCard");
+	public AccessRepoGridCard(NeBranch branch) {
+		super(branch, "/s8-web-front/carbide/grid/AccessRepoGridCard");
 	}
 	
 	

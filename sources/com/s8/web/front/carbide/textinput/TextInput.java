@@ -1,6 +1,8 @@
 package com.s8.web.front.carbide.textinput;
 
 import com.s8.io.bohr.neon.core.NeBranch;
+import com.s8.io.bohr.neon.functions.primitives.StringUTF8NeFunction;
+import com.s8.io.bohr.neon.lambdas.primitives.StringUTF8Lambda;
 import com.s8.web.front.HTML_NeNode;
 import com.s8.web.front.S8WebSize;
 import com.s8.web.front.S8WebTheme;
@@ -81,6 +83,24 @@ public class TextInput extends HTML_NeNode {
 	 */
 	public void setSize(S8WebSize size) {
 		vertex.fields().setUInt8Field("size", size.code);
+	}
+	
+	
+	/**
+	 * 
+	 * @param function
+	 */
+	public void onValueChanged(StringUTF8NeFunction function) {
+		vertex.methods().setStringUTF8Method("on-value-changed", function);
+	}
+	
+	
+	/**
+	 * 
+	 * @param lambda
+	 */
+	public void onValueChangedLambda(StringUTF8Lambda lambda) {
+		vertex.methods().setStringUTF8MethodLambda("on-value-changed", lambda);
 	}
 
 }

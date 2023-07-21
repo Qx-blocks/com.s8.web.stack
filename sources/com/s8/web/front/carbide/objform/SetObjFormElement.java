@@ -10,25 +10,29 @@ import com.s8.io.bohr.neon.lambdas.primitives.Bool8Lambda;
 import com.s8.io.bohr.neon.lambdas.primitives.Float32Lambda;
 import com.s8.io.bohr.neon.lambdas.primitives.Int32Lambda;
 import com.s8.io.bohr.neon.lambdas.primitives.StringUTF8Lambda;
+import com.s8.web.front.S8WebDirection;
+import com.s8.web.front.S8WebStatus;
+import com.s8.web.front.S8WebTheme;
 import com.s8.web.front.carbide.S8NumberFormat;
 import com.s8.web.front.carbide.icons.S8FlatIcon;
+import com.s8.web.front.carbide.popover.Popover;
 
 
 
 public class SetObjFormElement extends ObjFormElement {
-	
-	
-	
-	
+
+
+
+
 	public SetObjFormElement(NeBranch branch) {
 		super(branch, "/s8-web-front/carbide/objform/SetObjFormElement");
-		
+
 		vertex.methods().setVoidMethodLambda("on-expanded", () -> {});
 		vertex.methods().setVoidMethodLambda("on-collapsed", () -> {});
 		vertex.methods().setVoidMethodLambda("on-sync", () -> {});
 	}
-	
-	
+
+
 	/**
 	 * 
 	 * @param lambda
@@ -36,8 +40,8 @@ public class SetObjFormElement extends ObjFormElement {
 	public void onExpanded(VoidLambda lambda) {
 		vertex.methods().setVoidMethodLambda("on-expanded", lambda);
 	}
-	
-	
+
+
 	/**
 	 * 
 	 * @param lambda
@@ -45,8 +49,8 @@ public class SetObjFormElement extends ObjFormElement {
 	public void onCollapsed(VoidLambda lambda) {
 		vertex.methods().setVoidMethodLambda("on-collapsed", lambda);
 	}
-	
-	
+
+
 
 	public void setMarkupColor(ObjFormColor color) {
 		vertex.fields().setUInt8Field("markupColor", color.code);
@@ -60,7 +64,7 @@ public class SetObjFormElement extends ObjFormElement {
 		vertex.fields().setStringUTF8Field("typeName", name);
 	}
 
-	
+
 
 	/**
 	 * 
@@ -71,7 +75,7 @@ public class SetObjFormElement extends ObjFormElement {
 		setIconColor(color);
 	}
 
-	
+
 	/**
 	 * 
 	 * @param icon
@@ -88,7 +92,7 @@ public class SetObjFormElement extends ObjFormElement {
 		vertex.fields().setStringUTF8Field("iconShape", name);
 	}
 
-	
+
 	/**
 	 * 
 	 * @param color
@@ -111,10 +115,10 @@ public class SetObjFormElement extends ObjFormElement {
 	public void setTogglingState(boolean mustBeExpanded){
 		vertex.fields().setBool8Field("togglingState", mustBeExpanded);
 	}
-	
-	
 
-	
+
+
+
 	/**
 	 * Helper method 
 	 * @param name
@@ -124,11 +128,11 @@ public class SetObjFormElement extends ObjFormElement {
 	public void addElement(ObjFormElement element) {
 		vertex.fields().addObjToList("fields", element);
 	}
-	
-	
-	
-	
-	
+
+
+
+
+
 	/**
 	 * Helper method 
 	 * @param name
@@ -143,8 +147,8 @@ public class SetObjFormElement extends ObjFormElement {
 		fieldView.setValue(value);
 		addElement(fieldView);
 	}
-	
-	
+
+
 	/**
 	 * Helper method
 	 * @param name
@@ -156,8 +160,8 @@ public class SetObjFormElement extends ObjFormElement {
 		fieldView.setValue(value);
 		addElement(fieldView);
 	}
-	
-	
+
+
 	/**
 	 * Helper method
 	 * @param name
@@ -169,10 +173,10 @@ public class SetObjFormElement extends ObjFormElement {
 		fieldView.setValue(value);
 		addElement(fieldView);
 	}
-	
-	
-	
-	
+
+
+
+
 	/**
 	 * helper method
 	 * @param name
@@ -183,7 +187,7 @@ public class SetObjFormElement extends ObjFormElement {
 	public void addBooleanSetter(String name, boolean initialValue, Bool8Lambda lambda) {
 		addElement(BooleanObjFormSetter.create(vertex.getBranch(), name, initialValue, lambda));
 	}
-	
+
 	/**
 	 * helper method
 	 * @param name
@@ -194,9 +198,9 @@ public class SetObjFormElement extends ObjFormElement {
 	public void addBooleanSetter(String name, boolean initialValue, Bool8Lambda lambda, String doc) {
 		addElement(BooleanObjFormSetter.create(vertex.getBranch(), name, initialValue, lambda, doc));
 	}
-	
-	
-	
+
+
+
 	/**
 	 * helper method
 	 * @param name
@@ -208,8 +212,8 @@ public class SetObjFormElement extends ObjFormElement {
 			Float32Lambda lambda) {
 		addElement(ScalarObjFormSetter.create(vertex.getBranch(), name, unit, format, initialValue, lambda));
 	}
-	
-	
+
+
 	/**
 	 * helper method
 	 * @param name
@@ -221,8 +225,8 @@ public class SetObjFormElement extends ObjFormElement {
 			Float32Lambda lambda, String doc) {
 		addElement(ScalarObjFormSetter.create(vertex.getBranch(), name, unit, format, initialValue, lambda, doc));
 	}
-	
-	
+
+
 
 	/**
 	 * helper method
@@ -245,9 +249,9 @@ public class SetObjFormElement extends ObjFormElement {
 	public void addIntegerSetter(String name, int initialValue, Int32Lambda lambda, String doc) {
 		addElement(IntegerObjFormSetter.create(vertex.getBranch(), name, initialValue, lambda, doc));
 	}
-	
-	
-	
+
+
+
 	/**
 	 * helper method 
 	 * 
@@ -262,8 +266,47 @@ public class SetObjFormElement extends ObjFormElement {
 		fieldView.onValueChangedLambda(lambda);
 		addElement(fieldView);
 	}
+
+
+
+	public void setStatus(S8WebStatus status) {
+		vertex.fields().setUInt8Field("status", status.code);
+	}
+
+
+	public void setStatusPopover(Popover popover) {
+		vertex.fields().setObjectField("statusPopover", popover);
+	}
 	
 	
+	/**
+	 * 
+	 * @param status
+	 * @param message
+	 */
+	public void setStatusPopover(S8WebStatus status, String message) {
+		NeBranch branch = vertex.getBranch();
+		Popover popover = new Popover(branch);
+		switch(status) {
+		case WARNING : popover.setTheme(S8WebTheme.WARNING); break;
+		case ERROR : popover.setTheme(S8WebTheme.DANGER); break;
+		default : popover.setTheme(S8WebTheme.LIGHT); break;
+		}
+		popover.setDirection(S8WebDirection.BOTTOM);
+		popover.setElements(ObjFormTextDoc.create(vertex.getBranch(), message));
+		setStatusPopover(popover);
+	}
+
+
+	/**
+	 * 
+	 * @param lambda
+	 */
+	public void onStatusMessageRequired(VoidLambda lambda) {
+		vertex.methods().setVoidMethodLambda("get-status-info", lambda);
+	}
+
+
 	/**
 	 * 
 	 * @param state
@@ -271,9 +314,9 @@ public class SetObjFormElement extends ObjFormElement {
 	public void setUpToDate(boolean state) {
 		vertex.fields().setBool8Field("isUpToDate", state);
 	}
-	
-	
-	
+
+
+
 	/**
 	 * 
 	 * @param lambda
@@ -281,8 +324,8 @@ public class SetObjFormElement extends ObjFormElement {
 	public void onSyncLambda(VoidLambda lambda) {
 		vertex.methods().setVoidMethodLambda("on-sync", lambda);
 	}
-	
-	
+
+
 	/**
 	 * 
 	 * @param lambda
@@ -291,7 +334,7 @@ public class SetObjFormElement extends ObjFormElement {
 		vertex.methods().setVoidMethod("on-sync", function);
 	}
 
-	
-	
+
+
 
 }

@@ -390,7 +390,45 @@ div[class*="objform-icon-color-"]> svg {
 }
 
 
-/* toolttip inserted inline */
+/* <status> */
+
+
+.objform-status {
+    margin: 0 0 2px 0;
+    padding-left: 2px;
+    padding-right: 2px;
+    height: 16px;
+}
+
+.objform-status > svg {
+    margin: 0;
+    stroke: none;
+}
+
+.objform-status[status="disabled"] {
+    visibility: hidden;
+}
+
+.objform-status[status="out-of-sync"] > svg {
+    fill: rgb(155, 155, 155);
+}
+
+.objform-status[status="ok"] > svg {
+    fill: rgb(22, 192, 19);
+}
+
+.objform-status[status="warning"] > svg {
+    fill: rgb(230, 255, 2);
+}
+
+.objform-status[status="error"] > svg {
+    fill: rgb(255, 47, 36);
+}
+
+/* </status> */
+
+
+/* tooltip inserted inline */
 .objform-info {
     position: relative;
     font: 12px arial, sans-serif;

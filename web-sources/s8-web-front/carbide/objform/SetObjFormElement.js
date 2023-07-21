@@ -16,10 +16,6 @@ import { getColor, ObjFormElement } from '/s8-web-front/carbide/objform/ObjFormE
 export class SetObjFormElement extends ObjFormElement {
 
 
-
-
-
-
     /**
      * @type{boolean}
      */
@@ -98,6 +94,10 @@ export class SetObjFormElement extends ObjFormElement {
         this.typeNode.innerHTML = "${field_type}:";
         typeWrapperNode.appendChild(this.typeNode);
 
+
+        /* console node */
+        this.headerNode.appendChild(this.createStatusNode());
+
         /* info node */
         this.headerNode.appendChild(this.createInfoNode());
 
@@ -139,6 +139,11 @@ export class SetObjFormElement extends ObjFormElement {
 
         /* </body> */
     }
+
+
+
+
+
 
     S8_set_iconColor(colorCode) {
         let previous = "objform-icon-color-" + getColor(this.iconColorCode);
