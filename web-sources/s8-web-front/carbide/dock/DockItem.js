@@ -18,11 +18,6 @@ export class DockItem extends NeObject {
         this.node0 = document.createElement("div");
         this.wrapperNode.appendChild(this.node0);
 
-        const _this = this;
-        this.node0.addEventListener("click", function(){
-            S8.branch.loseFocus();
-        });
-
         this.imageNode = document.createElement("img");
         this.node0.appendChild(this.imageNode);
 
@@ -39,6 +34,13 @@ export class DockItem extends NeObject {
         this.billboardNode.innerHTML = "${Name}";
         this.billboardNode.classList.add("dock-item-tooltip");
         this.popover.node.appendChild(this.billboardNode);
+
+        const _this = this;
+        this.wrapperNode.addEventListener("click", function(event){
+            S8.branch.loseFocus();
+            _this.S8_vertex.runVoid("on-click");
+            event.stopPropagation();
+        });
 
     }
 
