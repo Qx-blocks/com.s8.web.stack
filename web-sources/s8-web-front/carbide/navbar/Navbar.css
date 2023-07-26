@@ -63,4 +63,5 @@
   	text-align: center;
     padding-top: 2px;
     padding-right: 4px;
+    white-space: nowrap;
 }

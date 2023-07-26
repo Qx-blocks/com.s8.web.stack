@@ -1,4 +1,4 @@
-package com.s8.web.front.svg;
+package com.s8.web.front.websvg;
 
 import com.s8.io.bohr.neon.core.NeBranch;
 import com.s8.io.bohr.neon.core.NeObject;
@@ -11,7 +11,7 @@ public class WebSVG_Element extends NeObject {
 	
 	
 	public void isBoundingBoxRelevant(boolean state) {
-		vertex.setBool8Field("is-bounding-box-relevant", state);
+		vertex.fields().setBool8Field("isBoundingBoxRelevant", state);
 	}
 	
 	
@@ -20,7 +20,7 @@ public class WebSVG_Element extends NeObject {
 	 * @param solidity
 	 */
 	public void setStrokeSolidity(WebSVG_StrokeSolidity solidity) {
-		vertex.setUInt8Field("stroke-solidity", solidity.code);
+		vertex.fields().setUInt8Field("strokeSolidity", solidity.code);
 	}
 	
 	
@@ -29,7 +29,7 @@ public class WebSVG_Element extends NeObject {
 	 * @param color
 	 */
 	public void setStrokeColor(WebSVG_StrokeColor color) {
-		vertex.setUInt8Field("stroke-color", color.code);
+		vertex.fields().setUInt8Field("strokeColor", color.code);
 	}
 	
 	
@@ -37,8 +37,8 @@ public class WebSVG_Element extends NeObject {
 	 * Style: 
 	 * @param thickness
 	 */
-	public void setStrokeThickness(WebSVG_StrokeThickness thickness) {
-		vertex.setUInt8Field("stroke-thickness", thickness.code);
+	public void setStrokeThickness(float thickness) {
+		vertex.fields().setFloat32Field("strokeThickness", thickness);
 	}
 
 }

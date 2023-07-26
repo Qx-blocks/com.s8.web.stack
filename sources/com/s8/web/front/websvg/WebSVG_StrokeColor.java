@@ -1,4 +1,4 @@
-package com.s8.web.front.svg;
+package com.s8.web.front.websvg;
 
 /**
  * 
@@ -22,9 +22,15 @@ public enum WebSVG_StrokeColor {
 	
 	
 	
-	
+	/**
+	 * code : WebFront
+	 */
 	public final int code;
 	
+	
+	/**
+	 * 
+	 */
 	public final String name;
 
 	

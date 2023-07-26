@@ -103,4 +103,10 @@ public class TextInput extends HTML_NeNode {
 		vertex.methods().setStringUTF8MethodLambda("on-value-changed", lambda);
 	}
 
+
+
+	public void setValue(String value) {
+		vertex.fields().setStringUTF8Field("value", value);
+	}
+
 }

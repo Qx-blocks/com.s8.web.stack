@@ -96,7 +96,7 @@ export class TextInput extends NeObject {
 			event.stopPropagation();
 		}
 		this.inputNode.addEventListener("click", this.clickListener, false);
-		
+
 		// mouseover
 		/**
 		 * @param {Event} event 
@@ -169,10 +169,15 @@ export class TextInput extends NeObject {
  */
 	S8_set_size(code) {
 		let assignedSize = S8WebFront.parseSize(code);
-		if(assignedSize != this.size){
-			this.inputNode.classList.replace("text-input-"+this.size, "text-input-"+assignedSize);
+		if (assignedSize != this.size) {
+			this.inputNode.classList.replace("text-input-" + this.size, "text-input-" + assignedSize);
 			this.size = assignedSize;
 		}
+	}
+
+
+	S8_set_value(value) {
+		this.inputNode.value = value;
 	}
 
 
@@ -191,17 +196,17 @@ export class TextInput extends NeObject {
 	 */
 	S8_set_theme(code) {
 		let assignedTheme = S8WebFront.parseTheme(code);
-		this.inputNode.classList.replace("text-input-"+this.theme, "text-input-"+assignedTheme);
+		this.inputNode.classList.replace("text-input-" + this.theme, "text-input-" + assignedTheme);
 		this.theme = assignedTheme;
 	}
 
-		/**
-	 * 
-	 * @param {*} code 
-	 */
-		S8_set_width(width) {
-			this.inputNode.size = width;
-		}
+	/**
+ * 
+ * @param {*} code 
+ */
+	S8_set_width(width) {
+		this.inputNode.size = width;
+	}
 
 
 	getStatus() {
@@ -217,7 +222,7 @@ export class TextInput extends NeObject {
 	onClick(event) {
 
 	}
-	
+
 	onMouseOver(event) {
 		if (!this.popover && this.doc) {
 			//_this.popover = ui.popover(_this.node, "bottom-left", "default",

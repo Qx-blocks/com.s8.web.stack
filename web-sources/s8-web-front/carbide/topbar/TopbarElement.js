@@ -129,7 +129,9 @@ export class TopbarElement extends NeObject {
             this.node.appendChild(this.popoverNode);
         }
         else if(popover == null){
-            this.node.removeChild(this.popoverNode);
+            if(this.popoverNode != null){
+                this.node.removeChild(this.popoverNode);
+            }
             this.popoverNode = null;
         }
     }

@@ -1,7 +1,7 @@
 package com.s8.web.front.carbide.title;
 
 import com.s8.io.bohr.neon.core.NeBranch;
-import com.s8.io.bohr.neon.core.NeObject;
+import com.s8.web.front.HTML_NeNode;
 
 
 /**
@@ -9,7 +9,7 @@ import com.s8.io.bohr.neon.core.NeObject;
  * @author pierreconvert
  *
  */
-public class H2Title extends NeObject {
+public class H2Title extends HTML_NeNode {
 	
 	/**
 	 * 
@@ -17,7 +17,7 @@ public class H2Title extends NeObject {
 	 * @param text
 	 * @return
 	 */
-	public H2Title create(NeBranch branch, String text) {
+	public static H2Title create(NeBranch branch, String text) {
 		H2Title title = new H2Title(branch);
 		title.setText(text);
 		return title;
