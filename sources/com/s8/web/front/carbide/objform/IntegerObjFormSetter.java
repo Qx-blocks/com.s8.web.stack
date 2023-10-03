@@ -1,8 +1,8 @@
 package com.s8.web.front.carbide.objform;
 
-import com.s8.io.bohr.neon.core.NeBranch;
-import com.s8.io.bohr.neon.functions.primitives.Int32NeFunction;
-import com.s8.io.bohr.neon.lambdas.primitives.Int32Lambda;
+import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.functions.primitives.Int32NeFunction;
+import com.s8.api.objects.web.lambdas.primitives.Int32Lambda;
 
 
 /**
@@ -21,7 +21,7 @@ public class IntegerObjFormSetter extends PrimitiveObjFormSetter {
 	 * @param lambda
 	 * @return
 	 */
-	public static IntegerObjFormSetter create(NeBranch branch, String name, int initialValue, Int32Lambda lambda) {
+	public static IntegerObjFormSetter create(WebS8Session branch, String name, int initialValue, Int32Lambda lambda) {
 		IntegerObjFormSetter fieldView = new IntegerObjFormSetter(branch);
 		fieldView.setName(name);
 		fieldView.setValue(initialValue);
@@ -39,7 +39,7 @@ public class IntegerObjFormSetter extends PrimitiveObjFormSetter {
 	 * @param doc
 	 * @return
 	 */
-	public static IntegerObjFormSetter create(NeBranch branch, String name, int initialValue, Int32Lambda lambda, String doc) {
+	public static IntegerObjFormSetter create(WebS8Session branch, String name, int initialValue, Int32Lambda lambda, String doc) {
 		IntegerObjFormSetter fieldView = new IntegerObjFormSetter(branch);
 		fieldView.setName(name);
 		fieldView.setValue(initialValue);
@@ -51,7 +51,7 @@ public class IntegerObjFormSetter extends PrimitiveObjFormSetter {
 	
 	
 
-	public IntegerObjFormSetter(NeBranch branch) {
+	public IntegerObjFormSetter(WebS8Session branch) {
 		super(branch, "/s8-web-front/carbide/objform/IntegerObjFormSetter");
 	}
 	

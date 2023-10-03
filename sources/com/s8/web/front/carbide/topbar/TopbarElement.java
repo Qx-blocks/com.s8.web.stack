@@ -1,9 +1,9 @@
 package com.s8.web.front.carbide.topbar;
 
-import com.s8.io.bohr.neon.core.NeBranch;
-import com.s8.io.bohr.neon.core.NeObject;
-import com.s8.io.bohr.neon.functions.none.VoidNeFunction;
-import com.s8.io.bohr.neon.lambdas.none.VoidLambda;
+import com.s8.api.objects.web.WebS8Object;
+import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.functions.none.VoidNeFunction;
+import com.s8.api.objects.web.lambdas.none.VoidLambda;
 import com.s8.web.front.carbide.popover.Popover;
 
 
@@ -12,19 +12,19 @@ import com.s8.web.front.carbide.popover.Popover;
  * @author pierreconvert
  *
  */
-public class TopbarElement extends NeObject {
+public class TopbarElement extends WebS8Object {
 
 	
 	/**
 	 * 
 	 * @param branch
 	 */
-	public TopbarElement(NeBranch branch) {
+	public TopbarElement(WebS8Session branch) {
 		super(branch, "/s8-web-front/carbide/topbar/TopbarElement");
 	}
 	
 	
-	public TopbarElement(NeBranch branch, String name) {
+	public TopbarElement(WebS8Session branch, String name) {
 		super(branch, "/s8-web-front/carbide/topbar/TopbarElement");
 		setName(name);
 		onSelected(() -> { });

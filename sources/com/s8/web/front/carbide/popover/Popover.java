@@ -2,8 +2,8 @@ package com.s8.web.front.carbide.popover;
 
 import java.util.List;
 
-import com.s8.io.bohr.neon.core.NeBranch;
-import com.s8.io.bohr.neon.core.NeObject;
+import com.s8.api.objects.web.WebS8Object;
+import com.s8.api.objects.web.WebS8Session;
 import com.s8.web.front.HTML_NeNode;
 import com.s8.web.front.S8WebDirection;
 import com.s8.web.front.S8WebTheme;
@@ -14,10 +14,10 @@ import com.s8.web.front.S8WebTheme;
  * @author pierreconvert
  *
  */
-public class Popover extends NeObject {
+public class Popover extends WebS8Object {
 	
 	
-	public static Popover create(NeBranch branch, S8WebTheme theme, S8WebDirection direction) {
+	public static Popover create(WebS8Session branch, S8WebTheme theme, S8WebDirection direction) {
 		Popover popover = new Popover(branch);
 		popover.setDirection(direction);
 		popover.setTheme(theme);
@@ -33,8 +33,8 @@ public class Popover extends NeObject {
 	 * 
 	 * @param branch
 	 */
-	public Popover(NeBranch branch) {
-		super(branch, "/s8-web-front/carbide/popover/Popover");
+	public Popover(WebS8Session session) {
+		super(session, "/s8-web-front/carbide/popover/Popover");
 	}
 	
 	

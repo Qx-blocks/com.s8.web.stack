@@ -2,20 +2,20 @@ package com.s8.web.front.carbide.grid;
 
 import java.util.List;
 
-import com.s8.io.bohr.neon.core.NeBranch;
-import com.s8.io.bohr.neon.core.NeObject;
-import com.s8.io.bohr.neon.functions.none.VoidNeFunction;
-import com.s8.io.bohr.neon.lambdas.none.VoidLambda;
+import com.s8.api.objects.web.WebS8Object;
+import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.functions.none.VoidNeFunction;
+import com.s8.api.objects.web.lambdas.none.VoidLambda;
 
 /**
  * 
  * @author pierreconvert
  *
  */
-public class Grid extends NeObject {
+public class Grid extends WebS8Object {
 
 
-	public Grid(NeBranch branch) {
+	public Grid(WebS8Session branch) {
 		super(branch, "/s8-web-front/carbide/grid/Grid");
 		onClickLambda(() -> unselectAllCards());
 	}

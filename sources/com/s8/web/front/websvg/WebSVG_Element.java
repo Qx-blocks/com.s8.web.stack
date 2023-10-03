@@ -1,11 +1,11 @@
 package com.s8.web.front.websvg;
 
-import com.s8.io.bohr.neon.core.NeBranch;
-import com.s8.io.bohr.neon.core.NeObject;
+import com.s8.api.objects.web.WebS8Object;
+import com.s8.api.objects.web.WebS8Session;
 
-public class WebSVG_Element extends NeObject {
+public class WebSVG_Element extends WebS8Object {
 
-	public WebSVG_Element(NeBranch branch, String typeName) {
+	public WebSVG_Element(WebS8Session branch, String typeName) {
 		super(branch, typeName);
 	}
 	

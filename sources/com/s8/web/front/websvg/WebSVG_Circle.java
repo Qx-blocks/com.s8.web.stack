@@ -1,6 +1,6 @@
 package com.s8.web.front.websvg;
 
-import com.s8.io.bohr.neon.core.NeBranch;
+import com.s8.api.objects.web.WebS8Session;
 import com.s8.io.svg.SVG_Vector;
 
 /**
@@ -22,7 +22,7 @@ public class WebSVG_Circle extends WebSVG_Element {
 	 * @param r
 	 * @return
 	 */
-	public static WebSVG_Circle create(NeBranch branch, 
+	public static WebSVG_Circle create(WebS8Session branch, 
 			float thickness,
 			WebSVG_StrokeSolidity solidity,
 			WebSVG_StrokeColor color,
@@ -50,7 +50,7 @@ public class WebSVG_Circle extends WebSVG_Element {
 	 * @param r
 	 * @return
 	 */
-	public static WebSVG_Circle create(NeBranch branch, 
+	public static WebSVG_Circle create(WebS8Session branch, 
 			double thickness,
 			WebSVG_StrokeSolidity solidity,
 			WebSVG_StrokeColor color,
@@ -68,7 +68,7 @@ public class WebSVG_Circle extends WebSVG_Element {
 	}
 
 
-	public WebSVG_Circle(NeBranch branch) {
+	public WebSVG_Circle(WebS8Session branch) {
 		super(branch, "/s8-web-front/websvg/WebSVG_Circle");
 	}
 

@@ -1,7 +1,7 @@
 package com.s8.web.front.asw;
 
-import com.s8.io.bohr.neon.core.NeBranch;
-import com.s8.io.bohr.neon.core.NeObject;
+import com.s8.api.objects.web.WebS8Object;
+import com.s8.api.objects.web.WebS8Session;
 import com.s8.web.front.carbide.cube.CubeElement;
 
 public class AswScreen extends CubeElement {
@@ -12,7 +12,7 @@ public class AswScreen extends CubeElement {
 	 * 
 	 * @param branch
 	 */
-	public AswScreen(NeBranch branch) {
+	public AswScreen(WebS8Session branch) {
 		super(branch, "/s8-web-front/asw/AswScreen");
 	}
 
@@ -34,7 +34,7 @@ public class AswScreen extends CubeElement {
 	}
 
 	
-	public void addElement(NeObject element) {
+	public void addElement(WebS8Object element) {
 		vertex.fields().addObjToList("elements", element);
 	}
 

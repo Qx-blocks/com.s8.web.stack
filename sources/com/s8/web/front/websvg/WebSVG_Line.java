@@ -1,6 +1,6 @@
 package com.s8.web.front.websvg;
 
-import com.s8.io.bohr.neon.core.NeBranch;
+import com.s8.api.objects.web.WebS8Session;
 import com.s8.io.svg.SVG_Vector;
 
 /**
@@ -22,7 +22,7 @@ public class WebSVG_Line extends WebSVG_Element {
 	 * @param r
 	 * @return
 	 */
-	public static WebSVG_Line create(NeBranch branch, 
+	public static WebSVG_Line create(WebS8Session branch, 
 			double thickness,
 			WebSVG_StrokeSolidity solidity,
 			WebSVG_StrokeColor color,
@@ -49,7 +49,7 @@ public class WebSVG_Line extends WebSVG_Element {
 	 * @param r
 	 * @return
 	 */
-	public static WebSVG_Line create(NeBranch branch, 
+	public static WebSVG_Line create(WebS8Session branch, 
 			float thickness,
 			WebSVG_StrokeSolidity solidity,
 			WebSVG_StrokeColor color,
@@ -65,14 +65,14 @@ public class WebSVG_Line extends WebSVG_Element {
 	}
 	
 
-	public static WebSVG_Line create(NeBranch branch, float x0, float y0, float x1, float y1) {
+	public static WebSVG_Line create(WebS8Session branch, float x0, float y0, float x1, float y1) {
 		WebSVG_Line line = new WebSVG_Line(branch);
 		line.setCoordinates(x0, y0, x1, y1);
 		return line;
 	}
 	
 	
-	public WebSVG_Line(NeBranch branch) {
+	public WebSVG_Line(WebS8Session branch) {
 		super(branch, "/s8-web-front/websvg/WebSVG_Line");
 	}
 	

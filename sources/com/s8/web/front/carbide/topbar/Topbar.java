@@ -3,7 +3,7 @@ package com.s8.web.front.carbide.topbar;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.s8.io.bohr.neon.core.NeBranch;
+import com.s8.api.objects.web.WebS8Session;
 import com.s8.web.front.HTML_NeNode;
 
 
@@ -19,7 +19,7 @@ public class Topbar extends HTML_NeNode {
 	 * 
 	 * @param branch
 	 */
-	public Topbar(NeBranch branch) {
+	public Topbar(WebS8Session branch) {
 		super(branch, "/s8-web-front/carbide/topbar/Topbar");
 	}
 	

@@ -3,13 +3,13 @@ package com.s8.web.front.carbide.objform;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.s8.io.bohr.neon.core.NeBranch;
-import com.s8.io.bohr.neon.functions.none.VoidNeFunction;
-import com.s8.io.bohr.neon.lambdas.none.VoidLambda;
-import com.s8.io.bohr.neon.lambdas.primitives.Bool8Lambda;
-import com.s8.io.bohr.neon.lambdas.primitives.Float32Lambda;
-import com.s8.io.bohr.neon.lambdas.primitives.Int32Lambda;
-import com.s8.io.bohr.neon.lambdas.primitives.StringUTF8Lambda;
+import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.functions.none.VoidNeFunction;
+import com.s8.api.objects.web.lambdas.none.VoidLambda;
+import com.s8.api.objects.web.lambdas.primitives.Bool8Lambda;
+import com.s8.api.objects.web.lambdas.primitives.Float32Lambda;
+import com.s8.api.objects.web.lambdas.primitives.Int32Lambda;
+import com.s8.api.objects.web.lambdas.primitives.StringUTF8Lambda;
 import com.s8.web.front.S8WebDirection;
 import com.s8.web.front.S8WebStatus;
 import com.s8.web.front.S8WebTheme;
@@ -24,7 +24,7 @@ public class SetObjFormElement extends ObjFormElement {
 
 
 
-	public SetObjFormElement(NeBranch branch) {
+	public SetObjFormElement(WebS8Session branch) {
 		super(branch, "/s8-web-front/carbide/objform/SetObjFormElement");
 
 		vertex.methods().setVoidMethodLambda("on-expanded", () -> {});
@@ -140,7 +140,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param value
 	 */
 	public void addScalarGetter(String name, String unit, S8NumberFormat format, double value) {
-		ScalarObjFormGetter fieldView = new ScalarObjFormGetter(vertex.getBranch());
+		ScalarObjFormGetter fieldView = new ScalarObjFormGetter(vertex.getSession());
 		fieldView.setFieldName(name);
 		fieldView.setUnit(unit);
 		fieldView.setFormat(format);
@@ -155,7 +155,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param value
 	 */
 	public void addIntegerGetter(String name, int value) {
-		IntegerObjFormGetter fieldView = new IntegerObjFormGetter(vertex.getBranch());
+		IntegerObjFormGetter fieldView = new IntegerObjFormGetter(vertex.getSession());
 		fieldView.setFieldName(name);
 		fieldView.setValue(value);
 		addElement(fieldView);
@@ -168,7 +168,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param value
 	 */
 	public void addTextGetter(String name, String value) {
-		TextObjFormGetter fieldView = new TextObjFormGetter(vertex.getBranch());
+		TextObjFormGetter fieldView = new TextObjFormGetter(vertex.getSession());
 		fieldView.setFieldName(name);
 		fieldView.setValue(value);
 		addElement(fieldView);
@@ -185,7 +185,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param lambda
 	 */
 	public void addBooleanSetter(String name, boolean initialValue, Bool8Lambda lambda) {
-		addElement(BooleanObjFormSetter.create(vertex.getBranch(), name, initialValue, lambda));
+		addElement(BooleanObjFormSetter.create(vertex.getSession(), name, initialValue, lambda));
 	}
 
 	/**
@@ -196,7 +196,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param lambda
 	 */
 	public void addBooleanSetter(String name, boolean initialValue, Bool8Lambda lambda, String doc) {
-		addElement(BooleanObjFormSetter.create(vertex.getBranch(), name, initialValue, lambda, doc));
+		addElement(BooleanObjFormSetter.create(vertex.getSession(), name, initialValue, lambda, doc));
 	}
 
 
@@ -210,7 +210,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 */
 	public void addScalarSetter(String name, String unit, S8NumberFormat format, double initialValue, 
 			Float32Lambda lambda) {
-		addElement(ScalarObjFormSetter.create(vertex.getBranch(), name, unit, format, initialValue, lambda));
+		addElement(ScalarObjFormSetter.create(vertex.getSession(), name, unit, format, initialValue, lambda));
 	}
 
 
@@ -223,7 +223,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 */
 	public void addScalarSetter(String name, String unit, S8NumberFormat format, double initialValue, 
 			Float32Lambda lambda, String doc) {
-		addElement(ScalarObjFormSetter.create(vertex.getBranch(), name, unit, format, initialValue, lambda, doc));
+		addElement(ScalarObjFormSetter.create(vertex.getSession(), name, unit, format, initialValue, lambda, doc));
 	}
 
 
@@ -236,7 +236,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param lambda
 	 */
 	public void addIntegerSetter(String name, int initialValue, Int32Lambda lambda) {
-		addElement(IntegerObjFormSetter.create(vertex.getBranch(), name, initialValue, lambda));
+		addElement(IntegerObjFormSetter.create(vertex.getSession(), name, initialValue, lambda));
 	}
 
 
@@ -247,7 +247,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param lambda
 	 */
 	public void addIntegerSetter(String name, int initialValue, Int32Lambda lambda, String doc) {
-		addElement(IntegerObjFormSetter.create(vertex.getBranch(), name, initialValue, lambda, doc));
+		addElement(IntegerObjFormSetter.create(vertex.getSession(), name, initialValue, lambda, doc));
 	}
 
 
@@ -260,7 +260,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param lambda
 	 */
 	public void addTextSetter(String name, String initialValue, StringUTF8Lambda lambda) {
-		TextObjFormSetter fieldView = new TextObjFormSetter(vertex.getBranch());
+		TextObjFormSetter fieldView = new TextObjFormSetter(vertex.getSession());
 		fieldView.setName(name);
 		fieldView.setValue(initialValue);
 		fieldView.onValueChangedLambda(lambda);
@@ -285,7 +285,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param message
 	 */
 	public void setStatusPopover(S8WebStatus status, String message) {
-		NeBranch branch = vertex.getBranch();
+		WebS8Session branch = vertex.getSession();
 		Popover popover = new Popover(branch);
 		switch(status) {
 		case WARNING : popover.setTheme(S8WebTheme.WARNING); break;
@@ -293,7 +293,7 @@ public class SetObjFormElement extends ObjFormElement {
 		default : popover.setTheme(S8WebTheme.LIGHT); break;
 		}
 		popover.setDirection(S8WebDirection.BOTTOM);
-		popover.setElements(ObjFormTextDoc.create(vertex.getBranch(), message));
+		popover.setElements(ObjFormTextDoc.create(vertex.getSession(), message));
 		setStatusPopover(popover);
 	}
 

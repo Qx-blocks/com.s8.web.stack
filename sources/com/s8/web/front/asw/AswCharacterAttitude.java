@@ -1,7 +1,7 @@
 package com.s8.web.front.asw;
 
-import com.s8.io.bohr.neon.core.NeBranch;
-import com.s8.io.bohr.neon.core.NeObject;
+import com.s8.api.objects.web.WebS8Object;
+import com.s8.api.objects.web.WebS8Session;
 
 
 /**
@@ -9,9 +9,9 @@ import com.s8.io.bohr.neon.core.NeObject;
  * @author pierreconvert
  *
  */
-public class AswCharacterAttitude extends NeObject {
+public class AswCharacterAttitude extends WebS8Object {
 
-	public AswCharacterAttitude(NeBranch branch, 
+	public AswCharacterAttitude(WebS8Session branch, 
 			double speechPitch, 
 			double speechRate, 
 			double speechVolume, 

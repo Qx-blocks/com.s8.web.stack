@@ -6,12 +6,7 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="/com.s8.io.bohr.neon">
-		<attributes>
-			<attribute name="module" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="src" path="/com.s8.io.bohr.atom">
+	<classpathentry kind="src" path="/com.s8.io.svg">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
@@ -21,7 +16,12 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="/com.s8.io.svg">
+	<classpathentry kind="src" path="/com.s8.io.bohr.atom">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry combineaccessrules="false" kind="src" path="/com.s8.api">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>

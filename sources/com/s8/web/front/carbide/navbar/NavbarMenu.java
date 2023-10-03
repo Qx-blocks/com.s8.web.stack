@@ -1,9 +1,9 @@
 package com.s8.web.front.carbide.navbar;
 
-import com.s8.io.bohr.neon.core.NeBranch;
-import com.s8.io.bohr.neon.core.NeObject;
-import com.s8.io.bohr.neon.functions.none.VoidNeFunction;
-import com.s8.io.bohr.neon.lambdas.none.VoidLambda;
+import com.s8.api.objects.web.WebS8Object;
+import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.functions.none.VoidNeFunction;
+import com.s8.api.objects.web.lambdas.none.VoidLambda;
 import com.s8.web.front.carbide.icons.S8FlatIcon;
 
 
@@ -12,19 +12,19 @@ import com.s8.web.front.carbide.icons.S8FlatIcon;
  * @author pierreconvert
  *
  */
-public class NavbarMenu extends NeObject {
+public class NavbarMenu extends WebS8Object {
 
 	
 	/**
 	 * 
 	 * @param branch
 	 */
-	public NavbarMenu(NeBranch branch) {
+	public NavbarMenu(WebS8Session branch) {
 		super(branch, "/s8-web-front/carbide/navbar/NavbarMenu");
 	}
 	
 	
-	public NavbarMenu(NeBranch branch, S8FlatIcon icon, String name) {
+	public NavbarMenu(WebS8Session branch, S8FlatIcon icon, String name) {
 		super(branch, "/s8-web-front/carbide/navbar/NavbarMenu");
 		setIcon(icon);
 		setName(name);

@@ -2,7 +2,7 @@ package com.s8.web.front.carbide.structure;
 
 import java.util.List;
 
-import com.s8.io.bohr.neon.core.NeBranch;
+import com.s8.api.objects.web.WebS8Session;
 import com.s8.web.front.HTML_NeNode;
 
 public class Div extends HTML_NeNode {
@@ -13,7 +13,7 @@ public class Div extends HTML_NeNode {
 	 * @param width
 	 * @return
 	 */
-	public static Div create(NeBranch branch) {
+	public static Div create(WebS8Session branch) {
 		return new Div(branch);
 	}
 
@@ -22,7 +22,7 @@ public class Div extends HTML_NeNode {
 	 * 
 	 * @param branch
 	 */
-	public Div(NeBranch branch) {
+	public Div(WebS8Session branch) {
 		super(branch, "/s8-web-front/carbide/structure/Div");
 	}
 	

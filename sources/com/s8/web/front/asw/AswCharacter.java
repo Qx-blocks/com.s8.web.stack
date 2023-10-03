@@ -3,10 +3,10 @@ package com.s8.web.front.asw;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.s8.io.bohr.neon.core.NeBranch;
-import com.s8.io.bohr.neon.core.NeObject;
-import com.s8.io.bohr.neon.lambdas.none.VoidLambda;
-import com.s8.io.bohr.neon.lambdas.primitives.StringUTF8Lambda;
+import com.s8.api.objects.web.WebS8Object;
+import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.lambdas.none.VoidLambda;
+import com.s8.api.objects.web.lambdas.primitives.StringUTF8Lambda;
 
 
 /**
@@ -14,14 +14,14 @@ import com.s8.io.bohr.neon.lambdas.primitives.StringUTF8Lambda;
  * @author pierreconvert
  *
  */
-public class AswCharacter extends NeObject {
+public class AswCharacter extends WebS8Object {
 
 	
 	/**
 	 * 
 	 * @param branch
 	 */
-	public AswCharacter(NeBranch branch) {
+	public AswCharacter(WebS8Session branch) {
 		super(branch, "/s8-web-front/asw/AswCharacter");
 	}
 

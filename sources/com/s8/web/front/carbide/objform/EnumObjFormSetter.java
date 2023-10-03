@@ -2,9 +2,9 @@ package com.s8.web.front.carbide.objform;
 
 import java.util.function.Consumer;
 
-import com.s8.io.bohr.neon.core.NeBranch;
-import com.s8.io.bohr.neon.functions.primitives.UInt8NeFunction;
-import com.s8.io.bohr.neon.lambdas.primitives.UInt8Lambda;
+import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.functions.primitives.UInt8NeFunction;
+import com.s8.api.objects.web.lambdas.primitives.UInt8Lambda;
 
 
 /**
@@ -15,7 +15,7 @@ import com.s8.io.bohr.neon.lambdas.primitives.UInt8Lambda;
 public class EnumObjFormSetter extends PrimitiveObjFormSetter {
 	
 	
-	public static <E extends Enum<E>> EnumObjFormSetter create(NeBranch branch, String name, Class<E> enumType, int preset, 
+	public static <E extends Enum<E>> EnumObjFormSetter create(WebS8Session branch, String name, Class<E> enumType, int preset, 
 			Consumer<E> consumer, String doc) {
 		
 		E[] enumValues = enumType.getEnumConstants();
@@ -32,7 +32,7 @@ public class EnumObjFormSetter extends PrimitiveObjFormSetter {
 	}
 
 	
-	public EnumObjFormSetter(NeBranch branch) {
+	public EnumObjFormSetter(WebS8Session branch) {
 		super(branch, "/s8-web-front/carbide/objform/EnumObjFormSetter");
 	}
 	

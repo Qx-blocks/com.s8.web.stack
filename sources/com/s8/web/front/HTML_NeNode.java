@@ -1,7 +1,7 @@
 package com.s8.web.front;
 
-import com.s8.io.bohr.neon.core.NeBranch;
-import com.s8.io.bohr.neon.core.NeObject;
+import com.s8.api.objects.web.WebS8Object;
+import com.s8.api.objects.web.WebS8Session;
 
 /**
  * 
@@ -11,10 +11,10 @@ import com.s8.io.bohr.neon.core.NeObject;
  * @author pierreconvert
  *
  */
-public abstract class HTML_NeNode extends NeObject {
+public abstract class HTML_NeNode extends WebS8Object {
 
-	public HTML_NeNode(NeBranch branch, String typeName) {
-		super(branch, typeName);
+	public HTML_NeNode(WebS8Session session, String typeName) {
+		super(session, typeName);
 	}
 
 }

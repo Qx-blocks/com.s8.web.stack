@@ -1,16 +1,16 @@
 package com.s8.web.front.carbide.objform;
 
-import com.s8.io.bohr.neon.core.NeBranch;
-import com.s8.io.bohr.neon.core.NeObject;
-import com.s8.io.bohr.neon.functions.none.VoidNeFunction;
-import com.s8.io.bohr.neon.lambdas.none.VoidLambda;
+import com.s8.api.objects.web.WebS8Object;
+import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.functions.none.VoidNeFunction;
+import com.s8.api.objects.web.lambdas.none.VoidLambda;
 import com.s8.web.front.S8WebDirection;
 import com.s8.web.front.S8WebTheme;
 import com.s8.web.front.carbide.popover.Popover;
 
 
 
-public class ObjFormElement extends NeObject {
+public class ObjFormElement extends WebS8Object {
 
 	
 	/**
@@ -18,7 +18,7 @@ public class ObjFormElement extends NeObject {
 	 * @param branch
 	 * @param typeName
 	 */
-	public ObjFormElement(NeBranch branch, String typeName) {
+	public ObjFormElement(WebS8Session branch, String typeName) {
 		super(branch, typeName);
 		onOptionsRequiredLambda(() -> {});
 	}
@@ -30,11 +30,11 @@ public class ObjFormElement extends NeObject {
 	 * @param text
 	 */
 	public void setTooltipDoc(String text) {
-		NeBranch branch = vertex.getBranch();
+		WebS8Session branch = vertex.getSession();
 		Popover tooltip = new Popover(branch);
 		tooltip.setTheme(S8WebTheme.LIGHT);
 		tooltip.setDirection(S8WebDirection.BOTTOM);
-		tooltip.setElements(ObjFormTextDoc.create(vertex.getBranch(), text));
+		tooltip.setElements(ObjFormTextDoc.create(vertex.getSession(), text));
 		vertex.fields().setObjectField("tooltip", tooltip);
 	}
 	

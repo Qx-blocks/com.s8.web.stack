@@ -28,9 +28,9 @@ module com.s8.web.front {
 	
 	exports com.s8.web.front.websvg;
 	
-	
+
+	requires transitive com.s8.api;
 	requires transitive com.s8.arch.fluor;
-	requires transitive com.s8.io.bohr.neon;
 	requires transitive com.s8.io.svg;
 	
 }

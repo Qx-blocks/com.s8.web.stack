@@ -1,6 +1,6 @@
 package com.s8.web.front.carbide.title;
 
-import com.s8.io.bohr.neon.core.NeBranch;
+import com.s8.api.objects.web.WebS8Session;
 import com.s8.web.front.HTML_NeNode;
 
 
@@ -17,7 +17,7 @@ public class H2Title extends HTML_NeNode {
 	 * @param text
 	 * @return
 	 */
-	public static H2Title create(NeBranch branch, String text) {
+	public static H2Title create(WebS8Session branch, String text) {
 		H2Title title = new H2Title(branch);
 		title.setText(text);
 		return title;
@@ -28,7 +28,7 @@ public class H2Title extends HTML_NeNode {
 	 * 
 	 * @param branch
 	 */
-	public H2Title(NeBranch branch) {
+	public H2Title(WebS8Session branch) {
 		super(branch, "/s8-web-front/carbide/title/H2Title");
 	}
 	

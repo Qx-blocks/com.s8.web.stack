@@ -2,7 +2,7 @@ package com.s8.web.front.websvg;
 
 import java.util.List;
 
-import com.s8.io.bohr.neon.core.NeBranch;
+import com.s8.api.objects.web.WebS8Session;
 import com.s8.web.front.HTML_NeNode;
 
 
@@ -19,7 +19,7 @@ public class WebSVG_Canvas extends HTML_NeNode {
 	 * @param branch
 	 * @param typeName
 	 */
-	public WebSVG_Canvas(NeBranch branch) {
+	public WebSVG_Canvas(WebS8Session branch) {
 		super(branch, "/s8-web-front/websvg/WebSVG_Canvas");
 	}
 	

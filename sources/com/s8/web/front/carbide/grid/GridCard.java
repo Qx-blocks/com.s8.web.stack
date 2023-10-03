@@ -1,9 +1,9 @@
 package com.s8.web.front.carbide.grid;
 
-import com.s8.io.bohr.neon.core.NeBranch;
-import com.s8.io.bohr.neon.core.NeObject;
-import com.s8.io.bohr.neon.functions.none.VoidNeFunction;
-import com.s8.io.bohr.neon.lambdas.none.VoidLambda;
+import com.s8.api.objects.web.WebS8Object;
+import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.functions.none.VoidNeFunction;
+import com.s8.api.objects.web.lambdas.none.VoidLambda;
 import com.s8.web.front.carbide.popover.Popover;
 
 
@@ -12,7 +12,7 @@ import com.s8.web.front.carbide.popover.Popover;
  * @author pierreconvert
  *
  */
-public class GridCard extends NeObject {
+public class GridCard extends WebS8Object {
 
 	
 	/**
@@ -20,7 +20,7 @@ public class GridCard extends NeObject {
 	 * @param branch
 	 * @param typeName
 	 */
-	public GridCard(NeBranch branch, String typeName) {
+	public GridCard(WebS8Session branch, String typeName) {
 		super(branch, typeName);
 	}
 

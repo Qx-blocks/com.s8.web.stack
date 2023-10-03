@@ -2,15 +2,15 @@ package com.s8.web.front.carbide.cube;
 
 import java.util.List;
 
-import com.s8.io.bohr.neon.core.NeBranch;
-import com.s8.io.bohr.neon.core.NeObject;
+import com.s8.api.objects.web.WebS8Object;
+import com.s8.api.objects.web.WebS8Session;
 
 /**
  * 
  * @author pierreconvert
  *
  */
-public class Cube extends NeObject {
+public class Cube extends WebS8Object {
 	
 	
 	public final static int NB_LAYERS = 8;
@@ -20,7 +20,7 @@ public class Cube extends NeObject {
 	 * 
 	 * @param branch
 	 */
-	public Cube(NeBranch branch) {
+	public Cube(WebS8Session branch) {
 		super(branch, "/s8-web-front/carbide/cube/Cube");
 	}
 

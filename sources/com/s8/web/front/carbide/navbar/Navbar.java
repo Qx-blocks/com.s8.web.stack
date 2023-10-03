@@ -2,7 +2,7 @@ package com.s8.web.front.carbide.navbar;
 
 import java.util.List;
 
-import com.s8.io.bohr.neon.core.NeBranch;
+import com.s8.api.objects.web.WebS8Session;
 import com.s8.web.front.HTML_NeNode;
 
 
@@ -18,7 +18,7 @@ public class Navbar extends HTML_NeNode {
 	 * 
 	 * @param branch
 	 */
-	public Navbar(NeBranch branch) {
+	public Navbar(WebS8Session branch) {
 		super(branch, "/s8-web-front/carbide/navbar/Navbar");
 	}
 	

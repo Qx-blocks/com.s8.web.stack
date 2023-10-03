@@ -1,6 +1,6 @@
 package com.s8.web.front.carbide.objform;
 
-import com.s8.io.bohr.neon.core.NeBranch;
+import com.s8.api.objects.web.WebS8Session;
 
 public class TextObjFormGetter extends PrimitiveObjFormGetter {
 	/**
@@ -10,7 +10,7 @@ public class TextObjFormGetter extends PrimitiveObjFormGetter {
 	 * @param unit
 	 * @return
 	 */
-	public static final TextObjFormGetter create(NeBranch branch, String fieldName, String value) {
+	public static final TextObjFormGetter create(WebS8Session branch, String fieldName, String value) {
 		TextObjFormGetter fieldView = new TextObjFormGetter(branch);
 		fieldView.setFieldName(fieldName);
 		fieldView.setValue(value);
@@ -19,7 +19,7 @@ public class TextObjFormGetter extends PrimitiveObjFormGetter {
 	
 	
 
-	public TextObjFormGetter(NeBranch branch) {
+	public TextObjFormGetter(WebS8Session branch) {
 		super(branch, "/s8-web-front/carbide/objform/TextObjFormGetter");
 	}
 	

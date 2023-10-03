@@ -1,6 +1,6 @@
 package com.s8.web.front.websvg;
 
-import com.s8.io.bohr.neon.core.NeBranch;
+import com.s8.api.objects.web.WebS8Session;
 import com.s8.io.svg.SVG_Vector;
 
 
@@ -23,7 +23,7 @@ public class WebSVG_Polyline extends WebSVG_Element {
 	 * @param r
 	 * @return
 	 */
-	public static WebSVG_Polyline create(NeBranch branch, 
+	public static WebSVG_Polyline create(WebS8Session branch, 
 			double thickness,
 			WebSVG_StrokeSolidity solidity,
 			WebSVG_StrokeColor color,
@@ -39,7 +39,7 @@ public class WebSVG_Polyline extends WebSVG_Element {
 	}
 	
 	
-	public static WebSVG_Polyline create(NeBranch branch, 
+	public static WebSVG_Polyline create(WebS8Session branch, 
 			double thickness,
 			WebSVG_StrokeSolidity solidity,
 			WebSVG_StrokeColor color,
@@ -61,7 +61,7 @@ public class WebSVG_Polyline extends WebSVG_Element {
 	 * @param coordinates
 	 * @return
 	 */
-	public static WebSVG_Polyline create(NeBranch branch, float[] coordinates) {
+	public static WebSVG_Polyline create(WebS8Session branch, float[] coordinates) {
 		WebSVG_Polyline line = new WebSVG_Polyline(branch);
 		line.setCoordinates(coordinates);
 		return line;
@@ -72,7 +72,7 @@ public class WebSVG_Polyline extends WebSVG_Element {
 	 * 
 	 * @param branch
 	 */
-	public WebSVG_Polyline(NeBranch branch) {
+	public WebSVG_Polyline(WebS8Session branch) {
 		super(branch, "/s8-web-front/websvg/WebSVG_Polyline");
 	}
 	

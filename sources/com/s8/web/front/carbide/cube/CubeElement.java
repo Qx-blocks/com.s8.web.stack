@@ -1,12 +1,12 @@
 package com.s8.web.front.carbide.cube;
 
-import com.s8.io.bohr.neon.core.NeBranch;
-import com.s8.io.bohr.neon.core.NeObject;
+import com.s8.api.objects.web.WebS8Object;
+import com.s8.api.objects.web.WebS8Session;
 
-public class CubeElement extends NeObject {
+public class CubeElement extends WebS8Object {
 
 	
-	public CubeElement(NeBranch branch, String typeName) {
+	public CubeElement(WebS8Session branch, String typeName) {
 		super(branch, typeName);
 	}
 

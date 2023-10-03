@@ -2,9 +2,9 @@ package com.s8.web.front.carbide.button;
 
 import java.nio.charset.StandardCharsets;
 
-import com.s8.arch.fluor.delivery.S8WebResource;
-import com.s8.arch.fluor.delivery.S8WebResourceGenerator;
-import com.s8.io.bohr.neon.core.NeBranch;
+import com.s8.api.flow.delivery.S8WebResource;
+import com.s8.api.flow.delivery.S8WebResourceGenerator;
+import com.s8.api.objects.web.WebS8Session;
 import com.s8.web.front.HTML_NeNode;
 import com.s8.web.front.S8WebSize;
 import com.s8.web.front.S8WebTheme;
@@ -25,7 +25,7 @@ public class DownloadButton extends HTML_NeNode {
 	 * @param style
 	 * @return
 	 */
-	public static DownloadButton create(NeBranch branch, String label, S8WebSize size, S8WebTheme theme) {
+	public static DownloadButton create(WebS8Session branch, String label, S8WebSize size, S8WebTheme theme) {
 		DownloadButton button = new DownloadButton(branch);
 		
 		button.setLabel(label);
@@ -46,7 +46,7 @@ public class DownloadButton extends HTML_NeNode {
 	 * 
 	 * @param branch
 	 */
-	public DownloadButton(NeBranch branch) {
+	public DownloadButton(WebS8Session branch) {
 		super(branch, "/s8-web-front/carbide/button/DownloadButton");
 		
 		/* to be overridden */

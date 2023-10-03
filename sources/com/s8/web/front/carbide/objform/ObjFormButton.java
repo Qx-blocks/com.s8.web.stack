@@ -1,8 +1,8 @@
 package com.s8.web.front.carbide.objform;
 
-import com.s8.io.bohr.neon.core.NeBranch;
-import com.s8.io.bohr.neon.functions.none.VoidNeFunction;
-import com.s8.io.bohr.neon.lambdas.none.VoidLambda;
+import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.functions.none.VoidNeFunction;
+import com.s8.api.objects.web.lambdas.none.VoidLambda;
 import com.s8.web.front.carbide.icons.S8FlatIcon;
 
 
@@ -21,7 +21,7 @@ public class ObjFormButton extends ObjFormElement {
 	 * @param color
 	 * @return
 	 */
-	public static ObjFormButton create(NeBranch branch, String label) {
+	public static ObjFormButton create(WebS8Session branch, String label) {
 		ObjFormButton objFormButton = new ObjFormButton(branch);
 		objFormButton.setLabel(label);
 		return objFormButton;
@@ -30,7 +30,7 @@ public class ObjFormButton extends ObjFormElement {
 	
 	
 	
-	public ObjFormButton(NeBranch branch) {
+	public ObjFormButton(WebS8Session branch) {
 		super(branch, "/s8-web-front/carbide/objform/ObjFormButton");
 	}
 	

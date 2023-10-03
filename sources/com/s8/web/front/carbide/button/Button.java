@@ -1,8 +1,8 @@
 package com.s8.web.front.carbide.button;
 
-import com.s8.io.bohr.neon.core.NeBranch;
-import com.s8.io.bohr.neon.functions.none.VoidNeFunction;
-import com.s8.io.bohr.neon.lambdas.none.VoidLambda;
+import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.functions.none.VoidNeFunction;
+import com.s8.api.objects.web.lambdas.none.VoidLambda;
 import com.s8.web.front.HTML_NeNode;
 import com.s8.web.front.S8WebSize;
 import com.s8.web.front.S8WebTheme;
@@ -23,7 +23,7 @@ public class Button extends HTML_NeNode {
 	 * @param style
 	 * @return
 	 */
-	public static Button create(NeBranch branch, String label, S8WebSize size, S8WebTheme theme) {
+	public static Button create(WebS8Session branch, String label, S8WebSize size, S8WebTheme theme) {
 		Button button = new Button(branch);
 		
 		button.setLabel(label);
@@ -44,7 +44,7 @@ public class Button extends HTML_NeNode {
 	 * 
 	 * @param branch
 	 */
-	public Button(NeBranch branch) {
+	public Button(WebS8Session branch) {
 		super(branch, "/s8-web-front/carbide/button/Button");
 		
 		/* to be overridden */
