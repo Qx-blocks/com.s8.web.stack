@@ -30,7 +30,6 @@ module com.s8.web.front {
 	
 
 	requires transitive com.s8.api;
-	requires transitive com.s8.arch.fluor;
 	requires transitive com.s8.io.svg;
 	
 }
