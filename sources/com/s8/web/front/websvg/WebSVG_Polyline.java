@@ -1,7 +1,7 @@
 package com.s8.web.front.websvg;
 
 import com.s8.api.objects.web.WebS8Session;
-import com.s8.io.svg.SVG_Vector;
+import com.s8.core.io.svg.SVG_Vector;
 
 
 /**
