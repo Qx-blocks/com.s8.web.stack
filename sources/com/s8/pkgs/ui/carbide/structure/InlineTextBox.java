@@ -1,0 +1,45 @@
+package com.s8.pkgs.ui.carbide.structure;
+
+import com.s8.api.objects.web.WebS8Session;
+import com.s8.pkgs.ui.carbide.Carbide;
+import com.s8.pkgs.ui.carbide.HTML_NeNode;
+
+
+/**
+ * 
+ * @author pierreconvert
+ *
+ */
+public class InlineTextBox extends HTML_NeNode {
+	
+	/**
+	 * 
+	 * @param branch
+	 * @param width
+	 * @return
+	 */
+	public static InlineTextBox create(WebS8Session branch, String text) {
+		InlineTextBox title = new InlineTextBox(branch);
+		title.setText(text);
+		return title;
+	}
+
+	
+	/**
+	 * 
+	 * @param branch
+	 */
+	public InlineTextBox(WebS8Session branch) {
+		super(branch, Carbide.ROOT_WEBPATH + "/structure/InlineTextBox");
+	}
+	
+	
+	/**
+	 * 
+	 * @param name
+	 */
+	public void setText(String text) {
+		vertex.fields().setStringUTF8Field("text", text);
+	}
+	
+}
