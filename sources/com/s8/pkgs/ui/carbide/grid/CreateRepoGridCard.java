@@ -1,6 +1,6 @@
 package com.s8.pkgs.ui.carbide.grid;
 
-import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.S8WebFront;
 import com.s8.pkgs.ui.carbide.Carbide;
 
 
@@ -19,7 +19,7 @@ public class CreateRepoGridCard extends GridCard {
 	 * 
 	 * @param branch
 	 */
-	public CreateRepoGridCard(WebS8Session branch) {
+	public CreateRepoGridCard(S8WebFront branch) {
 		super(branch, Carbide.ROOT_WEBPATH + "/grid/CreateRepoGridCard");
 	}
 	

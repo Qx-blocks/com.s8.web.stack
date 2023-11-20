@@ -1,6 +1,6 @@
 package com.s8.pkgs.ui.carbide.textinput;
 
-import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.S8WebFront;
 import com.s8.api.objects.web.functions.primitives.StringUTF8NeFunction;
 import com.s8.api.objects.web.lambdas.primitives.StringUTF8Lambda;
 import com.s8.pkgs.ui.carbide.Carbide;
@@ -16,7 +16,7 @@ import com.s8.pkgs.ui.carbide.S8WebTheme;
 public class TextInput extends HTML_NeNode {
 	
 	
-	public static TextInput create(WebS8Session branch, S8WebSize size, int width, String placeholder){
+	public static TextInput create(S8WebFront branch, S8WebSize size, int width, String placeholder){
 		TextInput input = new TextInput(branch);
 		input.setType(Type.TEXT);
 		input.setTheme(S8WebTheme.LIGHT);
@@ -34,7 +34,7 @@ public class TextInput extends HTML_NeNode {
 	
 	
 
-	public TextInput(WebS8Session branch) {
+	public TextInput(S8WebFront branch) {
 		super(branch, Carbide.ROOT_WEBPATH + "/textinput/TextInput");
 	}
 	

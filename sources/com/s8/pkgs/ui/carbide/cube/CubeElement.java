@@ -1,12 +1,12 @@
 package com.s8.pkgs.ui.carbide.cube;
 
-import com.s8.api.objects.web.WebS8Object;
-import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.S8WebFrontObject;
+import com.s8.api.objects.web.S8WebFront;
 
-public class CubeElement extends WebS8Object {
+public class CubeElement extends S8WebFrontObject {
 
 	
-	public CubeElement(WebS8Session branch, String typeName) {
+	public CubeElement(S8WebFront branch, String typeName) {
 		super(branch, typeName);
 	}
 

@@ -1,6 +1,6 @@
 package com.s8.pkgs.ui.carbide.objform;
 
-import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.S8WebFront;
 import com.s8.api.objects.web.functions.none.VoidNeFunction;
 import com.s8.api.objects.web.lambdas.none.VoidLambda;
 import com.s8.pkgs.ui.carbide.Carbide;
@@ -23,7 +23,7 @@ public class ObjFormOption extends HTML_NeNode {
 	 * @param color
 	 * @return
 	 */
-	public static ObjFormOption createLambda(WebS8Session branch, String name, S8FlatIcon icon, VoidLambda lambda) {
+	public static ObjFormOption createLambda(S8WebFront branch, String name, S8FlatIcon icon, VoidLambda lambda) {
 		ObjFormOption objFormOption = new ObjFormOption(branch);
 		objFormOption.setName(name);
 		objFormOption.setIconShape(icon);
@@ -32,7 +32,7 @@ public class ObjFormOption extends HTML_NeNode {
 	}
 	
 	
-	public static ObjFormOption createLambda(WebS8Session branch, String name, S8FlatIcon icon, VoidNeFunction function) {
+	public static ObjFormOption createLambda(S8WebFront branch, String name, S8FlatIcon icon, VoidNeFunction function) {
 		ObjFormOption objFormOption = new ObjFormOption(branch);
 		objFormOption.setName(name);
 		objFormOption.setIconShape(icon);
@@ -43,7 +43,7 @@ public class ObjFormOption extends HTML_NeNode {
 	
 	
 	
-	public ObjFormOption(WebS8Session branch) {
+	public ObjFormOption(S8WebFront branch) {
 		super(branch, Carbide.ROOT_WEBPATH + "/objform/ObjFormOption");
 	}
 	

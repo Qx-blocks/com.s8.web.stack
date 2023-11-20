@@ -1,6 +1,6 @@
 package com.s8.pkgs.ui.carbide.objform;
 
-import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.S8WebFront;
 import com.s8.pkgs.ui.carbide.Carbide;
 
 public class TextObjFormGetter extends PrimitiveObjFormGetter {
@@ -11,7 +11,7 @@ public class TextObjFormGetter extends PrimitiveObjFormGetter {
 	 * @param unit
 	 * @return
 	 */
-	public static final TextObjFormGetter create(WebS8Session branch, String fieldName, String value) {
+	public static final TextObjFormGetter create(S8WebFront branch, String fieldName, String value) {
 		TextObjFormGetter fieldView = new TextObjFormGetter(branch);
 		fieldView.setFieldName(fieldName);
 		fieldView.setValue(value);
@@ -20,7 +20,7 @@ public class TextObjFormGetter extends PrimitiveObjFormGetter {
 	
 	
 
-	public TextObjFormGetter(WebS8Session branch) {
+	public TextObjFormGetter(S8WebFront branch) {
 		super(branch, Carbide.ROOT_WEBPATH + "/objform/TextObjFormGetter");
 	}
 	

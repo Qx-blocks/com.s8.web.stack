@@ -1,7 +1,7 @@
 package com.s8.pkgs.ui.carbide.asw;
 
-import com.s8.api.objects.web.WebS8Object;
-import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.S8WebFrontObject;
+import com.s8.api.objects.web.S8WebFront;
 import com.s8.pkgs.ui.carbide.Carbide;
 import com.s8.pkgs.ui.carbide.cube.CubeElement;
 
@@ -13,7 +13,7 @@ public class AswScreen extends CubeElement {
 	 * 
 	 * @param branch
 	 */
-	public AswScreen(WebS8Session branch) {
+	public AswScreen(S8WebFront branch) {
 		super(branch, Carbide.ROOT_WEBPATH + "/asw/AswScreen");
 	}
 
@@ -35,7 +35,7 @@ public class AswScreen extends CubeElement {
 	}
 
 	
-	public void addElement(WebS8Object element) {
+	public void addElement(S8WebFrontObject element) {
 		vertex.fields().addObjToList("elements", element);
 	}
 

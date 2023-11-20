@@ -2,7 +2,7 @@ package com.s8.pkgs.ui.carbide.structure;
 
 import java.util.List;
 
-import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.S8WebFront;
 import com.s8.pkgs.ui.carbide.Carbide;
 import com.s8.pkgs.ui.carbide.HTML_NeNode;
 
@@ -14,7 +14,7 @@ public class Div extends HTML_NeNode {
 	 * @param width
 	 * @return
 	 */
-	public static Div create(WebS8Session branch) {
+	public static Div create(S8WebFront branch) {
 		return new Div(branch);
 	}
 
@@ -23,7 +23,7 @@ public class Div extends HTML_NeNode {
 	 * 
 	 * @param branch
 	 */
-	public Div(WebS8Session branch) {
+	public Div(S8WebFront branch) {
 		super(branch, Carbide.ROOT_WEBPATH + "/structure/Div");
 	}
 	

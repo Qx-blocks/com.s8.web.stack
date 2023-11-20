@@ -2,8 +2,8 @@ package com.s8.pkgs.ui.carbide.cube;
 
 import java.util.List;
 
-import com.s8.api.objects.web.WebS8Object;
-import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.S8WebFrontObject;
+import com.s8.api.objects.web.S8WebFront;
 import com.s8.pkgs.ui.carbide.Carbide;
 
 /**
@@ -11,7 +11,7 @@ import com.s8.pkgs.ui.carbide.Carbide;
  * @author pierreconvert
  *
  */
-public class Cube extends WebS8Object {
+public class Cube extends S8WebFrontObject {
 	
 	
 	public final static int NB_LAYERS = 8;
@@ -21,7 +21,7 @@ public class Cube extends WebS8Object {
 	 * 
 	 * @param branch
 	 */
-	public Cube(WebS8Session branch) {
+	public Cube(S8WebFront branch) {
 		super(branch, Carbide.ROOT_WEBPATH + "/cube/Cube");
 	}
 

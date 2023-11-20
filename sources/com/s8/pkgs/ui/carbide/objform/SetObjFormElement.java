@@ -3,7 +3,7 @@ package com.s8.pkgs.ui.carbide.objform;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.S8WebFront;
 import com.s8.api.objects.web.functions.none.VoidNeFunction;
 import com.s8.api.objects.web.lambdas.none.VoidLambda;
 import com.s8.api.objects.web.lambdas.primitives.Bool8Lambda;
@@ -25,7 +25,7 @@ public class SetObjFormElement extends ObjFormElement {
 
 
 
-	public SetObjFormElement(WebS8Session branch) {
+	public SetObjFormElement(S8WebFront branch) {
 		super(branch, Carbide.ROOT_WEBPATH + "/objform/SetObjFormElement");
 
 		vertex.methods().setVoidMethodLambda("on-expanded", () -> {});
@@ -286,7 +286,7 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param message
 	 */
 	public void setStatusPopover(S8WebStatus status, String message) {
-		WebS8Session branch = vertex.getSession();
+		S8WebFront branch = vertex.getSession();
 		Popover popover = new Popover(branch);
 		switch(status) {
 		case WARNING : popover.setTheme(S8WebTheme.WARNING); break;

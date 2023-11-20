@@ -1,6 +1,6 @@
 package com.s8.pkgs.ui.carbide.objform;
 
-import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.S8WebFront;
 import com.s8.api.objects.web.functions.primitives.Bool8NeFunction;
 import com.s8.api.objects.web.lambdas.primitives.Bool8Lambda;
 import com.s8.pkgs.ui.carbide.Carbide;
@@ -22,7 +22,7 @@ public class BooleanObjFormSetter extends PrimitiveObjFormSetter {
 	 * @param lambda
 	 * @return
 	 */
-	public static BooleanObjFormSetter create(WebS8Session branch, String name, boolean initialValue, Bool8Lambda lambda) {
+	public static BooleanObjFormSetter create(S8WebFront branch, String name, boolean initialValue, Bool8Lambda lambda) {
 		BooleanObjFormSetter fieldView = new BooleanObjFormSetter(branch);
 		fieldView.setName(name);
 		fieldView.setValue(initialValue);
@@ -41,7 +41,7 @@ public class BooleanObjFormSetter extends PrimitiveObjFormSetter {
 	 * @param doc
 	 * @return
 	 */
-	public static BooleanObjFormSetter create(WebS8Session branch, String name, boolean initialValue, Bool8Lambda lambda, String doc) {
+	public static BooleanObjFormSetter create(S8WebFront branch, String name, boolean initialValue, Bool8Lambda lambda, String doc) {
 		BooleanObjFormSetter fieldView = new BooleanObjFormSetter(branch);
 		fieldView.setName(name);
 		fieldView.setValue(initialValue);
@@ -55,7 +55,7 @@ public class BooleanObjFormSetter extends PrimitiveObjFormSetter {
 	 * 
 	 * @param branch
 	 */
-	public BooleanObjFormSetter(WebS8Session branch) {
+	public BooleanObjFormSetter(S8WebFront branch) {
 		super(branch, Carbide.ROOT_WEBPATH + "/objform/BooleanObjFormGetter");
 	}
 	

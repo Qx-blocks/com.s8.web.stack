@@ -1,6 +1,6 @@
 package com.s8.pkgs.ui.carbide.objform;
 
-import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.S8WebFront;
 import com.s8.api.objects.web.functions.none.VoidNeFunction;
 import com.s8.api.objects.web.lambdas.none.VoidLambda;
 import com.s8.pkgs.ui.carbide.Carbide;
@@ -22,7 +22,7 @@ public class ObjFormButton extends ObjFormElement {
 	 * @param color
 	 * @return
 	 */
-	public static ObjFormButton create(WebS8Session branch, String label) {
+	public static ObjFormButton create(S8WebFront branch, String label) {
 		ObjFormButton objFormButton = new ObjFormButton(branch);
 		objFormButton.setLabel(label);
 		return objFormButton;
@@ -31,7 +31,7 @@ public class ObjFormButton extends ObjFormElement {
 	
 	
 	
-	public ObjFormButton(WebS8Session branch) {
+	public ObjFormButton(S8WebFront branch) {
 		super(branch, Carbide.ROOT_WEBPATH + "/objform/ObjFormButton");
 	}
 	

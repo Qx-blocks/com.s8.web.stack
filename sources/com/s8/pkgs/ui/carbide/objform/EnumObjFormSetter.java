@@ -2,7 +2,7 @@ package com.s8.pkgs.ui.carbide.objform;
 
 import java.util.function.Consumer;
 
-import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.S8WebFront;
 import com.s8.api.objects.web.functions.primitives.UInt8NeFunction;
 import com.s8.api.objects.web.lambdas.primitives.UInt8Lambda;
 import com.s8.pkgs.ui.carbide.Carbide;
@@ -16,7 +16,7 @@ import com.s8.pkgs.ui.carbide.Carbide;
 public class EnumObjFormSetter extends PrimitiveObjFormSetter {
 	
 	
-	public static <E extends Enum<E>> EnumObjFormSetter create(WebS8Session branch, String name, Class<E> enumType, int preset, 
+	public static <E extends Enum<E>> EnumObjFormSetter create(S8WebFront branch, String name, Class<E> enumType, int preset, 
 			Consumer<E> consumer, String doc) {
 		
 		E[] enumValues = enumType.getEnumConstants();
@@ -33,7 +33,7 @@ public class EnumObjFormSetter extends PrimitiveObjFormSetter {
 	}
 
 	
-	public EnumObjFormSetter(WebS8Session branch) {
+	public EnumObjFormSetter(S8WebFront branch) {
 		super(branch, Carbide.ROOT_WEBPATH + "/objform/EnumObjFormSetter");
 	}
 	

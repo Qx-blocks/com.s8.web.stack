@@ -1,6 +1,6 @@
 package com.s8.pkgs.ui.carbide.objform;
 
-import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.S8WebFront;
 import com.s8.api.objects.web.functions.primitives.Int32NeFunction;
 import com.s8.api.objects.web.lambdas.primitives.Int32Lambda;
 import com.s8.pkgs.ui.carbide.Carbide;
@@ -22,7 +22,7 @@ public class IntegerObjFormSetter extends PrimitiveObjFormSetter {
 	 * @param lambda
 	 * @return
 	 */
-	public static IntegerObjFormSetter create(WebS8Session branch, String name, int initialValue, Int32Lambda lambda) {
+	public static IntegerObjFormSetter create(S8WebFront branch, String name, int initialValue, Int32Lambda lambda) {
 		IntegerObjFormSetter fieldView = new IntegerObjFormSetter(branch);
 		fieldView.setName(name);
 		fieldView.setValue(initialValue);
@@ -40,7 +40,7 @@ public class IntegerObjFormSetter extends PrimitiveObjFormSetter {
 	 * @param doc
 	 * @return
 	 */
-	public static IntegerObjFormSetter create(WebS8Session branch, String name, int initialValue, Int32Lambda lambda, String doc) {
+	public static IntegerObjFormSetter create(S8WebFront branch, String name, int initialValue, Int32Lambda lambda, String doc) {
 		IntegerObjFormSetter fieldView = new IntegerObjFormSetter(branch);
 		fieldView.setName(name);
 		fieldView.setValue(initialValue);
@@ -52,7 +52,7 @@ public class IntegerObjFormSetter extends PrimitiveObjFormSetter {
 	
 	
 
-	public IntegerObjFormSetter(WebS8Session branch) {
+	public IntegerObjFormSetter(S8WebFront branch) {
 		super(branch, Carbide.ROOT_WEBPATH + "/objform/IntegerObjFormSetter");
 	}
 	

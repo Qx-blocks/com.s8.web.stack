@@ -3,8 +3,8 @@ package com.s8.pkgs.ui.carbide.asw;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.s8.api.objects.web.WebS8Object;
-import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.S8WebFrontObject;
+import com.s8.api.objects.web.S8WebFront;
 import com.s8.api.objects.web.lambdas.none.VoidLambda;
 import com.s8.api.objects.web.lambdas.primitives.StringUTF8Lambda;
 import com.s8.pkgs.ui.carbide.Carbide;
@@ -15,14 +15,14 @@ import com.s8.pkgs.ui.carbide.Carbide;
  * @author pierreconvert
  *
  */
-public class AswCharacter extends WebS8Object {
+public class AswCharacter extends S8WebFrontObject {
 
 	
 	/**
 	 * 
 	 * @param branch
 	 */
-	public AswCharacter(WebS8Session branch) {
+	public AswCharacter(S8WebFront branch) {
 		super(branch, Carbide.ROOT_WEBPATH + "/asw/AswCharacter");
 	}
 

@@ -2,8 +2,8 @@ package com.s8.pkgs.ui.carbide.popover;
 
 import java.util.List;
 
-import com.s8.api.objects.web.WebS8Object;
-import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.S8WebFrontObject;
+import com.s8.api.objects.web.S8WebFront;
 import com.s8.pkgs.ui.carbide.Carbide;
 import com.s8.pkgs.ui.carbide.HTML_NeNode;
 import com.s8.pkgs.ui.carbide.S8WebDirection;
@@ -15,10 +15,10 @@ import com.s8.pkgs.ui.carbide.S8WebTheme;
  * @author pierreconvert
  *
  */
-public class Popover extends WebS8Object {
+public class Popover extends S8WebFrontObject {
 	
 	
-	public static Popover create(WebS8Session branch, S8WebTheme theme, S8WebDirection direction) {
+	public static Popover create(S8WebFront branch, S8WebTheme theme, S8WebDirection direction) {
 		Popover popover = new Popover(branch);
 		popover.setDirection(direction);
 		popover.setTheme(theme);
@@ -34,7 +34,7 @@ public class Popover extends WebS8Object {
 	 * 
 	 * @param branch
 	 */
-	public Popover(WebS8Session session) {
+	public Popover(S8WebFront session) {
 		super(session, Carbide.ROOT_WEBPATH + "/popover/Popover");
 	}
 	

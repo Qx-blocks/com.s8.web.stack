@@ -1,6 +1,6 @@
 package com.s8.pkgs.ui.carbide.objform;
 
-import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.S8WebFront;
 import com.s8.pkgs.ui.carbide.Carbide;
 import com.s8.pkgs.ui.carbide.HTML_NeNode;
 
@@ -17,7 +17,7 @@ public class ObjFormWrapper extends HTML_NeNode {
 	/**
 	 * 
 	 */
-	public ObjFormWrapper(WebS8Session branch) {
+	public ObjFormWrapper(S8WebFront branch) {
 		super(branch, Carbide.ROOT_WEBPATH + "/objform/ObjFormWrapper");
 	}
 	

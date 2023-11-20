@@ -1,7 +1,7 @@
 package com.s8.pkgs.ui.carbide.asw;
 
-import com.s8.api.objects.web.WebS8Object;
-import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.S8WebFrontObject;
+import com.s8.api.objects.web.S8WebFront;
 import com.s8.pkgs.ui.carbide.Carbide;
 
 
@@ -10,9 +10,9 @@ import com.s8.pkgs.ui.carbide.Carbide;
  * @author pierreconvert
  *
  */
-public class AswCharacterAttitude extends WebS8Object {
+public class AswCharacterAttitude extends S8WebFrontObject {
 
-	public AswCharacterAttitude(WebS8Session branch, 
+	public AswCharacterAttitude(S8WebFront branch, 
 			double speechPitch, 
 			double speechRate, 
 			double speechVolume, 

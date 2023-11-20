@@ -1,10 +1,10 @@
 package com.s8.pkgs.ui.carbide.objform;
 
-import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.S8WebFront;
 
 public class PrimitiveObjFormGetter extends ObjFormElement {
 
-	public PrimitiveObjFormGetter(WebS8Session branch, String typeName) {
+	public PrimitiveObjFormGetter(S8WebFront branch, String typeName) {
 		super(branch, typeName);
 	}
 	

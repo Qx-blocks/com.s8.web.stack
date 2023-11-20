@@ -1,7 +1,7 @@
 package com.s8.pkgs.ui.carbide;
 
-import com.s8.api.objects.web.WebS8Object;
-import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.S8WebFrontObject;
+import com.s8.api.objects.web.S8WebFront;
 
 /**
  * 
@@ -11,9 +11,9 @@ import com.s8.api.objects.web.WebS8Session;
  * @author pierreconvert
  *
  */
-public abstract class HTML_NeNode extends WebS8Object {
+public abstract class HTML_NeNode extends S8WebFrontObject {
 
-	public HTML_NeNode(WebS8Session session, String typeName) {
+	public HTML_NeNode(S8WebFront session, String typeName) {
 		super(session, typeName);
 	}
 

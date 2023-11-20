@@ -1,6 +1,6 @@
 package com.s8.pkgs.ui.carbide.structure;
 
-import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.S8WebFront;
 import com.s8.pkgs.ui.carbide.Carbide;
 import com.s8.pkgs.ui.carbide.HTML_NeNode;
 
@@ -18,7 +18,7 @@ public class InlineSpacer extends HTML_NeNode {
 	 * @param width
 	 * @return
 	 */
-	public static InlineSpacer create(WebS8Session branch, double width) {
+	public static InlineSpacer create(S8WebFront branch, double width) {
 		InlineSpacer title = new InlineSpacer(branch);
 		title.setWidth(width);
 		return title;
@@ -29,7 +29,7 @@ public class InlineSpacer extends HTML_NeNode {
 	 * 
 	 * @param branch
 	 */
-	public InlineSpacer(WebS8Session branch) {
+	public InlineSpacer(S8WebFront branch) {
 		super(branch, Carbide.ROOT_WEBPATH + "/structure/InlineSpacer");
 	}
 	

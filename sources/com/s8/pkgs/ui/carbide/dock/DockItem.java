@@ -1,7 +1,7 @@
 package com.s8.pkgs.ui.carbide.dock;
 
-import com.s8.api.objects.web.WebS8Object;
-import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.S8WebFrontObject;
+import com.s8.api.objects.web.S8WebFront;
 import com.s8.api.objects.web.functions.none.VoidNeFunction;
 import com.s8.api.objects.web.lambdas.none.VoidLambda;
 import com.s8.pkgs.ui.carbide.Carbide;
@@ -9,16 +9,16 @@ import com.s8.pkgs.ui.carbide.Carbide;
 /*
  * 
  */
-public class DockItem extends WebS8Object {
+public class DockItem extends S8WebFrontObject {
 	
 	
-	public static DockItem create(WebS8Session branch, String name, String iconFilename, VoidNeFunction function) {
+	public static DockItem create(S8WebFront branch, String name, String iconFilename, VoidNeFunction function) {
 		DockItem dockItem = new DockItem(branch, name, iconFilename);
 		dockItem.onClick(function);
 		return dockItem;
 	}
 	
-	public static DockItem createLambda(WebS8Session branch, String name, String iconFilename, VoidLambda lambda) {
+	public static DockItem createLambda(S8WebFront branch, String name, String iconFilename, VoidLambda lambda) {
 		DockItem dockItem = new DockItem(branch, name, iconFilename);
 		dockItem.onClickLambda(lambda);
 		return dockItem;
@@ -35,7 +35,7 @@ public class DockItem extends WebS8Object {
 	 * @param name
 	 * @param iconFilename
 	 */
-	public DockItem(WebS8Session branch, String name, String iconFilename) {
+	public DockItem(S8WebFront branch, String name, String iconFilename) {
 		super(branch, Carbide.ROOT_WEBPATH + "/dock/DockItem");
 		vertex.fields().setStringUTF8Field("name", name);
 		vertex.fields().setStringUTF8Field("iconFilename", iconFilename);

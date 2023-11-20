@@ -1,7 +1,7 @@
 package com.s8.pkgs.ui.carbide.topbar;
 
-import com.s8.api.objects.web.WebS8Object;
-import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.S8WebFrontObject;
+import com.s8.api.objects.web.S8WebFront;
 import com.s8.api.objects.web.functions.none.VoidNeFunction;
 import com.s8.api.objects.web.lambdas.none.VoidLambda;
 import com.s8.pkgs.ui.carbide.Carbide;
@@ -13,19 +13,19 @@ import com.s8.pkgs.ui.carbide.popover.Popover;
  * @author pierreconvert
  *
  */
-public class TopbarElement extends WebS8Object {
+public class TopbarElement extends S8WebFrontObject {
 
 	
 	/**
 	 * 
 	 * @param branch
 	 */
-	public TopbarElement(WebS8Session branch) {
+	public TopbarElement(S8WebFront branch) {
 		super(branch, Carbide.ROOT_WEBPATH + "/topbar/TopbarElement");
 	}
 	
 	
-	public TopbarElement(WebS8Session branch, String name) {
+	public TopbarElement(S8WebFront branch, String name) {
 		super(branch, Carbide.ROOT_WEBPATH +  "/topbar/TopbarElement");
 		setName(name);
 		onSelected(() -> { });

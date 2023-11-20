@@ -1,7 +1,7 @@
 package com.s8.pkgs.ui.carbide.objform;
 
-import com.s8.api.objects.web.WebS8Object;
-import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.S8WebFrontObject;
+import com.s8.api.objects.web.S8WebFront;
 import com.s8.api.objects.web.functions.none.VoidNeFunction;
 import com.s8.api.objects.web.lambdas.none.VoidLambda;
 import com.s8.pkgs.ui.carbide.S8WebDirection;
@@ -10,7 +10,7 @@ import com.s8.pkgs.ui.carbide.popover.Popover;
 
 
 
-public class ObjFormElement extends WebS8Object {
+public class ObjFormElement extends S8WebFrontObject {
 
 	
 	/**
@@ -18,7 +18,7 @@ public class ObjFormElement extends WebS8Object {
 	 * @param branch
 	 * @param typeName
 	 */
-	public ObjFormElement(WebS8Session branch, String typeName) {
+	public ObjFormElement(S8WebFront branch, String typeName) {
 		super(branch, typeName);
 		onOptionsRequiredLambda(() -> {});
 	}
@@ -30,7 +30,7 @@ public class ObjFormElement extends WebS8Object {
 	 * @param text
 	 */
 	public void setTooltipDoc(String text) {
-		WebS8Session branch = vertex.getSession();
+		S8WebFront branch = vertex.getSession();
 		Popover tooltip = new Popover(branch);
 		tooltip.setTheme(S8WebTheme.LIGHT);
 		tooltip.setDirection(S8WebDirection.BOTTOM);

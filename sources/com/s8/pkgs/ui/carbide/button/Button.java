@@ -1,6 +1,6 @@
 package com.s8.pkgs.ui.carbide.button;
 
-import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.S8WebFront;
 import com.s8.api.objects.web.functions.none.VoidNeFunction;
 import com.s8.api.objects.web.lambdas.none.VoidLambda;
 import com.s8.pkgs.ui.carbide.Carbide;
@@ -24,7 +24,7 @@ public class Button extends HTML_NeNode {
 	 * @param style
 	 * @return
 	 */
-	public static Button create(WebS8Session branch, String label, S8WebSize size, S8WebTheme theme) {
+	public static Button create(S8WebFront branch, String label, S8WebSize size, S8WebTheme theme) {
 		Button button = new Button(branch);
 		
 		button.setLabel(label);
@@ -45,7 +45,7 @@ public class Button extends HTML_NeNode {
 	 * 
 	 * @param branch
 	 */
-	public Button(WebS8Session branch) {
+	public Button(S8WebFront branch) {
 		super(branch, Carbide.ROOT_WEBPATH + "/button/Button");
 		
 		/* to be overridden */

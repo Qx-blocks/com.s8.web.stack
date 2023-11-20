@@ -1,7 +1,7 @@
 package com.s8.pkgs.ui.carbide.navbar;
 
-import com.s8.api.objects.web.WebS8Object;
-import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.S8WebFrontObject;
+import com.s8.api.objects.web.S8WebFront;
 import com.s8.api.objects.web.functions.none.VoidNeFunction;
 import com.s8.api.objects.web.lambdas.none.VoidLambda;
 import com.s8.pkgs.ui.carbide.Carbide;
@@ -13,19 +13,19 @@ import com.s8.pkgs.ui.carbide.icons.S8FlatIcon;
  * @author pierreconvert
  *
  */
-public class NavbarMenu extends WebS8Object {
+public class NavbarMenu extends S8WebFrontObject {
 
 	
 	/**
 	 * 
 	 * @param branch
 	 */
-	public NavbarMenu(WebS8Session branch) {
+	public NavbarMenu(S8WebFront branch) {
 		super(branch, Carbide.ROOT_WEBPATH + "/navbar/NavbarMenu");
 	}
 	
 	
-	public NavbarMenu(WebS8Session branch, S8FlatIcon icon, String name) {
+	public NavbarMenu(S8WebFront branch, S8FlatIcon icon, String name) {
 		super(branch, Carbide.ROOT_WEBPATH + "/navbar/NavbarMenu");
 		setIcon(icon);
 		setName(name);

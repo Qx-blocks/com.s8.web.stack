@@ -2,8 +2,8 @@ package com.s8.pkgs.ui.carbide.grid;
 
 import java.util.List;
 
-import com.s8.api.objects.web.WebS8Object;
-import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.S8WebFrontObject;
+import com.s8.api.objects.web.S8WebFront;
 import com.s8.api.objects.web.functions.none.VoidNeFunction;
 import com.s8.api.objects.web.lambdas.none.VoidLambda;
 import com.s8.pkgs.ui.carbide.Carbide;
@@ -13,10 +13,10 @@ import com.s8.pkgs.ui.carbide.Carbide;
  * @author pierreconvert
  *
  */
-public class Grid extends WebS8Object {
+public class Grid extends S8WebFrontObject {
 
 
-	public Grid(WebS8Session branch) {
+	public Grid(S8WebFront branch) {
 		super(branch, Carbide.ROOT_WEBPATH + "/grid/Grid");
 		onClickLambda(() -> unselectAllCards());
 	}

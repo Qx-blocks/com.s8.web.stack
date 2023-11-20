@@ -1,6 +1,6 @@
 package com.s8.pkgs.ui.carbide.objform;
 
-import com.s8.api.objects.web.WebS8Session;
+import com.s8.api.objects.web.S8WebFront;
 import com.s8.api.objects.web.functions.primitives.Float32NeFunction;
 import com.s8.api.objects.web.lambdas.primitives.Float32Lambda;
 import com.s8.pkgs.ui.carbide.Carbide;
@@ -15,7 +15,7 @@ import com.s8.pkgs.ui.carbide.S8NumberFormat;
 public class ScalarObjFormSetter extends PrimitiveObjFormSetter {
 
 
-	public static ScalarObjFormSetter create(WebS8Session branch, 
+	public static ScalarObjFormSetter create(S8WebFront branch, 
 			String name, 
 			String unit,
 			S8NumberFormat format,
@@ -30,7 +30,7 @@ public class ScalarObjFormSetter extends PrimitiveObjFormSetter {
 	}
 
 
-	public static ScalarObjFormSetter create(WebS8Session branch, 
+	public static ScalarObjFormSetter create(S8WebFront branch, 
 			String name, 
 			String unit,
 			S8NumberFormat format,
@@ -52,7 +52,7 @@ public class ScalarObjFormSetter extends PrimitiveObjFormSetter {
 	 * 
 	 * @param branch
 	 */
-	public ScalarObjFormSetter(WebS8Session branch) {
+	public ScalarObjFormSetter(S8WebFront branch) {
 		super(branch, Carbide.ROOT_WEBPATH + "/objform/ScalarObjFormSetter");
 	}
 
