@@ -2,9 +2,9 @@ package com.s8.pkgs.ui.carbide.objform;
 
 import java.util.function.Consumer;
 
-import com.s8.api.objects.web.S8WebFront;
-import com.s8.api.objects.web.functions.primitives.UInt8NeFunction;
-import com.s8.api.objects.web.lambdas.primitives.UInt8Lambda;
+import com.s8.api.web.S8WebFront;
+import com.s8.api.web.functions.primitives.UInt8NeFunction;
+import com.s8.api.web.lambdas.primitives.UInt8Lambda;
 import com.s8.pkgs.ui.carbide.Carbide;
 
 

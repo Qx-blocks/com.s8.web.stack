@@ -1,9 +1,9 @@
 package com.s8.pkgs.ui.carbide.dock;
 
-import com.s8.api.objects.web.S8WebFrontObject;
-import com.s8.api.objects.web.S8WebFront;
-import com.s8.api.objects.web.functions.none.VoidNeFunction;
-import com.s8.api.objects.web.lambdas.none.VoidLambda;
+import com.s8.api.web.S8WebFront;
+import com.s8.api.web.S8WebFrontObject;
+import com.s8.api.web.functions.none.VoidNeFunction;
+import com.s8.api.web.lambdas.none.VoidLambda;
 import com.s8.pkgs.ui.carbide.Carbide;
 
 /*

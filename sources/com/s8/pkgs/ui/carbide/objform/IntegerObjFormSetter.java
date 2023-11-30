@@ -1,8 +1,8 @@
 package com.s8.pkgs.ui.carbide.objform;
 
-import com.s8.api.objects.web.S8WebFront;
-import com.s8.api.objects.web.functions.primitives.Int32NeFunction;
-import com.s8.api.objects.web.lambdas.primitives.Int32Lambda;
+import com.s8.api.web.S8WebFront;
+import com.s8.api.web.functions.primitives.Int32NeFunction;
+import com.s8.api.web.lambdas.primitives.Int32Lambda;
 import com.s8.pkgs.ui.carbide.Carbide;
 
 

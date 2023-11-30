@@ -2,7 +2,7 @@ package com.s8.pkgs.ui.carbide.navbar;
 
 import java.util.List;
 
-import com.s8.api.objects.web.S8WebFront;
+import com.s8.api.web.S8WebFront;
 import com.s8.pkgs.ui.carbide.Carbide;
 import com.s8.pkgs.ui.carbide.HTML_NeNode;
 
