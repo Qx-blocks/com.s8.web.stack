@@ -1,9 +1,9 @@
 
-import { CubeElement } from '/s8-pkgs-ui-carbide/cube/CubeElement.js';
+import { CubeElement } from '/S8-pkgs-ui-carbide/cube/CubeElement.js';
 import { S8WebFront } from '../S8WebFront.js';
 
 
-S8WebFront.CSS_import("/s8-pkgs-ui-carbide/dock/Dock.css");
+S8WebFront.CSS_import("/S8-pkgs-ui-carbide/dock/Dock.css");
 
 /**
  * 

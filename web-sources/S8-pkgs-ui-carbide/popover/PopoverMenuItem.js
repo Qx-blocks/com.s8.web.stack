@@ -1,6 +1,6 @@
 import { Popover } from "./Popover.js";
-import { S8 } from "/s8-core-io-bohr-atom/S8.js";
-import { NeObject } from "/s8-core-io-bohr-neon/NeObject.js";
+import { S8 } from "/S8-core-bohr-atom/S8.js";
+import { NeObject } from "/S8-core-bohr-neon/NeObject.js";
 
 
 

@@ -1,17 +1,17 @@
 
-import { S8 } from "/s8-core-io-bohr-atom/S8.js";
-import { NeObject } from "/s8-core-io-bohr-neon/NeObject.js";
+import { S8 } from "/S8-core-bohr-atom/S8.js";
+import { NeObject } from "/S8-core-bohr-neon/NeObject.js";
 
-import { S8WebFront } from "/s8-pkgs-ui-carbide/S8WebFront.js";
+import { S8WebFront } from "/S8-pkgs-ui-carbide/S8WebFront.js";
 
-import { Popover } from "/s8-pkgs-ui-carbide/popover/Popover.js";
-import { Topbar } from "/s8-pkgs-ui-carbide/topbar/Topbar.js";
+import { Popover } from "/S8-pkgs-ui-carbide/popover/Popover.js";
+import { Topbar } from "/S8-pkgs-ui-carbide/topbar/Topbar.js";
 
 
 /**
  * 
  */
-S8WebFront.CSS_import('/s8-pkgs-ui-carbide/topbar/Topbar.css');
+S8WebFront.CSS_import('/S8-pkgs-ui-carbide/topbar/Topbar.css');
 
 
 /**

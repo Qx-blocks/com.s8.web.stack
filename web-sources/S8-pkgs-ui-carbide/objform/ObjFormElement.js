@@ -1,13 +1,13 @@
 
-import { S8 } from '/s8-core-io-bohr-atom/S8.js';
-import { NeObject } from '/s8-core-io-bohr-neon/NeObject.js';
+import { S8 } from '/S8-core-bohr-atom/S8.js';
+import { NeObject } from '/S8-core-bohr-neon/NeObject.js';
 
-import { S8WebFront } from '/s8-pkgs-ui-carbide/S8WebFront.js';
-import { Popover } from '/s8-pkgs-ui-carbide/popover/Popover.js';
+import { S8WebFront } from '/S8-pkgs-ui-carbide/S8WebFront.js';
+import { Popover } from '/S8-pkgs-ui-carbide/popover/Popover.js';
 
 
-S8WebFront.CSS_import("/s8-pkgs-ui-carbide/objform/ObjForm.css");
-S8WebFront.CSS_import("/s8-pkgs-ui-carbide/objform/ObjFormOptions.css");
+S8WebFront.CSS_import("/S8-pkgs-ui-carbide/objform/ObjForm.css");
+S8WebFront.CSS_import("/S8-pkgs-ui-carbide/objform/ObjFormOptions.css");
 
 
 export const getColor = function (code) {

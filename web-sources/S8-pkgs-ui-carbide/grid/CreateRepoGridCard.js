@@ -1,5 +1,5 @@
 
-import { GridCard } from "/s8-pkgs-ui-carbide/grid/GridCard.js";
+import { GridCard } from "/S8-pkgs-ui-carbide/grid/GridCard.js";
 
 
 

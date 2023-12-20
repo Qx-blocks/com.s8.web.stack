@@ -1,9 +1,9 @@
 
 
-import { S8 } from '/s8-core-io-bohr-atom/S8.js';
+import { S8 } from '/S8-core-bohr-atom/S8.js';
 
-import { S8_NumberFormats } from '/s8-pkgs-ui-carbide/S8NumberFormat.js';
-import { PrimtiveObjFormSetter } from '/s8-pkgs-ui-carbide/objform/PrimtiveObjFormSetter.js';
+import { S8_NumberFormats } from '/S8-pkgs-ui-carbide/S8NumberFormat.js';
+import { PrimtiveObjFormSetter } from '/S8-pkgs-ui-carbide/objform/PrimtiveObjFormSetter.js';
 
 
 export class ScalarObjFormSetter extends PrimtiveObjFormSetter {

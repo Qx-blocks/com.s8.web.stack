@@ -1,13 +1,13 @@
 
 
-import { S8 } from '/s8-core-io-bohr-atom/S8.js';
+import { S8 } from '/S8-core-bohr-atom/S8.js';
 
-import { S8WebFront } from '/s8-pkgs-ui-carbide/S8WebFront.js';
+import { S8WebFront } from '/S8-pkgs-ui-carbide/S8WebFront.js';
 
-import { Popover } from '/s8-pkgs-ui-carbide/popover/Popover.js';
-import { PopoverMenuItem } from '/s8-pkgs-ui-carbide/popover/PopoverMenuItem.js';
+import { Popover } from '/S8-pkgs-ui-carbide/popover/Popover.js';
+import { PopoverMenuItem } from '/S8-pkgs-ui-carbide/popover/PopoverMenuItem.js';
 
-import { getColor, ObjFormElement } from '/s8-pkgs-ui-carbide/objform/ObjFormElement.js';
+import { getColor, ObjFormElement } from '/S8-pkgs-ui-carbide/objform/ObjFormElement.js';
 
 
 /**

@@ -1,13 +1,13 @@
 
-import { S8WebFront } from '/s8-pkgs-ui-carbide/S8WebFront.js';
-import { GridCard } from '/s8-pkgs-ui-carbide/grid/GridCard.js';
+import { S8WebFront } from '/S8-pkgs-ui-carbide/S8WebFront.js';
+import { GridCard } from '/S8-pkgs-ui-carbide/grid/GridCard.js';
 
 
 
 /**
  * 
  */
-S8WebFront.CSS_import('/s8-pkgs-ui-carbide/grid/Grid.css');
+S8WebFront.CSS_import('/S8-pkgs-ui-carbide/grid/Grid.css');
 
 export class AccessRepoGridCard extends GridCard {
 

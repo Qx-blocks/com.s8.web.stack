@@ -1,8 +1,8 @@
 
 
-import { S8 } from "/s8-core-io-bohr-atom/S8.js";
+import { S8 } from "/S8-core-bohr-atom/S8.js";
 
-import { ObjFormElement } from "/s8-pkgs-ui-carbide/objform/ObjFormElement.js";
+import { ObjFormElement } from "/S8-pkgs-ui-carbide/objform/ObjFormElement.js";
 
 
 

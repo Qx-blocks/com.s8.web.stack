@@ -1,6 +1,6 @@
 
 
-import { PrimtiveObjFormGetter } from '/s8-pkgs-ui-carbide/objform/PrimitiveObjFormGetter.js';
+import { PrimtiveObjFormGetter } from '/S8-pkgs-ui-carbide/objform/PrimitiveObjFormGetter.js';
 
 /**
  * 

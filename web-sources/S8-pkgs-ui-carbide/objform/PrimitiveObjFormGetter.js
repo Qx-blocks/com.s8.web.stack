@@ -1,5 +1,5 @@
 
-import { getColor, ObjFormElement } from "/s8-pkgs-ui-carbide/objform/ObjFormElement.js";
+import { getColor, ObjFormElement } from "/S8-pkgs-ui-carbide/objform/ObjFormElement.js";
 
 /**
  * 

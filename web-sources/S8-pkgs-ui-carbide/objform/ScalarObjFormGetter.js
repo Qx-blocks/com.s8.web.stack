@@ -1,7 +1,7 @@
 
 
-import { S8_NumberFormats } from '/s8-pkgs-ui-carbide/S8NumberFormat.js';
-import { PrimtiveObjFormGetter } from '/s8-pkgs-ui-carbide/objform/PrimitiveObjFormGetter.js';
+import { S8_NumberFormats } from '/S8-pkgs-ui-carbide/S8NumberFormat.js';
+import { PrimtiveObjFormGetter } from '/S8-pkgs-ui-carbide/objform/PrimitiveObjFormGetter.js';
 
 
 /**

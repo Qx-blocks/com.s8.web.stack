@@ -1,9 +1,9 @@
 
-import { S8WebFront } from "/s8-pkgs-ui-carbide/S8WebFront.js";
+import { S8WebFront } from "/S8-pkgs-ui-carbide/S8WebFront.js";
 
 
 
-S8WebFront.CSS_import("/s8-pkgs-ui-carbide/popover/Popover.css");
+S8WebFront.CSS_import("/S8-pkgs-ui-carbide/popover/Popover.css");
 
 
 export class PopoverBox {

@@ -1,13 +1,13 @@
 
-import { S8 } from '/s8-core-io-bohr-atom/S8.js';
-import { NeObject } from '/s8-core-io-bohr-neon/NeObject.js';
+import { S8 } from '/S8-core-bohr-atom/S8.js';
+import { NeObject } from '/S8-core-bohr-neon/NeObject.js';
 
 
 
 /**
  * 
  */
-S8.import_CSS('/s8-pkgs-ui-carbide/cube/Cube.css');
+S8.import_CSS('/S8-pkgs-ui-carbide/cube/Cube.css');
 
 export class CubeElement extends NeObject {
 

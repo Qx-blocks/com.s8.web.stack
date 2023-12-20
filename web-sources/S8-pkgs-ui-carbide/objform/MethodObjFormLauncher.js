@@ -1,6 +1,6 @@
 
 
-import { ObjFormElement } from '/s8-pkgs-ui-carbide/objform/ObjFormElement.js';
+import { ObjFormElement } from '/S8-pkgs-ui-carbide/objform/ObjFormElement.js';
 
 
 /**

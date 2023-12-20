@@ -1,16 +1,16 @@
 
-import { S8 } from '/s8-core-io-bohr-atom/S8.js';
-import { NeObject } from '/s8-core-io-bohr-neon/NeObject.js';
+import { S8 } from '/S8-core-bohr-atom/S8.js';
+import { NeObject } from '/S8-core-bohr-neon/NeObject.js';
 
 
-import { AswCharacterAttitude } from '/s8-pkgs-ui-carbide/asw/AswCharacterAttitude.js';
-import { AswCharacterSentence } from '/s8-pkgs-ui-carbide/asw/AswCharacterSentence.js';
+import { AswCharacterAttitude } from '/S8-pkgs-ui-carbide/asw/AswCharacterAttitude.js';
+import { AswCharacterSentence } from '/S8-pkgs-ui-carbide/asw/AswCharacterSentence.js';
 
 
 /**
  * 
  */
-S8.import_CSS('/s8-pkgs-ui-carbide/asw/Asw.css');
+S8.import_CSS('/S8-pkgs-ui-carbide/asw/Asw.css');
 
 
 export const VOICE_SYNTH = window.speechSynthesis;
