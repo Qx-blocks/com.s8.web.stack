@@ -7,7 +7,7 @@ import com.s8.api.web.S8WebFront;
 import com.s8.api.web.S8WebFrontObject;
 import com.s8.api.web.lambdas.none.VoidLambda;
 import com.s8.api.web.lambdas.primitives.StringUTF8Lambda;
-import com.s8.pkgs.ui.carbide.Carbide;
+import com.s8.pkgs.ui.carbide.WebSources;
 
 
 /**
@@ -23,7 +23,7 @@ public class AswCharacter extends S8WebFrontObject {
 	 * @param branch
 	 */
 	public AswCharacter(S8WebFront branch) {
-		super(branch, Carbide.ROOT_WEBPATH + "/asw/AswCharacter");
+		super(branch, WebSources.ROOT_WEBPATH + "/asw/AswCharacter");
 	}
 
 

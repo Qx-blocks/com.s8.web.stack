@@ -1,7 +1,7 @@
 package com.s8.pkgs.ui.carbide.objform;
 
 import com.s8.api.web.S8WebFront;
-import com.s8.pkgs.ui.carbide.Carbide;
+import com.s8.pkgs.ui.carbide.WebSources;
 import com.s8.pkgs.ui.carbide.HTML_NeNode;
 
 
@@ -21,7 +21,7 @@ public class ObjFormTextDoc extends HTML_NeNode {
 
 	
 	public ObjFormTextDoc(S8WebFront branch) {
-		super(branch, Carbide.ROOT_WEBPATH + "/objform/ObjFormTextDoc");
+		super(branch, WebSources.ROOT_WEBPATH + "/objform/ObjFormTextDoc");
 	}
 	
 

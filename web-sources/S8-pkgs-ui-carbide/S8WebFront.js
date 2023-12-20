@@ -1,9 +1,9 @@
-import { S8 } from "/s8-core-io-bohr-atom/S8.js";
-import { S8_FlatIcons_Map } from "/s8-pkgs-ui-carbide/icons/S8FlatIcon.js";
+import { S8 } from "/S8-core-bohr-atom/S8.js";
+import { S8_FlatIcons_Map } from "/S8-pkgs-ui-carbide/icons/S8FlatIcon.js";
 
 
 
-export const ICON_ROOT_PATHNAME = "/s8-pkgs-ui-carbide/icons/";
+export const ICON_ROOT_PATHNAME = "/S8-pkgs-ui-carbide/icons/";
 
 /**
  * 

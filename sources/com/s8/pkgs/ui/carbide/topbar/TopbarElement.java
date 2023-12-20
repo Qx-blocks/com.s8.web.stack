@@ -4,7 +4,7 @@ import com.s8.api.web.S8WebFront;
 import com.s8.api.web.S8WebFrontObject;
 import com.s8.api.web.functions.none.VoidNeFunction;
 import com.s8.api.web.lambdas.none.VoidLambda;
-import com.s8.pkgs.ui.carbide.Carbide;
+import com.s8.pkgs.ui.carbide.WebSources;
 import com.s8.pkgs.ui.carbide.popover.Popover;
 
 
@@ -21,12 +21,12 @@ public class TopbarElement extends S8WebFrontObject {
 	 * @param branch
 	 */
 	public TopbarElement(S8WebFront branch) {
-		super(branch, Carbide.ROOT_WEBPATH + "/topbar/TopbarElement");
+		super(branch, WebSources.ROOT_WEBPATH + "/topbar/TopbarElement");
 	}
 	
 	
 	public TopbarElement(S8WebFront branch, String name) {
-		super(branch, Carbide.ROOT_WEBPATH +  "/topbar/TopbarElement");
+		super(branch, WebSources.ROOT_WEBPATH +  "/topbar/TopbarElement");
 		setName(name);
 		onSelected(() -> { });
 		onDeselected(() -> { });

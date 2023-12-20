@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.s8.api.web.S8WebFront;
-import com.s8.pkgs.ui.carbide.Carbide;
+import com.s8.pkgs.ui.carbide.WebSources;
 import com.s8.pkgs.ui.carbide.HTML_NeNode;
 
 
@@ -21,7 +21,7 @@ public class Topbar extends HTML_NeNode {
 	 * @param branch
 	 */
 	public Topbar(S8WebFront branch) {
-		super(branch, Carbide.ROOT_WEBPATH + "/topbar/Topbar");
+		super(branch, WebSources.ROOT_WEBPATH + "/topbar/Topbar");
 	}
 	
 	

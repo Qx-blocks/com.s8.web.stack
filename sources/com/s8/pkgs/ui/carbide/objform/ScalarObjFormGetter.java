@@ -1,7 +1,7 @@
 package com.s8.pkgs.ui.carbide.objform;
 
 import com.s8.api.web.S8WebFront;
-import com.s8.pkgs.ui.carbide.Carbide;
+import com.s8.pkgs.ui.carbide.WebSources;
 import com.s8.pkgs.ui.carbide.S8NumberFormat;
 
 public class ScalarObjFormGetter extends PrimitiveObjFormGetter {
@@ -56,7 +56,7 @@ public class ScalarObjFormGetter extends PrimitiveObjFormGetter {
 	
 
 	public ScalarObjFormGetter(S8WebFront branch) {
-		super(branch, Carbide.ROOT_WEBPATH + "/objform/ScalarObjFormGetter");
+		super(branch, WebSources.ROOT_WEBPATH + "/objform/ScalarObjFormGetter");
 	}
 	
 	

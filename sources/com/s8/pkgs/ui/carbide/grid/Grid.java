@@ -6,7 +6,7 @@ import com.s8.api.web.S8WebFront;
 import com.s8.api.web.S8WebFrontObject;
 import com.s8.api.web.functions.none.VoidNeFunction;
 import com.s8.api.web.lambdas.none.VoidLambda;
-import com.s8.pkgs.ui.carbide.Carbide;
+import com.s8.pkgs.ui.carbide.WebSources;
 
 /**
  * 
@@ -17,7 +17,7 @@ public class Grid extends S8WebFrontObject {
 
 
 	public Grid(S8WebFront branch) {
-		super(branch, Carbide.ROOT_WEBPATH + "/grid/Grid");
+		super(branch, WebSources.ROOT_WEBPATH + "/grid/Grid");
 		onClickLambda(() -> unselectAllCards());
 	}
 

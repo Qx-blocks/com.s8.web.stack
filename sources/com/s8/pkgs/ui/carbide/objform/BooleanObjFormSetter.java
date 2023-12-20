@@ -3,7 +3,7 @@ package com.s8.pkgs.ui.carbide.objform;
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.functions.primitives.Bool8NeFunction;
 import com.s8.api.web.lambdas.primitives.Bool8Lambda;
-import com.s8.pkgs.ui.carbide.Carbide;
+import com.s8.pkgs.ui.carbide.WebSources;
 
 /**
  * 
@@ -56,7 +56,7 @@ public class BooleanObjFormSetter extends PrimitiveObjFormSetter {
 	 * @param branch
 	 */
 	public BooleanObjFormSetter(S8WebFront branch) {
-		super(branch, Carbide.ROOT_WEBPATH + "/objform/BooleanObjFormGetter");
+		super(branch, WebSources.ROOT_WEBPATH + "/objform/BooleanObjFormGetter");
 	}
 	
 

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.s8.api.web.S8WebFront;
-import com.s8.pkgs.ui.carbide.Carbide;
+import com.s8.pkgs.ui.carbide.WebSources;
 import com.s8.pkgs.ui.carbide.cube.CubeElement;
 
 
@@ -25,7 +25,7 @@ public class Dock extends CubeElement {
 	 * 
 	 */
 	public Dock(S8WebFront branch) {
-		super(branch, Carbide.ROOT_WEBPATH + "/dock/Dock");
+		super(branch, WebSources.ROOT_WEBPATH + "/dock/Dock");
 		this.items = new ArrayList<DockItem>();
 	}
 	

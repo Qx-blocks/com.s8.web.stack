@@ -5,7 +5,7 @@ import java.nio.charset.StandardCharsets;
 import com.s8.api.flow.delivery.S8WebResource;
 import com.s8.api.flow.delivery.S8WebResourceGenerator;
 import com.s8.api.web.S8WebFront;
-import com.s8.pkgs.ui.carbide.Carbide;
+import com.s8.pkgs.ui.carbide.WebSources;
 import com.s8.pkgs.ui.carbide.HTML_NeNode;
 import com.s8.pkgs.ui.carbide.S8WebSize;
 import com.s8.pkgs.ui.carbide.S8WebTheme;
@@ -48,7 +48,7 @@ public class DownloadButton extends HTML_NeNode {
 	 * @param branch
 	 */
 	public DownloadButton(S8WebFront branch) {
-		super(branch, Carbide.ROOT_WEBPATH + "/button/DownloadButton");
+		super(branch, WebSources.ROOT_WEBPATH + "/button/DownloadButton");
 		
 		/* to be overridden */
 		vertex.providers().setRawProvider("get-file", () -> {

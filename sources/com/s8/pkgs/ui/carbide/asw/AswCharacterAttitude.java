@@ -2,7 +2,7 @@ package com.s8.pkgs.ui.carbide.asw;
 
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.S8WebFrontObject;
-import com.s8.pkgs.ui.carbide.Carbide;
+import com.s8.pkgs.ui.carbide.WebSources;
 
 
 /**
@@ -17,7 +17,7 @@ public class AswCharacterAttitude extends S8WebFrontObject {
 			double speechRate, 
 			double speechVolume, 
 			String faceImagePathname) {
-		super(branch, Carbide.ROOT_WEBPATH + "/asw/AswCharacterAttitude");
+		super(branch, WebSources.ROOT_WEBPATH + "/asw/AswCharacterAttitude");
 		
 		vertex.fields().setFloat32Field("speechPitch", (float) speechPitch);
 		vertex.fields().setFloat32Field("speechRate", (float) speechRate);

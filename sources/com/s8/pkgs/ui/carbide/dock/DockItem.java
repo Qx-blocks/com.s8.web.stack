@@ -4,7 +4,7 @@ import com.s8.api.web.S8WebFront;
 import com.s8.api.web.S8WebFrontObject;
 import com.s8.api.web.functions.none.VoidNeFunction;
 import com.s8.api.web.lambdas.none.VoidLambda;
-import com.s8.pkgs.ui.carbide.Carbide;
+import com.s8.pkgs.ui.carbide.WebSources;
 
 /*
  * 
@@ -36,7 +36,7 @@ public class DockItem extends S8WebFrontObject {
 	 * @param iconFilename
 	 */
 	public DockItem(S8WebFront branch, String name, String iconFilename) {
-		super(branch, Carbide.ROOT_WEBPATH + "/dock/DockItem");
+		super(branch, WebSources.ROOT_WEBPATH + "/dock/DockItem");
 		vertex.fields().setStringUTF8Field("name", name);
 		vertex.fields().setStringUTF8Field("iconFilename", iconFilename);
 		

@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.S8WebFrontObject;
-import com.s8.pkgs.ui.carbide.Carbide;
+import com.s8.pkgs.ui.carbide.WebSources;
 
 /**
  * 
@@ -22,7 +22,7 @@ public class Cube extends S8WebFrontObject {
 	 * @param branch
 	 */
 	public Cube(S8WebFront branch) {
-		super(branch, Carbide.ROOT_WEBPATH + "/cube/Cube");
+		super(branch, WebSources.ROOT_WEBPATH + "/cube/Cube");
 	}
 
 

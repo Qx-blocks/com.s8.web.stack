@@ -3,7 +3,7 @@ package com.s8.pkgs.ui.carbide.objform;
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.functions.none.VoidNeFunction;
 import com.s8.api.web.lambdas.none.VoidLambda;
-import com.s8.pkgs.ui.carbide.Carbide;
+import com.s8.pkgs.ui.carbide.WebSources;
 import com.s8.pkgs.ui.carbide.icons.S8FlatIcon;
 
 
@@ -32,7 +32,7 @@ public class ObjFormButton extends ObjFormElement {
 	
 	
 	public ObjFormButton(S8WebFront branch) {
-		super(branch, Carbide.ROOT_WEBPATH + "/objform/ObjFormButton");
+		super(branch, WebSources.ROOT_WEBPATH + "/objform/ObjFormButton");
 	}
 	
 	

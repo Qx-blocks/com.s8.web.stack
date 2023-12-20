@@ -3,7 +3,7 @@ package com.s8.pkgs.ui.carbide.button;
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.functions.none.VoidNeFunction;
 import com.s8.api.web.lambdas.none.VoidLambda;
-import com.s8.pkgs.ui.carbide.Carbide;
+import com.s8.pkgs.ui.carbide.WebSources;
 import com.s8.pkgs.ui.carbide.HTML_NeNode;
 import com.s8.pkgs.ui.carbide.S8WebSize;
 import com.s8.pkgs.ui.carbide.S8WebTheme;
@@ -46,7 +46,7 @@ public class Button extends HTML_NeNode {
 	 * @param branch
 	 */
 	public Button(S8WebFront branch) {
-		super(branch, Carbide.ROOT_WEBPATH + "/button/Button");
+		super(branch, WebSources.ROOT_WEBPATH + "/button/Button");
 		
 		/* to be overridden */
 		vertex.methods().setVoidMethodLambda("on-click", () -> System.out.println("I'm clicked!"));

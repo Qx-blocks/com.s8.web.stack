@@ -5,7 +5,7 @@ import java.util.function.Consumer;
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.functions.primitives.UInt8NeFunction;
 import com.s8.api.web.lambdas.primitives.UInt8Lambda;
-import com.s8.pkgs.ui.carbide.Carbide;
+import com.s8.pkgs.ui.carbide.WebSources;
 
 
 /**
@@ -34,7 +34,7 @@ public class EnumObjFormSetter extends PrimitiveObjFormSetter {
 
 	
 	public EnumObjFormSetter(S8WebFront branch) {
-		super(branch, Carbide.ROOT_WEBPATH + "/objform/EnumObjFormSetter");
+		super(branch, WebSources.ROOT_WEBPATH + "/objform/EnumObjFormSetter");
 	}
 	
 	

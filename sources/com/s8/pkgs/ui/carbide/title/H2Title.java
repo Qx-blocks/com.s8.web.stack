@@ -1,7 +1,7 @@
 package com.s8.pkgs.ui.carbide.title;
 
 import com.s8.api.web.S8WebFront;
-import com.s8.pkgs.ui.carbide.Carbide;
+import com.s8.pkgs.ui.carbide.WebSources;
 import com.s8.pkgs.ui.carbide.HTML_NeNode;
 
 
@@ -30,7 +30,7 @@ public class H2Title extends HTML_NeNode {
 	 * @param branch
 	 */
 	public H2Title(S8WebFront branch) {
-		super(branch, Carbide.ROOT_WEBPATH + "/title/H2Title");
+		super(branch, WebSources.ROOT_WEBPATH + "/title/H2Title");
 	}
 	
 	

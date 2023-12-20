@@ -2,7 +2,7 @@ package com.s8.pkgs.ui.carbide.asw;
 
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.S8WebFrontObject;
-import com.s8.pkgs.ui.carbide.Carbide;
+import com.s8.pkgs.ui.carbide.WebSources;
 
 /**
  * 
@@ -19,7 +19,7 @@ public class AswCharacterSentence extends S8WebFrontObject {
 	 * @param pause
 	 */
 	public AswCharacterSentence(S8WebFront branch, String text, int attitudeIndex, long pause) {
-		super(branch, Carbide.ROOT_WEBPATH + "/asw/AswCharacterSentence");
+		super(branch, WebSources.ROOT_WEBPATH + "/asw/AswCharacterSentence");
 		
 		vertex.fields().setStringUTF8Field("text", text);
 		vertex.fields().setUInt8Field("attitudeIndex", attitudeIndex);

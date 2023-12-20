@@ -10,7 +10,7 @@ import com.s8.api.web.lambdas.primitives.Bool8Lambda;
 import com.s8.api.web.lambdas.primitives.Float32Lambda;
 import com.s8.api.web.lambdas.primitives.Int32Lambda;
 import com.s8.api.web.lambdas.primitives.StringUTF8Lambda;
-import com.s8.pkgs.ui.carbide.Carbide;
+import com.s8.pkgs.ui.carbide.WebSources;
 import com.s8.pkgs.ui.carbide.S8NumberFormat;
 import com.s8.pkgs.ui.carbide.S8WebDirection;
 import com.s8.pkgs.ui.carbide.S8WebStatus;
@@ -26,7 +26,7 @@ public class SetObjFormElement extends ObjFormElement {
 
 
 	public SetObjFormElement(S8WebFront branch) {
-		super(branch, Carbide.ROOT_WEBPATH + "/objform/SetObjFormElement");
+		super(branch, WebSources.ROOT_WEBPATH + "/objform/SetObjFormElement");
 
 		vertex.methods().setVoidMethodLambda("on-expanded", () -> {});
 		vertex.methods().setVoidMethodLambda("on-collapsed", () -> {});
