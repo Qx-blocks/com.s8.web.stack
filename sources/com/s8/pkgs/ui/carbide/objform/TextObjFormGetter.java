@@ -30,7 +30,7 @@ public class TextObjFormGetter extends PrimitiveObjFormGetter {
 	 * @param name
 	 */
 	public void setValue(String value) {
-		vertex.fields().setStringUTF8Field("value", value);
+		vertex.outbound().setStringUTF8Field("value", value);
 	}
 	
 

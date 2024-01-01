@@ -53,7 +53,7 @@ public class ObjFormOption extends HTML_NeNode {
 	 * @param lambda
 	 */
 	public void onClickLambda(VoidLambda lambda) {
-		vertex.methods().setVoidMethodLambda("on-click", lambda);
+		vertex.inbound().setVoidMethodLambda("on-click", lambda);
 	}
 	
 	
@@ -62,14 +62,14 @@ public class ObjFormOption extends HTML_NeNode {
 	 * @param lambda
 	 */
 	public void onClick(VoidNeFunction function) {
-		vertex.methods().setVoidMethod("on-click", function);
+		vertex.inbound().setVoidMethod("on-click", function);
 	}
 	
 	
 
 
 	public void setName(String name) {
-		vertex.fields().setStringUTF8Field("name", name);
+		vertex.outbound().setStringUTF8Field("name", name);
 	}
 
 
@@ -79,7 +79,7 @@ public class ObjFormOption extends HTML_NeNode {
 	 * @param icon
 	 */
 	public void setIconShape(S8FlatIcon icon){
-		vertex.fields().setUInt16Field("iconShapeByCode", icon.code);
+		vertex.outbound().setUInt16Field("iconShapeByCode", icon.code);
 	}
 
 	/**
@@ -87,7 +87,7 @@ public class ObjFormOption extends HTML_NeNode {
 	 * @param name
 	 */
 	public void setIconShapeByName(String name){
-		vertex.fields().setStringUTF8Field("iconShape", name);
+		vertex.outbound().setStringUTF8Field("iconShape", name);
 	}
 
 	
@@ -96,7 +96,7 @@ public class ObjFormOption extends HTML_NeNode {
 	 * @param lambda
 	 */
 	public void onSyncLambda(VoidLambda lambda) {
-		vertex.methods().setVoidMethodLambda("on-sync", lambda);
+		vertex.inbound().setVoidMethodLambda("on-sync", lambda);
 	}
 	
 	
@@ -105,7 +105,7 @@ public class ObjFormOption extends HTML_NeNode {
 	 * @param lambda
 	 */
 	public void onSync(VoidNeFunction function) {
-		vertex.methods().setVoidMethod("on-sync", function);
+		vertex.inbound().setVoidMethod("on-sync", function);
 	}
 
 	

@@ -31,12 +31,12 @@ public class GridCard extends S8WebFrontObject {
 	 * @param name
 	 */
 	public void setSelected(boolean isSelected) {
-		vertex.fields().setBool8Field("isSelected", isSelected);
+		vertex.outbound().setBool8Field("isSelected", isSelected);
 	}
 	
 	
 	public void clearPopover() {
-		vertex.fields().setObjectField("popover", null);
+		vertex.outbound().setObjectField("popover", null);
 	}
 	
 	/**
@@ -44,7 +44,7 @@ public class GridCard extends S8WebFrontObject {
 	 * @param name
 	 */
 	public void setPopover(Popover popover) {
-		vertex.fields().setObjectField("popover", popover);
+		vertex.outbound().setObjectField("popover", popover);
 	}
 	
 
@@ -55,7 +55,7 @@ public class GridCard extends S8WebFrontObject {
 	 * @param func
 	 */
 	public void onClick(VoidNeFunction func) {
-		vertex.methods().setVoidMethod("on-click", func);
+		vertex.inbound().setVoidMethod("on-click", func);
 	}
 	
 	
@@ -65,7 +65,7 @@ public class GridCard extends S8WebFrontObject {
 	 * @param func
 	 */
 	public void onClickLambda(VoidLambda lambda) {
-		vertex.methods().setVoidMethodLambda("on-click", lambda);
+		vertex.inbound().setVoidMethodLambda("on-click", lambda);
 	}
 	
 	

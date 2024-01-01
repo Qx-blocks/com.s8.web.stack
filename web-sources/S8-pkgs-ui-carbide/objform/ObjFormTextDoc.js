@@ -1,12 +1,12 @@
 
 
-import { NeObject } from '/S8-core-bohr-neon/NeObject.js';
+import { S8Object } from '/S8-api/S8Object.js';
 
 
 /**
  * 
  */
-export class ObjFormTextDoc extends NeObject {
+export class ObjFormTextDoc extends S8Object {
 
     constructor() {
         super();

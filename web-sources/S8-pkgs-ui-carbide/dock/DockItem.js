@@ -1,6 +1,6 @@
 
 
-import { S8 } from '/S8-core-bohr-atom/S8.js';
+import { S8 } from '/S8-api/S8Context.js';
 import { NeObject } from '/S8-core-bohr-neon/NeObject.js';
 
 
@@ -40,7 +40,7 @@ export class DockItem extends NeObject {
 
         const _this = this;
         this.wrapperNode.addEventListener("click", function(event){
-            S8.branch.loseFocus();
+            S8.page.loseFocus();
             _this.S8_vertex.runVoid("on-click");
             event.stopPropagation();
         });

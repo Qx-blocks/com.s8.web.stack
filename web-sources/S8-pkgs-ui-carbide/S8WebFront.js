@@ -1,4 +1,4 @@
-import { S8 } from "/S8-core-bohr-atom/S8.js";
+import { S8 } from "/S8-api/S8Context.js";
 import { S8_FlatIcons_Map } from "/S8-pkgs-ui-carbide/icons/S8FlatIcon.js";
 
 
@@ -91,7 +91,7 @@ class S8WebFrontUtilities {
 		else {
 			let _this = this;
 			const pathname = ICON_ROOT_PATHNAME + name;
-			S8.sendRequest_HTTP2_GET(pathname, "text", function (svgSource1) {
+			S8.server.sendRequest_HTTP2_GET(pathname, "text", function (svgSource1) {
 				_this.map_SVG_sources.set(name, svgSource1);
 				injector(svgSource1);
 			});

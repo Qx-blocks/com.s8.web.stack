@@ -34,7 +34,7 @@ public class Div extends HTML_NeNode {
 	 * @param name
 	 */
 	public void setContent(List<HTML_NeNode> nodes) {
-		vertex.fields().setObjectListField("content", nodes);
+		vertex.outbound().setObjectListField("content", nodes);
 	}
 	
 	/**
@@ -42,7 +42,7 @@ public class Div extends HTML_NeNode {
 	 * @param nodes
 	 */
 	public void setContent(HTML_NeNode... nodes) {
-		vertex.fields().setObjectListField("content", nodes);
+		vertex.outbound().setObjectListField("content", nodes);
 	}
 
 

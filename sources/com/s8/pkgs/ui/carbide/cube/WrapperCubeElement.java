@@ -21,7 +21,7 @@ public class WrapperCubeElement extends CubeElement {
 	 * @param content
 	 */
 	public void setContent(S8WebFrontObject content) {
-		vertex.fields().setObjectField("content", content);
+		vertex.outbound().setObjectField("content", content);
 	}
 	
 }

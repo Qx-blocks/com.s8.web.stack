@@ -39,20 +39,20 @@ public class EnumObjFormSetter extends PrimitiveObjFormSetter {
 	
 	
 	public void setEnumValues(String[] enumValues) {
-		vertex.fields().setStringUTF8ArrayField("enumValues", enumValues);
+		vertex.outbound().setStringUTF8ArrayField("enumValues", enumValues);
 	}
 	
 	public void setPresetIndex(int index) {
-		vertex.fields().setUInt8Field("preset", index);
+		vertex.outbound().setUInt8Field("preset", index);
 	}
 	
 	
 	public void onSelectedLambda(UInt8Lambda lambda) {
-		vertex.methods().setUInt8MethodLambda("on-selected", lambda);
+		vertex.inbound().setUInt8MethodLambda("on-selected", lambda);
 	}
 	
 	public void onSelected(UInt8NeFunction function) {
-		vertex.methods().setUInt8Method("on-selected", function);
+		vertex.inbound().setUInt8Method("on-selected", function);
 	}
 
 }

@@ -1,7 +1,7 @@
 
 
-import { S8 } from "/S8-core-bohr-atom/S8.js";
 
+import { S8 } from "/S8-api/S8Context.js";
 import { ObjFormElement } from "/S8-pkgs-ui-carbide/objform/ObjFormElement.js";
 
 
@@ -23,7 +23,7 @@ export class ObjFormButton extends ObjFormElement {
         const _this = this;
         this.fieldNode.addEventListener("click", function(event){
             _this.S8_vertex.runVoid("on-click");
-            S8.branch.loseFocus();
+            S8.page.loseFocus();
             event.stopPropagation();
         });
 

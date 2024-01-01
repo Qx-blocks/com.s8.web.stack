@@ -1,5 +1,8 @@
 package com.s8.pkgs.ui.carbide.asw;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.S8WebFrontObject;
 import com.s8.pkgs.ui.carbide.WebSources;
@@ -8,6 +11,7 @@ import com.s8.pkgs.ui.carbide.cube.CubeElement;
 public class AswScreen extends CubeElement {
 	
 
+	private List<S8WebFrontObject> elements = new ArrayList<>();
 	
 	/**
 	 * 
@@ -19,24 +23,15 @@ public class AswScreen extends CubeElement {
 
 
 	
-	/**
-	 * 
-	 * @param i
-	 * @return
-	 */
-	public CubeElement getLayer(int i) {
-		return (CubeElement) vertex.fields().getObjectListField("elements").get(i);
-	}
-	
-	
 	
 	public void setBackgroundColor(String color) {
-		vertex.fields().setStringUTF8Field("backgroundColor", color);
+		vertex.outbound().setStringUTF8Field("backgroundColor", color);
 	}
 
 	
 	public void addElement(S8WebFrontObject element) {
-		vertex.fields().addObjToList("elements", element);
+		elements.add(element);
+		vertex.outbound().setObjectListField("elements", elements);
 	}
 
 

@@ -40,7 +40,7 @@ public class NavbarMenu extends S8WebFrontObject {
 	 * @param menus
 	 */
 	public void setIcon(S8FlatIcon icon) {
-		vertex.fields().setUInt16Field("icon", icon.code);
+		vertex.outbound().setUInt16Field("icon", icon.code);
 	}
 	
 	
@@ -49,13 +49,13 @@ public class NavbarMenu extends S8WebFrontObject {
 	 * @param name
 	 */
 	public void setName(String name) {
-		vertex.fields().setStringUTF8Field("name", name);
+		vertex.outbound().setStringUTF8Field("name", name);
 	}
 	
 	
 	
 	public void onSelected(VoidLambda lambda) {
-		vertex.methods().setVoidMethodLambda("on-selected", lambda);
+		vertex.inbound().setVoidMethodLambda("on-selected", lambda);
 	}
 	
 	
@@ -64,7 +64,7 @@ public class NavbarMenu extends S8WebFrontObject {
 	 * @param function
 	 */
 	public void onSelectedMethod(VoidNeFunction function) {
-		vertex.methods().setVoidMethod("on-selected", function);
+		vertex.inbound().setVoidMethod("on-selected", function);
 	}
 	
 }

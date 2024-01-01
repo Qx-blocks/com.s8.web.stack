@@ -1,10 +1,8 @@
 import { Popover } from "./Popover.js";
-import { NeObject } from "/S8-core-bohr-neon/NeObject.js";
+import { S8Object } from "/S8-api/S8Object.js";
 
 
-
-
-export class PopoverTitle extends NeObject {
+export class PopoverTitle extends S8Object {
 
 
 

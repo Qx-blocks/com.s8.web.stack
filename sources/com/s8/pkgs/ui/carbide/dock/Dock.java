@@ -32,7 +32,7 @@ public class Dock extends CubeElement {
 	
 	
 	public void setItems(List<DockItem> items) {
-		vertex.fields().setObjectListField("items", items);
+		vertex.outbound().setObjectListField("items", items);
 	}
 	
 	/**

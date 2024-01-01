@@ -62,7 +62,7 @@ public class ScalarObjFormSetter extends PrimitiveObjFormSetter {
 	 * @param unit
 	 */
 	public void setUnit(String unit) {
-		vertex.fields().setStringUTF8Field("unit", unit);
+		vertex.outbound().setStringUTF8Field("unit", unit);
 	}
 
 
@@ -72,7 +72,7 @@ public class ScalarObjFormSetter extends PrimitiveObjFormSetter {
 	 * @param unit
 	 */
 	public void setFormat(S8NumberFormat format) {
-		vertex.fields().setUInt8Field("format", format.code);
+		vertex.outbound().setUInt8Field("format", format.code);
 	}
 
 
@@ -81,7 +81,7 @@ public class ScalarObjFormSetter extends PrimitiveObjFormSetter {
 	 * @param value
 	 */
 	public void setValue(float value) {
-		vertex.fields().setFloat32Field("value", value);
+		vertex.outbound().setFloat32Field("value", value);
 	}
 
 
@@ -90,7 +90,7 @@ public class ScalarObjFormSetter extends PrimitiveObjFormSetter {
 	 * @param lambda
 	 */
 	public void onValueChanged(Float32Lambda lambda) {
-		vertex.methods().setFloat32MethodLambda("on-value-changed", lambda);
+		vertex.inbound().setFloat32MethodLambda("on-value-changed", lambda);
 	}
 
 
@@ -99,6 +99,6 @@ public class ScalarObjFormSetter extends PrimitiveObjFormSetter {
 	 * @param func
 	 */
 	public void onValueChanged(Float32NeFunction func) {
-		vertex.methods().setFloat32Method("on-value-changed", func);
+		vertex.inbound().setFloat32Method("on-value-changed", func);
 	}
 }

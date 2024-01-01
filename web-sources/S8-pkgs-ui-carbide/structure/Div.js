@@ -1,15 +1,15 @@
 
 
 
+import { S8 } from '/S8-api/S8Context.js';
 import { NeObject } from '/S8-core-bohr-neon/NeObject.js';
-import { S8WebFront } from '/S8-pkgs-ui-carbide/S8WebFront.js';
 
 
 
 /**
  * basics
  */
-S8WebFront.CSS_import('/S8-pkgs-ui-carbide/structure/Structure.css');
+S8.page.CSS_import('/S8-pkgs-ui-carbide/structure/Structure.css');
 
 
 /**

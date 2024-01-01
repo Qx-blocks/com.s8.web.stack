@@ -64,12 +64,12 @@ public class DownloadButton extends HTML_NeNode {
 	 * @param text
 	 */
 	public void setLabel(String text) {
-		vertex.fields().setStringUTF8Field("label", text);
+		vertex.outbound().setStringUTF8Field("label", text);
 	}
 	
 	
 	public void setDownloadFilename(String text) {
-		vertex.fields().setStringUTF8Field("downloadFilename", text);
+		vertex.outbound().setStringUTF8Field("downloadFilename", text);
 	}
 	
 	
@@ -80,7 +80,7 @@ public class DownloadButton extends HTML_NeNode {
 	 * @param menus
 	 */
 	public void setSize(S8WebSize size) {
-		vertex.fields().setUInt8Field("size", size.code);
+		vertex.outbound().setUInt8Field("size", size.code);
 	}
 	
 	
@@ -89,7 +89,7 @@ public class DownloadButton extends HTML_NeNode {
 	 * @param menus
 	 */
 	public void setTheme(S8WebTheme theme) {
-		vertex.fields().setUInt8Field("theme", theme.code);
+		vertex.outbound().setUInt8Field("theme", theme.code);
 	}
 	
 	
@@ -98,7 +98,7 @@ public class DownloadButton extends HTML_NeNode {
 	 * @param state
 	 */
 	public void setEnabled(boolean state) {
-		vertex.fields().setBool8Field("isEnabled", state);
+		vertex.outbound().setBool8Field("isEnabled", state);
 	}
 	
 	

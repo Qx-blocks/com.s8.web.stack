@@ -35,14 +35,14 @@ public class ObjFormElement extends S8WebFrontObject {
 		tooltip.setTheme(S8WebTheme.LIGHT);
 		tooltip.setDirection(S8WebDirection.BOTTOM);
 		tooltip.setElements(ObjFormTextDoc.create(vertex.getSession(), text));
-		vertex.fields().setObjectField("tooltip", tooltip);
+		vertex.outbound().setObjectField("tooltip", tooltip);
 	}
 	
 	
 	
 	
 	public void setOptionsAvailability(boolean isAvailable) {
-		vertex.fields().setBool8Field("hasOptions", isAvailable);
+		vertex.outbound().setBool8Field("hasOptions", isAvailable);
 	}
 	
 	
@@ -51,7 +51,7 @@ public class ObjFormElement extends S8WebFrontObject {
 	 * @param lambda
 	 */
 	public void onOptionsRequiredLambda(VoidLambda lambda) {
-		vertex.methods().setVoidMethodLambda("on-options-required", lambda);
+		vertex.inbound().setVoidMethodLambda("on-options-required", lambda);
 	}
 	
 	
@@ -60,7 +60,7 @@ public class ObjFormElement extends S8WebFrontObject {
 	 * @param lambda
 	 */
 	public void onOptionsRequired(VoidNeFunction function) {
-		vertex.methods().setVoidMethod("on-options-required", function);
+		vertex.inbound().setVoidMethod("on-options-required", function);
 	}
 	
 	
@@ -69,7 +69,7 @@ public class ObjFormElement extends S8WebFrontObject {
 	 * @param options
 	 */
 	public void setOptions(ObjFormOption... options) {
-		vertex.fields().setObjectListField("options", options);
+		vertex.outbound().setObjectListField("options", options);
 	}
 	
 	

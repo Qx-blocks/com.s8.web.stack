@@ -1,13 +1,13 @@
 
-import { S8 } from '/S8-core-bohr-atom/S8.js';
+import { S8 } from '/S8-api/S8Context.js';
 import { NeObject } from '/S8-core-bohr-neon/NeObject.js';
 
 import { S8WebFront } from '/S8-pkgs-ui-carbide/S8WebFront.js';
 import { Popover } from '/S8-pkgs-ui-carbide/popover/Popover.js';
 
 
-S8WebFront.CSS_import("/S8-pkgs-ui-carbide/objform/ObjForm.css");
-S8WebFront.CSS_import("/S8-pkgs-ui-carbide/objform/ObjFormOptions.css");
+S8.page.CSS_import("/S8-pkgs-ui-carbide/objform/ObjForm.css");
+S8.page.CSS_import("/S8-pkgs-ui-carbide/objform/ObjFormOptions.css");
 
 
 export const getColor = function (code) {
@@ -92,7 +92,7 @@ export class ObjFormElement extends NeObject {
 
         const _this = this;
         this.statusNode.addEventListener("click", function(event){
-            S8.branch.loseFocus();
+            S8.page.loseFocus();
             _this.S8_vertex.runVoid("get-status-info");
             event.stopPropagation();
         })
@@ -138,7 +138,7 @@ export class ObjFormElement extends NeObject {
             this.statusPopover = popover;
             this.statusNode.appendChild(popover.getEnvelope());
             popover.show();
-            S8.branch.setFocusOn(popover);
+            S8.page.setFocusOn(popover);
         }
         else { // tooltip == null
             this.infoNode.setAttribute("enabled", "false");

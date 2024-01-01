@@ -10,7 +10,7 @@ public class MethodObjFormLauncher extends ObjFormElement {
 	}
 	
 	public void setName(String name) {
-		vertex.fields().setStringUTF8Field("name", name);
+		vertex.outbound().setStringUTF8Field("name", name);
 	}
 
 }

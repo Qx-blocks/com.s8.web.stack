@@ -12,7 +12,7 @@ public class CubeElement extends S8WebFrontObject {
 
 	
 	public void setZIndex(int zIndex) {
-		vertex.fields().setUInt8Field("zIndex", zIndex);
+		vertex.outbound().setUInt8Field("zIndex", zIndex);
 	}
 
 

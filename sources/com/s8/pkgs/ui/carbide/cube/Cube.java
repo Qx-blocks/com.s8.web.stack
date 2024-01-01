@@ -1,5 +1,6 @@
 package com.s8.pkgs.ui.carbide.cube;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.s8.api.web.S8WebFront;
@@ -16,6 +17,7 @@ public class Cube extends S8WebFrontObject {
 	
 	public final static int NB_LAYERS = 8;
 	
+	private List<CubeElement> elements = new ArrayList<>();
 	
 	/**
 	 * 
@@ -33,18 +35,20 @@ public class Cube extends S8WebFrontObject {
 	 * @return
 	 */
 	public CubeElement getLayer(int i) {
-		return (CubeElement) vertex.fields().getObjectListField("elements").get(i);
+		return elements.get(i);
 	}
 	
 	
 	
 	public void setElements(List<CubeElement> elements) {
-		vertex.fields().setObjectListField("elements", elements);
+		this.elements = elements;
+		vertex.outbound().setObjectListField("elements", elements);
 	}
 	
 	
 	public void addElement(CubeElement element) {
-		vertex.fields().addObjToList("elements", element);
+		elements.add(element);
+		vertex.outbound().setObjectListField("elements", elements);
 	}
 
 

@@ -14,7 +14,7 @@ public class PrimitiveObjFormSetter extends ObjFormElement {
 	 * @param name
 	 */
 	public void setName(String name) {
-		vertex.fields().setStringUTF8Field("fieldName", name);
+		vertex.outbound().setStringUTF8Field("fieldName", name);
 	}
 
 }

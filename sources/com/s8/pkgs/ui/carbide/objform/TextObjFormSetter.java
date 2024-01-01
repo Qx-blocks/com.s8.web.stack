@@ -13,22 +13,34 @@ import com.s8.pkgs.ui.carbide.WebSources;
  */
 public class TextObjFormSetter extends PrimitiveObjFormSetter {
 
-	public TextObjFormSetter(S8WebFront branch) {
-		super(branch, WebSources.ROOT_WEBPATH + "/objform/TextObjFormSetter");
+
+	public static TextObjFormSetter create(S8WebFront front, String name, String value, StringUTF8Lambda lambda) {
+		TextObjFormSetter setter = new TextObjFormSetter(front);
+		setter.setName(name);
+		setter.setValue(value);
+		setter.onValueChangedLambda(lambda);
+		return setter;
+	}
+	
+	
+	public TextObjFormSetter(S8WebFront front) {
+		super(front, WebSources.ROOT_WEBPATH + "/objform/TextObjFormSetter");
 	}
 	
 	
 	public void setValue(String value) {
-		vertex.fields().setStringUTF8Field("value", value);
+		vertex.outbound().setStringUTF8Field("value", value);
 	}
 	
 
 	
 	public void onValueChanged(StringUTF8NeFunction func) {
-		vertex.methods().setStringUTF8Method("on-value-changed", func);
+		vertex.inbound().setStringUTF8Method("on-value-changed", func);
 	}
 	
 	public void onValueChangedLambda(StringUTF8Lambda lambda) {
-		vertex.methods().setStringUTF8MethodLambda("on-value-changed", lambda);
+		vertex.inbound().setStringUTF8MethodLambda("on-value-changed", lambda);
 	}
+
+
 }

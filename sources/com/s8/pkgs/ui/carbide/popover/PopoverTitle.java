@@ -20,7 +20,7 @@ public class PopoverTitle extends HTML_NeNode {
 	 */
 	public PopoverTitle(S8WebFront branch, String text) {
 		super(branch, WebSources.ROOT_WEBPATH + "/popover/PopoverTitle");
-		vertex.fields().setStringUTF8Field("text", text);
+		vertex.outbound().setStringUTF8Field("text", text);
 	}
 
 	

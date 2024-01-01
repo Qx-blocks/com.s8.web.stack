@@ -39,7 +39,7 @@ public class InlineTextBox extends HTML_NeNode {
 	 * @param name
 	 */
 	public void setText(String text) {
-		vertex.fields().setStringUTF8Field("text", text);
+		vertex.outbound().setStringUTF8Field("text", text);
 	}
 	
 }

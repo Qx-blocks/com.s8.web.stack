@@ -1,13 +1,12 @@
 
 
-import { S8 } from '/S8-core-bohr-atom/S8.js';
-
 import { S8WebFront } from '/S8-pkgs-ui-carbide/S8WebFront.js';
 
 import { Popover } from '/S8-pkgs-ui-carbide/popover/Popover.js';
 import { PopoverMenuItem } from '/S8-pkgs-ui-carbide/popover/PopoverMenuItem.js';
 
 import { getColor, ObjFormElement } from '/S8-pkgs-ui-carbide/objform/ObjFormElement.js';
+import { S8 } from '/S8-api/S8Context.js';
 
 
 /**
@@ -106,7 +105,7 @@ export class SetObjFormElement extends ObjFormElement {
 
         const _this = this;
         this.headerNode.addEventListener("click", function () {
-            S8.branch.loseFocus();
+            S8.page.loseFocus();
             _this.toggle();
         }, false);
         /* </header> */
@@ -177,7 +176,7 @@ export class SetObjFormElement extends ObjFormElement {
 
     S8_set_fields(fields) {
         // remove previous nodes
-        S8.removeChildren(this.elementsNode);
+        S8.page.removeChildren(this.elementsNode);
 
         // add new ones
         let _this = this;
@@ -259,7 +258,7 @@ export class SetObjFormElement extends ObjFormElement {
     }
 
     removeFields() {
-        S8.removeChildren(this.elementsNode);
+        S8.page.removeChildren(this.elementsNode);
     }
 
 

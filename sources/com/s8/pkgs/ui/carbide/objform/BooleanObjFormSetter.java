@@ -66,7 +66,7 @@ public class BooleanObjFormSetter extends PrimitiveObjFormSetter {
 	 * @param value
 	 */
 	public void setValue(boolean value) {
-		vertex.fields().setBool8Field("value", value);
+		vertex.outbound().setBool8Field("value", value);
 	}
 	
 	
@@ -75,7 +75,7 @@ public class BooleanObjFormSetter extends PrimitiveObjFormSetter {
 	 * @param lambda
 	 */
 	public void onValueChangedLambda(Bool8Lambda lambda) {
-		vertex.methods().setBool8MethodLambda("on-value-changed", lambda);
+		vertex.inbound().setBool8MethodLambda("on-value-changed", lambda);
 	}
 
 	
@@ -84,7 +84,7 @@ public class BooleanObjFormSetter extends PrimitiveObjFormSetter {
 	 * @param func
 	 */
 	public void onValueChanged(Bool8NeFunction func) {
-		vertex.methods().setBool8Method("on-value-changed", func);
+		vertex.inbound().setBool8Method("on-value-changed", func);
 	}
 
 }

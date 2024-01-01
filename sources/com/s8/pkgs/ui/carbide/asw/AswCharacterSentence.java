@@ -21,9 +21,9 @@ public class AswCharacterSentence extends S8WebFrontObject {
 	public AswCharacterSentence(S8WebFront branch, String text, int attitudeIndex, long pause) {
 		super(branch, WebSources.ROOT_WEBPATH + "/asw/AswCharacterSentence");
 		
-		vertex.fields().setStringUTF8Field("text", text);
-		vertex.fields().setUInt8Field("attitudeIndex", attitudeIndex);
-		vertex.fields().setUInt32Field("pause", pause);
+		vertex.outbound().setStringUTF8Field("text", text);
+		vertex.outbound().setUInt8Field("attitudeIndex", attitudeIndex);
+		vertex.outbound().setUInt32Field("pause", pause);
 	}
 
 }

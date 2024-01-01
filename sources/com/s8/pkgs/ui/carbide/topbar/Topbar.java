@@ -30,7 +30,7 @@ public class Topbar extends HTML_NeNode {
 	 * @param menus
 	 */
 	public void setElements(List<TopbarElement> menus) {
-		vertex.fields().setObjectListField("elements", menus);
+		vertex.outbound().setObjectListField("elements", menus);
 	}
 	
 
@@ -42,7 +42,7 @@ public class Topbar extends HTML_NeNode {
 		int n = elements.length;
 		List<TopbarElement> list = new ArrayList<>(n);
 		for(int i =0; i<n; i++) { list.add(elements[i]); }
-		vertex.fields().setObjectListField("elements", list);
+		vertex.outbound().setObjectListField("elements", list);
 	}
 	
 	

@@ -45,7 +45,7 @@ public class TextInput extends HTML_NeNode {
 	 * @param state
 	 */
 	public void setType(Type type) {
-		vertex.fields().setUInt8Field("type", type.code);
+		vertex.outbound().setUInt8Field("type", type.code);
 	}
 	
 	
@@ -56,7 +56,7 @@ public class TextInput extends HTML_NeNode {
 	 * @param state
 	 */
 	public void setPlaceholder(String placeholderText) {
-		vertex.fields().setStringUTF8Field("placeholder", placeholderText);
+		vertex.outbound().setStringUTF8Field("placeholder", placeholderText);
 	}
 	
 	/**
@@ -64,7 +64,7 @@ public class TextInput extends HTML_NeNode {
 	 * @param state
 	 */
 	public void setWidth(int width) {
-		vertex.fields().setUInt16Field("width", width);
+		vertex.outbound().setUInt16Field("width", width);
 	}
 	
 	
@@ -73,7 +73,7 @@ public class TextInput extends HTML_NeNode {
 	 * @param state
 	 */
 	public void setTheme(S8WebTheme theme) {
-		vertex.fields().setUInt8Field("theme", theme.code);
+		vertex.outbound().setUInt8Field("theme", theme.code);
 	}
 	
 	
@@ -83,7 +83,7 @@ public class TextInput extends HTML_NeNode {
 	 * @param size
 	 */
 	public void setSize(S8WebSize size) {
-		vertex.fields().setUInt8Field("size", size.code);
+		vertex.outbound().setUInt8Field("size", size.code);
 	}
 	
 	
@@ -92,7 +92,7 @@ public class TextInput extends HTML_NeNode {
 	 * @param function
 	 */
 	public void onValueChanged(StringUTF8NeFunction function) {
-		vertex.methods().setStringUTF8Method("on-value-changed", function);
+		vertex.inbound().setStringUTF8Method("on-value-changed", function);
 	}
 	
 	
@@ -101,13 +101,13 @@ public class TextInput extends HTML_NeNode {
 	 * @param lambda
 	 */
 	public void onValueChangedLambda(StringUTF8Lambda lambda) {
-		vertex.methods().setStringUTF8MethodLambda("on-value-changed", lambda);
+		vertex.inbound().setStringUTF8MethodLambda("on-value-changed", lambda);
 	}
 
 
 
 	public void setValue(String value) {
-		vertex.fields().setStringUTF8Field("value", value);
+		vertex.outbound().setStringUTF8Field("value", value);
 	}
 
 }

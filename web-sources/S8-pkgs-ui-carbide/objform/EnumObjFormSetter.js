@@ -1,8 +1,8 @@
 
 
-import { S8 } from '/S8-core-bohr-atom/S8.js';
 
 
+import { S8 } from '/S8-api/S8Context.js';
 import { PrimtiveObjFormSetter } from '/S8-pkgs-ui-carbide/objform/PrimtiveObjFormSetter.js';
 
 
@@ -41,7 +41,7 @@ export class EnumObjFormSetter extends PrimtiveObjFormSetter {
 
         const _this = this;
         this.selectNode.addEventListener("change", function(event){
-            S8.branch.loseFocus();
+            S8.page.loseFocus();
             _this.sendValue();
             event.stopPropagation();
         })
@@ -55,7 +55,7 @@ export class EnumObjFormSetter extends PrimtiveObjFormSetter {
 
     S8_set_enumValues(enumValues){
         // remove previous nodes
-        S8.removeChildren(this.selectNode);
+        S8.page.removeChildren(this.selectNode);
 
         // add new ones
         let _this = this;

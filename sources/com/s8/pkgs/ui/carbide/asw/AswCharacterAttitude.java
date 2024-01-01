@@ -19,10 +19,10 @@ public class AswCharacterAttitude extends S8WebFrontObject {
 			String faceImagePathname) {
 		super(branch, WebSources.ROOT_WEBPATH + "/asw/AswCharacterAttitude");
 		
-		vertex.fields().setFloat32Field("speechPitch", (float) speechPitch);
-		vertex.fields().setFloat32Field("speechRate", (float) speechRate);
-		vertex.fields().setFloat32Field("speechVolume", (float) speechVolume);
-		vertex.fields().setStringUTF8Field("faceImagePathname", faceImagePathname);
+		vertex.outbound().setFloat32Field("speechPitch", (float) speechPitch);
+		vertex.outbound().setFloat32Field("speechRate", (float) speechRate);
+		vertex.outbound().setFloat32Field("speechVolume", (float) speechVolume);
+		vertex.outbound().setStringUTF8Field("faceImagePathname", faceImagePathname);
 	}
 
 }

@@ -1,5 +1,6 @@
 package com.s8.pkgs.ui.carbide.grid;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.s8.api.web.S8WebFront;
@@ -15,6 +16,8 @@ import com.s8.pkgs.ui.carbide.WebSources;
  */
 public class Grid extends S8WebFrontObject {
 
+	
+	private List<GridCard> cards = new ArrayList<>();
 
 	public Grid(S8WebFront branch) {
 		super(branch, WebSources.ROOT_WEBPATH + "/grid/Grid");
@@ -28,7 +31,8 @@ public class Grid extends S8WebFrontObject {
 
 
 	public void setCards(List<GridCard> cards) {
-		vertex.fields().setObjectListField("cards", cards);
+		this.cards = cards;
+		vertex.outbound().setObjectListField("cards", this.cards);
 	}
 
 
@@ -37,7 +41,7 @@ public class Grid extends S8WebFrontObject {
 	 * @return
 	 */
 	public List<GridCard> getCards(){
-		return vertex.fields().getObjectListField("cards");
+		return cards;
 	}
 
 
@@ -57,7 +61,7 @@ public class Grid extends S8WebFrontObject {
 	 * @param func
 	 */
 	public void onClick(VoidNeFunction func) {
-		vertex.methods().setVoidMethod("on-click", func);
+		vertex.inbound().setVoidMethod("on-click", func);
 	}
 
 
@@ -67,7 +71,7 @@ public class Grid extends S8WebFrontObject {
 	 * @param func
 	 */
 	public void onClickLambda(VoidLambda lambda) {
-		vertex.methods().setVoidMethodLambda("on-click", lambda);
+		vertex.inbound().setVoidMethodLambda("on-click", lambda);
 	}
 
 }

@@ -29,7 +29,7 @@ public class AccessRepoGridCard extends GridCard {
 	 * @param name
 	 */
 	public void setTitle(String name) {
-		vertex.fields().setStringUTF8Field("title", name);
+		vertex.outbound().setStringUTF8Field("title", name);
 	}
 	
 	/**
@@ -37,7 +37,7 @@ public class AccessRepoGridCard extends GridCard {
 	 * @param name
 	 */
 	public void setInfo(String name) {
-		vertex.fields().setStringUTF8Field("info", name);
+		vertex.outbound().setStringUTF8Field("info", name);
 	}
 	
 	

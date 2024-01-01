@@ -1,7 +1,6 @@
 
 
-import { S8 } from '/S8-core-bohr-atom/S8.js';
-
+import { S8 } from '/S8-api/S8Context.js';
 import { S8_NumberFormats } from '/S8-pkgs-ui-carbide/S8NumberFormat.js';
 import { PrimtiveObjFormSetter } from '/S8-pkgs-ui-carbide/objform/PrimtiveObjFormSetter.js';
 
@@ -36,7 +35,7 @@ export class ScalarObjFormSetter extends PrimtiveObjFormSetter {
 
         const _this = this;
         this.inputNode.addEventListener("blur", function(event){
-            S8.branch.loseFocus();
+            S8.page.loseFocus();
             _this.sendValue();
             event.stopPropagation();
         });

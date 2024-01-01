@@ -1,5 +1,5 @@
 
-import { S8 } from "/S8-core-bohr-atom/S8.js";
+import { S8 } from "/S8-api/S8Context.js";
 import { NeObject } from "/S8-core-bohr-neon/NeObject.js";
 
 import { S8WebFront } from "/S8-pkgs-ui-carbide/S8WebFront.js";
@@ -50,7 +50,7 @@ export class TopbarElement extends NeObject {
 
         const _this = this;
         this.node.addEventListener("click", function (event) {
-            S8.branch.loseFocus();
+            S8.page.loseFocus();
             _this.toggle();
             event.stopPropagation();
         }, false);

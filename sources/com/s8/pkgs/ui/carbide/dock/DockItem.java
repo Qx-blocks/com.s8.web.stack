@@ -37,10 +37,10 @@ public class DockItem extends S8WebFrontObject {
 	 */
 	public DockItem(S8WebFront branch, String name, String iconFilename) {
 		super(branch, WebSources.ROOT_WEBPATH + "/dock/DockItem");
-		vertex.fields().setStringUTF8Field("name", name);
-		vertex.fields().setStringUTF8Field("iconFilename", iconFilename);
+		vertex.outbound().setStringUTF8Field("name", name);
+		vertex.outbound().setStringUTF8Field("iconFilename", iconFilename);
 		
-		vertex.methods().setBool8Method("onClickSelect", (f,v) -> { System.out.print("hello world"); });
+		vertex.inbound().setBool8Method("onClickSelect", (f,v) -> { System.out.print("hello world"); });
 		
 	}
 	
@@ -50,7 +50,7 @@ public class DockItem extends S8WebFrontObject {
 	 * @param function
 	 */
 	public void onClick(VoidNeFunction function) {
-		vertex.methods().setVoidMethod("on-click", function);
+		vertex.inbound().setVoidMethod("on-click", function);
 	}
 	
 	
@@ -59,7 +59,7 @@ public class DockItem extends S8WebFrontObject {
 	 * @param lambda
 	 */
 	public void onClickLambda(VoidLambda lambda) {
-		vertex.methods().setVoidMethodLambda("on-click", lambda);
+		vertex.inbound().setVoidMethodLambda("on-click", lambda);
 	}
 	
 	

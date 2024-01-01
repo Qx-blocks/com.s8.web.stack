@@ -45,7 +45,7 @@ public class Popover extends S8WebFrontObject {
 	 * @param direction
 	 */
 	public void setVisibility(boolean isVisible) {
-		vertex.fields().setBool8Field("visibility", isVisible);
+		vertex.outbound().setBool8Field("visibility", isVisible);
 	}
 	
 	
@@ -54,7 +54,7 @@ public class Popover extends S8WebFrontObject {
 	 * @param direction
 	 */
 	public void setDirection(S8WebDirection direction) {
-		vertex.fields().setUInt8Field("direction", direction.code);
+		vertex.outbound().setUInt8Field("direction", direction.code);
 	}
 	
 	
@@ -63,7 +63,7 @@ public class Popover extends S8WebFrontObject {
 	 * @param theme
 	 */
 	public void setTheme(S8WebTheme theme) {
-		vertex.fields().setUInt8Field("theme", theme.code);
+		vertex.outbound().setUInt8Field("theme", theme.code);
 	}
 	
 	
@@ -72,7 +72,7 @@ public class Popover extends S8WebFrontObject {
 	 * @param elements
 	 */
 	public void setElements(List<HTML_NeNode> elements) {
-		vertex.fields().setObjectListField("content", elements);
+		vertex.outbound().setObjectListField("content", elements);
 	}
 	
 	/**
@@ -80,7 +80,7 @@ public class Popover extends S8WebFrontObject {
 	 * @param elements
 	 */
 	public void setElements(HTML_NeNode... elements) {
-		vertex.fields().setObjectListField("content", elements);
+		vertex.outbound().setObjectListField("content", elements);
 	}
 	
 	
@@ -90,7 +90,7 @@ public class Popover extends S8WebFrontObject {
 	 * @param elements
 	 */
 	public void setPopover(Popover popover) {
-		vertex.fields().setObjectField("popover", popover);
+		vertex.outbound().setObjectField("popover", popover);
 	}
 	
 	
@@ -98,7 +98,7 @@ public class Popover extends S8WebFrontObject {
 	 * 
 	 */
 	public void removePopover() {
-		vertex.fields().setObjectField("popover", null);
+		vertex.outbound().setObjectField("popover", null);
 	}
 	
 	

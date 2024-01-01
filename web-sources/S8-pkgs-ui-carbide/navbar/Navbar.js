@@ -1,5 +1,5 @@
 
-import { NeObject } from "/S8-core-bohr-neon/NeObject.js";
+import { S8Object } from "/S8-api/S8Object.js";
 
 import { S8WebFront } from "/S8-pkgs-ui-carbide/S8WebFront.js";
 import { NavbarMenu } from "/S8-pkgs-ui-carbide/navbar/NavbarMenu.js";
@@ -16,7 +16,7 @@ S8WebFront.CSS_import('/S8-pkgs-ui-carbide/navbar/Navbar.css');
 /**
  * 
  */
-export class Navbar extends NeObject {
+export class Navbar extends S8Object {
 
 
     /**

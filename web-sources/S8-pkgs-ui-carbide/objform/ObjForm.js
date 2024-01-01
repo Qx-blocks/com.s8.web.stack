@@ -1,10 +1,10 @@
 
 
-import { S8 } from '../../s8/S8.js';
+import { S8 } from '/S8-api/S8Context.js';
 import { NeObject } from '/S8-core-bohr-neon/NeObject.js';
 
 
-S8.import_CSS("/air/objform/ObjForm.css");
+S8.page.import_CSS("/air/objform/ObjForm.css");
 
 
 
@@ -20,9 +20,9 @@ const getColor = function (code) {
     }
 }
 
-const getSVGShape = function(code) {
+const getSVGShape = function (code) {
     switch (code) {
-        
+
         case 0x02: return "octicons/alert";
         case 0x03: return "octicons/beaker";
         case 0x04: return "octicons/check";
@@ -43,7 +43,7 @@ export class ObjFormField extends NeObject {
     fieldNode;
 
 
-    constructor(){
+    constructor() {
         this.fieldNode = document.createElement("div");
     }
 
@@ -56,7 +56,7 @@ export class ObjFormField extends NeObject {
 export class ObjectObjFormField extends ObjFormField {
 
     constructor() {
-        
+
         super();
 
         // default setup
@@ -135,7 +135,7 @@ export class ObjectObjFormField extends ObjFormField {
         this.iconNode.classList.replace(previous, next);
         this.iconColorCode = colorCode;
     }
-    
+
     setMarkupColor(colorCode) {
         let previous = "objform-markup-" + getColor(this.markupColorCode);
         let next = "objform-markup-" + getColor(colorCode);
@@ -151,17 +151,17 @@ export class ObjectObjFormField extends ObjFormField {
         this.typeNode.innerHTML = name;
     }
 
-    setIconShapeByCode(code){
-       S8.insert_SVG(this.iconNode, getSVGShape(code), 16, 16);
+    setIconShapeByCode(code) {
+        S8.page.insert_SVG(this.iconNode, getSVGShape(code), 16, 16);
     }
 
-    setIconShape(name){
-        S8.insert_SVG(this.iconNode, name, 16, 16);
-     }
+    setIconShape(name) {
+        S8.page.insert_SVG(this.iconNode, name, 16, 16);
+    }
 
-    setFields(fields){
+    setFields(fields) {
         // remove previous nodes
-        S8.removeChildren(this.bodyNode);
+        S8.page.removeChildren(this.bodyNode);
 
         // add new ones
         let _this = this;
@@ -170,22 +170,22 @@ export class ObjectObjFormField extends ObjFormField {
         });
     }
 
-    setTogglingState(mustBeExpanded){
-        if(!this.isExpanded && mustBeExpanded){
+    setTogglingState(mustBeExpanded) {
+        if (!this.isExpanded && mustBeExpanded) {
             this.triangleNode.classList.replace("objform-icon-triangle-collapsed", "objform-icon-triangle-expanded");
             this.isExpanded = true;
         }
-        else if(this.isExpanded && !mustBeExpanded){
+        else if (this.isExpanded && !mustBeExpanded) {
             this.triangleNode.classList.replace("objform-icon-triangle-expanded", "objform-icon-triangle-collapsed");
             this.isExpanded = false;
         }
-        else{
+        else {
             throw "error: illegal toggling state";
         }
     }
 
-    removeFields(){
-         S8.removeChildren(this.bodyNode);
+    removeFields() {
+        S8.page.removeChildren(this.bodyNode);
     }
 }
 
@@ -267,11 +267,11 @@ export class ScalarObjFormGetter extends PrimtiveObjFormGetter {
     }
 
 
-    setValue(value){
+    setValue(value) {
         this.outputNode.innerHTML = `<span>${value}</span>`;
     }
 
-    setUnit(abbreviation){
+    setUnit(abbreviation) {
         this.unitNode.innerHTML = abbreviation;
     }
 }
@@ -294,8 +294,8 @@ export class BooleanObjFormGetter extends PrimtiveObjFormGetter {
     }
 
 
-    setValue(value){
-        this.outputNode.innerHTML = `<span>${value?"TRUE":"FALSE"}</span>`;
+    setValue(value) {
+        this.outputNode.innerHTML = `<span>${value ? "TRUE" : "FALSE"}</span>`;
     }
 }
 
@@ -403,7 +403,7 @@ export class ScalarObjFormSetter extends PrimtiveObjFormSetter {
     }
 
 
-    setUnit(abbreviation){
+    setUnit(abbreviation) {
         this.unitNode.innerHTML = abbreviation;
     }
 }
@@ -428,23 +428,23 @@ export class EnumObjFormSetter extends PrimtiveObjFormSetter {
         this.fieldNode.appendChild(selectWrapperNode);
 
         // populate with options
-        for(let i=0; i<4; i++){
+        for (let i = 0; i < 4; i++) {
             let optionNode = document.createElement("option");
             optionNode.setAttribute("value", `i=${i}`);
-            optionNode.innerText = "Option "+i;
+            optionNode.innerText = "Option " + i;
             this.selectNode.appendChild(optionNode);
         }
         /* </select> */
     }
 
-    setOptions(options){
+    setOptions(options) {
         // remove previous nodes
-        S8.removeChildren(this.selectNode);
+        S8.page.removeChildren(this.selectNode);
 
         // add new ones
         let _this = this;
         let n = options.length;
-        for(let i=0; i<n; i++){
+        for (let i = 0; i < n; i++) {
             let optionNode = document.createElement("option");
             optionNode.setAttribute("value", `i=${i}`);
             optionNode.innerText = options[i];
@@ -460,7 +460,7 @@ export class EnumObjFormSetter extends PrimtiveObjFormSetter {
 /**
  * 
  */
- class MethodObjFormLauncher {
+class MethodObjFormLauncher {
 
     constructor() {
 
@@ -471,7 +471,7 @@ export class EnumObjFormSetter extends PrimtiveObjFormSetter {
         this.fieldNode = document.createElement("div");
         this.fieldNode.classList.add("objform-method");
         this.fieldNode.classList.add("objform-method-disabled");
-        
+
         this.arrowNode = document.createElement("div");
         this.arrowNode.classList.add("objform-icon-arrow-disabled");
         this.arrowNode.innerHTML = ` <svg height="10" width="20" viewBox="0 0 20 10">
@@ -496,16 +496,16 @@ export class EnumObjFormSetter extends PrimtiveObjFormSetter {
         this.nameNode.innerHTML = `<span>${name}</span>`;
     }
 
-    enable(){
-        if(!this.isEnabled){
+    enable() {
+        if (!this.isEnabled) {
             this.fieldNode.classList.replace("objform-method-disabled", "objform-method-enabled");
             this.arrowNode.classList.replace("objform-icon-arrow-disabled", "objform-icon-arrow-enabled");
             this.isEnabled = true;
         }
     }
 
-    disable(){
-        if(this.isEnabled){
+    disable() {
+        if (this.isEnabled) {
             this.fieldNode.classList.replace("objform-method-enabled", "objform-method-disabled");
             this.arrowNode.classList.replace("objform-icon-arrow-enabled", "objform-icon-arrow-disabled");
             this.isEnabled = false;
@@ -515,15 +515,15 @@ export class EnumObjFormSetter extends PrimtiveObjFormSetter {
 
 
 
-export const objformTest02 = function(){
-    
-    let obj0 = new ObjectObjFormField();    
+export const objformTest02 = function () {
+
+    let obj0 = new ObjectObjFormField();
     obj0.setFieldName("Folder0:");
     obj0.setTypeName("Axial Config");
     obj0.setIconShapeByCode(0x23);
     obj0.setIconColor(3);
 
-    let obj00 = new ObjectObjFormField();    
+    let obj00 = new ObjectObjFormField();
     obj00.setFieldName("Folder00:");
     obj00.setTypeName("Sub Axial Config");
     obj00.setIconShapeByCode(0x22);
@@ -531,11 +531,11 @@ export const objformTest02 = function(){
     let prim000 = new ScalarObjFormSetter();
     prim000.setName("Axial thrust factor:");
     prim000.setUnit("bar");
-   
+
     let prim001 = new ScalarObjFormSetter();
     prim001.setName("special-og mod:");
     prim001.setUnit("°C");
-   
+
     let prim002 = new EnumObjFormSetter();
     prim002.setName("376special-og mod:");
     prim002.setOptions(["Axial", "Radial", "Axial-Radial"]);
@@ -568,7 +568,7 @@ export const objformTest02 = function(){
     obj00.setFields([prim000, prim001, prim002, prim003, method004, method005, get006, get007, get008]);
 
 
-    let obj01 = new ObjectObjFormField();    
+    let obj01 = new ObjectObjFormField();
     obj01.setFieldName("Folder01:");
     obj01.setTypeName("Sub Axial Config");
     obj01.setIconShape("octicons/tools");
@@ -577,11 +577,11 @@ export const objformTest02 = function(){
     let prim010 = new ScalarObjFormSetter();
     prim010.setName("Axial thrust factor:");
     prim010.setUnit("bar");
-   
+
     let prim011 = new ScalarObjFormSetter();
     prim011.setName("special-og mod:");
     prim011.setUnit("°C");
-   
+
     let prim012 = new EnumObjFormSetter();
     prim012.setName("376special-og mod:");
     prim012.setOptions(["Axial", "Radial", "Axial-Radial"]);
@@ -591,12 +591,12 @@ export const objformTest02 = function(){
 
     obj01.setFields([prim010, prim011, prim012, prim013]);
 
-    let obj02 = new ObjectObjFormField();    
+    let obj02 = new ObjectObjFormField();
     obj02.setFieldName("Folder02:");
     obj02.setTypeName("Sub Axial Config");
     obj02.setIconShape("octicons/pulse");
 
-    let obj03 = new ObjectObjFormField();    
+    let obj03 = new ObjectObjFormField();
     obj03.setFieldName("Folder02:");
     obj03.setTypeName("Sub Axial Config");
     obj03.setIconShape("octicons/radio-tower");
@@ -606,7 +606,7 @@ export const objformTest02 = function(){
     obj0.setFields([obj00, obj01, obj02, obj03]);
 
     return obj0;
-    
+
 };
 
 

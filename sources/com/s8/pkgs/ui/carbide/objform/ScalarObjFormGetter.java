@@ -66,12 +66,12 @@ public class ScalarObjFormGetter extends PrimitiveObjFormGetter {
 	 * @param name
 	 */
 	public void setValue(double value) {
-		vertex.fields().setFloat32Field("value", (float) value);
+		vertex.outbound().setFloat32Field("value", (float) value);
 	}
 	
 	
 	public void setUnit(String unit) {
-		vertex.fields().setStringUTF8Field("unit", unit);
+		vertex.outbound().setStringUTF8Field("unit", unit);
 	}
 	
 
@@ -80,7 +80,7 @@ public class ScalarObjFormGetter extends PrimitiveObjFormGetter {
 	 * @param unit
 	 */
 	public void setFormat(S8NumberFormat format) {
-		vertex.fields().setUInt8Field("format", format.code);
+		vertex.outbound().setUInt8Field("format", format.code);
 	}
 
 

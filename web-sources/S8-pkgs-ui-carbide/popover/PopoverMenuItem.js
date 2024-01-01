@@ -1,5 +1,5 @@
 import { Popover } from "./Popover.js";
-import { S8 } from "/S8-core-bohr-atom/S8.js";
+import { S8 } from "/S8-api/S8Context.js";
 import { NeObject } from "/S8-core-bohr-neon/NeObject.js";
 
 
@@ -50,7 +50,7 @@ export class PopoverMenuItem extends NeObject {
     }
 
     S8_set_icon(name){
-        S8.SVG_insertByName(this.iconNode, ICON_ROOT_PATHNAME + name, 16, 16);
+        S8.page.SVG_insertByName(this.iconNode, ICON_ROOT_PATHNAME + name, 16, 16);
     }
 
     /**

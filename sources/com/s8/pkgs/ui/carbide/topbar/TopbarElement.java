@@ -38,7 +38,7 @@ public class TopbarElement extends S8WebFrontObject {
 	 * @param name
 	 */
 	public void setName(String name) {
-		vertex.fields().setStringUTF8Field("name", name);
+		vertex.outbound().setStringUTF8Field("name", name);
 	}
 	
 	
@@ -48,7 +48,7 @@ public class TopbarElement extends S8WebFrontObject {
 	 * @param popover
 	 */
 	public void setPopover(Popover popover) {
-		vertex.fields().setObjectField("popover", popover);
+		vertex.outbound().setObjectField("popover", popover);
 	}
 	
 	
@@ -56,17 +56,17 @@ public class TopbarElement extends S8WebFrontObject {
 	 * 
 	 */
 	public void clearPopover() {
-		vertex.fields().setObjectField("popover", null);
+		vertex.outbound().setObjectField("popover", null);
 	}
 	
 	
 	
 	public void onSelected(VoidLambda lambda) {
-		vertex.methods().setVoidMethodLambda("on-selected", lambda);
+		vertex.inbound().setVoidMethodLambda("on-selected", lambda);
 	}
 	
 	public void onDeselected(VoidLambda lambda) {
-		vertex.methods().setVoidMethodLambda("on-deselected", lambda);
+		vertex.inbound().setVoidMethodLambda("on-deselected", lambda);
 	}
 	
 	
@@ -75,7 +75,7 @@ public class TopbarElement extends S8WebFrontObject {
 	 * @param function
 	 */
 	public void onSelectedMethod(VoidNeFunction function) {
-		vertex.methods().setVoidMethod("on-selected", function);
+		vertex.inbound().setVoidMethod("on-selected", function);
 	}
 	
 }

@@ -1,6 +1,6 @@
 
-import { S8 } from "/S8-core-bohr-atom/S8.js";
-import { NeObject } from "/S8-core-bohr-neon/NeObject.js";
+import { S8 } from "/S8-api/S8Context.js";
+import { S8Object } from "/S8-api/S8Object.js";
 
 import { S8WebFront } from "/S8-pkgs-ui-carbide/S8WebFront.js";
 import { Navbar } from "/S8-pkgs-ui-carbide/navbar/Navbar.js";
@@ -15,7 +15,7 @@ S8WebFront.CSS_import('/S8-pkgs-ui-carbide/navbar/Navbar.css');
 /**
  * 
  */
-export class NavbarMenu extends NeObject {
+export class NavbarMenu extends S8Object {
 
 
 
@@ -53,7 +53,7 @@ export class NavbarMenu extends NeObject {
 
         const _this = this;
         this.wrapperNode.addEventListener("click", function (event) {
-            S8.branch.loseFocus();
+            S8.page.loseFocus();
             _this.navbar.select(_this.index);
             _this.S8_vertex.runVoid("on-selected");
             event.stopPropagation();
