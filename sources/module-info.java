@@ -10,7 +10,6 @@ module com.s8.pkgs.ui.carbide {
 
 	exports com.s8.pkgs.ui.carbide;
 	
-	exports com.s8.pkgs.ui.carbide.asw;
 	exports com.s8.pkgs.ui.carbide.button;
 	exports com.s8.pkgs.ui.carbide.cube;
 	exports com.s8.pkgs.ui.carbide.dock;
