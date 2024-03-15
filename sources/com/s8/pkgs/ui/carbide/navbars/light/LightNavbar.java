@@ -1,4 +1,4 @@
-package com.s8.pkgs.ui.carbide.topbar;
+package com.s8.pkgs.ui.carbide.navbars.light;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,15 +13,18 @@ import com.s8.pkgs.ui.carbide.HTML_NeNode;
  * @author pierreconvert
  *
  */
-public class Topbar extends HTML_NeNode {
+public class LightNavbar extends HTML_NeNode {
 
+	public final static String JS_FILENAME = "/navbars/light/LightNavbar";
 	
+	
+			
 	/**
 	 * 
 	 * @param branch
 	 */
-	public Topbar(S8WebFront branch) {
-		super(branch, WebSources.ROOT_WEBPATH + "/topbar/Topbar");
+	public LightNavbar(S8WebFront branch) {
+		super(branch, WebSources.ROOT_WEBPATH + JS_FILENAME);
 	}
 	
 	
@@ -29,7 +32,7 @@ public class Topbar extends HTML_NeNode {
 	 * 
 	 * @param menus
 	 */
-	public void setElements(List<TopbarElement> menus) {
+	public void setElements(List<LightNavbarElement> menus) {
 		vertex.outbound().setObjectListField("elements", menus);
 	}
 	
@@ -38,9 +41,9 @@ public class Topbar extends HTML_NeNode {
 	 * 
 	 * @param menus
 	 */
-	public void setElements(TopbarElement... elements) {
+	public void setElements(LightNavbarElement... elements) {
 		int n = elements.length;
-		List<TopbarElement> list = new ArrayList<>(n);
+		List<LightNavbarElement> list = new ArrayList<>(n);
 		for(int i =0; i<n; i++) { list.add(elements[i]); }
 		vertex.outbound().setObjectListField("elements", list);
 	}

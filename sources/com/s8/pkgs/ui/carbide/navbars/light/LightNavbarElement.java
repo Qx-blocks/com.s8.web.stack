@@ -1,4 +1,4 @@
-package com.s8.pkgs.ui.carbide.topbar;
+package com.s8.pkgs.ui.carbide.navbars.light;
 
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.S8WebFrontObject;
@@ -13,20 +13,21 @@ import com.s8.pkgs.ui.carbide.popover.Popover;
  * @author pierreconvert
  *
  */
-public class TopbarElement extends S8WebFrontObject {
+public class LightNavbarElement extends S8WebFrontObject {
 
+	public final static String JS_FILENAME = "/navbars/light/LightNavbarElement";
 	
 	/**
 	 * 
 	 * @param branch
 	 */
-	public TopbarElement(S8WebFront branch) {
-		super(branch, WebSources.ROOT_WEBPATH + "/topbar/TopbarElement");
+	public LightNavbarElement(S8WebFront branch) {
+		super(branch, WebSources.ROOT_WEBPATH + JS_FILENAME);
 	}
 	
 	
-	public TopbarElement(S8WebFront branch, String name) {
-		super(branch, WebSources.ROOT_WEBPATH +  "/topbar/TopbarElement");
+	public LightNavbarElement(S8WebFront branch, String name) {
+		super(branch, WebSources.ROOT_WEBPATH + JS_FILENAME);
 		setName(name);
 		onSelected(() -> { });
 		onDeselected(() -> { });

@@ -1,4 +1,4 @@
-package com.s8.pkgs.ui.carbide.navbar;
+package com.s8.pkgs.ui.carbide.navbars.top;
 
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.S8WebFrontObject;
@@ -13,20 +13,22 @@ import com.s8.pkgs.ui.carbide.icons.S8FlatIcon;
  * @author pierreconvert
  *
  */
-public class NavbarMenu extends S8WebFrontObject {
+public class TopNavbarMenu extends S8WebFrontObject {
 
+	
+	public final static String JS_TYPENAME = "/navbars/top/TopNavbarMenu";
 	
 	/**
 	 * 
 	 * @param branch
 	 */
-	public NavbarMenu(S8WebFront branch) {
-		super(branch, WebSources.ROOT_WEBPATH + "/navbar/NavbarMenu");
+	public TopNavbarMenu(S8WebFront branch) {
+		super(branch, WebSources.ROOT_WEBPATH + JS_TYPENAME);
 	}
 	
 	
-	public NavbarMenu(S8WebFront branch, S8FlatIcon icon, String name) {
-		super(branch, WebSources.ROOT_WEBPATH + "/navbar/NavbarMenu");
+	public TopNavbarMenu(S8WebFront branch, S8FlatIcon icon, String name) {
+		super(branch, WebSources.ROOT_WEBPATH + JS_TYPENAME);
 		setIcon(icon);
 		setName(name);
 		onSelected(() -> {

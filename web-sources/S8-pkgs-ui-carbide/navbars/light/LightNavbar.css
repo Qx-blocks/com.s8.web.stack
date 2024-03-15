@@ -5,7 +5,7 @@
 */
 
 
-.topbar-wrapper {
+.lightnavbar-wrapper {
     z-index: 64;
     display: block;
     position: absolute;
@@ -26,7 +26,7 @@
 }
 
 
-.topbar-element {
+.lightnavbar-element {
     position: relative;
     color: rgb(46, 46, 46);
     font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -43,13 +43,13 @@
     cursor: pointer;
 }
 
-.topbar-element[selected = "true"]{
+.lightnavbar-element[selected = "true"]{
     color: rgb(0, 4, 37);
     background-color: rgba(133, 141, 252, 0.797);
     border-radius: 6px;
 }
 
-.topbar-element:hover {
+.lightnavbar-element:hover {
     color: rgb(214, 214, 214);
     background-color: rgba(61, 74, 255, 0.797);
     border-radius: 6px;

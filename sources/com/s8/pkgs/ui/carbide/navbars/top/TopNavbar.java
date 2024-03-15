@@ -1,4 +1,4 @@
-package com.s8.pkgs.ui.carbide.navbar;
+package com.s8.pkgs.ui.carbide.navbars.top;
 
 import java.util.List;
 
@@ -12,15 +12,20 @@ import com.s8.pkgs.ui.carbide.HTML_NeNode;
  * @author pierreconvert
  *
  */
-public class Navbar extends HTML_NeNode {
+public class TopNavbar extends HTML_NeNode {
+	
+	/**
+	 * 
+	 */
+	public final static String JS_TYPENAME = "/navbars/top/TopNavbar";
 
 	
 	/**
 	 * 
-	 * @param branch
+	 * @param front
 	 */
-	public Navbar(S8WebFront branch) {
-		super(branch, WebSources.ROOT_WEBPATH + "/navbar/Navbar");
+	public TopNavbar(S8WebFront front) {
+		super(front, WebSources.ROOT_WEBPATH + JS_TYPENAME);
 	}
 	
 
@@ -38,7 +43,7 @@ public class Navbar extends HTML_NeNode {
 	 * 
 	 * @param menus
 	 */
-	public void setMenus(List<NavbarMenu> menus) {
+	public void setMenus(List<TopNavbarMenu> menus) {
 		vertex.outbound().setObjectListField("menus", menus);
 	}
 	

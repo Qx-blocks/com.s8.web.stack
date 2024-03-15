@@ -2,7 +2,8 @@
 import { S8Object } from "/S8-api/S8Object.js";
 
 import { S8WebFront } from "/S8-pkgs-ui-carbide/S8WebFront.js";
-import { NavbarMenu } from "/S8-pkgs-ui-carbide/navbar/NavbarMenu.js";
+
+import { SubNavbarMenu } from "./TopNavbarMenu.js";
 
 
 
@@ -10,17 +11,17 @@ import { NavbarMenu } from "/S8-pkgs-ui-carbide/navbar/NavbarMenu.js";
 /**
  * 
  */
-S8WebFront.CSS_import('/S8-pkgs-ui-carbide/navbar/Navbar.css');
+S8WebFront.CSS_import('/S8-pkgs-ui-carbide/navbars/top/TopNavbar.css');
 
 
 /**
  * 
  */
-export class Navbar extends S8Object {
+export class TopNavbar extends S8Object {
 
 
     /**
-     * @type {NavbarMenu[]}
+     * @type {SubNavbarMenu[]}
      */
     menus;
 
@@ -37,7 +38,7 @@ export class Navbar extends S8Object {
     constructor(){
         super();
         this.wrapperNode = document.createElement("div");
-        this.wrapperNode.classList.add("navbar-header");
+        this.wrapperNode.classList.add("subnavbar-header");
     }
 
 

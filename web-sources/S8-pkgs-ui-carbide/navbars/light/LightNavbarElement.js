@@ -5,24 +5,24 @@ import { NeObject } from "/S8-core-bohr-neon/NeObject.js";
 import { S8WebFront } from "/S8-pkgs-ui-carbide/S8WebFront.js";
 
 import { Popover } from "/S8-pkgs-ui-carbide/popover/Popover.js";
-import { Topbar } from "/S8-pkgs-ui-carbide/topbar/Topbar.js";
+import { LightNavbar } from "./LightNavbar.js";
 
 
 /**
  * 
  */
-S8WebFront.CSS_import('/S8-pkgs-ui-carbide/topbar/Topbar.css');
+S8WebFront.CSS_import('/S8-pkgs-ui-carbide/navbars/light/LightNavbar.css');
 
 
 /**
  * 
  */
-export class TopbarElement extends NeObject {
+export class LightNavbarElement extends NeObject {
 
 
 
     /**
-     * @type{Topbar}
+     * @type{LightNavbar}
      */
     bar;
     
@@ -42,7 +42,7 @@ export class TopbarElement extends NeObject {
     constructor(){
         super();
         this.node = document.createElement("div");
-        this.node.classList.add("topbar-element");
+        this.node.classList.add("lightnavbar-element");
 
         /* selection */
         this.node.setAttribute("selected", "false");

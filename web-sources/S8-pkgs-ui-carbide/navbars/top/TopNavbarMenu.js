@@ -3,24 +3,24 @@ import { S8 } from "/S8-api/S8Context.js";
 import { S8Object } from "/S8-api/S8Object.js";
 
 import { S8WebFront } from "/S8-pkgs-ui-carbide/S8WebFront.js";
-import { Navbar } from "/S8-pkgs-ui-carbide/navbar/Navbar.js";
+import { TopNavbar } from "./TopNavbar.js";
 
 
 /**
  * 
  */
-S8WebFront.CSS_import('/S8-pkgs-ui-carbide/navbar/Navbar.css');
+S8WebFront.CSS_import('/S8-pkgs-ui-carbide/navbars/top/TopNavbar.css');
 
 
 /**
  * 
  */
-export class NavbarMenu extends S8Object {
+export class TopNavbarMenu extends S8Object {
 
 
 
     /**
-     * @type{Navbar}
+     * @type{TopNavbar}
      */
     navbar;
     
@@ -35,18 +35,18 @@ export class NavbarMenu extends S8Object {
     constructor(){
         super();
         this.wrapperNode = document.createElement("div");
-        this.wrapperNode.classList.add("navbar-menu");
+        this.wrapperNode.classList.add("topnavbar-menu");
 
         this.labelNode = document.createElement("div");
-        this.labelNode.classList.add("navbar-menu-label");
+        this.labelNode.classList.add("topnavbar-menu-label");
         this.wrapperNode.appendChild(this.labelNode);
 
         this.iconNode = document.createElement("div");
-        this.iconNode.classList.add("navbar-menu-icon");
+        this.iconNode.classList.add("topnavbar-menu-icon");
         this.labelNode.appendChild(this.iconNode);
 
         this.nameNode = document.createElement("div");
-        this.nameNode.classList.add("navbar-menu-name");
+        this.nameNode.classList.add("topnavbar-menu-name");
         this.labelNode.appendChild(this.nameNode);
         
         this.wrapperNode.setAttribute("selected", "true");

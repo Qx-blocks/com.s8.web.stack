@@ -1,39 +1,43 @@
 
 
-.navbar-header {
+.topnavbar-header {
     display: flex;
     flex-direction: row;
-    margin-left: 8px;
-    margin-right: 8px;
+    gap: 6px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-bottom: 1px solid rgb(175, 175, 175);
 }
 
 
-.navbar-menu {
-    border-bottom: 1px solid rgb(175, 175, 175);
+.topnavbar-menu {
     color: rgb(65, 65, 65);
     cursor: pointer;
+    transform: translateY(1px);
 }
 
 
-.navbar-menu[selected="true"] {
+.topnavbar-menu[selected="true"] {
     border-bottom: 3px solid rgb(216, 1, 1);
     color: black;
     cursor: pointer;
 }
 
 
-.navbar-menu-label {
+.topnavbar-menu-label {
     height: 24px;
     display: flex;
     flex-direction: row;
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-left: 2px;
+    padding-right: 2px;
     padding-top: 2px;
     padding-bottom: 2px;
     margin-bottom: 4px;
 }
 
-.navbar-menu > .navbar-menu-label:hover {
+.topnavbar-menu > .topnavbar-menu-label:hover {
     background-color: rgb(231, 231, 255);
     border-radius: 4px;
     color: rgb(38, 33, 53);
@@ -41,21 +45,21 @@
 
 
 
-.navbar-menu-icon {
+.topnavbar-menu-icon {
     padding-top: 0px;
     width: 24px;
     margin-right: 4px;
 }
 
-.navbar-menu-icon > svg {
+.topnavbar-menu-icon > svg {
     fill : rgb(98, 98, 98);
 }
 
-.navbar-menu[selected = "true"] .navbar-menu-icon > svg {
+.topnavbar-menu[selected = "true"] .topnavbar-menu-icon > svg {
     fill : black;
 }
 
-.navbar-menu-name {
+.topnavbar-menu-name {
     font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
 	font-size: 14px;
     font-weight: 400;

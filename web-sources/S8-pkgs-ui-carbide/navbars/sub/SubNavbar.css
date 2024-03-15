@@ -1,0 +1,71 @@
+
+
+.subnavbar-header {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-bottom: 1px solid rgb(175, 175, 175);
+}
+
+
+.subnavbar-menu {
+    color: rgb(65, 65, 65);
+    cursor: pointer;
+    transform: translateY(1px);
+}
+
+
+.subnavbar-menu[selected="true"] {
+    border-bottom: 3px solid rgb(216, 1, 1);
+    color: black;
+    cursor: pointer;
+}
+
+
+.subnavbar-menu-label {
+    height: 24px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-bottom: 4px;
+}
+
+.subnavbar-menu > .subnavbar-menu-label:hover {
+    background-color: rgb(231, 231, 255);
+    border-radius: 4px;
+    color: rgb(38, 33, 53);
+}
+
+
+
+.subnavbar-menu-icon {
+    padding-top: 0px;
+    width: 24px;
+    margin-right: 4px;
+}
+
+.subnavbar-menu-icon > svg {
+    fill : rgb(98, 98, 98);
+}
+
+.subnavbar-menu[selected = "true"] .subnavbar-menu-icon > svg {
+    fill : black;
+}
+
+.subnavbar-menu-name {
+    font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.016em;
+  	text-align: center;
+    padding-top: 2px;
+    padding-right: 4px;
+    white-space: nowrap;
+}

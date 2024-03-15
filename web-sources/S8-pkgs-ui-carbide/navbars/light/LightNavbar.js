@@ -3,7 +3,7 @@ import { NeObject } from "/S8-core-bohr-neon/NeObject.js";
 
 
 import { S8WebFront } from "/S8-pkgs-ui-carbide/S8WebFront.js";
-import { TopbarElement } from "/S8-pkgs-ui-carbide/topbar/TopbarElement.js";
+import { LightNavbarElement } from "./LightNavbarElement.js";
 
 
 
@@ -11,17 +11,17 @@ import { TopbarElement } from "/S8-pkgs-ui-carbide/topbar/TopbarElement.js";
 /**
  * 
  */
-S8WebFront.CSS_import('/S8-pkgs-ui-carbide/topbar/Topbar.css');
+S8WebFront.CSS_import('/S8-pkgs-ui-carbide/navbars/light/LightNavbar.css');
 
 
 /**
  * 
  */
-export class Topbar extends NeObject {
+export class LightNavbar extends NeObject {
 
 
     /**
-     * @type {TopbarElement[]}
+     * @type {LightNavbarElement[]}
      */
     elements;
 
@@ -38,7 +38,7 @@ export class Topbar extends NeObject {
     constructor(){
         super();
         this.wrapperNode = document.createElement("div");
-        this.wrapperNode.classList.add("topbar-wrapper");
+        this.wrapperNode.classList.add("lightnavbar-wrapper");
     }
 
 
