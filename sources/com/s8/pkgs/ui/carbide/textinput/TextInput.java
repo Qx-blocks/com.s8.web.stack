@@ -5,8 +5,8 @@ import com.s8.api.web.functions.primitives.StringUTF8NeFunction;
 import com.s8.api.web.lambdas.primitives.StringUTF8Lambda;
 import com.s8.pkgs.ui.carbide.WebSources;
 import com.s8.pkgs.ui.carbide.HTML_NeNode;
-import com.s8.pkgs.ui.carbide.S8WebSize;
-import com.s8.pkgs.ui.carbide.S8WebTheme;
+import com.s8.pkgs.ui.carbide.CarbideSize;
+import com.s8.pkgs.ui.carbide.CarbideTheme;
 
 /**
  * 
@@ -16,10 +16,10 @@ import com.s8.pkgs.ui.carbide.S8WebTheme;
 public class TextInput extends HTML_NeNode {
 	
 	
-	public static TextInput create(S8WebFront branch, S8WebSize size, int width, String placeholder){
+	public static TextInput create(S8WebFront branch, CarbideSize size, int width, String placeholder){
 		TextInput input = new TextInput(branch);
 		input.setType(Type.TEXT);
-		input.setTheme(S8WebTheme.LIGHT);
+		input.setTheme(CarbideTheme.LIGHT);
 		input.setSize(size);
 		input.setWidth(width);
 		input.setPlaceholder(placeholder);
@@ -72,7 +72,7 @@ public class TextInput extends HTML_NeNode {
 	 * 
 	 * @param state
 	 */
-	public void setTheme(S8WebTheme theme) {
+	public void setTheme(CarbideTheme theme) {
 		vertex.outbound().setUInt8Field("theme", theme.code);
 	}
 	
@@ -82,7 +82,7 @@ public class TextInput extends HTML_NeNode {
 	 * 
 	 * @param size
 	 */
-	public void setSize(S8WebSize size) {
+	public void setSize(CarbideSize size) {
 		vertex.outbound().setUInt8Field("size", size.code);
 	}
 	

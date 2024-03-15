@@ -5,7 +5,7 @@ package com.s8.pkgs.ui.carbide;
  * @author pierreconvert
  *
  */
-public enum S8WebDirection {
+public enum CarbideDirection {
 
 	/**
 	 * 
@@ -97,7 +97,7 @@ public enum S8WebDirection {
 	 * @param code
 	 * @param name
 	 */
-	private S8WebDirection(int code, String name) { 
+	private CarbideDirection(int code, String name) { 
 		this.code = code; 
 		this.name = name;
 	}

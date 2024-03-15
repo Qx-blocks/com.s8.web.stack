@@ -3,11 +3,11 @@ package com.s8.pkgs.ui.carbide.popover;
 import java.util.List;
 
 import com.s8.api.web.S8WebFront;
-import com.s8.api.web.S8WebFrontObject;
+import com.s8.api.web.S8WebObject;
 import com.s8.pkgs.ui.carbide.WebSources;
 import com.s8.pkgs.ui.carbide.HTML_NeNode;
-import com.s8.pkgs.ui.carbide.S8WebDirection;
-import com.s8.pkgs.ui.carbide.S8WebTheme;
+import com.s8.pkgs.ui.carbide.CarbideDirection;
+import com.s8.pkgs.ui.carbide.CarbideTheme;
 
 
 /**
@@ -15,10 +15,10 @@ import com.s8.pkgs.ui.carbide.S8WebTheme;
  * @author pierreconvert
  *
  */
-public class Popover extends S8WebFrontObject {
+public class Popover extends S8WebObject {
 	
 	
-	public static Popover create(S8WebFront branch, S8WebTheme theme, S8WebDirection direction) {
+	public static Popover create(S8WebFront branch, CarbideTheme theme, CarbideDirection direction) {
 		Popover popover = new Popover(branch);
 		popover.setDirection(direction);
 		popover.setTheme(theme);
@@ -53,7 +53,7 @@ public class Popover extends S8WebFrontObject {
 	 * 
 	 * @param direction
 	 */
-	public void setDirection(S8WebDirection direction) {
+	public void setDirection(CarbideDirection direction) {
 		vertex.outbound().setUInt8Field("direction", direction.code);
 	}
 	
@@ -62,7 +62,7 @@ public class Popover extends S8WebFrontObject {
 	 * 
 	 * @param theme
 	 */
-	public void setTheme(S8WebTheme theme) {
+	public void setTheme(CarbideTheme theme) {
 		vertex.outbound().setUInt8Field("theme", theme.code);
 	}
 	

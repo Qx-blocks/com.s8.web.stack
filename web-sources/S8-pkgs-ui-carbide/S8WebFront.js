@@ -180,7 +180,7 @@ class S8WebFrontUtilities {
 
 	/**
 	 * 
-	 * @param {*} code 
+	 * @param {Number} code 
 	 * @returns 
 	 */
 	parseSize(code) {
@@ -188,7 +188,7 @@ class S8WebFrontUtilities {
 			case 0x02: return "inlined";
 			case 0x04: return "small";
 			case 0x06: return "normal";
-			case 0x08: return "big";
+			case 0x08: return "large";
 
 			default: return "normal";
 		}

@@ -11,7 +11,7 @@ package com.s8.pkgs.ui.carbide;
         case 0x26: return "error";
  *
  */
-public enum S8WebStatus {
+public enum CarbideStatus {
 
 
 	/**
@@ -60,7 +60,7 @@ public enum S8WebStatus {
 	 * 
 	 * @param code
 	 */
-	private S8WebStatus(int code, String name) { 
+	private CarbideStatus(int code, String name) { 
 		this.code = code; 
 		this.name = name;
 	}

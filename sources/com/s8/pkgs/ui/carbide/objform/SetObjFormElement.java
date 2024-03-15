@@ -6,9 +6,9 @@ import java.util.List;
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.functions.none.VoidNeFunction;
 import com.s8.api.web.lambdas.none.VoidLambda;
-import com.s8.pkgs.ui.carbide.S8WebDirection;
-import com.s8.pkgs.ui.carbide.S8WebStatus;
-import com.s8.pkgs.ui.carbide.S8WebTheme;
+import com.s8.pkgs.ui.carbide.CarbideDirection;
+import com.s8.pkgs.ui.carbide.CarbideStatus;
+import com.s8.pkgs.ui.carbide.CarbideTheme;
 import com.s8.pkgs.ui.carbide.WebSources;
 import com.s8.pkgs.ui.carbide.icons.S8FlatIcon;
 import com.s8.pkgs.ui.carbide.popover.Popover;
@@ -116,7 +116,7 @@ public class SetObjFormElement extends ObjFormElement {
 
 
 
-	public void setStatus(S8WebStatus status) {
+	public void setStatus(CarbideStatus status) {
 		vertex.outbound().setUInt8Field("status", status.code);
 	}
 
@@ -131,15 +131,15 @@ public class SetObjFormElement extends ObjFormElement {
 	 * @param status
 	 * @param message
 	 */
-	public void setStatusPopover(S8WebStatus status, String message) {
+	public void setStatusPopover(CarbideStatus status, String message) {
 		S8WebFront branch = vertex.getSession();
 		Popover popover = new Popover(branch);
 		switch(status) {
-		case WARNING : popover.setTheme(S8WebTheme.WARNING); break;
-		case ERROR : popover.setTheme(S8WebTheme.DANGER); break;
-		default : popover.setTheme(S8WebTheme.LIGHT); break;
+		case WARNING : popover.setTheme(CarbideTheme.WARNING); break;
+		case ERROR : popover.setTheme(CarbideTheme.DANGER); break;
+		default : popover.setTheme(CarbideTheme.LIGHT); break;
 		}
-		popover.setDirection(S8WebDirection.BOTTOM);
+		popover.setDirection(CarbideDirection.BOTTOM);
 		popover.setElements(ObjFormTextDoc.create(vertex.getSession(), message));
 		setStatusPopover(popover);
 	}

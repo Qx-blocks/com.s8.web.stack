@@ -1,7 +1,7 @@
-package com.s8.pkgs.ui.carbide.navbars.top;
+package com.s8.pkgs.ui.carbide.navbars.under;
 
 import com.s8.api.web.S8WebFront;
-import com.s8.api.web.S8WebFrontObject;
+import com.s8.api.web.S8WebObject;
 import com.s8.api.web.functions.none.VoidNeFunction;
 import com.s8.api.web.lambdas.none.VoidLambda;
 import com.s8.pkgs.ui.carbide.WebSources;
@@ -13,21 +13,21 @@ import com.s8.pkgs.ui.carbide.icons.S8FlatIcon;
  * @author pierreconvert
  *
  */
-public class TopNavbarMenu extends S8WebFrontObject {
+public class UnderlinedNavbarMenu extends S8WebObject {
 
 	
-	public final static String JS_TYPENAME = "/navbars/top/TopNavbarMenu";
+	public final static String JS_TYPENAME = "/navbars/under/UnderlinedNavbarMenu";
 	
 	/**
 	 * 
 	 * @param branch
 	 */
-	public TopNavbarMenu(S8WebFront branch) {
+	public UnderlinedNavbarMenu(S8WebFront branch) {
 		super(branch, WebSources.ROOT_WEBPATH + JS_TYPENAME);
 	}
 	
 	
-	public TopNavbarMenu(S8WebFront branch, S8FlatIcon icon, String name) {
+	public UnderlinedNavbarMenu(S8WebFront branch, S8FlatIcon icon, String name) {
 		super(branch, WebSources.ROOT_WEBPATH + JS_TYPENAME);
 		setIcon(icon);
 		setName(name);

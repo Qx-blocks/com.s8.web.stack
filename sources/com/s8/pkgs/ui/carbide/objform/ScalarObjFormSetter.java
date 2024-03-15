@@ -4,7 +4,7 @@ import com.s8.api.web.S8WebFront;
 import com.s8.api.web.functions.primitives.Float32NeFunction;
 import com.s8.api.web.lambdas.primitives.Float32Lambda;
 import com.s8.pkgs.ui.carbide.WebSources;
-import com.s8.pkgs.ui.carbide.S8NumberFormat;
+import com.s8.pkgs.ui.carbide.CarbideNumberFormat;
 
 
 /**
@@ -18,7 +18,7 @@ public class ScalarObjFormSetter extends PrimitiveObjFormSetter {
 	public static ScalarObjFormSetter create(S8WebFront branch, 
 			String name, 
 			String unit,
-			S8NumberFormat format,
+			CarbideNumberFormat format,
 			double initialValue, 
 			Float32Lambda lambda) {
 		ScalarObjFormSetter fieldView = new ScalarObjFormSetter(branch);
@@ -33,7 +33,7 @@ public class ScalarObjFormSetter extends PrimitiveObjFormSetter {
 	public static ScalarObjFormSetter create(S8WebFront branch, 
 			String name, 
 			String unit,
-			S8NumberFormat format,
+			CarbideNumberFormat format,
 			double initialValue, 
 			Float32Lambda lambda, 
 			String doc) {
@@ -71,7 +71,7 @@ public class ScalarObjFormSetter extends PrimitiveObjFormSetter {
 	 * 
 	 * @param unit
 	 */
-	public void setFormat(S8NumberFormat format) {
+	public void setFormat(CarbideNumberFormat format) {
 		vertex.outbound().setUInt8Field("format", format.code);
 	}
 

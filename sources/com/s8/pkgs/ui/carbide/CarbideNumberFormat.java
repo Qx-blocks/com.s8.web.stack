@@ -8,7 +8,7 @@ import java.text.DecimalFormat;
  * @author pierreconvert
  *
  */
-public enum S8NumberFormat {
+public enum CarbideNumberFormat {
 
 	
 	STD2(0x22, new DecimalFormat("##,##0.##")),
@@ -29,7 +29,7 @@ public enum S8NumberFormat {
 	
 
 	
-	private S8NumberFormat(int code, DecimalFormat pattern) {
+	private CarbideNumberFormat(int code, DecimalFormat pattern) {
 		this.code = code;
 		this.pattern = pattern;
 	}
@@ -48,7 +48,7 @@ public enum S8NumberFormat {
 
 	public static void compile() {
 		StringBuilder builder = new StringBuilder();
-		for(S8NumberFormat format : S8NumberFormat.values()) {
+		for(CarbideNumberFormat format : CarbideNumberFormat.values()) {
 			builder.append("/** "+format.name()+" */\n");	
 			builder.append(JS_MAP_NAME+"["+String.format("0x%02x", format.code)+"] = TODO;\n");	
 			builder.append("\n");	
@@ -58,6 +58,6 @@ public enum S8NumberFormat {
 	}
 	
 	public static void main(String[] args) {
-		S8NumberFormat.compile();
+		CarbideNumberFormat.compile();
 	}
 }

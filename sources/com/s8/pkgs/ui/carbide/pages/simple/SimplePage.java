@@ -3,14 +3,14 @@ package com.s8.pkgs.ui.carbide.pages.simple;
 import java.util.List;
 
 import com.s8.api.web.S8WebFront;
-import com.s8.api.web.S8WebFrontObject;
+import com.s8.api.web.S8WebObject;
 import com.s8.pkgs.ui.carbide.WebSources;
 
 
 /**
  * 
  */
-public class SimplePage extends S8WebFrontObject {
+public class SimplePage extends S8WebObject {
 	
 	
 	/**
@@ -33,9 +33,12 @@ public class SimplePage extends S8WebFrontObject {
 	 * 
 	 * @param menus
 	 */
-	public void setElements(List<S8WebFrontObject> elements) {
+	public void setElements(List<S8WebObject> elements) {
 		vertex.outbound().setObjectListField("elements", elements);
 	}
 	
 
+	public void publish() {
+		vertex.expose(0);
+	}
 }

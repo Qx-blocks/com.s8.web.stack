@@ -3,7 +3,7 @@ import { S8Object } from "/S8-api/S8Object.js";
 
 import { S8WebFront } from "/S8-pkgs-ui-carbide/S8WebFront.js";
 
-import { SubNavbarMenu } from "./TopNavbarMenu.js";
+import { UnderlinedNavbarMenu } from "./UnderlinedNavbarMenu.js";
 
 
 
@@ -11,19 +11,23 @@ import { SubNavbarMenu } from "./TopNavbarMenu.js";
 /**
  * 
  */
-S8WebFront.CSS_import('/S8-pkgs-ui-carbide/navbars/top/TopNavbar.css');
+S8WebFront.CSS_import('/S8-pkgs-ui-carbide/navbars/under/UnderlinedNavbar.css');
 
 
 /**
  * 
  */
-export class TopNavbar extends S8Object {
+export class UnderlinedNavbar extends S8Object {
 
 
     /**
-     * @type {SubNavbarMenu[]}
+     * @type {UnderlinedNavbarMenu[]}
      */
     menus;
+
+
+    /** @type {string} : size of the navbar */
+    classSize;
 
 
     /**
@@ -38,7 +42,8 @@ export class TopNavbar extends S8Object {
     constructor(){
         super();
         this.wrapperNode = document.createElement("div");
-        this.wrapperNode.classList.add("subnavbar-header");
+        this.wrapperNode.classList.add("undernavbar-header");
+        this.wrapperNode.classList.add(this.classSize = "undernavbar-large");
     }
 
 
@@ -50,6 +55,15 @@ export class TopNavbar extends S8Object {
         return this.wrapperNode;
     }
 
+
+
+    /** @param {Number} code */
+    S8_set_size(code){
+        let newClassSize = "undernavbar-" + S8WebFront.parseSize(code);
+        this.wrapperNode.classList.add(this.classSize, newClassSize);
+        this.classSize = newClassSize;
+    }
+    
 
     /**
      * 

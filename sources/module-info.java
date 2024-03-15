@@ -14,16 +14,23 @@ module com.s8.pkgs.ui.carbide {
 	exports com.s8.pkgs.ui.carbide.cube;
 	exports com.s8.pkgs.ui.carbide.dock;
 	exports com.s8.pkgs.ui.carbide.grid;
+	
+	exports com.s8.pkgs.ui.carbide.headers.gs;
+	
 	exports com.s8.pkgs.ui.carbide.icons;
 	
 
 	/* <navbars> */
 	exports com.s8.pkgs.ui.carbide.navbars.light;
-	exports com.s8.pkgs.ui.carbide.navbars.sub;
-	exports com.s8.pkgs.ui.carbide.navbars.top;
+	exports com.s8.pkgs.ui.carbide.navbars.under;
+	
 	/* </navbars> */
 	
 	exports com.s8.pkgs.ui.carbide.objform;
+	
+	
+	
+	exports com.s8.pkgs.ui.carbide.pages.simple;
 	
 	
 	

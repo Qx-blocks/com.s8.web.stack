@@ -5,7 +5,7 @@ package com.s8.pkgs.ui.carbide;
  * @author pierreconvert
  *
  */
-public enum S8WebSize {
+public enum CarbideSize {
 
 
 	INLINED(0x02, "inlined"), 
@@ -17,7 +17,7 @@ public enum S8WebSize {
 	NORMAL(0x06, "normal"), 
 	
 	
-	BIG(0x08, "big");
+	LARGE(0x08, "large");
 	
 	
 	/**
@@ -34,7 +34,7 @@ public enum S8WebSize {
 	
 	
 	
-	private S8WebSize(int code, String name) { 
+	private CarbideSize(int code, String name) { 
 		this.code = code; 
 		this.name = name;
 	}

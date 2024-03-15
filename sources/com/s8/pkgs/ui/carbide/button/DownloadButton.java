@@ -7,8 +7,8 @@ import com.s8.api.flow.delivery.S8WebResourceGenerator;
 import com.s8.api.web.S8WebFront;
 import com.s8.pkgs.ui.carbide.WebSources;
 import com.s8.pkgs.ui.carbide.HTML_NeNode;
-import com.s8.pkgs.ui.carbide.S8WebSize;
-import com.s8.pkgs.ui.carbide.S8WebTheme;
+import com.s8.pkgs.ui.carbide.CarbideSize;
+import com.s8.pkgs.ui.carbide.CarbideTheme;
 
 
 /**
@@ -26,7 +26,7 @@ public class DownloadButton extends HTML_NeNode {
 	 * @param style
 	 * @return
 	 */
-	public static DownloadButton create(S8WebFront branch, String label, S8WebSize size, S8WebTheme theme) {
+	public static DownloadButton create(S8WebFront branch, String label, CarbideSize size, CarbideTheme theme) {
 		DownloadButton button = new DownloadButton(branch);
 		
 		button.setLabel(label);
@@ -79,7 +79,7 @@ public class DownloadButton extends HTML_NeNode {
 	 * 
 	 * @param menus
 	 */
-	public void setSize(S8WebSize size) {
+	public void setSize(CarbideSize size) {
 		vertex.outbound().setUInt8Field("size", size.code);
 	}
 	
@@ -88,7 +88,7 @@ public class DownloadButton extends HTML_NeNode {
 	 * 
 	 * @param menus
 	 */
-	public void setTheme(S8WebTheme theme) {
+	public void setTheme(CarbideTheme theme) {
 		vertex.outbound().setUInt8Field("theme", theme.code);
 	}
 	

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.s8.api.web.S8WebFront;
-import com.s8.api.web.S8WebFrontObject;
+import com.s8.api.web.S8WebObject;
 import com.s8.pkgs.ui.carbide.WebSources;
 
 /**
@@ -12,7 +12,7 @@ import com.s8.pkgs.ui.carbide.WebSources;
  * @author pierreconvert
  *
  */
-public class Cube extends S8WebFrontObject {
+public class Cube extends S8WebObject {
 	
 	
 	public final static int NB_LAYERS = 8;

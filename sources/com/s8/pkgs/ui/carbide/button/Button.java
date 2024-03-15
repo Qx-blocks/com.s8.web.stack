@@ -5,8 +5,8 @@ import com.s8.api.web.functions.none.VoidNeFunction;
 import com.s8.api.web.lambdas.none.VoidLambda;
 import com.s8.pkgs.ui.carbide.WebSources;
 import com.s8.pkgs.ui.carbide.HTML_NeNode;
-import com.s8.pkgs.ui.carbide.S8WebSize;
-import com.s8.pkgs.ui.carbide.S8WebTheme;
+import com.s8.pkgs.ui.carbide.CarbideSize;
+import com.s8.pkgs.ui.carbide.CarbideTheme;
 
 
 /**
@@ -24,7 +24,7 @@ public class Button extends HTML_NeNode {
 	 * @param style
 	 * @return
 	 */
-	public static Button create(S8WebFront branch, String label, S8WebSize size, S8WebTheme theme) {
+	public static Button create(S8WebFront branch, String label, CarbideSize size, CarbideTheme theme) {
 		Button button = new Button(branch);
 		
 		button.setLabel(label);
@@ -68,7 +68,7 @@ public class Button extends HTML_NeNode {
 	 * 
 	 * @param menus
 	 */
-	public void setSize(S8WebSize size) {
+	public void setSize(CarbideSize size) {
 		vertex.outbound().setUInt8Field("size", size.code);
 	}
 	
@@ -77,7 +77,7 @@ public class Button extends HTML_NeNode {
 	 * 
 	 * @param menus
 	 */
-	public void setTheme(S8WebTheme theme) {
+	public void setTheme(CarbideTheme theme) {
 		vertex.outbound().setUInt8Field("theme", theme.code);
 	}
 	

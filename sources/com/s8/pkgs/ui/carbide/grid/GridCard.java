@@ -1,7 +1,7 @@
 package com.s8.pkgs.ui.carbide.grid;
 
 import com.s8.api.web.S8WebFront;
-import com.s8.api.web.S8WebFrontObject;
+import com.s8.api.web.S8WebObject;
 import com.s8.api.web.functions.none.VoidNeFunction;
 import com.s8.api.web.lambdas.none.VoidLambda;
 import com.s8.pkgs.ui.carbide.popover.Popover;
@@ -12,7 +12,7 @@ import com.s8.pkgs.ui.carbide.popover.Popover;
  * @author pierreconvert
  *
  */
-public class GridCard extends S8WebFrontObject {
+public class GridCard extends S8WebObject {
 
 	
 	/**

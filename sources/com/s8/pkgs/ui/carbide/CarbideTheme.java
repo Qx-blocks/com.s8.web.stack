@@ -6,7 +6,7 @@ package com.s8.pkgs.ui.carbide;
  * @author pierreconvert
  *
  */
-public enum S8WebTheme {
+public enum CarbideTheme {
 
 
 	
@@ -68,7 +68,7 @@ public enum S8WebTheme {
 	 * 
 	 * @param code
 	 */
-	private S8WebTheme(int code, String name) { 
+	private CarbideTheme(int code, String name) { 
 		this.code = code; 
 		this.name = name;
 	}

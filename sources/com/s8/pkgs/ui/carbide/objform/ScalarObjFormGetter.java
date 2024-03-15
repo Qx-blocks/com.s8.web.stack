@@ -2,7 +2,7 @@ package com.s8.pkgs.ui.carbide.objform;
 
 import com.s8.api.web.S8WebFront;
 import com.s8.pkgs.ui.carbide.WebSources;
-import com.s8.pkgs.ui.carbide.S8NumberFormat;
+import com.s8.pkgs.ui.carbide.CarbideNumberFormat;
 
 public class ScalarObjFormGetter extends PrimitiveObjFormGetter {
 	
@@ -14,7 +14,7 @@ public class ScalarObjFormGetter extends PrimitiveObjFormGetter {
 	 * @param unit
 	 * @return
 	 */
-	public static final ScalarObjFormGetter create(S8WebFront branch, String fieldName, String unit, S8NumberFormat format) {
+	public static final ScalarObjFormGetter create(S8WebFront branch, String fieldName, String unit, CarbideNumberFormat format) {
 		ScalarObjFormGetter fieldView = new ScalarObjFormGetter(branch);
 		fieldView.setFieldName(fieldName);
 		fieldView.setUnit(unit);
@@ -30,7 +30,7 @@ public class ScalarObjFormGetter extends PrimitiveObjFormGetter {
 	 * @param value
 	 * @return
 	 */
-	public static final ScalarObjFormGetter create(S8WebFront branch, String fieldName, String unit, S8NumberFormat format, double value) {
+	public static final ScalarObjFormGetter create(S8WebFront branch, String fieldName, String unit, CarbideNumberFormat format, double value) {
 		ScalarObjFormGetter fieldView = new ScalarObjFormGetter(branch);
 		fieldView.setFieldName(fieldName);
 		fieldView.setUnit(unit);
@@ -42,7 +42,7 @@ public class ScalarObjFormGetter extends PrimitiveObjFormGetter {
 	public static final ScalarObjFormGetter create(S8WebFront branch, 
 			String name, 
 			String unit, 
-			S8NumberFormat format,
+			CarbideNumberFormat format,
 			double value, 
 			String doc) {
 		ScalarObjFormGetter fieldView = new ScalarObjFormGetter(branch);
@@ -79,7 +79,7 @@ public class ScalarObjFormGetter extends PrimitiveObjFormGetter {
 	 * 
 	 * @param unit
 	 */
-	public void setFormat(S8NumberFormat format) {
+	public void setFormat(CarbideNumberFormat format) {
 		vertex.outbound().setUInt8Field("format", format.code);
 	}
 
