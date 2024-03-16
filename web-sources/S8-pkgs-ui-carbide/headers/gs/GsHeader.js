@@ -22,11 +22,11 @@ export class GsHeader extends NeObject {
     wrapperNode;
 
     /** @type {S8Object[]} */
-    topbar;
+    topbar = null;
 
 
     /** @type {S8Object[]} */
-    navbar;
+    navbar = null;
 
     
     /**
@@ -69,7 +69,8 @@ export class GsHeader extends NeObject {
 
     refresh(){
         // clear nodes
-        while(this.wrapperNode.firstChild){ this.wrapperNode.remove(this.wrapperNode.lastChild); }
+        //while(this.wrapperNode.lastChild){ this.wrapperNode.remove(this.wrapperNode.lastChild); }
+        S8WebFront.removeChildren(this.wrapperNode);
         if(this.topbar){ this.wrapperNode.appendChild(this.topbar.getEnvelope()); }
         if(this.navbar){ this.wrapperNode.appendChild(this.navbar.getEnvelope()); }
     }

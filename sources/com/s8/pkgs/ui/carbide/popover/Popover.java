@@ -5,7 +5,7 @@ import java.util.List;
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.S8WebObject;
 import com.s8.pkgs.ui.carbide.WebSources;
-import com.s8.pkgs.ui.carbide.HTML_NeNode;
+import com.s8.pkgs.ui.carbide.HTML_S8WebNode;
 import com.s8.pkgs.ui.carbide.CarbideDirection;
 import com.s8.pkgs.ui.carbide.CarbideTheme;
 
@@ -71,7 +71,7 @@ public class Popover extends S8WebObject {
 	 * 
 	 * @param elements
 	 */
-	public void setElements(List<HTML_NeNode> elements) {
+	public void setElements(List<HTML_S8WebNode> elements) {
 		vertex.outbound().setObjectListField("content", elements);
 	}
 	
@@ -79,7 +79,7 @@ public class Popover extends S8WebObject {
 	 * 
 	 * @param elements
 	 */
-	public void setElements(HTML_NeNode... elements) {
+	public void setElements(HTML_S8WebNode... elements) {
 		vertex.outbound().setObjectListField("content", elements);
 	}
 	

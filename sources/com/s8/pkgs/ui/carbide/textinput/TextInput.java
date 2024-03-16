@@ -4,7 +4,7 @@ import com.s8.api.web.S8WebFront;
 import com.s8.api.web.functions.primitives.StringUTF8NeFunction;
 import com.s8.api.web.lambdas.primitives.StringUTF8Lambda;
 import com.s8.pkgs.ui.carbide.WebSources;
-import com.s8.pkgs.ui.carbide.HTML_NeNode;
+import com.s8.pkgs.ui.carbide.HTML_S8WebNode;
 import com.s8.pkgs.ui.carbide.CarbideSize;
 import com.s8.pkgs.ui.carbide.CarbideTheme;
 
@@ -13,7 +13,7 @@ import com.s8.pkgs.ui.carbide.CarbideTheme;
  * @author pierreconvert
  *
  */
-public class TextInput extends HTML_NeNode {
+public class TextInput extends HTML_S8WebNode {
 	
 	
 	public static TextInput create(S8WebFront branch, CarbideSize size, int width, String placeholder){

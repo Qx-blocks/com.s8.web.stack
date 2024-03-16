@@ -2,7 +2,7 @@ package com.s8.pkgs.ui.carbide.structure;
 
 import com.s8.api.web.S8WebFront;
 import com.s8.pkgs.ui.carbide.WebSources;
-import com.s8.pkgs.ui.carbide.HTML_NeNode;
+import com.s8.pkgs.ui.carbide.HTML_S8WebNode;
 
 
 /**
@@ -10,7 +10,7 @@ import com.s8.pkgs.ui.carbide.HTML_NeNode;
  * @author pierreconvert
  *
  */
-public class InlineTextBox extends HTML_NeNode {
+public class InlineTextBox extends HTML_S8WebNode {
 	
 	/**
 	 * 

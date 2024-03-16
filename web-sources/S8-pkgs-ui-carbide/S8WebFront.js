@@ -1,4 +1,5 @@
 import { S8 } from "/S8-api/S8Context.js";
+import { S8Object } from "/S8-api/S8Object.js";
 import { S8_FlatIcons_Map } from "/S8-pkgs-ui-carbide/icons/S8FlatIcon.js";
 
 
@@ -115,6 +116,19 @@ class S8WebFrontUtilities {
 		(depending on how the collection is implemented). */
 		while (node.firstChild) {
 			node.removeChild(node.lastChild);
+		}
+	}
+
+
+	/**
+	 * 
+	 * @param {HTMLElement} node 
+	 * @param {S8Object[]} elements 
+	 */
+	setS8Elements(node, elements) {
+		const n = elements.length;
+		for(let i = 0; i<n; i++){
+			node.appendChild(elements[i].getEnvelope());
 		}
 	}
 

@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.s8.api.web.S8WebFront;
 import com.s8.pkgs.ui.carbide.WebSources;
-import com.s8.pkgs.ui.carbide.HTML_NeNode;
+import com.s8.pkgs.ui.carbide.HTML_S8WebNode;
 
 
 /**
@@ -13,7 +13,7 @@ import com.s8.pkgs.ui.carbide.HTML_NeNode;
  * @author pierreconvert
  *
  */
-public class LightNavbar extends HTML_NeNode {
+public class LightNavbar extends HTML_S8WebNode {
 
 	public final static String JS_FILENAME = "/navbars/light/LightNavbar";
 	

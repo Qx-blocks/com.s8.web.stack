@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.s8.api.web.S8WebFront;
 import com.s8.pkgs.ui.carbide.WebSources;
-import com.s8.pkgs.ui.carbide.HTML_NeNode;
+import com.s8.pkgs.ui.carbide.HTML_S8WebNode;
 
 
 /**
@@ -12,9 +12,9 @@ import com.s8.pkgs.ui.carbide.HTML_NeNode;
  * @author pierreconvert
  *
  */
-public class Row extends HTML_NeNode {
+public class Row extends HTML_S8WebNode {
 	
-	public static Row create(S8WebFront branch, HTML_NeNode... nodes) {
+	public static Row create(S8WebFront branch, HTML_S8WebNode... nodes) {
 		Row title = new Row(branch);
 		title.setContent(nodes);
 		return title;
@@ -34,7 +34,7 @@ public class Row extends HTML_NeNode {
 	 * 
 	 * @param name
 	 */
-	public void setContent(List<HTML_NeNode> nodes) {
+	public void setContent(List<HTML_S8WebNode> nodes) {
 		vertex.outbound().setObjectListField("content", nodes);
 	}
 	
@@ -42,7 +42,7 @@ public class Row extends HTML_NeNode {
 	 * 
 	 * @param nodes
 	 */
-	public void setContent(HTML_NeNode... nodes) {
+	public void setContent(HTML_S8WebNode... nodes) {
 		vertex.outbound().setObjectListField("content", nodes);
 	}
 }

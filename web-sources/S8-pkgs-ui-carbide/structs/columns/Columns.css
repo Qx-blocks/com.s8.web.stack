@@ -1,0 +1,30 @@
+/*
+* MENU bar style
+*/
+
+
+.struct-columns {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+}
+
+
+.struct-column {
+  padding: 0px;
+  margin: 0px;
+}
+
+
+.struct-column_1d3 {
+  width: 33.33vw;
+}
+
+.struct-column_1d2 {
+  width: 50vw;
+}
+
+.struct-column_1d4 {
+  width: 25vw;
+}

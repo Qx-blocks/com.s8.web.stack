@@ -10,6 +10,10 @@ module com.s8.pkgs.ui.carbide {
 
 	exports com.s8.pkgs.ui.carbide;
 	
+	exports com.s8.pkgs.ui.carbide.boxes.b2;
+	
+	exports com.s8.pkgs.ui.carbide.breadcrumbs;
+	
 	exports com.s8.pkgs.ui.carbide.button;
 	exports com.s8.pkgs.ui.carbide.cube;
 	exports com.s8.pkgs.ui.carbide.dock;
@@ -26,7 +30,7 @@ module com.s8.pkgs.ui.carbide {
 	
 	/* </navbars> */
 	
-	exports com.s8.pkgs.ui.carbide.objform;
+	exports com.s8.pkgs.ui.carbide.forms.obj;
 	
 	
 	
@@ -35,9 +39,14 @@ module com.s8.pkgs.ui.carbide {
 	
 	
 	exports com.s8.pkgs.ui.carbide.popover;
+	exports com.s8.pkgs.ui.carbide.structs.columns;
+	
 	exports com.s8.pkgs.ui.carbide.structure;
 	exports com.s8.pkgs.ui.carbide.textinput;
+	
 	exports com.s8.pkgs.ui.carbide.title;
+	
+	exports com.s8.pkgs.ui.carbide.topbar;
 	
 	
 

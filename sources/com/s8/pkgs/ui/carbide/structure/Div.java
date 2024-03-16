@@ -4,9 +4,9 @@ import java.util.List;
 
 import com.s8.api.web.S8WebFront;
 import com.s8.pkgs.ui.carbide.WebSources;
-import com.s8.pkgs.ui.carbide.HTML_NeNode;
+import com.s8.pkgs.ui.carbide.HTML_S8WebNode;
 
-public class Div extends HTML_NeNode {
+public class Div extends HTML_S8WebNode {
 	
 	/**
 	 * 
@@ -33,7 +33,7 @@ public class Div extends HTML_NeNode {
 	 * 
 	 * @param name
 	 */
-	public void setContent(List<HTML_NeNode> nodes) {
+	public void setContent(List<HTML_S8WebNode> nodes) {
 		vertex.outbound().setObjectListField("content", nodes);
 	}
 	
@@ -41,7 +41,7 @@ public class Div extends HTML_NeNode {
 	 * 
 	 * @param nodes
 	 */
-	public void setContent(HTML_NeNode... nodes) {
+	public void setContent(HTML_S8WebNode... nodes) {
 		vertex.outbound().setObjectListField("content", nodes);
 	}
 

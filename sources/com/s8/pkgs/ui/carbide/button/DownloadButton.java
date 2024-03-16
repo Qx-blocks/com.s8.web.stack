@@ -6,7 +6,7 @@ import com.s8.api.flow.delivery.S8WebResource;
 import com.s8.api.flow.delivery.S8WebResourceGenerator;
 import com.s8.api.web.S8WebFront;
 import com.s8.pkgs.ui.carbide.WebSources;
-import com.s8.pkgs.ui.carbide.HTML_NeNode;
+import com.s8.pkgs.ui.carbide.HTML_S8WebNode;
 import com.s8.pkgs.ui.carbide.CarbideSize;
 import com.s8.pkgs.ui.carbide.CarbideTheme;
 
@@ -16,7 +16,7 @@ import com.s8.pkgs.ui.carbide.CarbideTheme;
  * @author pierreconvert
  *
  */
-public class DownloadButton extends HTML_NeNode {
+public class DownloadButton extends HTML_S8WebNode {
 	
 	/**
 	 * 

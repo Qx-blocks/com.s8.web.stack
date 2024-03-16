@@ -2,7 +2,7 @@ package com.s8.pkgs.ui.carbide.title;
 
 import com.s8.api.web.S8WebFront;
 import com.s8.pkgs.ui.carbide.WebSources;
-import com.s8.pkgs.ui.carbide.HTML_NeNode;
+import com.s8.pkgs.ui.carbide.HTML_S8WebNode;
 
 
 /**
@@ -10,7 +10,7 @@ import com.s8.pkgs.ui.carbide.HTML_NeNode;
  * @author pierreconvert
  *
  */
-public class H1Title extends HTML_NeNode {
+public class H1Title extends HTML_S8WebNode {
 	
 	public static H1Title create(S8WebFront branch, String text) {
 		H1Title title = new H1Title(branch);
