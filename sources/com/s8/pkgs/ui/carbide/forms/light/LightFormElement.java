@@ -4,6 +4,7 @@ import com.s8.api.web.S8WebFront;
 import com.s8.api.web.S8WebObject;
 import com.s8.api.web.functions.none.VoidNeFunction;
 import com.s8.api.web.lambdas.none.VoidLambda;
+import com.s8.pkgs.ui.carbide.messages.ictx.IconTextMessage;
 
 
 
@@ -23,8 +24,8 @@ public class LightFormElement extends S8WebObject {
 
 	
 
-	public void setHelperInfo(String text) {
-		vertex.outbound().setStringUTF8Field("helperInfo", text);
+	public void setHelperMessages(IconTextMessage... messages) {
+		vertex.outbound().setObjectListField("helperMessages", messages);
 	}
 	
 	

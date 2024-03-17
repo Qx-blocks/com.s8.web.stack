@@ -4,9 +4,14 @@
 
 
 .ictxmessage {
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
 }
 
+.ictxmessage-icon{
+  padding-left: 8px;
+  padding-right: 8px;
+}
 
 .ictxmessage-icon > svg {
   width: 16px;
@@ -14,11 +19,14 @@
 }
 
 .ictxmessage-text {
-  font: 12px arial, sans-serif;
+  font: 13px arial, sans-serif;
   font-weight: 100;
   font-style: normal;
   font-variant-caps: normal;
   text-align: left;
+  color: rgb(1, 1, 86);
+  padding: 4px;
+  width: 192px;
 }
 
 
@@ -38,7 +46,7 @@
     background-color: rgba(213, 255, 60, 0.349);
   }
   .ictxmessage-icon > svg {
-    fill: yellow;
+    fill: rgb(230 230 23);
   }
 }
 
@@ -47,7 +55,7 @@
     background-color: rgba(255, 60, 60, 0.349);
   }
   .ictxmessage-icon > svg {
-    fill: rgb(255, 177, 81);
+    fill: rgb(198, 0, 0);
   }
 }
 

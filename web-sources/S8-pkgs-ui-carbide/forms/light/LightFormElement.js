@@ -4,6 +4,7 @@ import { NeObject } from '/S8-core-bohr-neon/NeObject.js';
 
 import { S8WebFront } from '/S8-pkgs-ui-carbide/S8WebFront.js';
 import { Popover } from '/S8-pkgs-ui-carbide/popover/Popover.js';
+import { IconTextMessage } from '/S8-pkgs-ui-carbide/messages/ictx/IconTextMessage.js';
 
 
 S8.page.CSS_import("/S8-pkgs-ui-carbide/forms/obj/ObjForm.css");
@@ -203,20 +204,18 @@ export class LightFormElement extends NeObject {
 
 
 
-    S8_set_helperInfo(text){
+    /**
+     * 
+     * @param {IconTextMessage} messages 
+     */
+    S8_set_helperMessages(messages){
         if(!this.helperPopover){
             this.helperPopover = new Popover();
-
-            this.helperPopover.innerHTML = "test";
-
-            let helperInnerNode = document.createElement("div");
-            helperInnerNode.classList.add("lightform-helper-info");
-            helperInnerNode.innerText = text;
-            this.helperPopover.getEnvelope().appendChild(helperInnerNode);
-            
             this.fieldNode.appendChild(this.helperPopover.getEnvelope());
 
+            /* this.helperPopover.show(); // DEBUG */
 
+            
             this.helperPopover.hide();
             const _this = this;
             
@@ -227,6 +226,8 @@ export class LightFormElement extends NeObject {
                 _this.helperPopover.hide(); 
             }, false);
         }
+
+        this.helperPopover.S8_set_content(messages);
     }
 
 

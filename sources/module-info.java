@@ -23,6 +23,8 @@ module com.s8.pkgs.ui.carbide {
 	
 	exports com.s8.pkgs.ui.carbide.icons;
 	
+	exports com.s8.pkgs.ui.carbide.messages.ictx;
+	
 
 	/* <navbars> */
 	exports com.s8.pkgs.ui.carbide.navbars.light;

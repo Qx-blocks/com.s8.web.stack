@@ -1,5 +1,6 @@
 
 import { S8 } from "/S8-api/S8Context.js";
+import { S8Object } from "/S8-api/S8Object.js";
 import { NeObject } from "/S8-core-bohr-neon/NeObject.js";
 import { S8WebFront } from "/S8-pkgs-ui-carbide/S8WebFront.js";
 
@@ -159,7 +160,7 @@ export class Popover extends NeObject {
 
     /**
      * 
-     * @param {NeObject[]} elements 
+     * @param {S8Object[]} elements 
      */
     S8_set_content(elements) {
         const _this = this;

@@ -3,7 +3,7 @@
 
 .lightform-box {
     color: #eee;
-    font: 12px arial, sans-serif;
+    font: 14px arial, sans-serif;
     font-weight: 100;
     font-style: normal;
     font-variant-caps: normal;
@@ -76,6 +76,7 @@
 .lightform-object-header, .lightform-primitive-field, .lightform-method, .lightform-button {
     margin-top: 4px;
     /*border-bottom: 1px solid rgb(42 42 42 / 96%);*/
+   
 }
 
 .lightform-icon-triangle-expanded,
@@ -344,41 +345,40 @@ div[class*="lightform-icon-color-"]> svg {
 
 .lightform-field-name-primitive {
     /* padding-top: 3px; */
-    font-size: 12px;
+    font-size: 14px;
     padding-bottom: 3px;
 }
 
 input.lightform-input {
     width: 100%;
     background: #f7f6ff;
-    font-size: 12px;
+    font-size: 14px;
     color: rgb(41, 41, 41);
     text-align: right;
     padding-left: 2px;
     padding-right: 2px;
     border: 0;
     border-radius: 2px;
+    margin: 0 0 0 6px;
 }
 
 input[type="text"].lightform-input {
     border: none;
-    padding-left: 2px;
-    padding-right: 2px;
-    box-sizing: content-box;
+    padding-left: 6px;
+    padding-right: 6px;
     font-weight: 600;
 }
 
 input[type="text"].lightform-input:focus-visible {
-    border: none;
-    outline-color: rgb(162 162 202 / 54%);
+    outline-color: rgba(133, 133, 224, 0.54);
     outline-width: thin;
 }
 
 
 select.lightform-input {
     border: none;
-    padding-left: 2px;
-    padding-right: 2px;
+    padding-left: 6px;
+    padding-right: 6px;
     height: 18px;
 }
 
@@ -398,14 +398,15 @@ select.lightform-input {
 }
 
 .lightform-unit {
-    margin-left: 4px;
+    margin-left: 12px;
     padding-bottom: 3px;
+    font-size: 14px;
 }
 
 .lightform-unit > span {
     padding: 0px;
     border: none;
-    font-size: 12px;
+    font-size: 13px;
     color: rgb(83, 87, 88);
 }
 
@@ -451,12 +452,11 @@ select.lightform-input {
 /* tooltip inserted inline */
 .lightform-info {
     position: relative;
-    font: 12px arial, sans-serif;
+    font: 14px arial, sans-serif;
     font-weight: bold;
     font-style: normal;
     font-variant-caps: normal;
     text-align: left;
-    font-size: 12px;
     margin-bottom: 3px;
     background-color: #53697c;
     color: #222222;
@@ -485,7 +485,7 @@ select.lightform-input {
 
 .lightform-doc-text {
     margin: 0 8px 0 8px;
-    font: 12px arial, sans-serif;
+    font: 14px arial, sans-serif;
     font-weight: normal;
     font-style: normal;
     font-variant-caps: normal;
@@ -548,7 +548,7 @@ select.lightform-input {
 }
 
 .lightform-button > span {
-    font: 12px arial, sans-serif;
+    font: 14px arial, sans-serif;
     font-weight: bold;
     font-style: normal;
     font-variant-caps: normal;

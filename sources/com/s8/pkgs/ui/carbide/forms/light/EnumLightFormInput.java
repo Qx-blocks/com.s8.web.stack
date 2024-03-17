@@ -1,7 +1,5 @@
 package com.s8.pkgs.ui.carbide.forms.light;
 
-import java.util.function.Consumer;
-
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.functions.primitives.UInt8NeFunction;
 import com.s8.api.web.lambdas.primitives.UInt8Lambda;
@@ -15,19 +13,17 @@ import com.s8.api.web.lambdas.primitives.UInt8Lambda;
 public class EnumLightFormInput extends PrimitiveLightFormInput {
 	
 	
-	public static <E extends Enum<E>> EnumLightFormInput create(S8WebFront branch, String name, Class<E> enumType, int preset, 
-			Consumer<E> consumer, String doc) {
-		
-		E[] enumValues = enumType.getEnumConstants();
-		int n = enumValues.length;
-		String[] enumNames = new String[n];
-		for(int i = 0; i<n; i++) { enumNames[i] = enumValues[i].name(); }
+	
+	public static <E extends Enum<E>> EnumLightFormInput create(S8WebFront branch, 
+			String name, 
+			String[] options, 
+			int preset, 
+			UInt8Lambda lambda) {
 		EnumLightFormInput formSetter = new EnumLightFormInput(branch);
 		formSetter.setName(name);
-		formSetter.setEnumValues(enumNames);
+		formSetter.setEnumValues(options);
 		formSetter.setPresetIndex(preset);
-		formSetter.onSelectedLambda(index -> consumer.accept(enumValues[index]));
-		formSetter.setHelperInfo(doc);
+		formSetter.onSelectedLambda(lambda);
 		return formSetter;
 	}
 
@@ -37,8 +33,8 @@ public class EnumLightFormInput extends PrimitiveLightFormInput {
 	}
 	
 	
-	public void setEnumValues(String[] enumValues) {
-		vertex.outbound().setStringUTF8ArrayField("enumValues", enumValues);
+	public void setEnumValues(String[] options) {
+		vertex.outbound().setStringUTF8ArrayField("options", options);
 	}
 	
 	public void setPresetIndex(int index) {

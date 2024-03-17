@@ -8,7 +8,7 @@ import { S8Object } from "/S8-api/S8Object.js";
 /**
  * 
  */
-S8WebFront.CSS_import('/S8-pkgs-ui-carbide/messages/ictx/B2Box.css');
+S8WebFront.CSS_import('/S8-pkgs-ui-carbide/messages/ictx/IconTextMessage.css');
 
 
 /**
@@ -35,7 +35,7 @@ export class IconTextMessage extends S8Object {
         super();
         this.wrapperNode = document.createElement("div");
         this.wrapperNode.classList.add("ictxmessage");
-        this.wrapperNode.classList.add(`ictxmessage-theme-${this.theme}`);
+        this.wrapperNode.classList.add(this.theme);
 
         this.iconNode = document.createElement("div");
         this.iconNode.classList.add("ictxmessage-icon");
