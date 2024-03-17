@@ -14,7 +14,7 @@ public class BooleanObjFormGetter extends PrimitiveObjFormGetter {
 	 * @param branch
 	 */
 	public BooleanObjFormGetter(S8WebFront branch) {
-		super(branch, ObjFormWrapper.OBJFORM_WEBPATH + "/BooleanObjFormGetter");
+		super(branch, ObjFormWrapper.WEBPATH + "/BooleanObjFormGetter");
 	}
 	
 	/**

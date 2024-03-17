@@ -20,7 +20,7 @@ public class TextObjFormGetter extends PrimitiveObjFormGetter {
 	
 
 	public TextObjFormGetter(S8WebFront branch) {
-		super(branch, ObjFormWrapper.OBJFORM_WEBPATH + "/TextObjFormGetter");
+		super(branch, ObjFormWrapper.WEBPATH + "/TextObjFormGetter");
 	}
 	
 	

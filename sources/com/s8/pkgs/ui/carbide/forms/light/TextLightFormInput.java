@@ -1,4 +1,4 @@
-package com.s8.pkgs.ui.carbide.forms.obj;
+package com.s8.pkgs.ui.carbide.forms.light;
 
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.functions.primitives.StringUTF8NeFunction;
@@ -10,11 +10,11 @@ import com.s8.api.web.lambdas.primitives.StringUTF8Lambda;
  * @author pierreconvert
  *
  */
-public class TextObjFormSetter extends PrimitiveObjFormSetter {
+public class TextLightFormInput extends PrimitiveLightFormInput {
 
 
-	public static TextObjFormSetter create(S8WebFront front, String name, String value, StringUTF8Lambda lambda) {
-		TextObjFormSetter setter = new TextObjFormSetter(front);
+	public static TextLightFormInput create(S8WebFront front, String name, String value, StringUTF8Lambda lambda) {
+		TextLightFormInput setter = new TextLightFormInput(front);
 		setter.setName(name);
 		setter.setValue(value);
 		setter.onValueChangedLambda(lambda);
@@ -22,8 +22,8 @@ public class TextObjFormSetter extends PrimitiveObjFormSetter {
 	}
 	
 	
-	public TextObjFormSetter(S8WebFront front) {
-		super(front, ObjFormWrapper.WEBPATH + "/TextObjFormSetter");
+	public TextLightFormInput(S8WebFront front) {
+		super(front, LightFormWrapper.WEBPATH + "/TextLightFormInput");
 	}
 	
 	

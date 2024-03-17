@@ -1,4 +1,4 @@
-package com.s8.pkgs.ui.carbide.forms.obj;
+package com.s8.pkgs.ui.carbide.forms.light;
 
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.functions.primitives.Float32NeFunction;
@@ -11,16 +11,16 @@ import com.s8.pkgs.ui.carbide.CarbideNumberFormat;
  * @author pierreconvert
  *
  */
-public class ScalarObjFormSetter extends PrimitiveObjFormSetter {
+public class NumberLightFormInput extends PrimitiveLightFormInput {
 
 
-	public static ScalarObjFormSetter create(S8WebFront branch, 
+	public static NumberLightFormInput create(S8WebFront branch, 
 			String name, 
 			String unit,
 			CarbideNumberFormat format,
 			double initialValue, 
 			Float32Lambda lambda) {
-		ScalarObjFormSetter fieldView = new ScalarObjFormSetter(branch);
+		NumberLightFormInput fieldView = new NumberLightFormInput(branch);
 		fieldView.setName(name);
 		fieldView.setUnit(unit);
 		fieldView.setValue((float) initialValue);
@@ -29,19 +29,19 @@ public class ScalarObjFormSetter extends PrimitiveObjFormSetter {
 	}
 
 
-	public static ScalarObjFormSetter create(S8WebFront branch, 
+	public static NumberLightFormInput create(S8WebFront branch, 
 			String name, 
 			String unit,
 			CarbideNumberFormat format,
 			double initialValue, 
 			Float32Lambda lambda, 
 			String doc) {
-		ScalarObjFormSetter fieldView = new ScalarObjFormSetter(branch);
+		NumberLightFormInput fieldView = new NumberLightFormInput(branch);
 		fieldView.setName(name);
 		fieldView.setUnit(unit);
 		fieldView.setValue((float) initialValue);
 		fieldView.onValueChanged(lambda);	
-		fieldView.setTooltipDoc(doc);
+		fieldView.setHelperInfo(doc);
 		return fieldView;
 	}
 
@@ -51,8 +51,8 @@ public class ScalarObjFormSetter extends PrimitiveObjFormSetter {
 	 * 
 	 * @param branch
 	 */
-	public ScalarObjFormSetter(S8WebFront branch) {
-		super(branch, ObjFormWrapper.WEBPATH + "/ScalarObjFormSetter");
+	public NumberLightFormInput(S8WebFront branch) {
+		super(branch, LightFormWrapper.WEBPATH + "/NumberLightFormInput");
 	}
 
 

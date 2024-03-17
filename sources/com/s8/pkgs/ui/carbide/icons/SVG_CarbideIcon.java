@@ -5,7 +5,7 @@ package com.s8.pkgs.ui.carbide.icons;
  * @author pierreconvert
  *
  */
-public enum SVG_CarbonIcon {
+public enum SVG_CarbideIcon {
 	
 	
 
@@ -52,7 +52,7 @@ public enum SVG_CarbonIcon {
 
 	public final int code;
 
-	private SVG_CarbonIcon(int code, String pathname) {
+	private SVG_CarbideIcon(int code, String pathname) {
 		this.pathname = pathname;
 		this.code = code;
 	}

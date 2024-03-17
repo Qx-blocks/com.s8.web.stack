@@ -5,7 +5,7 @@ import com.s8.api.web.S8WebObject;
 import com.s8.api.web.functions.none.VoidNeFunction;
 import com.s8.api.web.lambdas.none.VoidLambda;
 import com.s8.pkgs.ui.carbide.WebSources;
-import com.s8.pkgs.ui.carbide.icons.SVG_CarbonIcon;
+import com.s8.pkgs.ui.carbide.icons.SVG_CarbideIcon;
 
 
 /**
@@ -27,7 +27,7 @@ public class UnderlinedNavbarMenu extends S8WebObject {
 	}
 	
 	
-	public UnderlinedNavbarMenu(S8WebFront branch, SVG_CarbonIcon icon, String name) {
+	public UnderlinedNavbarMenu(S8WebFront branch, SVG_CarbideIcon icon, String name) {
 		super(branch, WebSources.ROOT_WEBPATH + JS_TYPENAME);
 		setIcon(icon);
 		setName(name);
@@ -41,7 +41,7 @@ public class UnderlinedNavbarMenu extends S8WebObject {
 	 * 
 	 * @param menus
 	 */
-	public void setIcon(SVG_CarbonIcon icon) {
+	public void setIcon(SVG_CarbideIcon icon) {
 		vertex.outbound().setUInt16Field("icon", icon.code);
 	}
 	

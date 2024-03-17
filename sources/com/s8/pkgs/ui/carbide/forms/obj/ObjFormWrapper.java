@@ -13,14 +13,14 @@ import com.s8.pkgs.ui.carbide.HTML_S8WebNode;
 public class ObjFormWrapper extends HTML_S8WebNode {
 
 	
-	public final static String OBJFORM_WEBPATH = WebSources.ROOT_WEBPATH + "/forms/obj";
+	public final static String WEBPATH = WebSources.ROOT_WEBPATH + "/forms/obj";
 	
 	
 	/**
 	 * 
 	 */
 	public ObjFormWrapper(S8WebFront branch) {
-		super(branch, OBJFORM_WEBPATH + "/ObjFormWrapper");
+		super(branch, WEBPATH + "/ObjFormWrapper");
 	}
 	
 	

@@ -30,6 +30,7 @@ module com.s8.pkgs.ui.carbide {
 	
 	/* </navbars> */
 	
+	exports com.s8.pkgs.ui.carbide.forms.light;
 	exports com.s8.pkgs.ui.carbide.forms.obj;
 	
 	

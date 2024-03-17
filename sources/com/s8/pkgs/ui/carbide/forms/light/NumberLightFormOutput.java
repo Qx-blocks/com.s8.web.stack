@@ -1,9 +1,9 @@
-package com.s8.pkgs.ui.carbide.forms.obj;
+package com.s8.pkgs.ui.carbide.forms.light;
 
 import com.s8.api.web.S8WebFront;
 import com.s8.pkgs.ui.carbide.CarbideNumberFormat;
 
-public class ScalarObjFormGetter extends PrimitiveObjFormGetter {
+public class NumberLightFormOutput extends PrimitiveLightFormOutput {
 	
 
 	/**
@@ -13,8 +13,8 @@ public class ScalarObjFormGetter extends PrimitiveObjFormGetter {
 	 * @param unit
 	 * @return
 	 */
-	public static final ScalarObjFormGetter create(S8WebFront branch, String fieldName, String unit, CarbideNumberFormat format) {
-		ScalarObjFormGetter fieldView = new ScalarObjFormGetter(branch);
+	public static final NumberLightFormOutput create(S8WebFront branch, String fieldName, String unit, CarbideNumberFormat format) {
+		NumberLightFormOutput fieldView = new NumberLightFormOutput(branch);
 		fieldView.setFieldName(fieldName);
 		fieldView.setUnit(unit);
 		fieldView.setFormat(format);
@@ -29,8 +29,8 @@ public class ScalarObjFormGetter extends PrimitiveObjFormGetter {
 	 * @param value
 	 * @return
 	 */
-	public static final ScalarObjFormGetter create(S8WebFront branch, String fieldName, String unit, CarbideNumberFormat format, double value) {
-		ScalarObjFormGetter fieldView = new ScalarObjFormGetter(branch);
+	public static final NumberLightFormOutput create(S8WebFront branch, String fieldName, String unit, CarbideNumberFormat format, double value) {
+		NumberLightFormOutput fieldView = new NumberLightFormOutput(branch);
 		fieldView.setFieldName(fieldName);
 		fieldView.setUnit(unit);
 		fieldView.setFormat(format);
@@ -38,24 +38,24 @@ public class ScalarObjFormGetter extends PrimitiveObjFormGetter {
 		return fieldView;
 	}
 	
-	public static final ScalarObjFormGetter create(S8WebFront branch, 
+	public static final NumberLightFormOutput create(S8WebFront branch, 
 			String name, 
 			String unit, 
 			CarbideNumberFormat format,
 			double value, 
 			String doc) {
-		ScalarObjFormGetter fieldView = new ScalarObjFormGetter(branch);
+		NumberLightFormOutput fieldView = new NumberLightFormOutput(branch);
 		fieldView.setFieldName(name);
 		fieldView.setUnit(unit);
 		fieldView.setFormat(format);
 		fieldView.setValue(value);
-		fieldView.setTooltipDoc(doc);
+		fieldView.setHelperInfo(doc);
 		return fieldView;
 	}
 	
 
-	public ScalarObjFormGetter(S8WebFront branch) {
-		super(branch, ObjFormWrapper.WEBPATH + "/ScalarObjFormGetter");
+	public NumberLightFormOutput(S8WebFront branch) {
+		super(branch, LightFormWrapper.WEBPATH + "/NumberLightFormOutput");
 	}
 	
 	

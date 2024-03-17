@@ -1,8 +1,9 @@
-package com.s8.pkgs.ui.carbide.forms.obj;
+package com.s8.pkgs.ui.carbide.forms.light;
 
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.functions.none.VoidNeFunction;
 import com.s8.api.web.lambdas.none.VoidLambda;
+import com.s8.pkgs.ui.carbide.HTML_S8WebNode;
 import com.s8.pkgs.ui.carbide.icons.SVG_CarbideIcon;
 
 
@@ -11,27 +12,38 @@ import com.s8.pkgs.ui.carbide.icons.SVG_CarbideIcon;
  * @author pierreconvert
  *
  */
-public class ObjFormButton extends ObjFormElement {
+public class LightFormOption extends HTML_S8WebNode {
 	
 	/**
 	 * 
 	 * @param branch
-	 * @param label
+	 * @param name
 	 * @param icon
 	 * @param color
 	 * @return
 	 */
-	public static ObjFormButton create(S8WebFront branch, String label) {
-		ObjFormButton objFormButton = new ObjFormButton(branch);
-		objFormButton.setLabel(label);
-		return objFormButton;
+	public static LightFormOption createLambda(S8WebFront branch, String name, SVG_CarbideIcon icon, VoidLambda lambda) {
+		LightFormOption objFormOption = new LightFormOption(branch);
+		objFormOption.setName(name);
+		objFormOption.setIconShape(icon);
+		objFormOption.onClickLambda(lambda);
+		return objFormOption;
+	}
+	
+	
+	public static LightFormOption createLambda(S8WebFront branch, String name, SVG_CarbideIcon icon, VoidNeFunction function) {
+		LightFormOption objFormOption = new LightFormOption(branch);
+		objFormOption.setName(name);
+		objFormOption.setIconShape(icon);
+		objFormOption.onClick(function);
+		return objFormOption;
 	}
 	
 	
 	
 	
-	public ObjFormButton(S8WebFront branch) {
-		super(branch, ObjFormWrapper.WEBPATH + "/ObjFormButton");
+	public LightFormOption(S8WebFront branch) {
+		super(branch, LightFormWrapper.WEBPATH + "/ObjFormOption");
 	}
 	
 	
@@ -55,8 +67,8 @@ public class ObjFormButton extends ObjFormElement {
 	
 
 
-	public void setLabel(String name) {
-		vertex.outbound().setStringUTF8Field("label", name);
+	public void setName(String name) {
+		vertex.outbound().setStringUTF8Field("name", name);
 	}
 
 

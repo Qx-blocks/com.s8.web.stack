@@ -10,6 +10,22 @@
   /*box-shadow: 0px 0px 4px black;*/
   border-radius: 8px;
   border: 1px solid rgba(128, 128, 128, 0.5);
-  overflow: hidden;
+  /*overflow: hidden;*/
+}
+
+
+.b2box-header {
+  font: 12px arial, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-variant-caps: normal;
+  text-align: left;
+  padding: 4px 8px 4px 8px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+}
+
+.b2box-body {
+  padding: 4px 8px 4px 8px;
+  margin: 0px;
 }
 

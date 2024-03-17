@@ -1,4 +1,4 @@
-package com.s8.pkgs.ui.carbide.forms.obj;
+package com.s8.pkgs.ui.carbide.forms.light;
 
 import java.util.function.Consumer;
 
@@ -12,28 +12,28 @@ import com.s8.api.web.lambdas.primitives.UInt8Lambda;
  * @author pierreconvert
  *
  */
-public class EnumObjFormSetter extends PrimitiveObjFormSetter {
+public class EnumLightFormInput extends PrimitiveLightFormInput {
 	
 	
-	public static <E extends Enum<E>> EnumObjFormSetter create(S8WebFront branch, String name, Class<E> enumType, int preset, 
+	public static <E extends Enum<E>> EnumLightFormInput create(S8WebFront branch, String name, Class<E> enumType, int preset, 
 			Consumer<E> consumer, String doc) {
 		
 		E[] enumValues = enumType.getEnumConstants();
 		int n = enumValues.length;
 		String[] enumNames = new String[n];
 		for(int i = 0; i<n; i++) { enumNames[i] = enumValues[i].name(); }
-		EnumObjFormSetter formSetter = new EnumObjFormSetter(branch);
+		EnumLightFormInput formSetter = new EnumLightFormInput(branch);
 		formSetter.setName(name);
 		formSetter.setEnumValues(enumNames);
 		formSetter.setPresetIndex(preset);
 		formSetter.onSelectedLambda(index -> consumer.accept(enumValues[index]));
-		formSetter.setTooltipDoc(doc);
+		formSetter.setHelperInfo(doc);
 		return formSetter;
 	}
 
 	
-	public EnumObjFormSetter(S8WebFront branch) {
-		super(branch, ObjFormWrapper.WEBPATH + "/EnumObjFormSetter");
+	public EnumLightFormInput(S8WebFront branch) {
+		super(branch, LightFormWrapper.WEBPATH + "/EnumLightFormInput");
 	}
 	
 	

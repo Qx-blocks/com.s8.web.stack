@@ -1,4 +1,4 @@
-package com.s8.pkgs.ui.carbide.forms.obj;
+package com.s8.pkgs.ui.carbide.forms.light;
 
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.functions.primitives.Int32NeFunction;
@@ -10,7 +10,7 @@ import com.s8.api.web.lambdas.primitives.Int32Lambda;
  * @author pierreconvert
  *
  */
-public class IntegerObjFormSetter extends PrimitiveObjFormSetter {
+public class IntegerLightFormInput extends PrimitiveLightFormInput {
 	
 	
 	/**
@@ -21,8 +21,8 @@ public class IntegerObjFormSetter extends PrimitiveObjFormSetter {
 	 * @param lambda
 	 * @return
 	 */
-	public static IntegerObjFormSetter create(S8WebFront branch, String name, int initialValue, Int32Lambda lambda) {
-		IntegerObjFormSetter fieldView = new IntegerObjFormSetter(branch);
+	public static IntegerLightFormInput create(S8WebFront branch, String name, int initialValue, Int32Lambda lambda) {
+		IntegerLightFormInput fieldView = new IntegerLightFormInput(branch);
 		fieldView.setName(name);
 		fieldView.setValue(initialValue);
 		fieldView.onValueChangedLambda(lambda);
@@ -39,20 +39,20 @@ public class IntegerObjFormSetter extends PrimitiveObjFormSetter {
 	 * @param doc
 	 * @return
 	 */
-	public static IntegerObjFormSetter create(S8WebFront branch, String name, int initialValue, Int32Lambda lambda, String doc) {
-		IntegerObjFormSetter fieldView = new IntegerObjFormSetter(branch);
+	public static IntegerLightFormInput create(S8WebFront branch, String name, int initialValue, Int32Lambda lambda, String doc) {
+		IntegerLightFormInput fieldView = new IntegerLightFormInput(branch);
 		fieldView.setName(name);
 		fieldView.setValue(initialValue);
 		fieldView.onValueChangedLambda(lambda);
-		fieldView.setTooltipDoc(doc);
+		fieldView.setHelperInfo(doc);
 		return fieldView;
 	}
 	
 	
 	
 
-	public IntegerObjFormSetter(S8WebFront branch) {
-		super(branch, ObjFormWrapper.WEBPATH + "/IntegerObjFormSetter");
+	public IntegerLightFormInput(S8WebFront branch) {
+		super(branch, LightFormWrapper.WEBPATH + "/IntegerLightFormInput");
 	}
 	
 	

@@ -1,0 +1,579 @@
+
+
+
+.lightform-box {
+    color: #eee;
+    font: 12px arial, sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-variant-caps: normal;
+    text-align: left;
+    /* width: 420px; */
+
+    /* to de deleted */
+    margin-left: 0px;
+    margin-right: 0px;
+
+    max-height: 92vh;
+    /*overflow-x: scroll;
+    overflow-y: visible;*/
+}
+
+
+
+.lightform-object-field {
+   clear: both;
+}
+
+.lightform-object-body {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    margin-left: 12px;
+    padding: 0;
+    /*width: 100%; --> cancelled to enable auto-align right */
+    clear: both;
+}
+
+.lightform-object-body-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(64,64,64,0.64);
+    z-index: 1;
+    cursor: pointer;
+}
+
+.lightform-object-body-overlay > svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: lime;
+    filter: drop-shadow(0px 0px 8px rgb(0, 255, 0, 0.8));
+}
+
+.lightform-object-body-overlay[up-to-date="false"] {
+   visibility: visible;
+}
+
+.lightform-object-body-overlay[up-to-date="true"] {
+    visibility: hidden;
+ }
+
+.lightform-object-body-expanded {
+   visibility: visible;
+   display: block;
+}
+
+.lightform-object-body-collapsed {
+    visibility: hidden;
+    display: none;
+ }
+
+/* define line */
+
+.lightform-object-header, .lightform-primitive-field, .lightform-method, .lightform-button {
+    margin-top: 4px;
+    /*border-bottom: 1px solid rgb(42 42 42 / 96%);*/
+}
+
+.lightform-icon-triangle-expanded,
+.lightform-icon-triangle-collapsed,
+.lightform-field-name-object, 
+.lightform-icon-size-16,
+.lightform-field-name-primitive,
+.lightform-object-header-type,
+.lightform-input-wrapper,
+.lightform-status,
+.lightform-info,
+.lightform-unit,
+.lightform-icon-dots
+{
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.lightform-object-header {
+    cursor: pointer;
+    /* background-color: rgb(206, 206, 206); */
+    color: rgb(47, 47, 47);
+    position: relative;
+}
+
+.lightform-object-header:hover {
+    cursor: pointer;
+    /* background-color: rgb(198, 193, 211); */
+    color: rgb(4, 58, 1);
+}
+
+.lightform-primitive-field {
+    /* background-color: rgb(232, 232, 232); */
+    cursor: default;
+    color: rgb(72, 72, 72);
+    position: relative;
+}
+
+.lightform-method {
+    background-color: rgb(34, 34, 34);
+}
+
+.lightform-method-disabled {
+    color:rgb(128, 128, 128);
+    cursor: default;
+}
+
+.lightform-method-enabled {
+    color: #eee;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.lightform-method-enabled > div:first-child {
+    text-indent: 0px;
+    transition: text-indent 0.2s ease;
+}
+
+.lightform-method-enabled:hover  {
+    background: #509449 !important;
+    transition: background 0.2s ease;
+}
+
+.lightform-method-enabled:hover > div:first-child {
+    text-indent: 10px;
+    transition: text-indent 0.2s ease;
+}
+
+
+.lightform-icon-triangle-expanded, .lightform-icon-triangle-collapsed {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin: 0px;
+}
+
+.lightform-icon-triangle-expanded > svg, .lightform-icon-triangle-collapsed > svg {
+    margin: 0px;
+    stroke: none;
+    fill: rgb(64, 64, 64);
+}
+
+.lightform-icon-triangle-expanded > svg {
+    transform: rotate(90deg);
+    transition: transform 0.2s ease;
+}
+
+.lightform-icon-triangle-collapsed > svg {
+    transform: rotate(0deg);
+    transition: transform 0.2s ease;
+}
+
+.lightform-icon-arrow-enabled > svg {
+    margin-top: 7px;
+    margin-left: 2px;
+    stroke: none;
+    fill: white;
+}
+
+.lightform-icon-arrow-disabled > svg {
+    margin-top: 7px;
+    margin-left: 2px;
+    stroke: none;
+    fill: rgb(128, 128, 128);
+}
+
+/* <options> */
+
+.lightform-icon-dots{
+    position: relative;
+    margin-left: 4px;
+    cursor: pointer;
+    padding-top: 2px;    
+    padding-bottom: 2px;
+}
+
+.lightform-icon-dots[enabled="true"]{
+    visibility: visible;
+}
+
+.lightform-icon-dots[enabled="false"]{
+    visibility: hidden;
+    display: none;
+}
+
+
+.lightform-icon-dots > svg {
+   /* margin-top: 4px; */
+    margin-left: 2px;
+    stroke: none;
+    fill: rgb(37 42 44);
+    vertical-align: bottom;
+}
+
+.lightform-icon-dots:hover >svg {
+    fill: #4be939;
+}
+
+.lightform-option-text
+
+/* <options> */
+
+
+.lightform-icon-size-16 {
+    margin: 0 0 2px 0;
+    padding-left: 2px;
+    padding-right: 2px;
+    height: 16px;
+}
+
+.lightform-icon-size-16 > svg {
+    margin: 0;
+    stroke: none;
+}
+
+.lightform-object-header-type {
+    border-radius: 2px 2px 2px 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-weight: 320;
+    color: rgb(216, 199, 255);
+}
+
+
+[class*="lightform-markup"] {
+    border-left-width: 3px;
+    border-left-style: solid;
+}
+
+div[class*="lightform-icon-color-"]> svg {
+   stroke: none;
+}
+
+.lightform-markup {
+    height: 20px;
+}
+
+.lightform-markup-white {
+    border-left-color: rgb(255, 255, 255);
+}
+
+.lightform-icon-color-white > svg {
+    fill: rgb(255, 255, 255);
+}
+
+.lightform-markup-grey {
+    border-left-color: rgb(122, 122, 122);
+}
+
+.lightform-icon-color-grey > svg {
+    fill: rgb(122, 122, 122);
+}
+
+.lightform-markup-green {
+    border-left-color: rgb(0, 189, 0);
+}
+
+.lightform-icon-color-green > svg {
+    fill: rgb(0, 189, 0);
+}
+
+.lightform-markup-purple {
+    border-left-color: rgb(192, 51, 180);
+}
+
+.lightform-icon-color-purple > svg{
+    fill : rgb(192, 51, 180);
+}
+
+.lightform-markup-yellow {
+    border-left-color: rgb(250, 232, 68);
+}
+
+.lightform-icon-color-yellow > svg{
+    fill: rgb(250, 232, 68);
+}
+
+.lightform-markup-blue {
+    border-left-color: rgb(101, 68, 250);
+}
+
+.lightform-icon-color-blue > svg {
+    fill : rgb(101, 68, 250);
+}
+
+/* for <object-header> or <primtive-field> */
+/*
+.lightform-field-name-object, .lightform-field-name-primitive {
+   width: 42%; 
+}
+*/
+
+.lightform-field-name-object > span, .lightform-field-name-primitive > span, .lightform-output > span {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+    display: inline-block;
+    vertical-align: bottom;
+    margin-left: 4px;
+    text-align: left;
+}
+
+.lightform-field-name-object {
+    cursor: pointer;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-right: 8px;
+}
+
+.lightform-field-name-object:hover {
+    color: #4be939;
+}
+
+.lightform-input-wrapper {
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 1px;
+    padding-bottom: 2px;
+    margin-left: 4px;
+    width: 36%;
+}
+
+.lightform-field-name-primitive {
+    /* padding-top: 3px; */
+    font-size: 12px;
+    padding-bottom: 3px;
+}
+
+input.lightform-input {
+    width: 100%;
+    background: #f7f6ff;
+    font-size: 12px;
+    color: rgb(41, 41, 41);
+    text-align: right;
+    padding-left: 2px;
+    padding-right: 2px;
+    border: 0;
+    border-radius: 2px;
+}
+
+input[type="text"].lightform-input {
+    border: none;
+    padding-left: 2px;
+    padding-right: 2px;
+    box-sizing: content-box;
+    font-weight: 600;
+}
+
+input[type="text"].lightform-input:focus-visible {
+    border: none;
+    outline-color: rgb(162 162 202 / 54%);
+    outline-width: thin;
+}
+
+
+select.lightform-input {
+    border: none;
+    padding-left: 2px;
+    padding-right: 2px;
+    height: 18px;
+}
+
+
+.lightform-output {
+    background: none;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 2px;
+    padding-bottom: 3px;
+}
+
+.lightform-output > span {
+    font-size: 12px;
+    font-weight: bold;
+    color: aqua;
+}
+
+.lightform-unit {
+    margin-left: 4px;
+    padding-bottom: 3px;
+}
+
+.lightform-unit > span {
+    padding: 0px;
+    border: none;
+    font-size: 12px;
+    color: rgb(83, 87, 88);
+}
+
+
+/* <status> */
+
+
+.lightform-status {
+    margin: 0 0 2px 0;
+    padding-left: 2px;
+    padding-right: 2px;
+    height: 16px;
+}
+
+.lightform-status > svg {
+    margin: 0;
+    stroke: none;
+}
+
+.lightform-status[status="disabled"] {
+    visibility: hidden;
+}
+
+.lightform-status[status="out-of-sync"] > svg {
+    fill: rgb(155, 155, 155);
+}
+
+.lightform-status[status="ok"] > svg {
+    fill: rgb(22, 192, 19);
+}
+
+.lightform-status[status="warning"] > svg {
+    fill: rgb(230, 255, 2);
+}
+
+.lightform-status[status="error"] > svg {
+    fill: rgb(255, 47, 36);
+}
+
+/* </status> */
+
+
+/* tooltip inserted inline */
+.lightform-info {
+    position: relative;
+    font: 12px arial, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-variant-caps: normal;
+    text-align: left;
+    font-size: 12px;
+    margin-bottom: 3px;
+    background-color: #53697c;
+    color: #222222;
+    border-radius: 2px;
+    margin-left: 4px;
+    padding: 0 3px 0 3px;
+}
+
+.lightform-info > div[class*="popover"]{
+    visibility: hidden;
+}
+
+.lightform-info:hover > div[class*="popover"]{
+    visibility: visible;
+}
+
+.lightform-info[enabled = "true"]{
+    visibility: visible;
+}
+
+.lightform-info[enabled = "false"]{
+    visibility: hidden;
+    display: none;
+}
+
+
+.lightform-doc-text {
+    margin: 0 8px 0 8px;
+    font: 12px arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-variant-caps: normal;
+    font-size: 12px;
+    color: #222222;
+    max-width: 320px;
+    min-width: 200px;
+    max-height: 60px;
+    overflow-y: scroll;
+}
+
+/* <icons> */
+.lightform-expand-icon{
+    fill: #eee;
+    stroke: none;
+}
+/* <icons> */
+
+
+/* <test-section> */
+
+
+#lightform-test-wrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+
+.lightform-test-box {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 320px;
+}
+
+
+/* </test-section> */
+
+
+.lightform-button {
+    background-color: rgb(0 66 0);
+    color: #cbcbcb;
+    padding-top: 3px;
+    padding-bottom: 2px;
+    padding-left: 24px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.lightform-button:hover {
+    background-color: rgb(0, 142, 0);
+    color: #f8f8f8;
+}
+
+.lightform-button:active {
+    background-color: rgb(2, 212, 2);
+}
+
+.lightform-button > span {
+    font: 12px arial, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-variant-caps: normal;
+    font-size: 12px;   
+}
+
+
+
+
+
+
+.lightform-helper {
+   display: block;
+}
+
+.lightform-helper-message {
+    display: inline-block;
+}
+
+.lightform-helper-message-icon {
+    display: inline-block;
+}
+
+.lightform-helper-message-text {
+    display: inline-block;
+}
+
+

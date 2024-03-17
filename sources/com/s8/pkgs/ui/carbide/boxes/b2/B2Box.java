@@ -45,7 +45,7 @@ public class B2Box extends HTML_S8WebNode {
 	 * 
 	 * @param items
 	 */
-	public void setElements(S8WebObject[] elements) {
+	public void setElements(S8WebObject... elements) {
 		vertex.outbound().setObjectListField("elements", elements);
 	}
 	

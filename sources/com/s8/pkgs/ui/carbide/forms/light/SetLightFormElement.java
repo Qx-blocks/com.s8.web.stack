@@ -1,4 +1,4 @@
-package com.s8.pkgs.ui.carbide.forms.obj;
+package com.s8.pkgs.ui.carbide.forms.light;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,13 +14,13 @@ import com.s8.pkgs.ui.carbide.popover.Popover;
 
 
 
-public class SetObjFormElement extends ObjFormElement {
+public class SetLightFormElement extends LightFormElement {
 
 
 
 
-	public SetObjFormElement(S8WebFront branch) {
-		super(branch, ObjFormWrapper.WEBPATH + "/SetObjFormElement");
+	public SetLightFormElement(S8WebFront front) {
+		super(front, LightFormWrapper.WEBPATH + "/SetLightFormElement");
 		vertex.inbound().setVoidMethodLambda("on-expanded", () -> {});
 		vertex.inbound().setVoidMethodLambda("on-collapsed", () -> {});
 		vertex.inbound().setVoidMethodLambda("on-sync", () -> {});
@@ -96,13 +96,13 @@ public class SetObjFormElement extends ObjFormElement {
 	}
 
 
-	public void setFields(List<ObjFormElement> elements){
+	public void setFields(List<LightFormElement> elements){
 		vertex.outbound().setObjectListField("fields", elements);
 	}
 
-	public void setFields(ObjFormElement... elements){
-		List<ObjFormElement> list = new ArrayList<>();
-		for(ObjFormElement element : elements) { list.add(element); }
+	public void setFields(LightFormElement... elements){
+		List<LightFormElement> list = new ArrayList<>();
+		for(LightFormElement element : elements) { list.add(element); }
 		vertex.outbound().setObjectListField("fields", list);
 	}
 

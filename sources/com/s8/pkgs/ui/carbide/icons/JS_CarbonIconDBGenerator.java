@@ -11,7 +11,7 @@ public class JS_CarbonIconDBGenerator {
 
 	public static void compile() {
 		StringBuilder builder = new StringBuilder();
-		for(SVG_CarbonIcon icon : SVG_CarbonIcon.values()) {
+		for(SVG_CarbideIcon icon : SVG_CarbideIcon.values()) {
 			builder.append("/** "+icon.name()+" */\n");	
 			builder.append(JS_MAP_NAME+"["+String.format("0x%04x", icon.code)+"] = \""+icon.pathname+"\";\n");	
 			builder.append("\n");	

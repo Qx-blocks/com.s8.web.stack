@@ -5,7 +5,7 @@ import com.s8.api.web.S8WebFront;
 public class IntegerObjFormGetter extends PrimitiveObjFormGetter {
 
 	public IntegerObjFormGetter(S8WebFront branch) {
-		super(branch, ObjFormWrapper.OBJFORM_WEBPATH + "/IntegerObjFormGetter");
+		super(branch, ObjFormWrapper.WEBPATH + "/IntegerObjFormGetter");
 	}
 	
 	

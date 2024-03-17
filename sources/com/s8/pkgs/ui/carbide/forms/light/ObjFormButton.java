@@ -1,4 +1,4 @@
-package com.s8.pkgs.ui.carbide.forms.obj;
+package com.s8.pkgs.ui.carbide.forms.light;
 
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.functions.none.VoidNeFunction;
@@ -11,7 +11,7 @@ import com.s8.pkgs.ui.carbide.icons.SVG_CarbideIcon;
  * @author pierreconvert
  *
  */
-public class ObjFormButton extends ObjFormElement {
+public class ObjFormButton extends LightFormElement {
 	
 	/**
 	 * 
@@ -31,7 +31,7 @@ public class ObjFormButton extends ObjFormElement {
 	
 	
 	public ObjFormButton(S8WebFront branch) {
-		super(branch, ObjFormWrapper.WEBPATH + "/ObjFormButton");
+		super(branch, LightFormWrapper.WEBPATH + "/ObjFormButton");
 	}
 	
 	

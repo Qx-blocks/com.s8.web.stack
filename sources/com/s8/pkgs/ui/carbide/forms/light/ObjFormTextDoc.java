@@ -1,4 +1,4 @@
-package com.s8.pkgs.ui.carbide.forms.obj;
+package com.s8.pkgs.ui.carbide.forms.light;
 
 import com.s8.api.web.S8WebFront;
 import com.s8.pkgs.ui.carbide.HTML_S8WebNode;
@@ -20,7 +20,7 @@ public class ObjFormTextDoc extends HTML_S8WebNode {
 
 	
 	public ObjFormTextDoc(S8WebFront branch) {
-		super(branch, ObjFormWrapper.WEBPATH + "/ObjFormTextDoc");
+		super(branch, LightFormWrapper.WEBPATH + "/ObjFormTextDoc");
 	}
 	
 

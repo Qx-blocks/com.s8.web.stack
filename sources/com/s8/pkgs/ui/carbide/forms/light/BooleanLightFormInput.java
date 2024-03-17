@@ -1,4 +1,4 @@
-package com.s8.pkgs.ui.carbide.forms.obj;
+package com.s8.pkgs.ui.carbide.forms.light;
 
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.functions.primitives.Bool8NeFunction;
@@ -9,7 +9,7 @@ import com.s8.api.web.lambdas.primitives.Bool8Lambda;
  * @author pierreconvert
  *
  */
-public class BooleanObjFormSetter extends PrimitiveObjFormSetter {
+public class BooleanLightFormInput extends PrimitiveLightFormInput {
 
 	
 	
@@ -21,8 +21,8 @@ public class BooleanObjFormSetter extends PrimitiveObjFormSetter {
 	 * @param lambda
 	 * @return
 	 */
-	public static BooleanObjFormSetter create(S8WebFront branch, String name, boolean initialValue, Bool8Lambda lambda) {
-		BooleanObjFormSetter fieldView = new BooleanObjFormSetter(branch);
+	public static BooleanLightFormInput create(S8WebFront branch, String name, boolean initialValue, Bool8Lambda lambda) {
+		BooleanLightFormInput fieldView = new BooleanLightFormInput(branch);
 		fieldView.setName(name);
 		fieldView.setValue(initialValue);
 		fieldView.onValueChangedLambda(lambda);
@@ -40,12 +40,12 @@ public class BooleanObjFormSetter extends PrimitiveObjFormSetter {
 	 * @param doc
 	 * @return
 	 */
-	public static BooleanObjFormSetter create(S8WebFront branch, String name, boolean initialValue, Bool8Lambda lambda, String doc) {
-		BooleanObjFormSetter fieldView = new BooleanObjFormSetter(branch);
+	public static BooleanLightFormInput create(S8WebFront branch, String name, boolean initialValue, Bool8Lambda lambda, String doc) {
+		BooleanLightFormInput fieldView = new BooleanLightFormInput(branch);
 		fieldView.setName(name);
 		fieldView.setValue(initialValue);
 		fieldView.onValueChangedLambda(lambda);
-		fieldView.setTooltipDoc(doc);
+		fieldView.setHelperInfo(doc);
 		return fieldView;
 	}
 	
@@ -54,8 +54,8 @@ public class BooleanObjFormSetter extends PrimitiveObjFormSetter {
 	 * 
 	 * @param branch
 	 */
-	public BooleanObjFormSetter(S8WebFront branch) {
-		super(branch, ObjFormWrapper.WEBPATH + "/BooleanObjFormGetter");
+	public BooleanLightFormInput(S8WebFront branch) {
+		super(branch, LightFormWrapper.WEBPATH + "/BooleanLightFormInput");
 	}
 	
 
