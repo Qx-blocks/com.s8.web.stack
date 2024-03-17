@@ -1,0 +1,55 @@
+/*
+* MENU bar style
+*/
+
+
+.ictxmessage {
+  display: inline-block;
+}
+
+
+.ictxmessage-icon > svg {
+  width: 16px;
+  height: 16px;
+}
+
+.ictxmessage-text {
+  font: 12px arial, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-variant-caps: normal;
+  text-align: left;
+}
+
+
+/* <themes> */
+
+.ictxmessage-theme-default {
+  &.ictxmessage{
+    background-color: white;
+  }
+  .ictxmessage-icon > svg {
+    fill: gray;
+  }
+}
+
+.ictxmessage-theme-warning {
+  &.ictxmessage{
+    background-color: rgba(213, 255, 60, 0.349);
+  }
+  .ictxmessage-icon > svg {
+    fill: yellow;
+  }
+}
+
+.ictxmessage-theme-danger {
+  &.ictxmessage{
+    background-color: rgba(255, 60, 60, 0.349);
+  }
+  .ictxmessage-icon > svg {
+    fill: rgb(255, 177, 81);
+  }
+}
+
+/* </themes> */
+
