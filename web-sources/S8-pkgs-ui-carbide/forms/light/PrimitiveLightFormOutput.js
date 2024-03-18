@@ -15,14 +15,14 @@ export class PrimtiveLightFormOutput extends LightFormElement {
         // setup
         this.markupColor = markupColor;
 
-        this.fieldNode.classList.add("lightform-primitive-field");
+        this.wrapperNode.classList.add("lightform-primitive-field");
 
 
         /* <ribbon> */
         this.ribbonNode = document.createElement("div");
         this.ribbonNode.classList.add("lightform-markup");
         this.ribbonNode.classList.add("lightform-markup-" + getColor(markupColor));
-        this.fieldNode.appendChild(this.ribbonNode);
+        this.wrapperNode.appendChild(this.ribbonNode);
         this.markupColor = markupColor;
         /* </ribbon> */
 
@@ -30,14 +30,14 @@ export class PrimtiveLightFormOutput extends LightFormElement {
         this.fieldNameNode = document.createElement("div");
         this.fieldNameNode.classList.add("lightform-field-name-primitive");
         this.fieldNameNode.innerHTML = "<span>field_name:</span>";
-        this.fieldNode.appendChild(this.fieldNameNode);
+        this.wrapperNode.appendChild(this.fieldNameNode);
         /* </name> */
 
 
         this.createOutputNode();
         
         /* options node */
-        this.fieldNode.appendChild(this.createPlusNode());
+        this.wrapperNode.appendChild(this.createPlusNode());
     }
 
 

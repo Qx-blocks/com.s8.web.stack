@@ -43,7 +43,7 @@ export class LightFormElement extends NeObject {
 
 
     /** @type{HTMLDivElement} */
-    fieldNode = null;
+    wrapperNode = null;
 
 
     /**
@@ -55,12 +55,6 @@ export class LightFormElement extends NeObject {
      * @type{Popover}
      */
     consolePopover = null;
-
-
-    /**
-     * @type{HTMLDivElement}
-     */
-    infoNode = null;
 
     /**
      * @type{Popover}
@@ -75,11 +69,15 @@ export class LightFormElement extends NeObject {
 
     constructor() {
         super();
-        this.fieldNode = document.createElement("div");
+        this.wrapperNode = document.createElement("div");
     }
 
     getEnvelope() {
-        return this.fieldNode;
+        return this.wrapperNode;
+    }
+
+    getRow() {
+        return this.wrapperNode;
     }
 
 
@@ -211,24 +209,21 @@ export class LightFormElement extends NeObject {
     S8_set_helperMessages(messages){
         if(!this.helperPopover){
             this.helperPopover = new Popover();
-            this.fieldNode.appendChild(this.helperPopover.getEnvelope());
-
+            this.helperPopover.hide();
+            
+            const row = this.getRow();
+            row.appendChild(this.helperPopover.getEnvelope());
             /* this.helperPopover.show(); // DEBUG */
 
-            
-            this.helperPopover.hide();
             const _this = this;
-            
-            this.fieldNode.addEventListener("mouseenter", function(){ 
-                _this.helperPopover.show(); 
-            }, false);
-            this.fieldNode.addEventListener("mouseleave", function(){ 
-                _this.helperPopover.hide(); 
-            }, false);
+            row.addEventListener("mouseenter", function(){ _this.helperPopover.show(); }, false);
+            row.addEventListener("mouseleave", function(){ _this.helperPopover.hide(); }, false);
         }
 
         this.helperPopover.S8_set_content(messages);
     }
+
+
 
 
 }

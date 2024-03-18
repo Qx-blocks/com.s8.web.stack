@@ -33,7 +33,7 @@ export class NumberLightFormInput extends PrimtiveLightFormInput {
         this.inputNode.setAttribute("type", "text");
 
         inputWrapperNode.appendChild(this.inputNode);
-        this.fieldNode.appendChild(inputWrapperNode);
+        this.wrapperNode.appendChild(inputWrapperNode);
 
         const _this = this;
         this.inputNode.addEventListener("blur", function(event){
@@ -49,7 +49,7 @@ export class NumberLightFormInput extends PrimtiveLightFormInput {
         this.unitNode = document.createElement("span");
         this.unitNode.innerHTML = "(unit)";
         unitWrapperNode.appendChild(this.unitNode);
-        this.fieldNode.appendChild(unitWrapperNode);
+        this.wrapperNode.appendChild(unitWrapperNode);
         /* </unit> */
     }
 

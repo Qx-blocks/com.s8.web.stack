@@ -24,10 +24,6 @@ public class LightFormElement extends S8WebObject {
 
 	
 
-	public void setHelperMessages(IconTextMessage... messages) {
-		vertex.outbound().setObjectListField("helperMessages", messages);
-	}
-	
 	
 	
 	public void setOptionsAvailability(boolean isAvailable) {
@@ -62,7 +58,10 @@ public class LightFormElement extends S8WebObject {
 	}
 	
 	
-	
+
+	public void setHelperMessages(IconTextMessage... messages) {
+		vertex.outbound().setObjectListField("helperMessages", messages);
+	}
 	
 	
 

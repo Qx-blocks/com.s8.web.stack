@@ -27,8 +27,9 @@ export class EnumLightFormInput extends PrimtiveLightFormInput {
 
         this.selectNode = document.createElement("select");
         this.selectNode.setAttribute("name", "list");
+        this.selectNode.classList.add("lightform-input");
         selectWrapperNode.appendChild(this.selectNode);
-        this.fieldNode.appendChild(selectWrapperNode);
+        this.wrapperNode.appendChild(selectWrapperNode);
 
         // populate with options
         for(let i=0; i<4; i++){
@@ -53,7 +54,7 @@ export class EnumLightFormInput extends PrimtiveLightFormInput {
         this.S8_vertex.runUInt8("on-selected", index);
     }
 
-    S8_set_enumValues(enumValues){
+    S8_set_options(enumValues){
         // remove previous nodes
         S8.page.removeChildren(this.selectNode);
 

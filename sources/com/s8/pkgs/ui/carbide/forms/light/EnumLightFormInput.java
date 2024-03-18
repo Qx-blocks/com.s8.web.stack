@@ -21,7 +21,7 @@ public class EnumLightFormInput extends PrimitiveLightFormInput {
 			UInt8Lambda lambda) {
 		EnumLightFormInput formSetter = new EnumLightFormInput(branch);
 		formSetter.setName(name);
-		formSetter.setEnumValues(options);
+		formSetter.setOptions(options);
 		formSetter.setPresetIndex(preset);
 		formSetter.onSelectedLambda(lambda);
 		return formSetter;
@@ -33,7 +33,7 @@ public class EnumLightFormInput extends PrimitiveLightFormInput {
 	}
 	
 	
-	public void setEnumValues(String[] options) {
+	public void setOptions(String[] options) {
 		vertex.outbound().setStringUTF8ArrayField("options", options);
 	}
 	

@@ -12,13 +12,20 @@ import { S8 } from '/S8-api/S8Context.js';
 /**
  * 
  */
-export class SetLightFormElement extends LightFormElement {
+export class ObjectLightFormElement extends LightFormElement {
 
 
     /**
      * @type{boolean}
      */
     isUpToDate = false;
+
+
+    /**
+     * @type{number}
+     */
+    typeIndex = 0;
+
 
 
     constructor() {
@@ -30,12 +37,13 @@ export class SetLightFormElement extends LightFormElement {
         this.iconColorCode = 4;
 
         // field node already created by super
-        this.fieldNode.classList.add("lightform-object-field");
+        this.wrapperNode.classList.add("lightform-object-field");
+        const _this = this;
 
         /* <header> */
         this.headerNode = document.createElement("div");
         this.headerNode.classList.add("lightform-object-header");
-        this.fieldNode.appendChild(this.headerNode);
+        this.wrapperNode.appendChild(this.headerNode);
 
 
         /* <triangle> */
@@ -71,13 +79,22 @@ export class SetLightFormElement extends LightFormElement {
 
 
         // <div><span class="">R3Container</span></div>
-        let typeWrapperNode = document.createElement("div");
-        typeWrapperNode.classList.add("lightform-object-header-type");
-        this.headerNode.appendChild(typeWrapperNode);
+        this.typeWrapperNode = document.createElement("div");
+        this.typeWrapperNode.classList.add("lightform-object-header-type");
+        this.typeWrapperNode.addEventListener("click", function (event) { event.stopPropagation(); }, false);
+        this.headerNode.appendChild(this.typeWrapperNode);
 
-        this.typeNode = document.createElement("span");
-        this.typeNode.innerHTML = "${field_type}:";
-        typeWrapperNode.appendChild(this.typeNode);
+        this.selectNode = document.createElement("select");
+        this.selectNode.setAttribute("name", "list");
+        this.selectNode.classList.add("lightform-input-type");
+       
+        this.selectNode.addEventListener("change", function(event){
+            S8.page.loseFocus();
+            _this.sendValue();
+            event.stopPropagation();
+        })
+        
+        this.typeWrapperNode.appendChild(this.selectNode);
 
 
         /* console node */
@@ -86,7 +103,6 @@ export class SetLightFormElement extends LightFormElement {
         /* options node */
         this.headerNode.appendChild(this.createPlusNode());
 
-        const _this = this;
         this.headerNode.addEventListener("click", function () {
             S8.page.loseFocus();
             _this.toggle();
@@ -97,7 +113,7 @@ export class SetLightFormElement extends LightFormElement {
         this.isExpanded = false; // initially collapsed
         this.bodyNode = document.createElement("div");
         this.bodyNode.classList.add("lightform-object-body", "lightform-object-body-collapsed");
-        this.fieldNode.appendChild(this.bodyNode);
+        this.wrapperNode.appendChild(this.bodyNode);
 
 
         /* <content> */
@@ -109,7 +125,9 @@ export class SetLightFormElement extends LightFormElement {
     }
 
 
-
+    getRow() {
+        return this.headerNode;
+    }
 
 
 
@@ -131,8 +149,43 @@ export class SetLightFormElement extends LightFormElement {
         this.fieldNameNode.innerHTML = name;
     }
 
-    S8_set_typeName(name) {
-        this.typeNode.innerHTML = name;
+    /**
+     * 
+     * @param {string[]} typenames 
+     */
+    S8_set_typeOptions(typenames) {
+        S8WebFront.removeChildren(this.selectNode);
+       
+        // populate with options
+        const n = typenames.length;
+        for(let i=0; i<n; i++){
+            let optionNode = document.createElement("option");
+            optionNode.innerText = typenames[i];
+            if(i == this.typeIndex){ optionNode.setAttribute("selected", ""); }
+            this.selectNode.appendChild(optionNode);
+        }
+         /* </select> */
+    }
+
+
+    S8_set_typePreset(selectedIndex){
+        let children = this.selectNode.children;
+        let n = children.length;
+        for(let i=0; i<n; i++){
+            let optionNode = children[i];
+            if(i == selectedIndex){
+                optionNode.setAttribute("selected", "");
+            }
+            else{
+                optionNode.removeAttribute("selected");
+            }
+        }
+        this.typeIndex = selectedIndex;
+    }
+
+
+    sendValue(){
+        this.S8_vertex.runUInt8("on-type-changed", this.selectNode.selectedIndex);
     }
 
     S8_set_iconShapeByCode(code) {
@@ -236,5 +289,8 @@ export class SetLightFormElement extends LightFormElement {
     S8_dispose() { /* nothing to dispose*/ }
 
     S8_unfocus() { /* stable when unfocussing : do nothing */ }
+
+
+
 }
 

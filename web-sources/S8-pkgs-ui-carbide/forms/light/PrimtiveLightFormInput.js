@@ -1,6 +1,6 @@
 
 
-import { getColor, LightFormElement } from './LightFormElement.js';
+import { LightFormElement } from './LightFormElement.js';
 
 
 
@@ -11,38 +11,33 @@ export class PrimtiveLightFormInput extends LightFormElement {
 
 
 
-
     constructor() {
         super();
 
-        this.fieldNode = document.createElement("div");
-        this.fieldNode.classList.add("lightform-primitive-field");
-
-        this.createNameNode();
-        this.createInputNode();
-        
-         /* options node */
-        this.fieldNode.appendChild(this.createPlusNode());
-    }
-
-    createNameNode() {
+        this.wrapperNode.classList.add("lightform-primitive-field");
+       
+        /* <name> */
         this.fieldNameNode = document.createElement("div");
         this.fieldNameNode.classList.add("lightform-field-name-primitive");
         this.fieldNameNode.innerHTML = "<span>field_name:</span>";
-        this.fieldNode.appendChild(this.fieldNameNode);
+        this.wrapperNode.appendChild(this.fieldNameNode);
+        /* </name> */
+        
+        /* to be overridden */
+        this.createInputNode();
+        
+         /* options node */
+        this.wrapperNode.appendChild(this.createPlusNode());
     }
 
 
     getEnvelope() {
-        return this.fieldNode;
+        return this.wrapperNode;
     }
 
     S8_set_fieldName(name) {
         this.fieldNameNode.innerHTML = `<span>${name}</span>`;
     }
-
-
-
 
     S8_render(){ /* continuous rendering approach... */ }
 

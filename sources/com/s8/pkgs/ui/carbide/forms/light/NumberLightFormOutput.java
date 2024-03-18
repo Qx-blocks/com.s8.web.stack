@@ -2,6 +2,9 @@ package com.s8.pkgs.ui.carbide.forms.light;
 
 import com.s8.api.web.S8WebFront;
 import com.s8.pkgs.ui.carbide.CarbideNumberFormat;
+import com.s8.pkgs.ui.carbide.CarbideTheme;
+import com.s8.pkgs.ui.carbide.icons.SVG_CarbideIcon;
+import com.s8.pkgs.ui.carbide.messages.ictx.IconTextMessage;
 
 public class NumberLightFormOutput extends PrimitiveLightFormOutput {
 	
@@ -49,7 +52,7 @@ public class NumberLightFormOutput extends PrimitiveLightFormOutput {
 		fieldView.setUnit(unit);
 		fieldView.setFormat(format);
 		fieldView.setValue(value);
-		fieldView.setHelperInfo(doc);
+		fieldView.setHelperMessages(IconTextMessage.create(branch, CarbideTheme.DEFAULT, SVG_CarbideIcon.checklist, doc));
 		return fieldView;
 	}
 	

@@ -23,7 +23,7 @@ export class NumberLightFormOutput extends PrimtiveLightFormOutput {
         /* <output> */
         this.outputNode = document.createElement("div");
         this.outputNode.classList.add("lightform-output");
-        this.fieldNode.appendChild(this.outputNode);
+        this.wrapperNode.appendChild(this.outputNode);
         this.outputNode.innerHTML = `<span>(value)</span>`;
         /* </output> */
 
@@ -33,7 +33,7 @@ export class NumberLightFormOutput extends PrimtiveLightFormOutput {
         this.unitNode = document.createElement("span");
         this.unitNode.innerHTML = "(unit)";
         unitWrapperNode.appendChild(this.unitNode);
-        this.fieldNode.appendChild(unitWrapperNode);
+        this.wrapperNode.appendChild(unitWrapperNode);
         /* </unit> */
     }
 

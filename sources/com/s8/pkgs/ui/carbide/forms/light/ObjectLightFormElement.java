@@ -6,6 +6,7 @@ import java.util.List;
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.functions.none.VoidNeFunction;
 import com.s8.api.web.lambdas.none.VoidLambda;
+import com.s8.api.web.lambdas.primitives.StringUTF8Lambda;
 import com.s8.pkgs.ui.carbide.CarbideDirection;
 import com.s8.pkgs.ui.carbide.CarbideStatus;
 import com.s8.pkgs.ui.carbide.CarbideTheme;
@@ -14,19 +15,35 @@ import com.s8.pkgs.ui.carbide.popover.Popover;
 
 
 
-public class SetLightFormElement extends LightFormElement {
+public class ObjectLightFormElement extends LightFormElement {
 
 
 
+	private String[] typenames;
 
-	public SetLightFormElement(S8WebFront front) {
-		super(front, LightFormWrapper.WEBPATH + "/SetLightFormElement");
+	
+	/**
+	 * 
+	 * @param front
+	 */
+	public ObjectLightFormElement(S8WebFront front) {
+		super(front, LightFormWrapper.WEBPATH + "/ObjectLightFormElement");
 		vertex.inbound().setVoidMethodLambda("on-expanded", () -> {});
 		vertex.inbound().setVoidMethodLambda("on-collapsed", () -> {});
 		vertex.inbound().setVoidMethodLambda("on-sync", () -> {});
 	}
 
 
+
+	/**
+	 * 
+	 * @param lambda
+	 */
+	public void onTypeChanged(StringUTF8Lambda lambda) {
+		vertex.inbound().setUInt8MethodLambda("on-type-changed", index -> lambda.operate(typenames[index]));
+	}
+	
+	
 	/**
 	 * 
 	 * @param lambda
@@ -54,8 +71,10 @@ public class SetLightFormElement extends LightFormElement {
 		vertex.outbound().setStringUTF8Field("fieldName", name);
 	}
 
-	public void setTypeName(String name) {
-		vertex.outbound().setStringUTF8Field("typeName", name);
+	public void setTypeOptions(String[] typenames, int preset) {
+		this.typenames = typenames;
+		vertex.outbound().setStringUTF8ArrayField("typeOptions", typenames);
+		vertex.outbound().setUInt8Field("typePreset", preset);
 	}
 
 

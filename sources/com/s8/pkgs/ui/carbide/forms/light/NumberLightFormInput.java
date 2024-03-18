@@ -4,6 +4,9 @@ import com.s8.api.web.S8WebFront;
 import com.s8.api.web.functions.primitives.Float32NeFunction;
 import com.s8.api.web.lambdas.primitives.Float32Lambda;
 import com.s8.pkgs.ui.carbide.CarbideNumberFormat;
+import com.s8.pkgs.ui.carbide.CarbideTheme;
+import com.s8.pkgs.ui.carbide.icons.SVG_CarbideIcon;
+import com.s8.pkgs.ui.carbide.messages.ictx.IconTextMessage;
 
 
 /**
@@ -36,12 +39,8 @@ public class NumberLightFormInput extends PrimitiveLightFormInput {
 			double initialValue, 
 			Float32Lambda lambda, 
 			String doc) {
-		NumberLightFormInput fieldView = new NumberLightFormInput(branch);
-		fieldView.setName(name);
-		fieldView.setUnit(unit);
-		fieldView.setValue((float) initialValue);
-		fieldView.onValueChanged(lambda);	
-		fieldView.setHelperInfo(doc);
+		NumberLightFormInput fieldView = create(branch, name, unit, format, initialValue, lambda);
+		fieldView.setHelperMessages(IconTextMessage.create(branch, CarbideTheme.DEFAULT, SVG_CarbideIcon.checklist, doc));
 		return fieldView;
 	}
 

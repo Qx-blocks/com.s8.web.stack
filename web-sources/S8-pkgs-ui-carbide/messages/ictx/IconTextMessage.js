@@ -78,7 +78,7 @@ export class IconTextMessage extends S8Object {
      * @param {*} code 
      */
     S8_set_text(text){
-        this.textNode.innerText = text;
+        this.textNode.innerHTML = text;
     }
 
 

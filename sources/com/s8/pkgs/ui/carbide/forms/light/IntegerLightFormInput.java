@@ -3,6 +3,9 @@ package com.s8.pkgs.ui.carbide.forms.light;
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.functions.primitives.Int32NeFunction;
 import com.s8.api.web.lambdas.primitives.Int32Lambda;
+import com.s8.pkgs.ui.carbide.CarbideTheme;
+import com.s8.pkgs.ui.carbide.icons.SVG_CarbideIcon;
+import com.s8.pkgs.ui.carbide.messages.ictx.IconTextMessage;
 
 
 /**
@@ -40,11 +43,8 @@ public class IntegerLightFormInput extends PrimitiveLightFormInput {
 	 * @return
 	 */
 	public static IntegerLightFormInput create(S8WebFront branch, String name, int initialValue, Int32Lambda lambda, String doc) {
-		IntegerLightFormInput fieldView = new IntegerLightFormInput(branch);
-		fieldView.setName(name);
-		fieldView.setValue(initialValue);
-		fieldView.onValueChangedLambda(lambda);
-		fieldView.setHelperInfo(doc);
+		IntegerLightFormInput fieldView = create(branch, name, initialValue, lambda);
+		fieldView.setHelperMessages(IconTextMessage.create(branch, CarbideTheme.DEFAULT, SVG_CarbideIcon.checklist, doc));
 		return fieldView;
 	}
 	

@@ -20,7 +20,7 @@ export class BooleanLightFormInput extends PrimtiveLightFormInput {
         this.inputNode.setAttribute("type", "checkbox");
         inputWrapperNode.appendChild(this.inputNode);
         
-        this.fieldNode.appendChild(inputWrapperNode);
+        this.wrapperNode.appendChild(inputWrapperNode);
         
         const _this = this;
         this.inputNode.addEventListener("blur", function(event){

@@ -16,7 +16,7 @@ export class BooleanLightFormOutput extends PrimtiveLightFormOutput {
         /* <output> */
         this.outputNode = document.createElement("div");
         this.outputNode.classList.add("lightform-output");
-        this.fieldNode.appendChild(this.outputNode);
+        this.wrapperNode.appendChild(this.outputNode);
         this.outputNode.innerHTML = `<span>(value)</span>`;
         /* </output> */
     }
