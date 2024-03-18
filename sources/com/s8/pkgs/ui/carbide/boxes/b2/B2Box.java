@@ -14,8 +14,9 @@ import com.s8.pkgs.ui.carbide.WebSources;
 public class B2Box extends HTML_S8WebNode {
 	
 	
+	public final static String WEBPATH = WebSources.ROOT_WEBPATH + "/boxes/b2";
 	
-	public final static String JS_TYPENAME = "/boxes/b2/B2Box";
+	public final static String JS_TYPENAME = "/B2Box";
 	
 	
 
@@ -26,7 +27,7 @@ public class B2Box extends HTML_S8WebNode {
 	 */
 	
 	public B2Box(S8WebFront front) {
-		super(front, WebSources.ROOT_WEBPATH + JS_TYPENAME);
+		super(front, WEBPATH + JS_TYPENAME);
 	}
 	
 	

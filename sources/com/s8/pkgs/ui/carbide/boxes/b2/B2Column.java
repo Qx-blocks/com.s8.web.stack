@@ -1,8 +1,7 @@
-package com.s8.pkgs.ui.carbide.structs.columns;
+package com.s8.pkgs.ui.carbide.boxes.b2;
 
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.S8WebObject;
-import com.s8.pkgs.ui.carbide.WebSources;
 
 
 /**
@@ -10,19 +9,19 @@ import com.s8.pkgs.ui.carbide.WebSources;
  * @author pierreconvert
  *
  */
-public class Column extends S8WebObject {
+public class B2Column extends S8WebObject {
 
 	
 	/**  */
-	public final static String JS_TYPENAME = "/structs/columns/Column";
+	public final static String JS_TYPENAME = "/B2Column";
 	
 	
 	/**
 	 * 
 	 * @param branch
 	 */
-	public Column(S8WebFront branch) {
-		super(branch, WebSources.ROOT_WEBPATH + JS_TYPENAME);
+	public B2Column(S8WebFront branch) {
+		super(branch, B2Box.WEBPATH + JS_TYPENAME);
 	}
 	
 	

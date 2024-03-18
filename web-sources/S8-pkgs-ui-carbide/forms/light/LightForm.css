@@ -3,8 +3,9 @@
 
 .lightform-box {
     color: #eee;
-    font: 14px arial, sans-serif;
-    font-weight: 100;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
     font-style: normal;
     font-variant-caps: normal;
     text-align: left;
@@ -30,7 +31,7 @@
     list-style: none;
     margin: 0;
     margin-left: 9px;
-    padding: 0;
+    padding: 0 0 0 2px;
     /*width: 100%; --> cancelled to enable auto-align right */
     clear: both;
     border-left: 1px solid #e1e5e9;
@@ -351,7 +352,7 @@ div[class*="lightform-icon-color-"]> svg {
 }
 
 input.lightform-input, select.lightform-input {
-    background: #f7f6ff;
+    background: rgb(236, 236, 255);
     font-size: 14px;
     font-weight: 600;
     color: rgb(41, 41, 41);
