@@ -64,7 +64,7 @@ class S8WebFrontUtilities {
 	 * @param {number} height 
 	 */
 	SVG_insertByCode(target, code, width, height) {
-		S8WebFront.SVG_insertByName(target, S8_FlatIcons_Map[code], width, height);
+		S8WebFront.SVG_insertByName(target, S8_FlatIcons_Map.get(code), width, height);
 	}
 
 

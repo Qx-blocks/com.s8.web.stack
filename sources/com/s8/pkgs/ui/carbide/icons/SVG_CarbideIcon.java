@@ -20,7 +20,6 @@ public enum SVG_CarbideIcon {
 	
 	lab(0x0812, "octicons/beaker.svg"),
 	file(0x0813, "octicons/file.svg"),
-	fork(0x0814, "octicons/git-branch.svg"),
 	gear(0x0815, "octicons/gear.svg"),
 	
 	pencil(0x0821, "octicons/pencil.svg"),
@@ -44,8 +43,15 @@ public enum SVG_CarbideIcon {
 	screenshot(0x0209, "set2/screenshot-icon.svg"),
 	structure(0x020a, "set2/sitemap-icon.svg"),
 	techno(0x020b, "set2/tech-icon.svg"),
-	thermodynamic(0x020c, "set2/thermometer-icon.svg");
+	thermodynamic(0x020c, "set2/thermometer-icon.svg"),
 	/* </set2: 0x02xx> */
+	
+
+	/* <set3: 0x03xx> */
+	save(0x0302, "set3/save.svg"),
+	commit(0x0304, "set3/commit.svg"),
+	fork(0x0304, "set3/fork.svg");
+	/* </set3: 0x32xx> */
 
 
 	public final String pathname;

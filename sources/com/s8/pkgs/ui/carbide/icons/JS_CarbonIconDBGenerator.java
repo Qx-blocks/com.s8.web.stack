@@ -13,7 +13,7 @@ public class JS_CarbonIconDBGenerator {
 		StringBuilder builder = new StringBuilder();
 		for(SVG_CarbideIcon icon : SVG_CarbideIcon.values()) {
 			builder.append("/** "+icon.name()+" */\n");	
-			builder.append(JS_MAP_NAME+"["+String.format("0x%04x", icon.code)+"] = \""+icon.pathname+"\";\n");	
+			builder.append(JS_MAP_NAME+".set("+String.format("0x%04x", icon.code)+", \""+icon.pathname+"\");\n");	
 			builder.append("\n");	
 		}
 		String codeSection = builder.toString();
