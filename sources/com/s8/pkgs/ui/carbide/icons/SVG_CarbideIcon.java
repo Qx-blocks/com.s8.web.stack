@@ -50,7 +50,8 @@ public enum SVG_CarbideIcon {
 	/* <set3: 0x03xx> */
 	save(0x0302, "set3/save.svg"),
 	commit(0x0304, "set3/commit.svg"),
-	fork(0x0304, "set3/fork.svg");
+	fork(0x0305, "set3/fork.svg"),
+	revert(0x0306, "set3/revert.svg");
 	/* </set3: 0x32xx> */
 
 

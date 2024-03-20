@@ -87,4 +87,7 @@ S8_FlatIcons_Map.set(0x0302, "set3/save.svg");
 S8_FlatIcons_Map.set(0x0304, "set3/commit.svg");
 
 /** fork */
-S8_FlatIcons_Map.set(0x0304, "set3/fork.svg");
+S8_FlatIcons_Map.set(0x0305, "set3/fork.svg");
+
+/** revert */
+S8_FlatIcons_Map.set(0x0306, "set3/revert.svg");

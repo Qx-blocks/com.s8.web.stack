@@ -30,14 +30,15 @@
 
 .topbar-ictxbutton:hover {
     box-shadow: yellow 0px 0px 4px;
+    background-color: #a6a69e;
 }
 
 .topbar-ictxbutton:hover > .topbar-ictxbutton-icon > svg {
-    fill: rgb(49, 55, 21);
+    fill: rgb(234, 234, 173);
 }
 
 .topbar-ictxbutton:hover > .topbar-ictxbutton-text {
-    color:rgb(49, 57, 20);
+    color: rgb(234, 234, 173);
 }
 
 
