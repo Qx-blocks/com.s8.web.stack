@@ -1,4 +1,4 @@
-package com.s8.pkgs.ui.carbide.headers.gs;
+package com.s8.pkgs.ui.carbide.structs.gs;
 
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.S8WebObject;
@@ -13,7 +13,7 @@ public class GsHeader extends S8WebObject {
 	/**
 	 * header
 	 */
-	public final static String JS_TYPENAME = "/headers/gs/GsHeader";
+	public final static String JS_TYPENAME = "/structs/gs/GsHeader";
 
 	
 	/**

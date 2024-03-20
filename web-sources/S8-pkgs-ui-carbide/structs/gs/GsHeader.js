@@ -10,7 +10,7 @@ import { S8Object } from "/S8-api/S8Object.js";
 /**
  * 
  */
-S8WebFront.CSS_import('/S8-pkgs-ui-carbide/headers/gs/GsHeader.css');
+S8WebFront.CSS_import('/S8-pkgs-ui-carbide/structs/gs/GsHeader.css');
 
 
 /**

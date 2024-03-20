@@ -20,6 +20,10 @@ export class Column extends S8Object {
         super();
         this.wrapperNode = document.createElement("div");
         this.wrapperNode.classList.add("struct-column");
+
+        this.contentNode = document.createElement("div");
+        this.wrapperNode.appendChild(this.contentNode);
+
     }
 
 
@@ -34,7 +38,7 @@ export class Column extends S8Object {
 
     /** @param {S8Object[]} elements */
     S8_set_elements(elements){
-       S8WebFront.setS8Elements(this.wrapperNode, elements);
+       S8WebFront.setS8Elements(this.contentNode, elements);
     }
 
 

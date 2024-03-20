@@ -20,6 +20,14 @@ export class B2Column extends S8Object {
         super();
         this.wrapperNode = document.createElement("div");
         this.wrapperNode.classList.add("b2struct-column");
+
+        /*
+        this.extensionNode = document.createElement("div");
+        this.wrapperNode.appendChild(this.extensionNode);
+
+        this.contentNode = document.createElement("div");
+        this.extensionNode.appendChild(this.contentNode);
+        */
     }
 
 

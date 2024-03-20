@@ -19,7 +19,7 @@ module com.s8.pkgs.ui.carbide {
 	exports com.s8.pkgs.ui.carbide.dock;
 	exports com.s8.pkgs.ui.carbide.grid;
 	
-	exports com.s8.pkgs.ui.carbide.headers.gs;
+	exports com.s8.pkgs.ui.carbide.structs.gs;
 	
 	exports com.s8.pkgs.ui.carbide.icons;
 	
