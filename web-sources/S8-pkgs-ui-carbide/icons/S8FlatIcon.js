@@ -91,3 +91,12 @@ S8_FlatIcons_Map.set(0x0305, "set3/fork.svg");
 
 /** revert */
 S8_FlatIcons_Map.set(0x0306, "set3/revert.svg");
+
+/** home */
+S8_FlatIcons_Map.set(0x0322, "set3/home.svg");
+
+/** repo */
+S8_FlatIcons_Map.set(0x0323, "set3/repo.svg");
+
+/** branch */
+S8_FlatIcons_Map.set(0x0324, "set3/branch.svg");

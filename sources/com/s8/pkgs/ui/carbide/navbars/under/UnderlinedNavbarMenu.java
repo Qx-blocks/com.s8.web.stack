@@ -4,7 +4,7 @@ import com.s8.api.web.S8WebFront;
 import com.s8.api.web.S8WebObject;
 import com.s8.api.web.functions.none.VoidNeFunction;
 import com.s8.api.web.lambdas.none.VoidLambda;
-import com.s8.pkgs.ui.carbide.WebSources;
+import com.s8.pkgs.ui.carbide.CarbideWebSources;
 import com.s8.pkgs.ui.carbide.icons.SVG_CarbideIcon;
 
 
@@ -23,12 +23,12 @@ public class UnderlinedNavbarMenu extends S8WebObject {
 	 * @param branch
 	 */
 	public UnderlinedNavbarMenu(S8WebFront branch) {
-		super(branch, WebSources.ROOT_WEBPATH + JS_TYPENAME);
+		super(branch, CarbideWebSources.ROOT_WEBPATH + JS_TYPENAME);
 	}
 	
 	
 	public UnderlinedNavbarMenu(S8WebFront branch, SVG_CarbideIcon icon, String name) {
-		super(branch, WebSources.ROOT_WEBPATH + JS_TYPENAME);
+		super(branch, CarbideWebSources.ROOT_WEBPATH + JS_TYPENAME);
 		setIcon(icon);
 		setName(name);
 		onSelected(() -> {

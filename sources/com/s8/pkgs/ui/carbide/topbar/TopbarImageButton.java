@@ -2,7 +2,7 @@ package com.s8.pkgs.ui.carbide.topbar;
 
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.S8WebObject;
-import com.s8.pkgs.ui.carbide.WebSources;
+import com.s8.pkgs.ui.carbide.CarbideWebSources;
 
 /**
  * 
@@ -21,7 +21,7 @@ public class TopbarImageButton extends S8WebObject {
 	 * @param front
 	 */
 	public TopbarImageButton(S8WebFront front) {
-		super(front, WebSources.ROOT_WEBPATH + JS_TYPENAME);
+		super(front, CarbideWebSources.ROOT_WEBPATH + JS_TYPENAME);
 	}
 	
 	public void setImageURL(String url) {

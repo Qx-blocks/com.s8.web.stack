@@ -14,16 +14,21 @@ module com.s8.pkgs.ui.carbide {
 	
 	exports com.s8.pkgs.ui.carbide.breadcrumbs;
 	
-	exports com.s8.pkgs.ui.carbide.button;
+	exports com.s8.pkgs.ui.carbide.buttons.std;
 	exports com.s8.pkgs.ui.carbide.cube;
 	exports com.s8.pkgs.ui.carbide.dock;
-	exports com.s8.pkgs.ui.carbide.grid;
+	
+	exports com.s8.pkgs.ui.carbide.collections.grids.r2;
+	exports com.s8.pkgs.ui.carbide.collections.grids.std;
+
+	exports com.s8.pkgs.ui.carbide.collections.lists.std;
 	
 	exports com.s8.pkgs.ui.carbide.structs.gs;
 	
 	exports com.s8.pkgs.ui.carbide.icons;
 	
 	exports com.s8.pkgs.ui.carbide.messages.ictx;
+	exports com.s8.pkgs.ui.carbide.modal.box;
 	
 
 	/* <navbars> */
@@ -38,6 +43,7 @@ module com.s8.pkgs.ui.carbide {
 	
 	
 	exports com.s8.pkgs.ui.carbide.pages.simple;
+	exports com.s8.pkgs.ui.carbide.paragraphs.std;
 	
 	
 	

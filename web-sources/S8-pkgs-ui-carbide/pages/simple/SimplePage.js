@@ -35,6 +35,15 @@ export class SimplePage extends S8Object {
         super();
         this.wrapperNode = document.createElement("div");
         this.wrapperNode.classList.add("simplepage");
+
+        this.baseLayerNode = document.createElement("div");
+        this.baseLayerNode.classList.add("simplepage-layer-base");
+        this.wrapperNode.appendChild(this.baseLayerNode);
+        
+        this.modalLayerNode = document.createElement("div");
+        this.modalLayerNode.classList.add("simplepage-layer-modal");
+        this.modalLayerNode.style.display = "none";
+        this.wrapperNode.appendChild(this.modalLayerNode);
     }
 
 
@@ -55,9 +64,24 @@ export class SimplePage extends S8Object {
         let n = elements.length;
         for(let i=0; i<n; i++){
             let element = elements[i];
-            this.wrapperNode.appendChild(element.getEnvelope());
+            this.baseLayerNode.appendChild(element.getEnvelope());
         }
         this.elements = elements;
+    }
+
+
+     /**
+     * 
+     * @param {ModalBox} elements 
+     */
+     S8_set_modalBox(box){
+        if(box != null){
+            this.modalLayerNode.appendChild(box.getEnvelope());
+            this.modalLayerNode.style.removeProperty("display");
+        }
+        else{
+            this.modalLayerNode.style.display = "none";
+        }
     }
 
 

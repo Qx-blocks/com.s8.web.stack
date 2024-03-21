@@ -3,7 +3,7 @@ package com.s8.pkgs.ui.carbide.breadcrumbs;
 import com.s8.api.web.S8WebFront;
 import com.s8.pkgs.ui.carbide.CarbideSize;
 import com.s8.pkgs.ui.carbide.HTML_S8WebNode;
-import com.s8.pkgs.ui.carbide.WebSources;
+import com.s8.pkgs.ui.carbide.CarbideWebSources;
 
 
 /**
@@ -26,7 +26,7 @@ public class Breadcrumbs extends HTML_S8WebNode {
 	 */
 	
 	public Breadcrumbs(S8WebFront front) {
-		super(front, WebSources.ROOT_WEBPATH + JS_TYPENAME);
+		super(front, CarbideWebSources.ROOT_WEBPATH + JS_TYPENAME);
 	}
 	
 	
@@ -45,7 +45,7 @@ public class Breadcrumbs extends HTML_S8WebNode {
 	 * 
 	 * @param items
 	 */
-	public void setItems(BreadcrumbsItem[] items) {
+	public void setItems(BreadcrumbsNode[] items) {
 		vertex.outbound().setObjectListField("items", items);
 	}
 	

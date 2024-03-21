@@ -1,0 +1,145 @@
+
+
+
+/** */
+.r2grid-wrapper {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	padding: 36px 20% 10% 20%;
+	background-color: white;
+	overflow-y: scroll;
+}
+
+.r2grid-core {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+
+.r2grid-card-wrapper {
+	box-sizing: content-box;
+	position: relative;
+	padding: 14px;
+	/* z-index: 32; */
+}
+
+.r2grid-card-shape {
+	box-sizing: content-box;
+   
+}
+
+/* all cards */
+
+.r2grid-card-create, .r2grid-card-repo {
+	height: 240px;
+    width: 160px;
+	cursor: pointer;
+}
+
+
+/* <create-card> */
+
+.r2grid-card-create {
+    border: 8px dashed rgb(204, 204, 204);
+    border-radius: 24px;
+    background-color: white;
+    box-shadow: 0px 0px 4px rgb(172, 172, 172);
+    overflow: hidden;
+	color: rgb(200, 200, 200);
+}
+
+.r2grid-card-create:hover {
+    border-color: aqua;
+}
+
+.r2grid-card-create-header {
+	font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 128px;
+    font-weight: bold;
+    letter-spacing: -0.016em;
+  	text-align: center;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	color: rgb(200, 200, 200);
+}
+
+.r2grid-card-create-body {
+	font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -0.016em;
+  	text-align: center;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	color: rgb(200, 200, 200);
+}
+
+/* <create-card> */
+
+
+
+/* <repository-card> */
+
+.r2grid-card-repo {
+	border: 2px solid rgb(204, 204, 204);
+	border-radius: 8px;
+	background-color:  white;
+	box-shadow: 0px 0px 4px rgb(172, 172, 172);
+	overflow: hidden;
+}
+
+.r2grid-card-repo:hover{
+	border: 2px solid rgb(130, 176, 250);
+}
+
+.r2grid-card-repo[selected]{
+	border: 2px solid #769ff4;
+	box-shadow: 0px 0px 4px rgb(103, 143, 167);
+}
+
+
+.r2grid-card-repo-image {
+	height: 160px;
+	width: 160px;
+	background-image: url("/S8-pkgs-ui-carbide/collections/grids/pics/turbine-pic.png");
+	background-size: cover;
+}
+
+
+.r2grid-card-repo-title {
+	font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.016em;
+  	text-align: center;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+.r2grid-card-repo-info {
+	font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -0.016em;
+  	text-align: center;
+	height: 32px;
+	margin-top: 2px;
+	margin-left: 6px;
+	margin-right: 6px;
+	margin-bottom: 2px;
+	text-overflow: ellipsis;
+}
+
+
+.r2grid-card-repo-popover-root {
+	height: 16px;
+	width: 16px;
+	position: relative;
+	margin-left: 72px;
+}
+
+/* </repository-card> */

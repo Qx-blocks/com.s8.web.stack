@@ -1,0 +1,65 @@
+/* modal box */
+.modalbox {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    height: 200px;
+    width: 500px;
+    background-color: rgb(222, 222, 222);
+    border-radius: 8px;
+    border: 1px solid grey;
+    box-shadow: rgba(64, 64, 64, 0.507) 0px 4px 16px;
+    display: flex;
+    flex-direction: row;
+    padding: 12px;
+}
+
+
+.modalbox-icon {
+    width: 120px;
+    padding: 24px;
+}
+
+.modalbox-icon > svg {
+    fill: rgb(241, 241, 41);
+    filter: drop-shadow(0px 1px 4px rgb(0 0 0 / 0.4));
+}
+
+
+.modalbox-main {
+    width: 360px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.modalbox-main > div:last-child {
+    margin-top: auto;
+}
+
+.modalbox-message {
+    margin: 8px 24px 8px 24px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.modalbox-blocks {
+    margin: 8px 24px 8px 24px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.modalbox-validation {
+    padding: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end; /* Pack items from the end */
+}
+
+.modalbox-validation-item {
+    margin: 2px 8px 2px 8px;
+    padding: 0px;
+}
+

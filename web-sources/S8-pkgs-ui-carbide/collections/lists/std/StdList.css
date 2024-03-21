@@ -1,0 +1,133 @@
+
+
+
+/** */
+.stdlist-wrapper {
+	width: auto;
+	margin: 36px 20% 10% 20%;
+	padding: 0px;
+	border-radius: 16px;
+	border: 1px solid rgb(182, 182, 182);
+	overflow: hidden;
+}
+
+.stdlist-head {
+	color: cadetblue;
+	font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 14px;
+    font-weight: 600;
+	padding: 8px 16px 8px 16px;
+	background-color: rgb(214, 214, 214);
+}
+
+.stdlist-body {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	background-color: white;
+}
+
+
+.stdlist-row-create, .stdlist-row-access{
+	box-sizing: content-box;
+	position: relative;
+	padding: 4px;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	border-top: 1px solid rgb(182, 182, 182);
+	/* z-index: 32; */
+}
+
+
+.stdlist-row-create:hover, .stdlist-row-access:hover {
+	background-color: rgb(203 223 255);
+}
+
+
+/* all cards */
+
+.stdlist-row-create, .stdlist-row-access {
+    cursor: pointer;
+	display: flex;
+	flex-direction: column;
+}
+
+
+/* <create-card> */
+
+.stdlist-row-create {
+	border-radius: 24px;
+    border: 8px dashed rgb(204, 204, 204);
+    background-color: white;
+    overflow: hidden;
+	color: rgb(200, 200, 200);
+}
+
+.stdlist-row-create:hover {
+    border-color: aqua;
+}
+
+.stdlist-row-create-header {
+	font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 128px;
+    font-weight: bold;
+    letter-spacing: -0.016em;
+  	text-align: center;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	color: rgb(200, 200, 200);
+}
+
+.stdlist-row-create-body {
+	font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -0.016em;
+  	text-align: center;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	color: rgb(200, 200, 200);
+}
+
+/* <create-card> */
+
+
+
+/* <repository-card> */
+
+
+.stdlist-row-access[selected]{
+	border: 2px solid #769ff4;
+	box-shadow: 0px 0px 4px rgb(103, 143, 167);
+}
+
+.stdlist-row-access-title {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.016em;
+  	text-align: left;
+	margin: 6px 8px 0px 8px;
+	max-height: 32px;
+}
+
+.stdlist-row-access-info {
+	font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -0.016em;
+  	text-align: left;
+	margin: 6px 8px 12px 8px;
+	text-overflow: ellipsis;
+}
+
+
+.stdlist-row-access-popover-root {
+	height: 16px;
+	width: 16px;
+	position: relative;
+	margin-left: 72px;
+}
+
+/* </repository-card> */

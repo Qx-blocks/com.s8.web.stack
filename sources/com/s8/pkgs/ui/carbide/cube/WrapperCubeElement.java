@@ -2,7 +2,7 @@ package com.s8.pkgs.ui.carbide.cube;
 
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.S8WebObject;
-import com.s8.pkgs.ui.carbide.WebSources;
+import com.s8.pkgs.ui.carbide.CarbideWebSources;
 
 public class WrapperCubeElement extends CubeElement {
 
@@ -12,7 +12,7 @@ public class WrapperCubeElement extends CubeElement {
 	 * @param branch
 	 */
 	public WrapperCubeElement(S8WebFront branch) {
-		super(branch, WebSources.ROOT_WEBPATH + "/cube/WrapperCubeElement");
+		super(branch, CarbideWebSources.ROOT_WEBPATH + "/cube/WrapperCubeElement");
 	}
 
 	

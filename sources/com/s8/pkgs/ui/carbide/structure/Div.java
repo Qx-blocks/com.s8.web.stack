@@ -3,7 +3,7 @@ package com.s8.pkgs.ui.carbide.structure;
 import java.util.List;
 
 import com.s8.api.web.S8WebFront;
-import com.s8.pkgs.ui.carbide.WebSources;
+import com.s8.pkgs.ui.carbide.CarbideWebSources;
 import com.s8.pkgs.ui.carbide.HTML_S8WebNode;
 
 public class Div extends HTML_S8WebNode {
@@ -24,7 +24,7 @@ public class Div extends HTML_S8WebNode {
 	 * @param branch
 	 */
 	public Div(S8WebFront branch) {
-		super(branch, WebSources.ROOT_WEBPATH + "/structure/Div");
+		super(branch, CarbideWebSources.ROOT_WEBPATH + "/structure/Div");
 	}
 	
 	

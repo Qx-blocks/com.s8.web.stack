@@ -3,7 +3,7 @@ package com.s8.pkgs.ui.carbide.textinput;
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.functions.primitives.StringUTF8NeFunction;
 import com.s8.api.web.lambdas.primitives.StringUTF8Lambda;
-import com.s8.pkgs.ui.carbide.WebSources;
+import com.s8.pkgs.ui.carbide.CarbideWebSources;
 import com.s8.pkgs.ui.carbide.HTML_S8WebNode;
 import com.s8.pkgs.ui.carbide.CarbideSize;
 import com.s8.pkgs.ui.carbide.CarbideTheme;
@@ -35,7 +35,7 @@ public class TextInput extends HTML_S8WebNode {
 	
 
 	public TextInput(S8WebFront branch) {
-		super(branch, WebSources.ROOT_WEBPATH + "/textinput/TextInput");
+		super(branch, CarbideWebSources.ROOT_WEBPATH + "/textinput/TextInput");
 	}
 	
 	

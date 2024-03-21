@@ -1,7 +1,7 @@
 package com.s8.pkgs.ui.carbide.structure;
 
 import com.s8.api.web.S8WebFront;
-import com.s8.pkgs.ui.carbide.WebSources;
+import com.s8.pkgs.ui.carbide.CarbideWebSources;
 import com.s8.pkgs.ui.carbide.HTML_S8WebNode;
 
 
@@ -30,7 +30,7 @@ public class InlineSpacer extends HTML_S8WebNode {
 	 * @param branch
 	 */
 	public InlineSpacer(S8WebFront branch) {
-		super(branch, WebSources.ROOT_WEBPATH + "/structure/InlineSpacer");
+		super(branch, CarbideWebSources.ROOT_WEBPATH + "/structure/InlineSpacer");
 	}
 	
 	

@@ -3,7 +3,7 @@ package com.s8.pkgs.ui.carbide.messages.ictx;
 import com.s8.api.web.S8WebFront;
 import com.s8.pkgs.ui.carbide.CarbideTheme;
 import com.s8.pkgs.ui.carbide.HTML_S8WebNode;
-import com.s8.pkgs.ui.carbide.WebSources;
+import com.s8.pkgs.ui.carbide.CarbideWebSources;
 import com.s8.pkgs.ui.carbide.icons.SVG_CarbideIcon;
 
 /**
@@ -43,7 +43,7 @@ public class IconTextMessage extends HTML_S8WebNode {
 	 */
 	
 	public IconTextMessage(S8WebFront front) {
-		super(front, WebSources.ROOT_WEBPATH + JS_TYPENAME);
+		super(front, CarbideWebSources.ROOT_WEBPATH + JS_TYPENAME);
 	}
 	
 	

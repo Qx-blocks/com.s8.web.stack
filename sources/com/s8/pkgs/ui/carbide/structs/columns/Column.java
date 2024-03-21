@@ -2,7 +2,7 @@ package com.s8.pkgs.ui.carbide.structs.columns;
 
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.S8WebObject;
-import com.s8.pkgs.ui.carbide.WebSources;
+import com.s8.pkgs.ui.carbide.CarbideWebSources;
 
 
 /**
@@ -22,7 +22,7 @@ public class Column extends S8WebObject {
 	 * @param branch
 	 */
 	public Column(S8WebFront branch) {
-		super(branch, WebSources.ROOT_WEBPATH + JS_TYPENAME);
+		super(branch, CarbideWebSources.ROOT_WEBPATH + JS_TYPENAME);
 	}
 	
 	
