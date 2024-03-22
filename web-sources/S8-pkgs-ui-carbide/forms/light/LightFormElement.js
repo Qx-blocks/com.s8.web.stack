@@ -63,6 +63,12 @@ export class LightFormElement extends NeObject {
 
 
     /**
+     * @type{boolean}
+     */
+    isFocused = false;
+
+
+    /**
      * 
      */
     documentation = null;
@@ -211,16 +217,38 @@ export class LightFormElement extends NeObject {
             this.helperPopover = new Popover();
             this.helperPopover.hide();
             
-            const row = this.getRow();
-            row.appendChild(this.helperPopover.getEnvelope());
-            /* this.helperPopover.show(); // DEBUG */
+            const row = this.getRow(), _this = this;;
 
-            const _this = this;
+            /*
+            row.appendChild(this.helperPopover.getEnvelope());
+            
             row.addEventListener("mouseenter", function(){ _this.helperPopover.show(); }, false);
             row.addEventListener("mouseleave", function(){ _this.helperPopover.hide(); }, false);
+            */
+
+            row.addEventListener("mouseenter", function(){ 
+                _this.isFocused = true;
+                _this.helperPopover.positionToTarget(_this.wrapperNode);
+                S8.page.HTML_setPopover(_this.helperPopover.getEnvelope()); 
+                _this.helperPopover.show();
+            }, false);
+
+            row.addEventListener("mouseleave", function(){ 
+                _this.isFocused = false;
+                _this.helperPopover.hide();
+                S8.page.HTML_clearPopover(); 
+            }, false);
         }
 
         this.helperPopover.S8_set_content(messages);
+    }
+
+    onScroll(){
+        if(this.isFocused){
+            this.isFocused = false;
+            this.helperPopover.hide();
+            S8.page.HTML_clearPopover(); 
+        }
     }
 
 

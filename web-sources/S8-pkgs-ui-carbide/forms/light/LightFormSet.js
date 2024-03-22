@@ -24,12 +24,19 @@ export class LightFormSet extends S8Object {
         return this.wrapperNode;
     }
 
+    /** @returns{S8Object[]} */
+    getComponents(){
+        return this.fields;
+    }
+    
+
     S8_set_fields(fields) {
         // remove previous nodes
         S8WebFront.removeChildren(this.wrapperNode);
 
         // add new ones
         let _this = this;
+        this.fields = fields;
         fields.forEach(field => {
             _this.wrapperNode.appendChild(field.getEnvelope());
         });

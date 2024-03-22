@@ -77,7 +77,7 @@ export class Popover extends NeObject {
         this.clickListener = function (event) {
             event.stopPropagation();
             S8.page.loseFocus();
-           /* do nothing => inert click */
+            /* do nothing => inert click */
         }
         this.node.addEventListener("click", this.clickListener, false);
     }
@@ -205,7 +205,7 @@ export class Popover extends NeObject {
     S8_render() { /* no post processing */ }
 
 
-    S8_unfocus(){ this.hide(); }
+    S8_unfocus() { this.hide(); }
 
 
     /**
@@ -216,4 +216,86 @@ export class Popover extends NeObject {
         // remove listeners
         this.inputNode.removeEventListener("click", this.clickListener);
     }
+
+
+
+    /**
+     * 
+     * @param {*} target 
+     */
+    positionToTarget(target) {
+
+
+        /* choose where to land: check available space around target */
+        let targetBox = target.getBoundingClientRect();
+        //let lzHeight = ui.popoversLandingZone.offsetHeight;
+
+        // main anchors
+        let viewportWidth = window.innerWidth;
+        let viewportHeight = window.innerHeight;
+
+       
+        switch (this.direction) {
+
+            case "top-left":
+                this.node.style.left = targetBox.left + "px";
+                this.node.style.top = targetBox.bottom + "px;";
+                break;
+
+            case "top":
+                this.node.style.left = 0.5 * (targetBox.left + targetBox.right) + "px";
+                this.node.style.top = yTargetBottom + "px;";
+                break;
+
+            case "top-right":
+                this.node.style.right = xTargetRight + "px";
+                this.node.style.top = yTargetBottom + "px;";
+                break;
+
+            case "right-top":
+                this.wrapperNode.style = "left:" + xTargetRight + "px; top:" + yTargetTop + "px;";
+                break;
+
+            case "right-center":
+                this.wrapperNode.style = "left:" + xTargetRight + "px; top:" + yTargetTop + "px;";
+                break;
+
+            case "right-bottom":
+                this.wrapperNode.style = "left:" + xTargetRight + "px; bottom:" + (viewportHeight - yTargetBottom) + "px;";
+                break;
+
+            case "bottom-right":
+                this.wrapperNode.style = "right:" + (viewportWidth - xTargetRight) + "px; top:" + yTargetBottom + "px;";
+                break;
+
+            case "bottom-center":
+                this.wrapperNode.style = "left:" + xTargetLeft + "px; top:" + yTargetBottom + "px;";
+                break;
+
+            case "bottom-left":
+                this.wrapperNode.style = "left:" + xTargetLeft + "px; top:" + yTargetBottom + "px;";
+                break;
+
+
+            case "left-bottom":
+                this.node.style.left = targetBox.right + "px";
+                this.node.style.top = 0.5 * (targetBox.top + targetBox.bottom) + "px";
+                //this.node.style.bottom = (viewportHeight - targetBox.bottom) + "px";
+                break;
+
+            case "left":
+                this.node.style.left = targetBox.right + "px";
+                this.node.style.top = 0.5 * (targetBox.top + targetBox.bottom) + "px";
+                break;
+
+            case "left-top":
+                this.node.style.left = targetBox.right + "px";
+                this.node.style.top = 0.5 * (targetBox.top + targetBox.bottom) + "px";
+                //this.node.style.top = targetBox.top + "px";
+                break;
+        }
+
+
+    }
+
 }

@@ -17,6 +17,10 @@ export class ColumnsStruct extends S8Object {
     wrapperNode;
 
 
+     /** @type {Column[]} */
+    columns;
+
+
     /** */
     constructor() {
         super();
@@ -31,8 +35,15 @@ export class ColumnsStruct extends S8Object {
     }
 
 
+    /** @returns{S8Object[]} */
+    getComponents() {
+        return this.elements;
+    }
+
+
     /** @param {Column[]} columns */
     S8_set_columns(columns) {
+        this.columns = columns;
         S8WebFront.setS8Elements(this.wrapperNode, columns);
     }
 

@@ -37,10 +37,14 @@
     margin-bottom: 4px;
 }
 
-.undernavbar-menu>.undernavbar-menu-label:hover {
+.undernavbar-menu:hover > .undernavbar-menu-label {
     background-color: rgb(231, 231, 255);
     border-radius: 4px;
-    color: rgb(38, 33, 53);
+    color: rgb(111, 110, 35);
+}
+
+.undernavbar-menu:hover > .undernavbar-menu-label > .undernavbar-menu-icon > svg {
+    fill: rgb(111, 110, 35);
 }
 
 
@@ -64,6 +68,7 @@
     font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
     font-weight: 400;
+    text-shadow: 0px 1px 1px rgba(255,255,255,1.0), 0px -0.5px 1px rgba(128,128,128,0.4);
     letter-spacing: -0.016em;
     text-align: center;
     padding-top: 2px;

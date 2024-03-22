@@ -35,6 +35,18 @@ export class Column extends S8Object {
         return this.wrapperNode;
     }
 
+    /** @param{S8Object[]} buffer */
+    getComponents(buffer) {
+        if(this.elements) { buffer.push(this.elements); }
+    }
+
+    /**
+     * @param{string} eventType
+     */
+    onDownwardEvent(eventType){
+       
+    }
+
 
     /** @param {S8Object[]} elements */
     S8_set_elements(elements){

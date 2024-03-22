@@ -41,7 +41,10 @@ export class PrimtiveLightFormOutput extends LightFormElement {
     }
 
 
-    
+    /** @returns{S8Object[]} */
+    getComponents(){
+        return null;
+    }
 
 
 

@@ -35,6 +35,11 @@ export class PrimtiveLightFormInput extends LightFormElement {
         return this.wrapperNode;
     }
 
+    /** @returns{S8Object[]} */
+    getComponents(){
+        return null;
+    }
+
     S8_set_fieldName(name) {
         this.fieldNameNode.innerHTML = `<span>${name}</span>`;
     }

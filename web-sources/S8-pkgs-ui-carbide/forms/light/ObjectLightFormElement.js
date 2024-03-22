@@ -129,6 +129,10 @@ export class ObjectLightFormElement extends LightFormElement {
         return this.headerNode;
     }
 
+    /** @returns{S8Object[]} */
+    getComponents(){
+        return this.fields;
+    }
 
 
     S8_set_iconColor(colorCode) {
@@ -202,6 +206,7 @@ export class ObjectLightFormElement extends LightFormElement {
 
         // add new ones
         let _this = this;
+        this.fields = fields;
         fields.forEach(field => {
             _this.elementsNode.appendChild(field.getEnvelope());
         });
