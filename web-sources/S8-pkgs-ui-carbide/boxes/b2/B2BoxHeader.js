@@ -1,5 +1,4 @@
 
-import { S8WebFront } from "/S8-pkgs-ui-carbide/S8WebFront.js";
 import { S8Object } from "/S8-api/S8Object.js";
 import { S8 } from "/S8-api/S8Context.js";
 
@@ -15,7 +14,7 @@ S8.page.CSS_import('/S8-pkgs-ui-carbide/boxes/b2/B2Box.css');
 /**
  * 
  */
-export class B2Box extends S8Object {
+export class B2BoxHeader extends S8Object {
 
     /** @type {HTMLDivElement} */
     wrapperNode;
@@ -27,8 +26,9 @@ export class B2Box extends S8Object {
      */
     constructor() {
         super();
-        this.wrapperNode = document.createElement("div");
-        this.wrapperNode.classList.add("b2box");
+
+        this.headerNode = document.createElement("div");
+        this.headerNode.classList.add("b2box-header");
     }
 
 
@@ -37,20 +37,19 @@ export class B2Box extends S8Object {
      * @returns 
      */
     getEnvelope() {
-        return this.wrapperNode;
+        return this.headerNode;
     }
 
     /** @returns{S8Object[]} */
     getComponents() {
-        return this.elements;
+        return [];
     }
 
-    /** @param {S8Object[]} elements */
-    S8_set_elements(elements) {
-        this.elements = elements;
-        S8WebFront.setS8Elements(this.wrapperNode, elements);
-    }
 
+    /** @param {string} text */
+    S8_set_title(text) {
+        this.headerNode.innerText = text;
+    }
 
     /** render */
     S8_render() { }

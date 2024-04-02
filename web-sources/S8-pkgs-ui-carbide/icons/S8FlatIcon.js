@@ -1,8 +1,4 @@
-
-
-/**
- * @type{ Number[] }
- */
+/** @type{ Number[] } */
 export const S8_FlatIcons_Map = new Map();
 
 /** alert */
@@ -100,3 +96,14 @@ S8_FlatIcons_Map.set(0x0323, "set3/repo.svg");
 
 /** branch */
 S8_FlatIcons_Map.set(0x0324, "set3/branch.svg");
+
+/** MECH_configuration */
+S8_FlatIcons_Map.set(0x0342, "set3/configuration.svg");
+
+/** MECH_takeoff */
+S8_FlatIcons_Map.set(0x0343, "set3/flight-takeoff.svg");
+
+/** MECH_dynamics */
+S8_FlatIcons_Map.set(0x0344, "set3/curve.svg");
+
+

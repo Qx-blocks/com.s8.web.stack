@@ -61,6 +61,10 @@ export class SimplePage extends S8Object {
      * @param {S8Object[]} elements 
      */
     S8_set_elements(elements){
+
+        /* remove children */
+        S8WebFront.removeChildren(this.baseLayerNode);
+
         let n = elements.length;
         for(let i=0; i<n; i++){
             let element = elements[i];

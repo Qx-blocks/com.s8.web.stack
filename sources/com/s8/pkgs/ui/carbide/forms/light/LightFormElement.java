@@ -21,6 +21,11 @@ public class LightFormElement extends S8WebObject {
 		onOptionsRequiredLambda(() -> {});
 	}
 	
+	
+	
+	public void setStatus(LightFormStatus status) {
+		vertex.outbound().setUInt8Field("status", status.code);
+	}
 
 	
 

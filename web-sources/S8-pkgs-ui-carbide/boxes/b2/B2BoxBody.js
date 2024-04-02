@@ -15,7 +15,7 @@ S8.page.CSS_import('/S8-pkgs-ui-carbide/boxes/b2/B2Box.css');
 /**
  * 
  */
-export class B2Box extends S8Object {
+export class B2BoxBody extends S8Object {
 
     /** @type {HTMLDivElement} */
     wrapperNode;
@@ -28,7 +28,7 @@ export class B2Box extends S8Object {
     constructor() {
         super();
         this.wrapperNode = document.createElement("div");
-        this.wrapperNode.classList.add("b2box");
+        this.wrapperNode.classList.add("b2box-body");
     }
 
 

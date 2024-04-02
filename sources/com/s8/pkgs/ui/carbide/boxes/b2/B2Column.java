@@ -21,7 +21,7 @@ public class B2Column extends S8WebObject {
 	 * @param branch
 	 */
 	public B2Column(S8WebFront branch) {
-		super(branch, B2Box.WEBPATH + JS_TYPENAME);
+		super(branch, B2Box.ROOT_WEBPATH + JS_TYPENAME);
 	}
 	
 	

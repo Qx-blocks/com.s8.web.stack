@@ -55,7 +55,11 @@ public enum SVG_CarbideIcon {
 
 	home(0x0322, "set3/home.svg"),
 	repo(0x0323, "set3/repo.svg"),
-	branch(0x0324, "set3/branch.svg");
+	branch(0x0324, "set3/branch.svg"),
+	
+	MECH_configuration(0x0342, "set3/configuration.svg"),
+	MECH_takeoff(0x0343, "set3/flight-takeoff.svg"),
+	MECH_dynamics(0x0344, "set3/curve.svg");
 	/* </set3: 0x32xx> */
 
 

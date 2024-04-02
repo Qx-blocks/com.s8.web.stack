@@ -24,7 +24,7 @@ public class B2ColumnsStruct extends HTML_S8WebNode {
 	 */
 	
 	public B2ColumnsStruct(S8WebFront front) {
-		super(front, B2Box.WEBPATH + JS_TYPENAME);
+		super(front, B2Box.ROOT_WEBPATH + JS_TYPENAME);
 	}
 	
 	

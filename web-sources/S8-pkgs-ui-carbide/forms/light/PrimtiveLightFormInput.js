@@ -28,6 +28,9 @@ export class PrimtiveLightFormInput extends LightFormElement {
         
          /* options node */
         this.wrapperNode.appendChild(this.createPlusNode());
+
+         /* status node */
+         this.wrapperNode.appendChild(this.createStatusNode());
     }
 
 

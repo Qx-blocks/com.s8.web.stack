@@ -33,7 +33,6 @@ export const getStatus = function (code) {
         case 0x13: return "warning";
         case 0x26: return "error";
         default: throw "out-of-sync";
-
     }
 }
 
@@ -95,13 +94,6 @@ export class LightFormElement extends NeObject {
         this.statusNode = document.createElement("div");
         this.statusNode.classList.add("lightform-status");
         this.setStatus("disabled");
-
-        const _this = this;
-        this.statusNode.addEventListener("click", function(event){
-            S8.page.loseFocus();
-            _this.S8_vertex.runVoid("get-status-info");
-            event.stopPropagation();
-        })
         return this.statusNode;
     }
 
@@ -111,19 +103,19 @@ export class LightFormElement extends NeObject {
             this.statusNode.setAttribute("status", status);
             switch(status){
                 case "ok": 
-                S8WebFront.SVG_insertByName( this.statusNode, "octicons/check.svg", 16, 16);
+                S8WebFront.SVG_insertByName(this.statusNode, "octicons/check.svg", 16, 16);
                 break;
     
                 case "out-of-sync": 
-                S8WebFront.SVG_insertByName( this.statusNode, "octicons/sync.svg", 16, 16);
+                S8WebFront.SVG_insertByName(this.statusNode, "octicons/sync.svg", 16, 16);
                 break;
     
                 case "warning": 
-                S8WebFront.SVG_insertByName( this.statusNode, "octicons/alert.svg", 16, 16);
+                S8WebFront.SVG_insertByName(this.statusNode, "octicons/alert.svg", 16, 16);
                 break;
     
                 case "error": 
-                S8WebFront.SVG_insertByName( this.statusNode, "octicons/alert.svg", 16, 16);
+                S8WebFront.SVG_insertByName(this.statusNode, "octicons/alert.svg", 16, 16);
                 break;
             }
         }

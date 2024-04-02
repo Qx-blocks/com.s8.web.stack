@@ -17,6 +17,16 @@ import com.s8.pkgs.ui.carbide.messages.ictx.IconTextMessage;
 public class NumberLightFormInput extends PrimitiveLightFormInput {
 
 
+	
+	public static NumberLightFormInput create(S8WebFront branch, String name, String unit, CarbideNumberFormat format, double initialValue) {
+		NumberLightFormInput fieldView = new NumberLightFormInput(branch);
+		fieldView.setName(name);
+		fieldView.setUnit(unit);
+		fieldView.setFormat(format);
+		fieldView.setValue((float) initialValue);
+		return fieldView;
+	}
+	
 	public static NumberLightFormInput create(S8WebFront branch, 
 			String name, 
 			String unit,
@@ -26,6 +36,7 @@ public class NumberLightFormInput extends PrimitiveLightFormInput {
 		NumberLightFormInput fieldView = new NumberLightFormInput(branch);
 		fieldView.setName(name);
 		fieldView.setUnit(unit);
+		fieldView.setFormat(format);
 		fieldView.setValue((float) initialValue);
 		fieldView.onValueChanged(lambda);
 		return fieldView;

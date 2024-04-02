@@ -36,7 +36,7 @@ export class NumberLightFormInput extends PrimtiveLightFormInput {
         this.wrapperNode.appendChild(inputWrapperNode);
 
         const _this = this;
-        this.inputNode.addEventListener("blur", function(event){
+        this.inputNode.addEventListener("change", function(event){
             S8.page.loseFocus();
             _this.sendValue();
             event.stopPropagation();

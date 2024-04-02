@@ -364,6 +364,12 @@ input.lightform-input, select.lightform-input {
     margin: 0 0 0 6px;
 }
 
+input.lightform-input:focus-visible, select.lightform-input:focus-visible {
+    outline-color: rgb(139 133 224 / 54%);
+    outline-style: solid;
+    outline-width: 2px;
+}
+
 
 input.lightform-input {
     width: 100%;
@@ -385,12 +391,14 @@ input[type="text"].lightform-input {
     padding-right: 6px;
 }
 
+/*
 input[type="text"].lightform-input:focus-visible, 
 input[type="number"].lightform-input:focus-visible, 
 select.lightform-input:focus-visible {
     outline-color: rgba(133, 133, 224, 0.54);
     outline-width: thin;
 }
+*/
 
 
 
@@ -447,7 +455,7 @@ select.lightform-input:focus-visible {
 
 
 .lightform-status {
-    margin: 0 0 2px 0;
+    margin: 0px 2px 4px 6px;
     padding-left: 2px;
     padding-right: 2px;
     height: 16px;
@@ -471,7 +479,7 @@ select.lightform-input:focus-visible {
 }
 
 .lightform-status[status="warning"] > svg {
-    fill: rgb(230, 255, 2);
+    fill: rgb(218, 193, 1);
 }
 
 .lightform-status[status="error"] > svg {

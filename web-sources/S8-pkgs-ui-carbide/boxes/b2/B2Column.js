@@ -29,10 +29,12 @@ export class B2Column extends S8Object {
         /*
         this.extensionNode = document.createElement("div");
         this.wrapperNode.appendChild(this.extensionNode);
+        */
 
         this.contentNode = document.createElement("div");
-        this.extensionNode.appendChild(this.contentNode);
-        */
+        this.contentNode.classList.add("b2struct-column-content");
+        this.wrapperNode.appendChild(this.contentNode);
+        
 
         const _this = this;
         this.wrapperNode.addEventListener("scroll", function(event){  
@@ -62,7 +64,7 @@ export class B2Column extends S8Object {
     /** @param {S8Object[]} elements */
     S8_set_elements(elements) {
         this.elements = elements;
-        S8WebFront.setS8Elements(this.wrapperNode, elements);
+        S8WebFront.setS8Elements(this.contentNode, elements);
     }
 
 
