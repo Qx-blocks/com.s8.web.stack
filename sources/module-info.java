@@ -33,6 +33,7 @@ module com.s8.pkgs.ui.carbide {
 
 	/* <navbars> */
 	exports com.s8.pkgs.ui.carbide.navbars.light;
+	exports com.s8.pkgs.ui.carbide.navbars.thumb;
 	exports com.s8.pkgs.ui.carbide.navbars.under;
 	
 	/* </navbars> */
