@@ -59,7 +59,10 @@ public enum SVG_CarbideIcon {
 	
 	MECH_configuration(0x0342, "set3/configuration.svg"),
 	MECH_takeoff(0x0343, "set3/flight-takeoff.svg"),
-	MECH_dynamics(0x0344, "set3/curve.svg");
+	MECH_dynamics(0x0344, "set3/curve.svg"),
+	
+	ELECTRICAL_BATTERY(0x0351, "set3/battery-bolt.svg"),
+	JOURNEY(0x0352, "set3/route.svg");
 	/* </set3: 0x32xx> */
 
 

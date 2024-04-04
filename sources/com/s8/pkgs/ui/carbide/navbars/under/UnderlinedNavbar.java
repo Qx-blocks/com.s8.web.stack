@@ -69,6 +69,14 @@ public class UnderlinedNavbar extends HTML_S8WebNode {
 		vertex.outbound().setObjectListField("menus", menus);
 	}
 	
+	/**
+	 * 
+	 * @param menus
+	 */
+	public void setMenus(UnderlinedNavbarMenu... menus) {
+		vertex.outbound().setObjectListField("menus", menus);
+	}
+	
 	
 	
 }

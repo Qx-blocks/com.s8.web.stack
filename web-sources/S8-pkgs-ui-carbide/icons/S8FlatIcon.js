@@ -106,4 +106,9 @@ S8_FlatIcons_Map.set(0x0343, "set3/flight-takeoff.svg");
 /** MECH_dynamics */
 S8_FlatIcons_Map.set(0x0344, "set3/curve.svg");
 
+/** ELECTRICAL_BATTERY */
+S8_FlatIcons_Map.set(0x0351, "set3/battery-bolt.svg");
+
+/** JOURNEY */
+S8_FlatIcons_Map.set(0x0352, "set3/route.svg");
 

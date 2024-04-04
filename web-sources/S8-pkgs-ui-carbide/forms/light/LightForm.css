@@ -11,9 +11,8 @@
     text-align: left;
     /* width: 420px; */
 
-    /* to de deleted */
-    margin-left: 0px;
-    margin-right: 0px;
+    margin: 4px 8px 4px 8px;
+    padding: 0px;
 
     max-height: 92vh;
     /*overflow-x: scroll;

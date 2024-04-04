@@ -32,7 +32,7 @@
 }
 
 .b2box-body {
-  padding: 4px 8px 4px 8px;
+  padding: 0px;
   margin: 0px;
 }
 
@@ -53,6 +53,7 @@
   flex-direction: column;
   max-height: 100vh;
   overflow: auto;
+  scrollbar-width: none;
 }
 
 .b2struct-column-content {
