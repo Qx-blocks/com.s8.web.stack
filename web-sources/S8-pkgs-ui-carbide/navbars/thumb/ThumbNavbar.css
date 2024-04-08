@@ -13,6 +13,8 @@
     position: relative;
     border-radius: 16px;
     border: solid 2px rgba(216, 216, 216, 0.643);
+    width: 128px;
+    height: 128px;
     /* background: linear-gradient(0deg, rgba(191,191,191,1) 33%, rgba(217,217,217,1) 68%, rgba(252,252,252,1) 100%); */
 }
 
@@ -60,21 +62,23 @@
 
 
 .thumbnavbar-menu:hover {
-    background-color: rgb(149, 149, 215);
+    background-color: rgba(223, 223, 253, 0.318);
     color: white;
 }
 
 .thumbnavbar-menu:hover > .thumbnavbar-menu-name {
-    background-color: rgba(255, 255, 255, 0.142);
+    background-color: rgba(58, 67, 167, 0.872);
     color: white;
 }
 
 
 .thumbnavbar-menu-image {
     padding-top: 2px;
-    width: 128px;
-    height: 128px;
-    margin-right: 4px;
+    width: 82px;
+    height: 82px;
+    margin-right: auto;
+    margin-left: 23px;
+    margin-top: 8px;
     text-align: center;
 }
 
@@ -88,9 +92,9 @@
 
 .thumbnavbar-menu-name {
     position: absolute;
-    top: 50%;
+    bottom: 6px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
     font-weight: normal;
@@ -99,8 +103,7 @@
     padding: 4px;
     white-space: nowrap;
     color: rgb(78, 78, 78);
-    background-color: rgba(255, 255, 255, 0.368);
-    border-radius: 8px;
+    border-radius: 2px;
 }
 
 
