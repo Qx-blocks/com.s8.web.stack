@@ -1,0 +1,78 @@
+.paperform-wrapper {
+    padding: 0px;
+    margin: 0px;
+    border-left: solid 1px rgb(210, 210, 210);
+}
+
+.paperform-core {
+    padding: 0px;
+    margin: 16px 32px 16px 32px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.paperform-field {
+    font-family: Helvetica, Arial, sans-serif;
+    display: block;
+    margin: 0px;
+    padding: 0px;
+   
+}
+
+.paperform-field>h1 {
+    padding: 16px 4px 4px 8px;
+    margin: 0px;
+    font-size: 24px;
+    font-weight: lighter;
+}
+
+
+.paperform-field>h2 {
+    padding: 4px;
+    margin: 8px 0px 0px 0px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.paperform-options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0px;
+    margin: 8px 0px 0px 0px;
+}
+
+.paperform-option {
+    border: solid 1px #c2c2c2;
+    border-radius: 12px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    padding: 18px;
+    cursor: pointer;
+}
+
+.paperform-option:hover {
+    border-color: #c8d0ff;
+    background-color: rgb(246, 245, 255);
+}
+
+
+.paperform-option[selected="true"] {
+    border-color: #5983ff;
+    outline: solid 4px rgb(193, 198, 255);
+}
+
+.paperform-option-primary {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.paperform-option-secondary {
+    font-size: 14px;
+    padding: 1px;
+    font-weight: normal;
+    margin-left: auto;
+}

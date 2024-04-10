@@ -41,6 +41,7 @@ module com.s8.pkgs.ui.carbide {
 	
 	exports com.s8.pkgs.ui.carbide.forms.light;
 	exports com.s8.pkgs.ui.carbide.forms.obj;
+	exports com.s8.pkgs.ui.carbide.forms.paper;
 	
 	
 	
