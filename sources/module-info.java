@@ -15,7 +15,9 @@ module com.s8.pkgs.ui.carbide {
 	
 	exports com.s8.pkgs.ui.carbide.breadcrumbs;
 	
+	exports com.s8.pkgs.ui.carbide.buttons;
 	exports com.s8.pkgs.ui.carbide.buttons.std;
+	
 	exports com.s8.pkgs.ui.carbide.cube;
 	exports com.s8.pkgs.ui.carbide.dock;
 	
