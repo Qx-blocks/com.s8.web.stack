@@ -55,7 +55,7 @@ export class PaperFormField extends S8Object {
      * @param {number} index 
      */
     onSelected(index) {
-        this.options[this.selectedIndex].deselect();
+        if(this.selectedIndex >= 0){  this.options[this.selectedIndex].deselect();  }
         this.selectedIndex = index;
         this.options[this.selectedIndex].select();
         this.S8_vertex.runUInt8("on-selected", index);
