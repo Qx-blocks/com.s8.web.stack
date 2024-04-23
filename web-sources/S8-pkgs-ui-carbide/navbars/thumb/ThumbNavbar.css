@@ -96,14 +96,14 @@
     left: 50%;
     transform: translateX(-50%);
     font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: normal;
     letter-spacing: -0.016em;
     text-align: center;
-    padding: 4px;
+    padding: 4px 8px 4px 8px;
     white-space: nowrap;
     color: rgb(78, 78, 78);
-    border-radius: 2px;
+    border-radius: 12px;
 }
 
 

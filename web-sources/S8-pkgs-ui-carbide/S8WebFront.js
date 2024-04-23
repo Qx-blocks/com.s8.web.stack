@@ -126,9 +126,15 @@ class S8WebFrontUtilities {
 	 * @param {S8Object[]} elements 
 	 */
 	setS8Elements(node, elements) {
+
+		/* first clear */
+		this.removeChildren(node);
 		const n = elements.length;
+		let element;
 		for(let i = 0; i<n; i++){
-			node.appendChild(elements[i].getEnvelope());
+			if((element = elements[i]) != null){
+				node.appendChild(element.getEnvelope());
+			}
 		}
 	}
 

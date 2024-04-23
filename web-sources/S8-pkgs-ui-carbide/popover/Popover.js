@@ -234,7 +234,7 @@ export class Popover extends NeObject {
         let viewportWidth = window.innerWidth;
         let viewportHeight = window.innerHeight;
 
-       
+
         switch (this.direction) {
 
             case "top-left":
@@ -252,16 +252,21 @@ export class Popover extends NeObject {
                 this.node.style.top = yTargetBottom + "px;";
                 break;
 
-            case "right-top":
-                this.wrapperNode.style = "left:" + xTargetRight + "px; top:" + yTargetTop + "px;";
-                break;
-
-            case "right-center":
-                this.wrapperNode.style = "left:" + xTargetRight + "px; top:" + yTargetTop + "px;";
-                break;
-
             case "right-bottom":
-                this.wrapperNode.style = "left:" + xTargetRight + "px; bottom:" + (viewportHeight - yTargetBottom) + "px;";
+                this.node.style.right = targetBox.left + "px";
+                this.node.style.bottom = targetBox.bottom + "px";
+                //this.node.style.bottom = (viewportHeight - targetBox.bottom) + "px";
+                break;
+
+            case "right":
+                this.node.style.right = targetBox.left + "px";
+                this.node.style.top = 0.5 * (targetBox.top + targetBox.bottom) + "px";
+                break;
+
+            case "right-top":
+                this.node.style.right = (viewportWidth - targetBox.left) + "px";
+                this.node.style.top = 0.5 * (targetBox.top + targetBox.bottom) + "px";
+                //this.node.style.top = targetBox.top + "px";
                 break;
 
             case "bottom-right":

@@ -1,5 +1,7 @@
 package com.s8.pkgs.ui.carbide.boxes.b2;
 
+import java.util.List;
+
 import com.s8.api.web.S8WebFront;
 import com.s8.api.web.S8WebObject;
 
@@ -31,6 +33,14 @@ public class B2Column extends S8WebObject {
 	 * @param name
 	 */
 	public void setElements(S8WebObject... elements) {
+		vertex.outbound().setObjectListField("elements", elements);
+	}
+	
+	/**
+	 * 
+	 * @param name
+	 */
+	public void setElements(List<S8WebObject> elements) {
 		vertex.outbound().setObjectListField("elements", elements);
 	}
 	

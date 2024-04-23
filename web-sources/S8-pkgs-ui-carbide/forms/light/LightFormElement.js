@@ -50,9 +50,9 @@ export class LightFormElement extends NeObject {
      */
     statusNode = null;
 
-     /**
-     * @type{Popover}
-     */
+    /**
+    * @type{Popover}
+    */
     consolePopover = null;
 
     /**
@@ -90,7 +90,7 @@ export class LightFormElement extends NeObject {
      * 
      * @returns 
      */
-    createStatusNode(){
+    createStatusNode() {
         this.statusNode = document.createElement("div");
         this.statusNode.classList.add("lightform-status");
         this.setStatus("disabled");
@@ -98,25 +98,25 @@ export class LightFormElement extends NeObject {
     }
 
 
-    setStatus(status){
-        if( this.statusNode != null){
+    setStatus(status) {
+        if (this.statusNode != null) {
             this.statusNode.setAttribute("status", status);
-            switch(status){
-                case "ok": 
-                S8WebFront.SVG_insertByName(this.statusNode, "octicons/check.svg", 16, 16);
-                break;
-    
-                case "out-of-sync": 
-                S8WebFront.SVG_insertByName(this.statusNode, "octicons/sync.svg", 16, 16);
-                break;
-    
-                case "warning": 
-                S8WebFront.SVG_insertByName(this.statusNode, "octicons/alert.svg", 16, 16);
-                break;
-    
-                case "error": 
-                S8WebFront.SVG_insertByName(this.statusNode, "octicons/alert.svg", 16, 16);
-                break;
+            switch (status) {
+                case "ok":
+                    S8WebFront.SVG_insertByName(this.statusNode, "octicons/check.svg", 16, 16);
+                    break;
+
+                case "out-of-sync":
+                    S8WebFront.SVG_insertByName(this.statusNode, "octicons/sync.svg", 16, 16);
+                    break;
+
+                case "warning":
+                    S8WebFront.SVG_insertByName(this.statusNode, "octicons/alert.svg", 16, 16);
+                    break;
+
+                case "error":
+                    S8WebFront.SVG_insertByName(this.statusNode, "octicons/alert.svg", 16, 16);
+                    break;
             }
         }
     }
@@ -179,6 +179,37 @@ export class LightFormElement extends NeObject {
     }
 
 
+    createHelperPopover() {
+        if (!this.helperPopover) {
+            this.helperPopover = new Popover();
+            this.helperPopover.hide();
+
+            const row = this.getRow(), _this = this;;
+
+            /*
+            row.appendChild(this.helperPopover.getEnvelope());
+            
+            row.addEventListener("mouseenter", function(){ _this.helperPopover.show(); }, false);
+            row.addEventListener("mouseleave", function(){ _this.helperPopover.hide(); }, false);
+            */
+
+            row.addEventListener("mouseenter", function () {
+                _this.isFocused = true;
+                _this.helperPopover.positionToTarget(_this.wrapperNode);
+                S8.page.HTML_setPopover(_this.helperPopover.getEnvelope());
+                _this.helperPopover.show();
+                console.log("[lightFormElement] hello mouse entered!");
+            }, false);
+
+            row.addEventListener("mouseleave", function () {
+                _this.isFocused = false;
+                _this.helperPopover.hide();
+                S8.page.HTML_clearPopover();
+            }, false);
+        }
+    }
+
+
     S8_set_hasOptions(isEnabled) {
         if (isEnabled) {
             this.plusNode.setAttribute("enabled", "true");
@@ -197,54 +228,33 @@ export class LightFormElement extends NeObject {
         this.optionsPopover.S8_set_content(options);
     }
 
-
+    /**
+   * 
+   * @param {code} code 
+   */
+    S8_set_helperPopoverDirection(code) {
+        this.createHelperPopover();
+        this.helperPopover.S8_set_direction(code);
+    }
 
 
     /**
      * 
      * @param {IconTextMessage} messages 
      */
-    S8_set_helperMessages(messages){
-        if(!this.helperPopover){
-            this.helperPopover = new Popover();
-            this.helperPopover.hide();
-            
-            const row = this.getRow(), _this = this;;
-
-            /*
-            row.appendChild(this.helperPopover.getEnvelope());
-            
-            row.addEventListener("mouseenter", function(){ _this.helperPopover.show(); }, false);
-            row.addEventListener("mouseleave", function(){ _this.helperPopover.hide(); }, false);
-            */
-
-            row.addEventListener("mouseenter", function(){ 
-                _this.isFocused = true;
-                _this.helperPopover.positionToTarget(_this.wrapperNode);
-                S8.page.HTML_setPopover(_this.helperPopover.getEnvelope()); 
-                _this.helperPopover.show();
-            }, false);
-
-            row.addEventListener("mouseleave", function(){ 
-                _this.isFocused = false;
-                _this.helperPopover.hide();
-                S8.page.HTML_clearPopover(); 
-            }, false);
-        }
-
+    S8_set_helperMessages(messages) {
+        this.createHelperPopover();
         this.helperPopover.S8_set_content(messages);
     }
 
-    onScroll(){
-        if(this.isFocused){
+
+    onScroll() {
+        if (this.isFocused) {
             this.isFocused = false;
             this.helperPopover.hide();
-            S8.page.HTML_clearPopover(); 
+            S8.page.HTML_clearPopover();
         }
     }
-
-
-
 
 }
 

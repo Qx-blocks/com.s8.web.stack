@@ -17,15 +17,6 @@ export class PrimtiveLightFormOutput extends LightFormElement {
 
         this.wrapperNode.classList.add("lightform-primitive-field");
 
-
-        /* <ribbon> */
-        this.ribbonNode = document.createElement("div");
-        this.ribbonNode.classList.add("lightform-markup");
-        this.ribbonNode.classList.add("lightform-markup-" + getColor(markupColor));
-        this.wrapperNode.appendChild(this.ribbonNode);
-        this.markupColor = markupColor;
-        /* </ribbon> */
-
         /* <name> */
         this.fieldNameNode = document.createElement("div");
         this.fieldNameNode.classList.add("lightform-field-name-primitive");

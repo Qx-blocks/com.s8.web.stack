@@ -77,7 +77,9 @@
 .lightform-object-header, .lightform-primitive-field, .lightform-method, .lightform-button {
     margin-top: 4px;
     /*border-bottom: 1px solid rgb(42 42 42 / 96%);*/
-   
+   display: flex;
+   flex-direction: row;
+   align-items: end;
 }
 
 .lightform-icon-triangle-expanded,
@@ -92,7 +94,7 @@
 .lightform-unit,
 .lightform-icon-dots
 {
-    display: inline-block;
+    /*display: inline-block;*/
     vertical-align: bottom;
 }
 
@@ -426,14 +428,15 @@ select.lightform-input:focus-visible {
     background: none;
     padding-left: 4px;
     padding-right: 4px;
-    padding-top: 2px;
+    padding-top: 1px;
     padding-bottom: 3px;
+    margin-left: 4px;
 }
 
 .lightform-output > span {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: bold;
-    color: aqua;
+    color: rgb(64, 64, 64);
 }
 
 .lightform-unit {
