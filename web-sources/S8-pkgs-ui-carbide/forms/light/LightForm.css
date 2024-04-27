@@ -436,7 +436,7 @@ select.lightform-input:focus-visible {
 .lightform-output > span {
     font-size: 14px;
     font-weight: bold;
-    color: rgb(64, 64, 64);
+    color: rgb(24, 24, 24);
 }
 
 .lightform-unit {

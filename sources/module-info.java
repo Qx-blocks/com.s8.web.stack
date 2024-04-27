@@ -26,7 +26,6 @@ module com.s8.pkgs.ui.carbide {
 
 	exports com.s8.pkgs.ui.carbide.collections.lists.std;
 	
-	exports com.s8.pkgs.ui.carbide.structs.gs;
 	
 	exports com.s8.pkgs.ui.carbide.icons;
 	
@@ -45,15 +44,12 @@ module com.s8.pkgs.ui.carbide {
 	exports com.s8.pkgs.ui.carbide.forms.obj;
 	exports com.s8.pkgs.ui.carbide.forms.paper;
 	
-	
-	
-	exports com.s8.pkgs.ui.carbide.pages.simple;
+
 	exports com.s8.pkgs.ui.carbide.paragraphs.std;
 	
 	
 	
 	exports com.s8.pkgs.ui.carbide.popover;
-	exports com.s8.pkgs.ui.carbide.structs.columns;
 	
 	exports com.s8.pkgs.ui.carbide.structure;
 	exports com.s8.pkgs.ui.carbide.textinput;
