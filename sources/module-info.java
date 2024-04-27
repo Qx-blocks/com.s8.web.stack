@@ -10,9 +10,6 @@ module com.s8.pkgs.ui.carbide {
 
 	exports com.s8.pkgs.ui.carbide;
 	
-	exports com.s8.pkgs.ui.carbide.boxes.b2;
-	exports com.s8.pkgs.ui.carbide.boxes.paper;
-	
 	exports com.s8.pkgs.ui.carbide.breadcrumbs;
 	
 	exports com.s8.pkgs.ui.carbide.buttons;
