@@ -20,7 +20,6 @@ module com.s8.pkgs.ui.carbide {
 	
 	exports com.s8.pkgs.ui.carbide.collections.grids.r2;
 
-	exports com.s8.pkgs.ui.carbide.collections.lists.std;
 	
 	
 	exports com.s8.pkgs.ui.carbide.icons;

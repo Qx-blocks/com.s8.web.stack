@@ -1,6 +1,5 @@
 
-
-
+/* obj form full style*/
 .objform-box {
     color: #eee;
     font: 12px arial, sans-serif;
@@ -11,17 +10,15 @@
     width: 420px;
 
     /* to de deleted */
-    margin-left: 8px;
-    margin-right: 8px;
-
-    max-height: 92vh;
-    overflow: scroll;
+    margin: 0px;
+    padding: 4px 8px 4px 8px;
+    background: rgb(48, 48, 62);
 }
 
 
 
 .objform-object-field {
-   clear: both;
+    clear: both;
 }
 
 .objform-object-body {
@@ -38,12 +35,12 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(64,64,64,0.64);
+    background-color: rgba(64, 64, 64, 0.64);
     z-index: 1;
     cursor: pointer;
 }
 
-.objform-object-body-overlay > svg {
+.objform-object-body-overlay>svg {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -53,29 +50,29 @@
 }
 
 .objform-object-body-overlay[up-to-date="false"] {
-   visibility: visible;
+    visibility: visible;
 }
 
 .objform-object-body-overlay[up-to-date="true"] {
     visibility: hidden;
- }
+}
 
 .objform-object-body-expanded {
-   visibility: visible;
-   display: block;
+    visibility: visible;
+    display: block;
 }
 
 .objform-object-body-collapsed {
     visibility: hidden;
     display: none;
- }
+}
 
 /* define line */
 .objform-object-header, .objform-primitive-field, .objform-method, .objform-button {
     border-bottom: 1px solid rgb(42 42 42 / 96%);
 }
 
-.objform-object-header > div, .objform-primitive-field > div, .objform-method > div{
+.objform-object-header>div, .objform-primitive-field>div, .objform-method>div {
     display: inline-block;
     vertical-align: bottom;
 }
@@ -103,7 +100,7 @@
 }
 
 .objform-method-disabled {
-    color:rgb(128, 128, 128);
+    color: rgb(128, 128, 128);
     cursor: default;
 }
 
@@ -113,17 +110,17 @@
     transition: background 0.2s ease;
 }
 
-.objform-method-enabled > div:first-child {
+.objform-method-enabled>div:first-child {
     text-indent: 0px;
     transition: text-indent 0.2s ease;
 }
 
-.objform-method-enabled:hover  {
+.objform-method-enabled:hover {
     background: #509449 !important;
     transition: background 0.2s ease;
 }
 
-.objform-method-enabled:hover > div:first-child {
+.objform-method-enabled:hover>div:first-child {
     text-indent: 10px;
     transition: text-indent 0.2s ease;
 }
@@ -137,30 +134,30 @@
     margin: 0px;
 }
 
-.objform-icon-triangle-expanded > svg, .objform-icon-triangle-collapsed > svg {
+.objform-icon-triangle-expanded>svg, .objform-icon-triangle-collapsed>svg {
     margin: 0px;
     stroke: none;
     fill: white;
 }
 
-.objform-icon-triangle-expanded > svg {
+.objform-icon-triangle-expanded>svg {
     transform: rotate(90deg);
     transition: transform 0.2s ease;
 }
 
-.objform-icon-triangle-collapsed > svg {
+.objform-icon-triangle-collapsed>svg {
     transform: rotate(0deg);
     transition: transform 0.2s ease;
 }
 
-.objform-icon-arrow-enabled > svg {
+.objform-icon-arrow-enabled>svg {
     margin-top: 7px;
     margin-left: 2px;
     stroke: none;
     fill: white;
 }
 
-.objform-icon-arrow-disabled > svg {
+.objform-icon-arrow-disabled>svg {
     margin-top: 7px;
     margin-left: 2px;
     stroke: none;
@@ -169,38 +166,37 @@
 
 /* <options> */
 
-.objform-icon-dots{
+.objform-icon-dots {
     position: relative;
     margin-left: 4px;
     cursor: pointer;
-    padding-top: 2px;    
+    padding-top: 2px;
     padding-bottom: 2px;
 }
 
-.objform-icon-dots[enabled="true"]{
+.objform-icon-dots[enabled="true"] {
     visibility: visible;
 }
 
-.objform-icon-dots[enabled="false"]{
+.objform-icon-dots[enabled="false"] {
     visibility: hidden;
     display: none;
 }
 
 
-.objform-icon-dots > svg {
-   /* margin-top: 4px; */
+.objform-icon-dots>svg {
+    /* margin-top: 4px; */
     margin-left: 2px;
     stroke: none;
     fill: rgb(37 42 44);
     vertical-align: bottom;
 }
 
-.objform-icon-dots:hover >svg {
+.objform-icon-dots:hover>svg {
     fill: #4be939;
 }
 
 .objform-option-text
-
 /* <options> */
 
 
@@ -211,7 +207,7 @@
     height: 16px;
 }
 
-.objform-icon-size-16 > svg {
+.objform-icon-size-16>svg {
     margin: 0;
     stroke: none;
 }
@@ -232,8 +228,8 @@
     border-left-style: solid;
 }
 
-div[class*="objform-icon-color-"]> svg {
-   stroke: none;
+div[class*="objform-icon-color-"]>svg {
+    stroke: none;
 }
 
 .objform-markup {
@@ -244,7 +240,7 @@ div[class*="objform-icon-color-"]> svg {
     border-left-color: rgb(255, 255, 255);
 }
 
-.objform-icon-color-white > svg {
+.objform-icon-color-white>svg {
     fill: rgb(255, 255, 255);
 }
 
@@ -252,7 +248,7 @@ div[class*="objform-icon-color-"]> svg {
     border-left-color: rgb(122, 122, 122);
 }
 
-.objform-icon-color-grey > svg {
+.objform-icon-color-grey>svg {
     fill: rgb(122, 122, 122);
 }
 
@@ -260,7 +256,7 @@ div[class*="objform-icon-color-"]> svg {
     border-left-color: rgb(0, 189, 0);
 }
 
-.objform-icon-color-green > svg {
+.objform-icon-color-green>svg {
     fill: rgb(0, 189, 0);
 }
 
@@ -268,15 +264,15 @@ div[class*="objform-icon-color-"]> svg {
     border-left-color: rgb(192, 51, 180);
 }
 
-.objform-icon-color-purple > svg{
-    fill : rgb(192, 51, 180);
+.objform-icon-color-purple>svg {
+    fill: rgb(192, 51, 180);
 }
 
 .objform-markup-yellow {
     border-left-color: rgb(250, 232, 68);
 }
 
-.objform-icon-color-yellow > svg{
+.objform-icon-color-yellow>svg {
     fill: rgb(250, 232, 68);
 }
 
@@ -284,8 +280,8 @@ div[class*="objform-icon-color-"]> svg {
     border-left-color: rgb(101, 68, 250);
 }
 
-.objform-icon-color-blue > svg {
-    fill : rgb(101, 68, 250);
+.objform-icon-color-blue>svg {
+    fill: rgb(101, 68, 250);
 }
 
 /* for <object-header> or <primtive-field> */
@@ -295,11 +291,11 @@ div[class*="objform-icon-color-"]> svg {
 }
 */
 
-.objform-field-name-object > span, .objform-field-name-primitive > span, .objform-output > span {
+.objform-field-name-object>span, .objform-field-name-primitive>span, .objform-output>span {
     width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space:nowrap;
+    white-space: nowrap;
     display: inline-block;
     vertical-align: bottom;
     margin-left: 4px;
@@ -331,7 +327,7 @@ div[class*="objform-icon-color-"]> svg {
     padding-bottom: 3px;
 }
 
-.objform-input > input, .objform-input > select {
+.objform-input>input, .objform-input>select {
     width: 100%;
     background: #303030;
     font-size: 12px;
@@ -342,20 +338,20 @@ div[class*="objform-icon-color-"]> svg {
     border: 0;
 }
 
-.objform-input > input[type="text"] {
+.objform-input>input[type="text"] {
     border: none;
     padding-left: 2px;
     padding-right: 2px;
 }
 
-.objform-input > input[type="checkbox"] {
+.objform-input>input[type="checkbox"] {
     border: none;
     padding-left: 2px;
     padding-right: 2px;
     vertical-align: middle;
 }
 
-.objform-input > select {
+.objform-input>select {
     border: none;
     padding-left: 2px;
     padding-right: 2px;
@@ -371,7 +367,7 @@ div[class*="objform-icon-color-"]> svg {
     padding-bottom: 3px;
 }
 
-.objform-output > span {
+.objform-output>span {
     font-size: 12px;
     font-weight: bold;
     color: aqua;
@@ -382,7 +378,7 @@ div[class*="objform-icon-color-"]> svg {
     padding-bottom: 3px;
 }
 
-.objform-unit > span {
+.objform-unit>span {
     padding: 0px;
     border: none;
     font-size: 12px;
@@ -400,7 +396,7 @@ div[class*="objform-icon-color-"]> svg {
     height: 16px;
 }
 
-.objform-status > svg {
+.objform-status>svg {
     margin: 0;
     stroke: none;
 }
@@ -409,19 +405,19 @@ div[class*="objform-icon-color-"]> svg {
     visibility: hidden;
 }
 
-.objform-status[status="out-of-sync"] > svg {
+.objform-status[status="out-of-sync"]>svg {
     fill: rgb(155, 155, 155);
 }
 
-.objform-status[status="ok"] > svg {
+.objform-status[status="ok"]>svg {
     fill: rgb(22, 192, 19);
 }
 
-.objform-status[status="warning"] > svg {
+.objform-status[status="warning"]>svg {
     fill: rgb(230, 255, 2);
 }
 
-.objform-status[status="error"] > svg {
+.objform-status[status="error"]>svg {
     fill: rgb(255, 47, 36);
 }
 
@@ -445,19 +441,19 @@ div[class*="objform-icon-color-"]> svg {
     padding: 0 3px 0 3px;
 }
 
-.objform-info > div[class*="popover"]{
+.objform-info>div[class*="popover"] {
     visibility: hidden;
 }
 
-.objform-info:hover > div[class*="popover"]{
+.objform-info:hover>div[class*="popover"] {
     visibility: visible;
 }
 
-.objform-info[enabled = "true"]{
+.objform-info[enabled="true"] {
     visibility: visible;
 }
 
-.objform-info[enabled = "false"]{
+.objform-info[enabled="false"] {
     visibility: hidden;
     display: none;
 }
@@ -478,10 +474,11 @@ div[class*="objform-icon-color-"]> svg {
 }
 
 /* <icons> */
-.objform-expand-icon{
+.objform-expand-icon {
     fill: #eee;
     stroke: none;
 }
+
 /* <icons> */
 
 
@@ -527,10 +524,10 @@ div[class*="objform-icon-color-"]> svg {
     background-color: rgb(2, 212, 2);
 }
 
-.objform-button > span {
+.objform-button>span {
     font: 12px arial, sans-serif;
     font-weight: bold;
     font-style: normal;
     font-variant-caps: normal;
-    font-size: 12px;   
+    font-size: 12px;
 }
