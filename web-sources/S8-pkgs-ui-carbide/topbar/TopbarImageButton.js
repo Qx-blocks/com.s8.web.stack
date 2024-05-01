@@ -1,14 +1,6 @@
 
 import { TopbarElement } from "./TopbarElement.js";
 
-import { S8WebFront } from "/S8-pkgs-ui-carbide/S8WebFront.js";
-
-
-/**
- * 
- */
-S8WebFront.CSS_import('/S8-pkgs-ui-carbide/pages/simple/SimplePage.css');
-
 
 /**
  * 
