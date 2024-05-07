@@ -88,6 +88,9 @@ S8_FlatIcons_Map.set(0x0305, "set3/fork.svg");
 /** revert */
 S8_FlatIcons_Map.set(0x0306, "set3/revert.svg");
 
+/** DOWNLOAD */
+S8_FlatIcons_Map.set(0x0307, "set3/download.svg");
+
 /** home */
 S8_FlatIcons_Map.set(0x0322, "set3/home.svg");
 
@@ -111,4 +114,5 @@ S8_FlatIcons_Map.set(0x0351, "set3/battery-bolt.svg");
 
 /** JOURNEY */
 S8_FlatIcons_Map.set(0x0352, "set3/route.svg");
+
 

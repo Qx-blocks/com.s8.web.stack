@@ -52,6 +52,7 @@ public enum SVG_CarbideIcon {
 	commit(0x0304, "set3/commit.svg"),
 	fork(0x0305, "set3/fork.svg"),
 	revert(0x0306, "set3/revert.svg"),
+	DOWNLOAD(0x0307, "set3/download.svg"),
 
 	home(0x0322, "set3/home.svg"),
 	repo(0x0323, "set3/repo.svg"),
